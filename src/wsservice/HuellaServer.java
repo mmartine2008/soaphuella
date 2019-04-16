@@ -17,15 +17,11 @@ public class HuellaServer {
 	private String movimientoBaja = "973";
 	private String movimientoModificacion = "309";
 
-	public String sayHello(String name) {
-		return "Hello " + name;
-	}
-
 	/**
 	* Logging interno del servicio. 
 	* Por ahora solo emite por pantalla
 	*/
-	private void logging(String mensaje)
+	protected void logging(String mensaje)
 	{
 		System.out.println(mensaje);
 	}
@@ -36,7 +32,7 @@ public class HuellaServer {
 		return "Animal 1, Animal 2, Animal 3";
 	}
 
-	private String void movimiento(String fecha, String caravana, String movimiento)
+	protected String movimiento(String fecha, String caravana, String movimiento)
 	{
 		String consulta = "Movimiento:";
 		consulta += " Material:"+ this.ganado;
@@ -46,21 +42,34 @@ public class HuellaServer {
 		consulta += " Caravana:"+ caravana;
 		consulta += " TipoMovimiento:" + movimiento;
 
-		this.loggin(consulta);
+		this.logging(consulta);
+
+		String resultado = "Ok";
+
+		return resultado;
 	}
 
 	public String alta(String fecha, String caravana)
 	{
+		String resultado = 
 		this.movimiento(fecha, caravana, this.movimientoAlta);
+
+		return resultado;
 	}
 
 	public String baja(String fecha, String caravana)
 	{
+		String resultado = 
 		this.movimiento(fecha, caravana, this.movimientoBaja);
+
+		return resultado;
 	}
 
 	public String modificacion(String fecha, String caravana)
 	{
+		String resultado = 
 		this.movimiento(fecha, caravana, this.movimientoModificacion);
+
+		return resultado;
 	}		
 }

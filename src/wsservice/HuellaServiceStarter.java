@@ -2,6 +2,8 @@ package wsserver;
 
 import javax.xml.ws.Endpoint;
 
+import wsserver.HuellaServer;
+
 public class HuellaServiceStarter {
 
 	public static void main(String[] args) {
