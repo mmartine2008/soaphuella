@@ -1,0 +1,38 @@
+Con esta URL se genera el alta de ganado, la baja de ganado y el cambio de estado.
+
+URL para Alta de Ganado (cl mov 971),  para Baja de Ganado (cl mov 973) y cambio de Estado de Ganado (309)
+
+
+http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo?sap-client=400
+
+Credenciales
+
+ IF_PDM y la contraseña ZXasqw12
+
+
+
+
+    Un servidor de pruebas para el web service donde Huella consulta las altas de stock , y todo lo mismo que para el otro servicio (credenciales y ejemplos).
+
+ 
+
+http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400
+
+ 
+
+                En esta URL hay que indicar una fecha desde – hasta y el material para consultar los movimientos de recepción por compra de ganado.
+
+                En el archivo esta destacado el amarillo una parte, si eso lo sacas la Consulta devuelve todos los materiales de ganado por compra para el centro 5010 
+
+#######################################
+VPN:
+ Tus datos de acceso son:
+
+mamartinez
+M4rian0-19
+#######################################
+
+
+
+
+

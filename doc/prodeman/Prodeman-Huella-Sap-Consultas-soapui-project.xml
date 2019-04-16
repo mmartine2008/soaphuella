@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a22dd6fc-35b2-44bb-918d-09fbedba69b6" activeEnvironment="Default" name="Prodeman-Huella-Sap-Consultas" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d3a33e00-a840-414b-82fc-82abcce3bf4c" wsaVersion="NONE" name="ZMM_WS_CONSULTA_MOVIMIENTO_soap12" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}ZMM_WS_CONSULTA_MOVIMIENTO_soap12" soapVersion="1_2" anonymous="optional" definition="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento</con:endpoint></con:endpoints><con:operation id="d2eaeec8-81fd-4b8f-93b3-39d631b59771" isOneWay="false" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_CONSULTA_MOVIMIENTO:ZMM_CONSULTA_MOVIMIENTORequest" name="ZMM_CONSULTA_MOVIMIENTO" bindingOperationName="ZMM_CONSULTA_MOVIMIENTO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ac74cb3a-468d-45a2-b69e-667dc557681b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:ZMM_CONSULTA_MOVIMIENTO>
+         <FI_FECHA>
+            <!--Zero or more repetitions:-->
+            <item>
+               <SIGN>?</SIGN>
+               <OPTION>?</OPTION>
+               <LOW>?</LOW>
+               <HIGH>?</HIGH>
+            </item>
+         </FI_FECHA>
+      </urn:ZMM_CONSULTA_MOVIMIENTO>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZMM_WS_CONSULTA_MOVIMIENTO/ZMM_CONSULTA_MOVIMIENTORequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="df36a9d4-2aa6-498a-a411-bd778a307d4c" wsaVersion="NONE" name="ZMM_WS_CONSULTA_MOVIMIENTO" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}ZMM_WS_CONSULTA_MOVIMIENTO" soapVersion="1_1" anonymous="optional" definition="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400"><con:part><con:url>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN__ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZMM_WS_CONSULTA_MOVIMIENTO_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+          <sapcentraladmin:BusinessApplicationID>00505688D2F21ED989CC040C1D95EFF4</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZMM_CONSULTA_MOVIMIENTO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13"/>
+          <xsd:fractionDigits value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZMM_RANGO_FECHA_ST">
+        <xsd:sequence>
+          <xsd:element name="SIGN" type="tns:char1"/>
+          <xsd:element name="OPTION" type="tns:char2"/>
+          <xsd:element name="LOW" type="tns:date10"/>
+          <xsd:element name="HIGH" type="tns:date10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMM_OUTPUT_WS_MOV_ST">
+        <xsd:sequence>
+          <xsd:element name="MAT_DOC" type="tns:char10"/>
+          <xsd:element name="DOC_YEAR" type="tns:numeric4"/>
+          <xsd:element name="DOC_DATE" type="tns:date10"/>
+          <xsd:element name="PSTNG_DATE" type="tns:date10"/>
+          <xsd:element name="ENTRY_DATE" type="tns:date10"/>
+          <xsd:element name="USERNAME" type="tns:char12"/>
+          <xsd:element name="MATDOC_ITM" type="tns:numeric4"/>
+          <xsd:element name="MATERIAL" type="tns:char40"/>
+          <xsd:element name="PLANT" type="tns:char4"/>
+          <xsd:element name="STGE_LOC" type="tns:char4"/>
+          <xsd:element name="BATCH" type="tns:char10"/>
+          <xsd:element name="MOVE_TYPE" type="tns:char3"/>
+          <xsd:element name="ENTRY_QNT" type="tns:quantum13.3"/>
+          <xsd:element name="ENTRY_UOM" type="tns:unit3"/>
+          <xsd:element name="GR_RCPT" type="tns:char12"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="tns:char1"/>
+          <xsd:element name="ID" type="tns:char20"/>
+          <xsd:element name="NUMBER" type="tns:numeric3"/>
+          <xsd:element name="MESSAGE" type="tns:char220"/>
+          <xsd:element name="LOG_NO" type="tns:char20"/>
+          <xsd:element name="LOG_MSG_NO" type="tns:numeric6"/>
+          <xsd:element name="MESSAGE_V1" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V2" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V3" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V4" type="tns:char50"/>
+          <xsd:element name="PARAMETER" type="tns:char32"/>
+          <xsd:element name="ROW" type="xsd:int"/>
+          <xsd:element name="FIELD" type="tns:char30"/>
+          <xsd:element name="SYSTEM" type="tns:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMM_RANGO_FECHA_TT">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZMM_RANGO_FECHA_ST" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZMM_OUTPUT_WS_MOV_TT">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZMM_OUTPUT_WS_MOV_ST" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2_T">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:BAPIRET2" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZMM_CONSULTA_MOVIMIENTO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FI_FECHA" type="tns:ZMM_RANGO_FECHA_TT"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZMM_CONSULTA_MOVIMIENTOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FE_OUTPUT" type="tns:ZMM_OUTPUT_WS_MOV_TT"/>
+            <xsd:element name="FE_RETURN" type="tns:BAPIRET2_T"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZMM_CONSULTA_MOVIMIENTO">
+    <wsdl:part name="parameters" element="tns:ZMM_CONSULTA_MOVIMIENTO"/>
+  </wsdl:message>
+  <wsdl:message name="ZMM_CONSULTA_MOVIMIENTOResponse">
+    <wsdl:part name="parameter" element="tns:ZMM_CONSULTA_MOVIMIENTOResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://srv-s4-asq.pdm.local:8000/sap/bc/esdt/docu/sd_text?sap-client=400&amp;sd_name=ZMM_WS_CONSULTA_MOVIMIENTO"/>
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZMM_WS_CONSULTA_MOVIMIENTO"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZMM_CONSULTA_MOVIMIENTO">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZMM_CONSULTA_MOVIMIENTO"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZMM_CONSULTA_MOVIMIENTO"/>
+      <wsdl:output message="tns:ZMM_CONSULTA_MOVIMIENTOResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZMM_WS_CONSULTA_MOVIMIENTO" type="tns:ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZMM_WS_CONSULTA_MOVIMIENTO"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZMM_CONSULTA_MOVIMIENTO">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZMM_WS_CONSULTA_MOVIMIENTO:ZMM_CONSULTA_MOVIMIENTORequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZMM_WS_CONSULTA_MOVIMIENTO_soap12" type="tns:ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZMM_WS_CONSULTA_MOVIMIENTO_soap12"/>
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZMM_CONSULTA_MOVIMIENTO">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZMM_WS_CONSULTA_MOVIMIENTO:ZMM_CONSULTA_MOVIMIENTORequest" style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZMM_WS_CONSULTA_MOVIMIENTO">
+    <wsdl:port name="ZMM_WS_CONSULTA_MOVIMIENTO" binding="tns:ZMM_WS_CONSULTA_MOVIMIENTO">
+      <soap:address location="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento"/>
+    </wsdl:port>
+    <wsdl:port name="ZMM_WS_CONSULTA_MOVIMIENTO_soap12" binding="tns:ZMM_WS_CONSULTA_MOVIMIENTO_soap12">
+      <wsoap12:address location="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento</con:endpoint></con:endpoints><con:operation id="904696e4-b2a2-42d0-acb2-2a4746c1ba23" isOneWay="false" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_CONSULTA_MOVIMIENTO:ZMM_CONSULTA_MOVIMIENTORequest" name="ZMM_CONSULTA_MOVIMIENTO" bindingOperationName="ZMM_CONSULTA_MOVIMIENTO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="113b7ccc-3f59-41c3-b39c-ef2af4933efd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ZMM_CONSULTA_MOVIMIENTO>
+         <FI_FECHA>
+            <!--Zero or more repetitions:-->
+            <item>
+               <SIGN>I</SIGN>
+               <OPTION>BT</OPTION>
+               <LOW>2019-01-01</LOW>
+               <HIGH>2019-04-01</HIGH>
+            </item>
+         </FI_FECHA>
+      </urn:ZMM_CONSULTA_MOVIMIENTO>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_CONSULTA_MOVIMIENTO:ZMM_CONSULTA_MOVIMIENTORequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
