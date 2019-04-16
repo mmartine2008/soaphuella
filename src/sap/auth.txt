@@ -1,0 +1,1 @@
+http://IF_PDM:ZXasqw12@http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400

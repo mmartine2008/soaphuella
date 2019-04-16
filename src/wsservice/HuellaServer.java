@@ -10,6 +10,7 @@ import javax.jws.soap.SOAPBinding;
 public class HuellaServer {
 
 	// Estas son constantes del servicio:
+	// Eventualmente las levantara de un archivo
 	private String ganado = "120010101";
 	private String centro = "5010";
 	private String almacen = "A001";

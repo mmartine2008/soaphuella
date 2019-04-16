@@ -33,6 +33,10 @@ M4rian0-19
 #######################################
 
 
+HZ082B125
 
+Para generar el wsdl
+
+ wsimport -keep -extension zmm_ws_consulta_movimiento.wsdl
 
 
