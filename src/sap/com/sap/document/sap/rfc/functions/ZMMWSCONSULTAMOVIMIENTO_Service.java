@@ -30,7 +30,8 @@ public class ZMMWSCONSULTAMOVIMIENTO_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/home/mariano/work/Huella/soaphuella/sap/zmm_ws_consulta_movimiento.wsdl");
+            //url = new URL("file:/home/mariano/work/Huella/soaphuella/src/sap/zmm_ws_consulta_movimiento.wsdl");
+            url = new URL("http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/srvc_url/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento?sap-client=400");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

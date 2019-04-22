@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0ba98005-ceab-4bb7-b411-c568846c7036" activeEnvironment="Default" name="Prodeman-Huella-ABM" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="18d3c6ee-3ece-4c35-9ef2-9ccc7e00a269" wsaVersion="NONE" name="zmm_ws_goodsmvt_create_solo_soap12" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}zmm_ws_goodsmvt_create_solo_soap12" soapVersion="1_2" anonymous="optional" definition="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo?sap-client=400" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint></con:endpoints><con:operation id="c9cd3005-99ee-471b-8bbc-3a27e2c9673e" isOneWay="false" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest" name="ZMM_GOODSMVT_CREATE_SOLO" bindingOperationName="ZMM_GOODSMVT_CREATE_SOLO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3c2236ef-440c-40b6-9e61-7c36e8def8e9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soap:Header/>
+   <soap:Body>
+      <urn:ZMM_GOODSMVT_CREATE_SOLO>
+         <FI_HEADER>
+            <PSTNG_DATE>?</PSTNG_DATE>
+            <DOC_DATE>?</DOC_DATE>
+            <REF_DOC_NO>?</REF_DOC_NO>
+            <BILL_OF_LADING>?</BILL_OF_LADING>
+            <GR_GI_SLIP_NO>?</GR_GI_SLIP_NO>
+            <PR_UNAME>?</PR_UNAME>
+            <HEADER_TXT>?</HEADER_TXT>
+            <VER_GR_GI_SLIP>?</VER_GR_GI_SLIP>
+            <VER_GR_GI_SLIPX>?</VER_GR_GI_SLIPX>
+            <EXT_WMS>?</EXT_WMS>
+            <REF_DOC_NO_LONG>?</REF_DOC_NO_LONG>
+            <BILL_OF_LADING_LONG>?</BILL_OF_LADING_LONG>
+            <BAR_CODE>?</BAR_CODE>
+         </FI_HEADER>
+         <FI_ITEM>
+            <!--Zero or more repetitions:-->
+            <item>
+               <MATERIAL>?</MATERIAL>
+               <PLANT>?</PLANT>
+               <STGE_LOC>?</STGE_LOC>
+               <BATCH>?</BATCH>
+               <MOVE_TYPE>?</MOVE_TYPE>
+               <STCK_TYPE>?</STCK_TYPE>
+               <SPEC_STOCK>?</SPEC_STOCK>
+               <VENDOR>?</VENDOR>
+               <CUSTOMER>?</CUSTOMER>
+               <SALES_ORD>?</SALES_ORD>
+               <S_ORD_ITEM>?</S_ORD_ITEM>
+               <SCHED_LINE>?</SCHED_LINE>
+               <VAL_TYPE>?</VAL_TYPE>
+               <ENTRY_QNT>?</ENTRY_QNT>
+               <ENTRY_UOM>?</ENTRY_UOM>
+               <ENTRY_UOM_ISO>?</ENTRY_UOM_ISO>
+               <PO_PR_QNT>?</PO_PR_QNT>
+               <ORDERPR_UN>?</ORDERPR_UN>
+               <ORDERPR_UN_ISO>?</ORDERPR_UN_ISO>
+               <PO_NUMBER>?</PO_NUMBER>
+               <PO_ITEM>?</PO_ITEM>
+               <SHIPPING>?</SHIPPING>
+               <COMP_SHIP>?</COMP_SHIP>
+               <NO_MORE_GR>?</NO_MORE_GR>
+               <ITEM_TEXT>?</ITEM_TEXT>
+               <GR_RCPT>?</GR_RCPT>
+               <UNLOAD_PT>?</UNLOAD_PT>
+               <COSTCENTER>?</COSTCENTER>
+               <ORDERID>?</ORDERID>
+               <ORDER_ITNO>?</ORDER_ITNO>
+               <CALC_MOTIVE>?</CALC_MOTIVE>
+               <ASSET_NO>?</ASSET_NO>
+               <SUB_NUMBER>?</SUB_NUMBER>
+               <RESERV_NO>?</RESERV_NO>
+               <RES_ITEM>?</RES_ITEM>
+               <RES_TYPE>?</RES_TYPE>
+               <WITHDRAWN>?</WITHDRAWN>
+               <MOVE_MAT>?</MOVE_MAT>
+               <MOVE_PLANT>?</MOVE_PLANT>
+               <MOVE_STLOC>?</MOVE_STLOC>
+               <MOVE_BATCH>?</MOVE_BATCH>
+               <MOVE_VAL_TYPE>?</MOVE_VAL_TYPE>
+               <MVT_IND>?</MVT_IND>
+               <MOVE_REAS>?</MOVE_REAS>
+               <RL_EST_KEY>?</RL_EST_KEY>
+               <REF_DATE>?</REF_DATE>
+               <COST_OBJ>?</COST_OBJ>
+               <PROFIT_SEGM_NO>?</PROFIT_SEGM_NO>
+               <PROFIT_CTR>?</PROFIT_CTR>
+               <WBS_ELEM>?</WBS_ELEM>
+               <NETWORK>?</NETWORK>
+               <ACTIVITY>?</ACTIVITY>
+               <PART_ACCT>?</PART_ACCT>
+               <AMOUNT_LC>?</AMOUNT_LC>
+               <AMOUNT_SV>?</AMOUNT_SV>
+               <REF_DOC_YR>?</REF_DOC_YR>
+               <REF_DOC>?</REF_DOC>
+               <REF_DOC_IT>?</REF_DOC_IT>
+               <EXPIRYDATE>?</EXPIRYDATE>
+               <PROD_DATE>?</PROD_DATE>
+               <FUND>?</FUND>
+               <FUNDS_CTR>?</FUNDS_CTR>
+               <CMMT_ITEM>?</CMMT_ITEM>
+               <VAL_SALES_ORD>?</VAL_SALES_ORD>
+               <VAL_S_ORD_ITEM>?</VAL_S_ORD_ITEM>
+               <VAL_WBS_ELEM>?</VAL_WBS_ELEM>
+               <GL_ACCOUNT>?</GL_ACCOUNT>
+               <IND_PROPOSE_QUANX>?</IND_PROPOSE_QUANX>
+               <XSTOB>?</XSTOB>
+               <EAN_UPC>?</EAN_UPC>
+               <DELIV_NUMB_TO_SEARCH>?</DELIV_NUMB_TO_SEARCH>
+               <DELIV_ITEM_TO_SEARCH>?</DELIV_ITEM_TO_SEARCH>
+               <SERIALNO_AUTO_NUMBERASSIGNMENT>?</SERIALNO_AUTO_NUMBERASSIGNMENT>
+               <VENDRBATCH>?</VENDRBATCH>
+               <STGE_TYPE>?</STGE_TYPE>
+               <STGE_BIN>?</STGE_BIN>
+               <SU_PL_STCK_1>?</SU_PL_STCK_1>
+               <ST_UN_QTYY_1>?</ST_UN_QTYY_1>
+               <ST_UN_QTYY_1_ISO>?</ST_UN_QTYY_1_ISO>
+               <UNITTYPE_1>?</UNITTYPE_1>
+               <SU_PL_STCK_2>?</SU_PL_STCK_2>
+               <ST_UN_QTYY_2>?</ST_UN_QTYY_2>
+               <ST_UN_QTYY_2_ISO>?</ST_UN_QTYY_2_ISO>
+               <UNITTYPE_2>?</UNITTYPE_2>
+               <STGE_TYPE_PC>?</STGE_TYPE_PC>
+               <STGE_BIN_PC>?</STGE_BIN_PC>
+               <NO_PST_CHGNT>?</NO_PST_CHGNT>
+               <GR_NUMBER>?</GR_NUMBER>
+               <STGE_TYPE_ST>?</STGE_TYPE_ST>
+               <STGE_BIN_ST>?</STGE_BIN_ST>
+               <MATDOC_TR_CANCEL>?</MATDOC_TR_CANCEL>
+               <MATITEM_TR_CANCEL>?</MATITEM_TR_CANCEL>
+               <MATYEAR_TR_CANCEL>?</MATYEAR_TR_CANCEL>
+               <NO_TRANSFER_REQ>?</NO_TRANSFER_REQ>
+               <CO_BUSPROC>?</CO_BUSPROC>
+               <ACTTYPE>?</ACTTYPE>
+               <SUPPL_VEND>?</SUPPL_VEND>
+               <MATERIAL_EXTERNAL>?</MATERIAL_EXTERNAL>
+               <MATERIAL_GUID>?</MATERIAL_GUID>
+               <MATERIAL_VERSION>?</MATERIAL_VERSION>
+               <MOVE_MAT_EXTERNAL>?</MOVE_MAT_EXTERNAL>
+               <MOVE_MAT_GUID>?</MOVE_MAT_GUID>
+               <MOVE_MAT_VERSION>?</MOVE_MAT_VERSION>
+               <FUNC_AREA>?</FUNC_AREA>
+               <TR_PART_BA>?</TR_PART_BA>
+               <PAR_COMPCO>?</PAR_COMPCO>
+               <DELIV_NUMB>?</DELIV_NUMB>
+               <DELIV_ITEM>?</DELIV_ITEM>
+               <NB_SLIPS>?</NB_SLIPS>
+               <NB_SLIPSX>?</NB_SLIPSX>
+               <GR_RCPTX>?</GR_RCPTX>
+               <UNLOAD_PTX>?</UNLOAD_PTX>
+               <SPEC_MVMT>?</SPEC_MVMT>
+               <GRANT_NBR>?</GRANT_NBR>
+               <CMMT_ITEM_LONG>?</CMMT_ITEM_LONG>
+               <FUNC_AREA_LONG>?</FUNC_AREA_LONG>
+               <LINE_ID>?</LINE_ID>
+               <PARENT_ID>?</PARENT_ID>
+               <LINE_DEPTH>?</LINE_DEPTH>
+               <QUANTITY>?</QUANTITY>
+               <BASE_UOM>?</BASE_UOM>
+               <LONGNUM>?</LONGNUM>
+               <BUDGET_PERIOD>?</BUDGET_PERIOD>
+               <EARMARKED_NUMBER>?</EARMARKED_NUMBER>
+               <EARMARKED_ITEM>?</EARMARKED_ITEM>
+               <STK_SEGMENT>?</STK_SEGMENT>
+               <MOVE_SEGMENT>?</MOVE_SEGMENT>
+               <MATERIAL_LONG>?</MATERIAL_LONG>
+               <MOVE_MAT_LONG>?</MOVE_MAT_LONG>
+               <STK_SEG_LONG>?</STK_SEG_LONG>
+               <MOV_SEG_LONG>?</MOV_SEG_LONG>
+               <CREATE_DELIVERY>?</CREATE_DELIVERY>
+            </item>
+         </FI_ITEM>
+      </urn:ZMM_GOODSMVT_CREATE_SOLO>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions/ZMM_WS_GOODSMVT_CREATE_SOLO/ZMM_GOODSMVT_CREATE_SOLORequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="e529e60a-8e95-4413-9dae-f67757bff8fc" wsaVersion="NONE" name="zmm_ws_goodsmvt_create_solo" type="wsdl" bindingName="{urn:sap-com:document:sap:rfc:functions}zmm_ws_goodsmvt_create_solo" soapVersion="1_1" anonymous="optional" definition="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo?sap-client=400" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo?sap-client=400"><con:part><con:url>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo?sap-client=400</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN__zmm_ws_goodsmvt_create_solo">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__zmm_ws_goodsmvt_create_solo_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZMM_WS_GOODSMVT_CREATE_SOLO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+          <sapcentraladmin:BusinessApplicationID>00505688D2F21ED989CC040C1D95EFF4</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZMM_GOODSMVT_CREATE_SOLO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char14">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="14"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char24">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="24"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char25">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="25"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal23.4">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="23"/>
+          <xsd:fractionDigits value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal3.0">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="3"/>
+          <xsd:fractionDigits value="0"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13"/>
+          <xsd:fractionDigits value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="BAPI2017_GM_ITEM_CREATE">
+        <xsd:sequence>
+          <xsd:element name="MATERIAL" type="tns:char18"/>
+          <xsd:element name="PLANT" type="tns:char4"/>
+          <xsd:element name="STGE_LOC" type="tns:char4"/>
+          <xsd:element name="BATCH" type="tns:char10"/>
+          <xsd:element name="MOVE_TYPE" type="tns:char3"/>
+          <xsd:element name="STCK_TYPE" type="tns:char1"/>
+          <xsd:element name="SPEC_STOCK" type="tns:char1"/>
+          <xsd:element name="VENDOR" type="tns:char10"/>
+          <xsd:element name="CUSTOMER" type="tns:char10"/>
+          <xsd:element name="SALES_ORD" type="tns:char10"/>
+          <xsd:element name="S_ORD_ITEM" type="tns:numeric6"/>
+          <xsd:element name="SCHED_LINE" type="tns:numeric4"/>
+          <xsd:element name="VAL_TYPE" type="tns:char10"/>
+          <xsd:element name="ENTRY_QNT" type="tns:quantum13.3"/>
+          <xsd:element name="ENTRY_UOM" type="tns:unit3"/>
+          <xsd:element name="ENTRY_UOM_ISO" type="tns:char3"/>
+          <xsd:element name="PO_PR_QNT" type="tns:quantum13.3"/>
+          <xsd:element name="ORDERPR_UN" type="tns:unit3"/>
+          <xsd:element name="ORDERPR_UN_ISO" type="tns:char3"/>
+          <xsd:element name="PO_NUMBER" type="tns:char10"/>
+          <xsd:element name="PO_ITEM" type="tns:numeric5"/>
+          <xsd:element name="SHIPPING" type="tns:char2"/>
+          <xsd:element name="COMP_SHIP" type="tns:char2"/>
+          <xsd:element name="NO_MORE_GR" type="tns:char1"/>
+          <xsd:element name="ITEM_TEXT" type="tns:char50"/>
+          <xsd:element name="GR_RCPT" type="tns:char12"/>
+          <xsd:element name="UNLOAD_PT" type="tns:char25"/>
+          <xsd:element name="COSTCENTER" type="tns:char10"/>
+          <xsd:element name="ORDERID" type="tns:char12"/>
+          <xsd:element name="ORDER_ITNO" type="tns:numeric4"/>
+          <xsd:element name="CALC_MOTIVE" type="tns:char2"/>
+          <xsd:element name="ASSET_NO" type="tns:char12"/>
+          <xsd:element name="SUB_NUMBER" type="tns:char4"/>
+          <xsd:element name="RESERV_NO" type="tns:numeric10"/>
+          <xsd:element name="RES_ITEM" type="tns:numeric4"/>
+          <xsd:element name="RES_TYPE" type="tns:char1"/>
+          <xsd:element name="WITHDRAWN" type="tns:char1"/>
+          <xsd:element name="MOVE_MAT" type="tns:char18"/>
+          <xsd:element name="MOVE_PLANT" type="tns:char4"/>
+          <xsd:element name="MOVE_STLOC" type="tns:char4"/>
+          <xsd:element name="MOVE_BATCH" type="tns:char10"/>
+          <xsd:element name="MOVE_VAL_TYPE" type="tns:char10"/>
+          <xsd:element name="MVT_IND" type="tns:char1"/>
+          <xsd:element name="MOVE_REAS" type="tns:numeric4"/>
+          <xsd:element name="RL_EST_KEY" type="tns:char8"/>
+          <xsd:element name="REF_DATE" type="tns:date10"/>
+          <xsd:element name="COST_OBJ" type="tns:char12"/>
+          <xsd:element name="PROFIT_SEGM_NO" type="tns:numeric10"/>
+          <xsd:element name="PROFIT_CTR" type="tns:char10"/>
+          <xsd:element name="WBS_ELEM" type="tns:char24"/>
+          <xsd:element name="NETWORK" type="tns:char12"/>
+          <xsd:element name="ACTIVITY" type="tns:char4"/>
+          <xsd:element name="PART_ACCT" type="tns:char10"/>
+          <xsd:element name="AMOUNT_LC" type="tns:decimal23.4"/>
+          <xsd:element name="AMOUNT_SV" type="tns:decimal23.4"/>
+          <xsd:element name="REF_DOC_YR" type="tns:numeric4"/>
+          <xsd:element name="REF_DOC" type="tns:char10"/>
+          <xsd:element name="REF_DOC_IT" type="tns:numeric4"/>
+          <xsd:element name="EXPIRYDATE" type="tns:date10"/>
+          <xsd:element name="PROD_DATE" type="tns:date10"/>
+          <xsd:element name="FUND" type="tns:char10"/>
+          <xsd:element name="FUNDS_CTR" type="tns:char16"/>
+          <xsd:element name="CMMT_ITEM" type="tns:char14"/>
+          <xsd:element name="VAL_SALES_ORD" type="tns:char10"/>
+          <xsd:element name="VAL_S_ORD_ITEM" type="tns:numeric6"/>
+          <xsd:element name="VAL_WBS_ELEM" type="tns:char24"/>
+          <xsd:element name="GL_ACCOUNT" type="tns:char10"/>
+          <xsd:element name="IND_PROPOSE_QUANX" type="tns:char1"/>
+          <xsd:element name="XSTOB" type="tns:char1"/>
+          <xsd:element name="EAN_UPC" type="tns:char18"/>
+          <xsd:element name="DELIV_NUMB_TO_SEARCH" type="tns:char10"/>
+          <xsd:element name="DELIV_ITEM_TO_SEARCH" type="tns:numeric6"/>
+          <xsd:element name="SERIALNO_AUTO_NUMBERASSIGNMENT" type="tns:char1"/>
+          <xsd:element name="VENDRBATCH" type="tns:char15"/>
+          <xsd:element name="STGE_TYPE" type="tns:char3"/>
+          <xsd:element name="STGE_BIN" type="tns:char10"/>
+          <xsd:element name="SU_PL_STCK_1" type="tns:decimal3.0"/>
+          <xsd:element name="ST_UN_QTYY_1" type="tns:quantum13.3"/>
+          <xsd:element name="ST_UN_QTYY_1_ISO" type="tns:char3"/>
+          <xsd:element name="UNITTYPE_1" type="tns:char3"/>
+          <xsd:element name="SU_PL_STCK_2" type="tns:decimal3.0"/>
+          <xsd:element name="ST_UN_QTYY_2" type="tns:quantum13.3"/>
+          <xsd:element name="ST_UN_QTYY_2_ISO" type="tns:char3"/>
+          <xsd:element name="UNITTYPE_2" type="tns:char3"/>
+          <xsd:element name="STGE_TYPE_PC" type="tns:char3"/>
+          <xsd:element name="STGE_BIN_PC" type="tns:char10"/>
+          <xsd:element name="NO_PST_CHGNT" type="tns:char1"/>
+          <xsd:element name="GR_NUMBER" type="tns:char10"/>
+          <xsd:element name="STGE_TYPE_ST" type="tns:char3"/>
+          <xsd:element name="STGE_BIN_ST" type="tns:char10"/>
+          <xsd:element name="MATDOC_TR_CANCEL" type="tns:char10"/>
+          <xsd:element name="MATITEM_TR_CANCEL" type="tns:numeric4"/>
+          <xsd:element name="MATYEAR_TR_CANCEL" type="tns:numeric4"/>
+          <xsd:element name="NO_TRANSFER_REQ" type="tns:char1"/>
+          <xsd:element name="CO_BUSPROC" type="tns:char12"/>
+          <xsd:element name="ACTTYPE" type="tns:char6"/>
+          <xsd:element name="SUPPL_VEND" type="tns:char10"/>
+          <xsd:element name="MATERIAL_EXTERNAL" type="tns:char40"/>
+          <xsd:element name="MATERIAL_GUID" type="tns:char32"/>
+          <xsd:element name="MATERIAL_VERSION" type="tns:char10"/>
+          <xsd:element name="MOVE_MAT_EXTERNAL" type="tns:char40"/>
+          <xsd:element name="MOVE_MAT_GUID" type="tns:char32"/>
+          <xsd:element name="MOVE_MAT_VERSION" type="tns:char10"/>
+          <xsd:element name="FUNC_AREA" type="tns:char4"/>
+          <xsd:element name="TR_PART_BA" type="tns:char4"/>
+          <xsd:element name="PAR_COMPCO" type="tns:char4"/>
+          <xsd:element name="DELIV_NUMB" type="tns:char10"/>
+          <xsd:element name="DELIV_ITEM" type="tns:numeric6"/>
+          <xsd:element name="NB_SLIPS" type="tns:numeric3"/>
+          <xsd:element name="NB_SLIPSX" type="tns:char1"/>
+          <xsd:element name="GR_RCPTX" type="tns:char1"/>
+          <xsd:element name="UNLOAD_PTX" type="tns:char1"/>
+          <xsd:element name="SPEC_MVMT" type="tns:char1"/>
+          <xsd:element name="GRANT_NBR" type="tns:char20"/>
+          <xsd:element name="CMMT_ITEM_LONG" type="tns:char24"/>
+          <xsd:element name="FUNC_AREA_LONG" type="tns:char16"/>
+          <xsd:element name="LINE_ID" type="tns:numeric6"/>
+          <xsd:element name="PARENT_ID" type="tns:numeric6"/>
+          <xsd:element name="LINE_DEPTH" type="tns:numeric2"/>
+          <xsd:element name="QUANTITY" type="tns:quantum13.3"/>
+          <xsd:element name="BASE_UOM" type="tns:unit3"/>
+          <xsd:element name="LONGNUM" type="tns:char40"/>
+          <xsd:element name="BUDGET_PERIOD" type="tns:char10"/>
+          <xsd:element name="EARMARKED_NUMBER" type="tns:char10"/>
+          <xsd:element name="EARMARKED_ITEM" type="tns:numeric3"/>
+          <xsd:element name="STK_SEGMENT" type="tns:char16"/>
+          <xsd:element name="MOVE_SEGMENT" type="tns:char16"/>
+          <xsd:element name="MATERIAL_LONG" type="tns:char40"/>
+          <xsd:element name="MOVE_MAT_LONG" type="tns:char40"/>
+          <xsd:element name="STK_SEG_LONG" type="tns:char40"/>
+          <xsd:element name="MOV_SEG_LONG" type="tns:char40"/>
+          <xsd:element name="CREATE_DELIVERY" type="tns:char1"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPI2017_GM_HEAD_01">
+        <xsd:sequence>
+          <xsd:element name="PSTNG_DATE" type="tns:date10"/>
+          <xsd:element name="DOC_DATE" type="tns:date10"/>
+          <xsd:element name="REF_DOC_NO" type="tns:char16"/>
+          <xsd:element name="BILL_OF_LADING" type="tns:char16"/>
+          <xsd:element name="GR_GI_SLIP_NO" type="tns:char10"/>
+          <xsd:element name="PR_UNAME" type="tns:char12"/>
+          <xsd:element name="HEADER_TXT" type="tns:char25"/>
+          <xsd:element name="VER_GR_GI_SLIP" type="tns:char1"/>
+          <xsd:element name="VER_GR_GI_SLIPX" type="tns:char1"/>
+          <xsd:element name="EXT_WMS" type="tns:char1"/>
+          <xsd:element name="REF_DOC_NO_LONG" type="tns:char35"/>
+          <xsd:element name="BILL_OF_LADING_LONG" type="tns:char35"/>
+          <xsd:element name="BAR_CODE" type="tns:char40"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="tns:char1"/>
+          <xsd:element name="ID" type="tns:char20"/>
+          <xsd:element name="NUMBER" type="tns:numeric3"/>
+          <xsd:element name="MESSAGE" type="tns:char220"/>
+          <xsd:element name="LOG_NO" type="tns:char20"/>
+          <xsd:element name="LOG_MSG_NO" type="tns:numeric6"/>
+          <xsd:element name="MESSAGE_V1" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V2" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V3" type="tns:char50"/>
+          <xsd:element name="MESSAGE_V4" type="tns:char50"/>
+          <xsd:element name="PARAMETER" type="tns:char32"/>
+          <xsd:element name="ROW" type="xsd:int"/>
+          <xsd:element name="FIELD" type="tns:char30"/>
+          <xsd:element name="SYSTEM" type="tns:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPI2017_GM_ITEM_CREATE_T">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:BAPI2017_GM_ITEM_CREATE" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2_T">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:BAPIRET2" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZMM_GOODSMVT_CREATE_SOLO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FI_HEADER" type="tns:BAPI2017_GM_HEAD_01"/>
+            <xsd:element name="FI_ITEM" type="tns:BAPI2017_GM_ITEM_CREATE_T"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZMM_GOODSMVT_CREATE_SOLOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FE_RETURN" type="tns:BAPIRET2_T"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZMM_GOODSMVT_CREATE_SOLO">
+    <wsdl:part name="parameters" element="tns:ZMM_GOODSMVT_CREATE_SOLO"/>
+  </wsdl:message>
+  <wsdl:message name="ZMM_GOODSMVT_CREATE_SOLOResponse">
+    <wsdl:part name="parameter" element="tns:ZMM_GOODSMVT_CREATE_SOLOResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZMM_WS_GOODSMVT_CREATE_SOLO">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://srv-s4-asq.pdm.local:8000/sap/bc/esdt/docu/sd_text?sap-client=400&amp;sd_name=ZMM_WS_GOODSMVT_CREATE_SOLO"/>
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZMM_WS_GOODSMVT_CREATE_SOLO"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZMM_GOODSMVT_CREATE_SOLO">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZMM_GOODSMVT_CREATE_SOLO"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZMM_GOODSMVT_CREATE_SOLO"/>
+      <wsdl:output message="tns:ZMM_GOODSMVT_CREATE_SOLOResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="zmm_ws_goodsmvt_create_solo" type="tns:ZMM_WS_GOODSMVT_CREATE_SOLO">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__zmm_ws_goodsmvt_create_solo"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZMM_GOODSMVT_CREATE_SOLO">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="zmm_ws_goodsmvt_create_solo_soap12" type="tns:ZMM_WS_GOODSMVT_CREATE_SOLO">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__zmm_ws_goodsmvt_create_solo_soap12"/>
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZMM_GOODSMVT_CREATE_SOLO">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest" style="document"/>
+      <wsdl:input>
+        <wsoap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="zmm_ws_goodsmvt_create_solo">
+    <wsdl:port name="zmm_ws_goodsmvt_create_solo" binding="tns:zmm_ws_goodsmvt_create_solo">
+      <soap:address location="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo"/>
+    </wsdl:port>
+    <wsdl:port name="zmm_ws_goodsmvt_create_solo_soap12" binding="tns:zmm_ws_goodsmvt_create_solo_soap12">
+      <wsoap12:address location="http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint></con:endpoints><con:operation id="c2754477-b10e-43d4-9d1d-78f7fef73b83" isOneWay="false" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest" name="ZMM_GOODSMVT_CREATE_SOLO" bindingOperationName="ZMM_GOODSMVT_CREATE_SOLO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b6aa471b-1c94-40fd-aaaa-49416d582934" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ZMM_GOODSMVT_CREATE_SOLO>
+         <FI_HEADER>
+            <PSTNG_DATE>2019-04-16</PSTNG_DATE>
+            <DOC_DATE>2019-04-16</DOC_DATE>
+            <REF_DOC_NO></REF_DOC_NO>
+            <BILL_OF_LADING></BILL_OF_LADING>
+            <GR_GI_SLIP_NO></GR_GI_SLIP_NO>
+            <PR_UNAME></PR_UNAME>
+            <HEADER_TXT></HEADER_TXT>
+            <VER_GR_GI_SLIP></VER_GR_GI_SLIP>
+            <VER_GR_GI_SLIPX></VER_GR_GI_SLIPX>
+            <EXT_WMS></EXT_WMS>
+            <REF_DOC_NO_LONG></REF_DOC_NO_LONG>
+            <BILL_OF_LADING_LONG></BILL_OF_LADING_LONG>
+            <BAR_CODE></BAR_CODE>
+         </FI_HEADER>
+         <FI_ITEM>
+            <!--Zero or more repetitions:-->
+            <item>
+               <MATERIAL>120010101</MATERIAL>
+               <PLANT>5010</PLANT>
+               <STGE_LOC>A001</STGE_LOC>
+               <BATCH>HZ082B125</BATCH>
+               <MOVE_TYPE>971</MOVE_TYPE>
+               <STCK_TYPE></STCK_TYPE>
+               <SPEC_STOCK></SPEC_STOCK>
+               <VENDOR></VENDOR>
+               <CUSTOMER></CUSTOMER>
+               <SALES_ORD></SALES_ORD>
+               <S_ORD_ITEM></S_ORD_ITEM>
+               <SCHED_LINE></SCHED_LINE>
+               <VAL_TYPE></VAL_TYPE>
+               <ENTRY_QNT>1</ENTRY_QNT>
+               <ENTRY_UOM>ST</ENTRY_UOM>
+               <ENTRY_UOM_ISO></ENTRY_UOM_ISO>
+               <PO_PR_QNT></PO_PR_QNT>
+               <ORDERPR_UN></ORDERPR_UN>
+               <ORDERPR_UN_ISO></ORDERPR_UN_ISO>
+               <PO_NUMBER></PO_NUMBER>
+               <PO_ITEM></PO_ITEM>
+               <SHIPPING></SHIPPING>
+               <COMP_SHIP></COMP_SHIP>
+               <NO_MORE_GR></NO_MORE_GR>
+               <ITEM_TEXT></ITEM_TEXT>
+               <GR_RCPT></GR_RCPT>
+               <UNLOAD_PT></UNLOAD_PT>
+               <COSTCENTER></COSTCENTER>
+               <ORDERID></ORDERID>
+               <ORDER_ITNO></ORDER_ITNO>
+               <CALC_MOTIVE></CALC_MOTIVE>
+               <ASSET_NO></ASSET_NO>
+               <SUB_NUMBER></SUB_NUMBER>
+               <RESERV_NO></RESERV_NO>
+               <RES_ITEM></RES_ITEM>
+               <RES_TYPE></RES_TYPE>
+               <WITHDRAWN></WITHDRAWN>
+               <MOVE_MAT></MOVE_MAT>
+               <MOVE_PLANT></MOVE_PLANT>
+               <MOVE_STLOC></MOVE_STLOC>
+               <MOVE_BATCH></MOVE_BATCH>
+               <MOVE_VAL_TYPE></MOVE_VAL_TYPE>
+               <MVT_IND></MVT_IND>
+               <MOVE_REAS></MOVE_REAS>
+               <RL_EST_KEY></RL_EST_KEY>
+               <REF_DATE></REF_DATE>
+               <COST_OBJ></COST_OBJ>
+               <PROFIT_SEGM_NO></PROFIT_SEGM_NO>
+               <PROFIT_CTR></PROFIT_CTR>
+               <WBS_ELEM></WBS_ELEM>
+               <NETWORK></NETWORK>
+               <ACTIVITY></ACTIVITY>
+               <PART_ACCT></PART_ACCT>
+               <AMOUNT_LC>10.0</AMOUNT_LC>
+               <AMOUNT_SV>10.0</AMOUNT_SV>
+               <REF_DOC_YR></REF_DOC_YR>
+               <REF_DOC></REF_DOC>
+               <REF_DOC_IT></REF_DOC_IT>
+               <EXPIRYDATE></EXPIRYDATE>
+               <PROD_DATE></PROD_DATE>
+               <FUND></FUND>
+               <FUNDS_CTR></FUNDS_CTR>
+               <CMMT_ITEM></CMMT_ITEM>
+               <VAL_SALES_ORD></VAL_SALES_ORD>
+               <VAL_S_ORD_ITEM></VAL_S_ORD_ITEM>
+               <VAL_WBS_ELEM></VAL_WBS_ELEM>
+               <GL_ACCOUNT></GL_ACCOUNT>
+               <IND_PROPOSE_QUANX></IND_PROPOSE_QUANX>
+               <XSTOB></XSTOB>
+               <EAN_UPC></EAN_UPC>
+               <DELIV_NUMB_TO_SEARCH></DELIV_NUMB_TO_SEARCH>
+               <DELIV_ITEM_TO_SEARCH></DELIV_ITEM_TO_SEARCH>
+               <SERIALNO_AUTO_NUMBERASSIGNMENT></SERIALNO_AUTO_NUMBERASSIGNMENT>
+               <VENDRBATCH></VENDRBATCH>
+               <STGE_TYPE></STGE_TYPE>
+               <STGE_BIN></STGE_BIN>
+               <SU_PL_STCK_1></SU_PL_STCK_1>
+               <ST_UN_QTYY_1></ST_UN_QTYY_1>
+               <ST_UN_QTYY_1_ISO></ST_UN_QTYY_1_ISO>
+               <UNITTYPE_1></UNITTYPE_1>
+               <SU_PL_STCK_2></SU_PL_STCK_2>
+               <ST_UN_QTYY_2></ST_UN_QTYY_2>
+               <ST_UN_QTYY_2_ISO></ST_UN_QTYY_2_ISO>
+               <UNITTYPE_2></UNITTYPE_2>
+               <STGE_TYPE_PC></STGE_TYPE_PC>
+               <STGE_BIN_PC></STGE_BIN_PC>
+               <NO_PST_CHGNT></NO_PST_CHGNT>
+               <GR_NUMBER></GR_NUMBER>
+               <STGE_TYPE_ST></STGE_TYPE_ST>
+               <STGE_BIN_ST></STGE_BIN_ST>
+               <MATDOC_TR_CANCEL></MATDOC_TR_CANCEL>
+               <MATITEM_TR_CANCEL></MATITEM_TR_CANCEL>
+               <MATYEAR_TR_CANCEL></MATYEAR_TR_CANCEL>
+               <NO_TRANSFER_REQ></NO_TRANSFER_REQ>
+               <CO_BUSPROC></CO_BUSPROC>
+               <ACTTYPE></ACTTYPE>
+               <SUPPL_VEND></SUPPL_VEND>
+               <MATERIAL_EXTERNAL></MATERIAL_EXTERNAL>
+               <MATERIAL_GUID></MATERIAL_GUID>
+               <MATERIAL_VERSION></MATERIAL_VERSION>
+               <MOVE_MAT_EXTERNAL></MOVE_MAT_EXTERNAL>
+               <MOVE_MAT_GUID></MOVE_MAT_GUID>
+               <MOVE_MAT_VERSION></MOVE_MAT_VERSION>
+               <FUNC_AREA></FUNC_AREA>
+               <TR_PART_BA></TR_PART_BA>
+               <PAR_COMPCO></PAR_COMPCO>
+               <DELIV_NUMB></DELIV_NUMB>
+               <DELIV_ITEM></DELIV_ITEM>
+               <NB_SLIPS></NB_SLIPS>
+               <NB_SLIPSX></NB_SLIPSX>
+               <GR_RCPTX></GR_RCPTX>
+               <UNLOAD_PTX></UNLOAD_PTX>
+               <SPEC_MVMT></SPEC_MVMT>
+               <GRANT_NBR></GRANT_NBR>
+               <CMMT_ITEM_LONG></CMMT_ITEM_LONG>
+               <FUNC_AREA_LONG></FUNC_AREA_LONG>
+               <LINE_ID></LINE_ID>
+               <PARENT_ID></PARENT_ID>
+               <LINE_DEPTH></LINE_DEPTH>
+               <QUANTITY></QUANTITY>
+               <BASE_UOM></BASE_UOM>
+               <LONGNUM></LONGNUM>
+               <BUDGET_PERIOD></BUDGET_PERIOD>
+               <EARMARKED_NUMBER></EARMARKED_NUMBER>
+               <EARMARKED_ITEM></EARMARKED_ITEM>
+               <STK_SEGMENT></STK_SEGMENT>
+               <MOVE_SEGMENT></MOVE_SEGMENT>
+               <MATERIAL_LONG></MATERIAL_LONG>
+               <MOVE_MAT_LONG></MOVE_MAT_LONG>
+               <STK_SEG_LONG></STK_SEG_LONG>
+               <MOV_SEG_LONG></MOV_SEG_LONG>
+               <CREATE_DELIVERY></CREATE_DELIVERY>
+            </item>
+         </FI_ITEM>
+      </urn:ZMM_GOODSMVT_CREATE_SOLO>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
