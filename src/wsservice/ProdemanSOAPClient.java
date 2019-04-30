@@ -10,7 +10,7 @@ import javax.xml.ws.Holder;
 public class ProdemanSOAPClient {
 	
 	public static void main(String[] args) {
-		pruebaConexion();
+		
 	}
 
     public String consultaMovimiento(String desde, String hasta)
@@ -47,10 +47,8 @@ public class ProdemanSOAPClient {
 			Holder<BAPIRET2T> feRETURN = new Holder<BAPIRET2T>();
 
 			ZMMWSCONSULTAMOVIMIENTO_Service service = new ZMMWSCONSULTAMOVIMIENTO_Service(); 
-			/*
 			ZMMWSCONSULTAMOVIMIENTO ws = service.getZMMWSCONSULTAMOVIMIENTO();
-			
-			
+
 			ZMMRANGOFECHAST item = new ZMMRANGOFECHAST();
 			item.setSIGN("I");
 			item.setOPTION("BT");
@@ -62,7 +60,7 @@ public class ProdemanSOAPClient {
 			ws.zmmCONSULTAMOVIMIENTO(fiFECHA, feOUTPUT, feRETURN);
 
 			System.out.println(feRETURN);
-			*/
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
