@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ZMM_CONSULTA_MOVIMIENTO>
+         <FI_FECHA>
+            <!--Zero or more repetitions:-->
+            <item>
+               <SIGN>I</SIGN>
+               <OPTION>BT</OPTION>
+               <LOW>?</LOW>
+               <HIGH>?</HIGH>
+            </item>
+         </FI_FECHA>
+      </urn:ZMM_CONSULTA_MOVIMIENTO>
+   </soapenv:Body>
+</soapenv:Envelope>
