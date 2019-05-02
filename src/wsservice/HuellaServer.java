@@ -1,12 +1,20 @@
 package wsserver;
 
 import javax.jws.WebMethod;
+import javax.jws.WebResult;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import java.util.List;
+import java.util.ArrayList;
+
+// @WebService
+// @SOAPBinding(style=SOAPBinding.Style.RPC)
 
 @WebService
-@SOAPBinding(style=SOAPBinding.Style.RPC)
+@SOAPBinding(style=SOAPBinding.Style.DOCUMENT,
+			 use=SOAPBinding.Use.LITERAL, 
+			 parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
 public class HuellaServer {
 
 	// Estas son constantes del servicio:
@@ -27,10 +35,16 @@ public class HuellaServer {
 		System.out.println(mensaje);
 	}
 
-	public String consultaMovimiento(String desde, String hasta) {
+	@WebMethod
+	@WebResult(name="animal")	
+	public List<Animal> consultaMovimiento(String desde, String hasta) {
 		this.logging("consultaMovimiento "+desde+" "+hasta);
 
-		return "Animal 1, Animal 2, Animal 3";
+		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
+		
+		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+
+		return respuesta;
 	}
 
 	protected String movimiento(String fecha, String caravana, String movimiento)

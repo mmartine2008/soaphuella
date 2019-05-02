@@ -6,17 +6,61 @@ import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.Holder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class ProdemanSOAPClient {
-	
+
+	/**
+	 * Recibe un string y devuelve un array de animales
+	 */
+	private ArrayList<Animal> procesarRespuestaMovimiento(String respuesta)
+	{
+		ArrayList<Animal> output = new ArrayList<Animal>();
+
+		Document document = EasyClient.convertStringToDocument(respuesta);
+
+		Node nodeFE_OUTPUT = document.getElementsByTagName("FE_OUTPUT").item(0);
+		NodeList listaOutput = nodeFE_OUTPUT.getChildNodes();
+
+		for (int temp = 0; temp < listaOutput.getLength(); temp++) {
+			Node nodo = listaOutput.item(temp);
+
+			if (nodo.getNodeType() == Node.ELEMENT_NODE) {
+
+				Animal animal = new Animal(nodo);
+				output.add(animal);
+
+			}
+		}
+		return output;
+	}
+
 	public static void main(String[] args) {
+		String respuestaPrueba = EasyClient.getStringService("prueba.xml");
+		ProdemanSOAPClient p = new ProdemanSOAPClient();
+		
+		p.procesarRespuestaMovimiento(respuestaPrueba);
 		
 	}
 
-    public String consultaMovimiento(String desde, String hasta)
+	/**
+	 * Envia el pedido al servicio de prodeman
+	 */
+	public ArrayList<Animal> consultaMovimiento(String desde, String hasta)
     {
+        EasyClient easyClient = new EasyClient();
 
-    	return "";
+        String respuesta = easyClient.getMovimientos(desde, hasta);
+
+		ArrayList<Animal> procesado = procesarRespuestaMovimiento(respuesta);
+
+    	return procesado;
     }
 
 	protected String movimiento(String fecha, String caravana, String movimiento)
@@ -38,33 +82,6 @@ public class ProdemanSOAPClient {
 	{
 		return "";
 	}
-
-	private static void pruebaConexion() {
-
-		try {
-			ZMMRANGOFECHATT fiFECHA = new ZMMRANGOFECHATT();
-			Holder<ZMMOUTPUTWSMOVTT> feOUTPUT = new Holder<ZMMOUTPUTWSMOVTT>();
-			Holder<BAPIRET2T> feRETURN = new Holder<BAPIRET2T>();
-
-			ZMMWSCONSULTAMOVIMIENTO_Service service = new ZMMWSCONSULTAMOVIMIENTO_Service(); 
-			ZMMWSCONSULTAMOVIMIENTO ws = service.getZMMWSCONSULTAMOVIMIENTO();
-
-			ZMMRANGOFECHAST item = new ZMMRANGOFECHAST();
-			item.setSIGN("I");
-			item.setOPTION("BT");
-			item.setLOW("2019-01-01");
-			item.setHIGH("2019-04-01");
-
-			fiFECHA.getItem().add(item);
-
-			ws.zmmCONSULTAMOVIMIENTO(fiFECHA, feOUTPUT, feRETURN);
-
-			System.out.println(feRETURN);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
+	
 	
 }

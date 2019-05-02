@@ -1,4 +1,10 @@
+package wsserver;
 
+/**
+ * Esta clase accede al servicio SOAP parseando el archivo XML que se encuetran en
+ * /data, lo lee como texto, lo convierte a XML , le cambia los datos y lo envia
+ * Todo lo lee a partir de un archivo de configuracion.
+ */
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -31,14 +37,14 @@ import java.nio.charset.Charset;
 
 public class EasyClient {
 
-    static String baseFileConsulta; 
-    static String wsEndPointConsulta; 
-    static String SOAPActionConsulta; 
+    private String baseFileConsulta; 
+    private String wsEndPointConsulta; 
+    private String SOAPActionConsulta; 
     
     /**
      * Lee la configuracion del arvhico ini
      */
-    private static void leerConfiguracion() {
+    private void leerConfiguracion() {
         try{
             IniFile ini = new IniFile("configuracion.ini");
             
@@ -55,7 +61,7 @@ public class EasyClient {
      * Devuelve el string del contenido del archivo del servicio
      * @name puede ser consulta o modificacion (por ahora solo consulta) 
      */
-    private static String getStringService(String fileName)
+    public static String getStringService(String fileName)
     {
         // Lo paso a una cadena
         String response = new String();
@@ -74,8 +80,10 @@ public class EasyClient {
         return response;
     }
 
-
-    private static Document convertStringToDocument(String xmlStr) {
+    /**
+     * Recibe un string y devuelve un XML Document
+     */
+    public static Document convertStringToDocument(String xmlStr) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  
         DocumentBuilder builder;  
         try  
@@ -89,7 +97,7 @@ public class EasyClient {
         return null;
     }    
 
-    private static String convertDocumentToString(Document doc) {
+    private String convertDocumentToString(Document doc) {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer;
         try {
@@ -110,7 +118,7 @@ public class EasyClient {
     /** 
      * Prepara el pedido en el XML doc
      */
-    private static void prepareConsulta(String desde, String hasta, Document doc)
+    private void prepareConsulta(String desde, String hasta, Document doc)
     {
         Node nodeDesde = doc.getElementsByTagName("LOW").item(0);
         nodeDesde.setTextContent(desde);
@@ -119,27 +127,34 @@ public class EasyClient {
         nodeHasta.setTextContent(hasta);
     }
 
-    public static void main(String args[]) {
-
+    public String getMovimientos(String desde, String hasta)
+    {
         leerConfiguracion();
-        // String wsEndPoint = "http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento";
-        // String SOAPAction = "http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_consulta_movimiento/400/zmm_ws_consulta_movimiento/zmm_ws_consulta_movimiento";
-
+    
         String xmlBase = getStringService(baseFileConsulta);
         Document doc = convertStringToDocument(xmlBase);
-
-        prepareConsulta("2019-01-01", "2019-04-01", doc);
-
+        prepareConsulta(desde, hasta, doc);
         String xmlInput = convertDocumentToString(doc);
 
         HttpURLConnection httpConn = getConnection(wsEndPointConsulta);
         sendRequest(httpConn, SOAPActionConsulta, xmlInput);
         String response = getResponse(httpConn);
 
-       System.out.println(response);
+        return response;
     }
 
-    protected static HttpURLConnection getConnection(String wsEndPoint)
+    /**
+     * Ejemplo de consulta para una clase.
+     */
+    public static void main(String args[]) {
+        EasyClient easyClient = new EasyClient();
+
+        String respuesta = easyClient.getMovimientos("2019-01-01", "2019-04-01");
+
+        System.out.println(respuesta);
+    }
+
+    protected  HttpURLConnection getConnection(String wsEndPoint)
     {
         try {
             // Crea la conexion
@@ -154,7 +169,7 @@ public class EasyClient {
         return null;
     }
 
-    private static void sendRequest(HttpURLConnection httpConn, String SOAPAction, String xmlInput)
+    private  void sendRequest(HttpURLConnection httpConn, String SOAPAction, String xmlInput)
     {
         try {
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
@@ -183,7 +198,7 @@ public class EasyClient {
         }
     }
 
-    private static String getResponse(HttpURLConnection httpConn)
+    private  String getResponse(HttpURLConnection httpConn)
     {
 		String responseString = "";
         String outputString = "";
@@ -208,7 +223,7 @@ public class EasyClient {
     }
 
 	// format the XML in pretty String
-	private static String formatXML(String unformattedXml) {
+	private  String formatXML(String unformattedXml) {
 		try {
 			Document document = parseXmlFile(unformattedXml);
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -224,7 +239,7 @@ public class EasyClient {
 		}
     }   
     
-	private static Document parseXmlFile(String in) {
+	private  Document parseXmlFile(String in) {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();

@@ -1,5 +1,5 @@
 #/bin/sh
 cd bin
-#java wsserver.HuellaServiceStarter
-java wsserver.ProdemanSOAPClient
+java wsserver.HuellaServiceStarter
+#java wsserver.ProdemanSOAPClient
 cd ..

@@ -1,3 +1,8 @@
+package wsserver;
+/**
+ * Esta clase se usa para leer archivos .ini
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
