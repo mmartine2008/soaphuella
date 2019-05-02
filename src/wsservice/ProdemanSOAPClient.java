@@ -41,6 +41,18 @@ public class ProdemanSOAPClient {
 		return output;
 	}
 
+	/**
+	 * Simula un pedido, sin necesidad de conectar al web Service de prodeman
+	 */
+	public ArrayList<Animal> mock_consultaMovimiento(String desde, String hasta)
+	{
+		String respuestaPrueba = EasyClient.getStringService("prueba.xml");
+		ProdemanSOAPClient p = new ProdemanSOAPClient();
+		ArrayList<Animal> l = p.procesarRespuestaMovimiento(respuestaPrueba);
+		return l;
+
+	}
+
 	public static void main(String[] args) {
 		String respuestaPrueba = EasyClient.getStringService("prueba.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();

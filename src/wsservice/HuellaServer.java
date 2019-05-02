@@ -37,14 +37,28 @@ public class HuellaServer {
 
 	@WebMethod
 	@WebResult(name="animal")	
-	public List<Animal> consultaMovimiento(String desde, String hasta) {
+	public Animal[] consultaMovimiento(
+		@WebParam(name="desde",
+               targetNamespace="http://example.org/complex")
+		String desde,
+		@WebParam(name="hasta",
+               targetNamespace="http://example.org/complex")
+		String hasta) {
 		this.logging("consultaMovimiento "+desde+" "+hasta);
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 		
-		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+//		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
 
-		return respuesta;
+		Animal[] output = new Animal[respuesta.size()];
+
+		int i = 0;
+		for (Animal animal : respuesta) {
+			output[i++] = animal;
+	 	}
+
+		return output;
 	}
 
 	protected String movimiento(String fecha, String caravana, String movimiento)
