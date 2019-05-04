@@ -190,8 +190,8 @@ object Form1: TForm1
       Top = 16
       Width = 122
       Height = 21
-      Date = 43571.726518726850000000
-      Time = 43571.726518726850000000
+      Date = 43481.726518726850000000
+      Time = 43481.726518726850000000
       TabOrder = 0
     end
     object consultaBt: TButton
@@ -239,5 +239,17 @@ object Form1: TForm1
     Lines.Strings = (
       '')
     TabOrder = 6
+  end
+  object HTTPRIO1: THTTPRIO
+    OnAfterExecute = HTTPRIO1AfterExecute
+    WSDLLocation = 'http://localhost:1212/huella?wsdl'
+    Service = 'HuellaServerService'
+    Port = 'HuellaServerPort'
+    HTTPWebNode.Agent = 'Borland SOAP 1.2'
+    HTTPWebNode.UseUTF8InHeader = False
+    HTTPWebNode.InvokeOptions = [soIgnoreInvalidCerts, soAutoCheckAccessPointViaUDDI]
+    Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soCacheMimeResponse, soUTF8EncodeXML]
+    Left = 552
+    Top = 104
   end
 end

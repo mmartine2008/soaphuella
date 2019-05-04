@@ -1,15 +1,13 @@
 
 package wsserver;
 
-import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
-import javax.xml.ws.RequestWrapper;
-import javax.xml.ws.ResponseWrapper;
 
 
 /**
@@ -19,6 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * 
  */
 @WebService(name = "HuellaServer", targetNamespace = "http://wsserver/")
+@SOAPBinding(style = SOAPBinding.Style.RPC)
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -27,21 +26,19 @@ public interface HuellaServer {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
+     * @param hasta
+     * @param desde
      * @return
-     *     returns java.util.List<wsserver.Animal>
+     *     returns wsserver.AnimalArray
      */
     @WebMethod
-    @WebResult(name = "animal", targetNamespace = "")
-    @RequestWrapper(localName = "consultaMovimiento", targetNamespace = "http://wsserver/", className = "wsserver.ConsultaMovimiento")
-    @ResponseWrapper(localName = "consultaMovimientoResponse", targetNamespace = "http://wsserver/", className = "wsserver.ConsultaMovimientoResponse")
+    @WebResult(name = "animal", partName = "animal")
     @Action(input = "http://wsserver/HuellaServer/consultaMovimientoRequest", output = "http://wsserver/HuellaServer/consultaMovimientoResponse")
-    public List<Animal> consultaMovimiento(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+    public AnimalArray consultaMovimiento(
+        @WebParam(name = "desde", partName = "desde")
+        String desde,
+        @WebParam(name = "hasta", partName = "hasta")
+        String hasta);
 
     /**
      * 
@@ -51,14 +48,12 @@ public interface HuellaServer {
      *     returns java.lang.String
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "alta", targetNamespace = "http://wsserver/", className = "wsserver.Alta")
-    @ResponseWrapper(localName = "altaResponse", targetNamespace = "http://wsserver/", className = "wsserver.AltaResponse")
+    @WebResult(partName = "return")
     @Action(input = "http://wsserver/HuellaServer/altaRequest", output = "http://wsserver/HuellaServer/altaResponse")
     public String alta(
-        @WebParam(name = "arg0", targetNamespace = "")
+        @WebParam(name = "arg0", partName = "arg0")
         String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
+        @WebParam(name = "arg1", partName = "arg1")
         String arg1);
 
     /**
@@ -69,14 +64,12 @@ public interface HuellaServer {
      *     returns java.lang.String
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "baja", targetNamespace = "http://wsserver/", className = "wsserver.Baja")
-    @ResponseWrapper(localName = "bajaResponse", targetNamespace = "http://wsserver/", className = "wsserver.BajaResponse")
+    @WebResult(partName = "return")
     @Action(input = "http://wsserver/HuellaServer/bajaRequest", output = "http://wsserver/HuellaServer/bajaResponse")
     public String baja(
-        @WebParam(name = "arg0", targetNamespace = "")
+        @WebParam(name = "arg0", partName = "arg0")
         String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
+        @WebParam(name = "arg1", partName = "arg1")
         String arg1);
 
     /**
@@ -87,14 +80,12 @@ public interface HuellaServer {
      *     returns java.lang.String
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modificacion", targetNamespace = "http://wsserver/", className = "wsserver.Modificacion")
-    @ResponseWrapper(localName = "modificacionResponse", targetNamespace = "http://wsserver/", className = "wsserver.ModificacionResponse")
+    @WebResult(partName = "return")
     @Action(input = "http://wsserver/HuellaServer/modificacionRequest", output = "http://wsserver/HuellaServer/modificacionResponse")
     public String modificacion(
-        @WebParam(name = "arg0", targetNamespace = "")
+        @WebParam(name = "arg0", partName = "arg0")
         String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
+        @WebParam(name = "arg1", partName = "arg1")
         String arg1);
 
 }

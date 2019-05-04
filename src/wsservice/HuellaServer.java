@@ -4,17 +4,19 @@ import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.xml.ws.ResponseWrapper;
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.ArrayList;
 
+
 // @WebService
-// @SOAPBinding(style=SOAPBinding.Style.RPC)
+// @SOAPBinding(style=SOAPBinding.Style.DOCUMENT,
+// 			 use=SOAPBinding.Use.LITERAL, 
+// 			 parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
 
 @WebService
-@SOAPBinding(style=SOAPBinding.Style.DOCUMENT,
-			 use=SOAPBinding.Use.LITERAL, 
-			 parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
+@SOAPBinding(style=SOAPBinding.Style.RPC)
 public class HuellaServer {
 
 	// Estas son constantes del servicio:
@@ -36,13 +38,11 @@ public class HuellaServer {
 	}
 
 	@WebMethod
-	@WebResult(name="animal")	
+	@WebResult(name="movimientos")
 	public Animal[] consultaMovimiento(
-		@WebParam(name="desde",
-               targetNamespace="http://example.org/complex")
+		@WebParam(name="desde", mode=WebParam.Mode.IN)
 		String desde,
-		@WebParam(name="hasta",
-               targetNamespace="http://example.org/complex")
+		@WebParam(name="hasta", mode=WebParam.Mode.IN)
 		String hasta) {
 		this.logging("consultaMovimiento "+desde+" "+hasta);
 

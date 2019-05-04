@@ -2,7 +2,8 @@ program soapHuellaCliente;
 
 uses
   Forms,
-  Unit1 in 'Unit1.pas' {Form1};
+  Unit1 in 'Unit1.pas' {Form1},
+  huella in 'huella.pas';
 
 {$R *.res}
 

@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, huella;
+  Dialogs, StdCtrls, ComCtrls, huella, DB, DBClient, SOAPConn,
+  InvokeRegistry, Rio, SOAPHTTPClient;
 
 type
   TForm1 = class(TForm)
@@ -36,11 +37,14 @@ type
     Button5: TButton;
     Memo1: TMemo;
     RespuestaLog: TMemo;
+    HTTPRIO1: THTTPRIO;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
     procedure modificaBtClick(Sender: TObject);
     procedure consultaBtClick(Sender: TObject);
+    procedure HTTPRIO1AfterExecute(const MethodName: String;
+      SOAPResponse: TStream);
   private
     { Private declarations }
     procedure alta;
@@ -74,12 +78,26 @@ end;
 function TForm1.getFecha(fechaPicker: TDateTimePicker): String;
 var
   fecha: TDate;
-  fechaStr: String;
+  fechaStr, sMonth, sDay: String;
   myYear, myMonth, myDay : Word;
+
 begin
   fecha := fechaPicker.Date;
   DecodeDate(fecha, myYear, myMonth, myDay);
-  fechaStr := IntToStr(myYear) + '-' + IntToStr(myMonth) + '-' + IntToStr(myDay);
+  sMonth :=  IntToStr(myMonth);
+  sDay :=     IntToStr(myDay);
+
+  if myMonth < 10 then
+  begin
+     sMonth := '0' +   sMonth;
+  end;
+
+  if myDay < 10 then
+  begin
+      sDay := '0' +   sDay;
+  end;
+  
+  fechaStr := IntToStr(myYear) + '-' + sMonth + '-' + sDay;
 
   getFecha := fechaStr;
 end;
@@ -87,14 +105,16 @@ end;
 procedure TForm1.alta;
 var
   ws: HuellaServer;
-  caravana, fechaStr, rta: String;
+  caravana, fechaStr: String;
+  rta: WideString;
+
 begin
   ws := GetHuellaServer;
   
   caravana := Edit1.Text;
   fechaStr :=  getFecha(fechaAlta);
 
-  rta := ws.alta(fechaStr, caravana);
+  ws.alta(fechaStr, caravana);
 
   RespuestaLog.Lines.Add(rta);
 
@@ -110,7 +130,7 @@ begin
   caravana := Edit2.Text;
   fechaStr :=  getFecha(fechaBaja);
 
-  rta := ws.baja(fechaStr, caravana);
+  //rta := ws.baja(fechaStr, caravana);
 
   RespuestaLog.Lines.Add(rta);
 
@@ -120,15 +140,29 @@ procedure TForm1.consulta;
 var
   ws: HuellaServer;
   fechaStr1, fechaStr2, rta: String;
+  another : animal;
+  movimientos: animalArray;
+  i: integer;
 begin
-  ws := GetHuellaServer;
+  ws := GetHuellaServer(false, '', HTTPRIO1);
 
   fechaStr1 := getFecha(fechaDesde);
   fechaStr2 := getFecha(fechaHasta);
+  movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
+  {  for i := 0 to length(movimientos) -1 do
+  begin
+    another := movimientos[i];
+    ShowMessage(another.RP);
+    Memo1.Lines.Add(another.RP);
+  end;
 
-  rta := ws.consultaMovimiento(fechaStr1, fechaStr2);
 
-  Memo1.Lines.Add(rta);
+  movimientos := TStringList.Create;
+  movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
+
+
+   }
+  //
 
 end;
 
@@ -137,12 +171,12 @@ var
   ws: HuellaServer;
   caravana, fechaStr, rta: String;
 begin
-  ws := GetHuellaServer;
+  ws := GetHuellaServer();
   
   caravana := Edit3.Text;
   fechaStr :=  getFecha(fechaModifica);
 
-  rta := ws.modificacion(fechaStr, caravana);
+//  rta := ws.modificacion(fechaStr, caravana);
 
   RespuestaLog.Lines.Add(rta);
 
@@ -161,6 +195,14 @@ end;
 procedure TForm1.consultaBtClick(Sender: TObject);
 begin
   consulta;
+end;
+
+procedure TForm1.HTTPRIO1AfterExecute(const MethodName: String;
+  SOAPResponse: TStream);
+begin
+  SOAPResponse.Position := 0;
+  Memo1.Lines.LoadFromStream(SOAPResponse);
+
 end;
 
 end.

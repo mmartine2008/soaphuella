@@ -3,9 +3,9 @@
 // WSDL File described below:
 // WSDL     : http://localhost:1212/huella?wsdl
 // Encoding : UTF-8
-// Codegen  : [wfDebug,wfUseSerializerClassForAttrs]
+// Codegen  : [wfDebug,wfOneOutIsReturn,wfAmbiguousComplexTypesAsArray,wfMapArraysToClasses,wfUseSerializerClassForAttrs]
 // Version  : 1.0
-// (04/05/2019 11:51:58 a.m. - 1.33.2.5)
+// (03/05/2019 11:01:30 a.m. - 1.33.2.5)
 // ************************************************************************ //
 
 unit huella;
@@ -16,18 +16,6 @@ uses InvokeRegistry, SOAPHTTPClient, Types, XSBuiltIns;
 
 type
 
-  animal = class(TRemotable)
-  private
-    SRP: String;
-    SCategoria: String;
-   published
-    property RP: String read SRP write SRP;
-    property Categoria: String read SCategoria write SCategoria;
-   end;
-
-
-  animalArray = array of animal;
-
   // ************************************************************************ //
   // The following types, referred to in the WSDL document are not being represented
   // in this file. They are either aliases[@] of other types represented or were referred
@@ -35,14 +23,20 @@ type
   // typically map to predefined/known XML or Borland types; however, they could also 
   // indicate incorrect WSDL documents that failed to declare or import a schema type.
   // ************************************************************************ //
-  // !:string          - "http://www.w3.org/2001/XMLSchema"
-  // !:animalArray     - "http://wsserver/"
+  // !:consultaMovimiento - "http://wsserver/"
+  // !:consultaMovimientoResponse - "http://wsserver/"
+  // !:alta            - "http://wsserver/"
+  // !:altaResponse    - "http://wsserver/"
+  // !:baja            - "http://wsserver/"
+  // !:bajaResponse    - "http://wsserver/"
+  // !:modificacion    - "http://wsserver/"
+  // !:modificacionResponse - "http://wsserver/"
 
 
   // ************************************************************************ //
   // Namespace : http://wsserver/
   // transport : http://schemas.xmlsoap.org/soap/http
-  // style     : rpc
+  // style     : document
   // binding   : HuellaServerPortBinding
   // service   : HuellaServerService
   // port      : HuellaServerPort
@@ -50,10 +44,10 @@ type
   // ************************************************************************ //
   HuellaServer = interface(IInvokable)
   ['{95D6A290-4AEA-6330-BBE5-6DB4CBF51A2B}']
-    function  consultaMovimiento(const desde: WideString; const hasta: WideString): animalArray; stdcall;
-    function  alta(const arg0: WideString; const arg1: WideString): WideString; stdcall;
-    function  baja(const arg0: WideString; const arg1: WideString): WideString; stdcall;
-    function  modificacion(const arg0: WideString; const arg1: WideString): WideString; stdcall;
+    procedure consultaMovimiento(const arg0: WideString; const arg1: WideString; var arg3: WideString); stdcall;
+    procedure alta(const arg0: WideString; const arg1: WideString); stdcall;
+    procedure baja(const arg0: WideString; const arg1: WideString); stdcall;
+    procedure modificacion(const arg0: WideString; const arg1: WideString); stdcall;
   end;
 
 function GetHuellaServer(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): HuellaServer;
@@ -101,9 +95,7 @@ end;
 initialization
   InvRegistry.RegisterInterface(TypeInfo(HuellaServer), 'http://wsserver/', 'UTF-8');
   InvRegistry.RegisterDefaultSOAPAction(TypeInfo(HuellaServer), '');
-  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioDefault);
-
-  RemClassRegistry.RegisterXSClass(animal, 'http://wsserver/', 'animal');
-  RemClassRegistry.RegisterExternalPropName(TypeInfo(animal), 'animal', 'animal');
+  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioDocument);
+  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioLiteral);
 
 end. 

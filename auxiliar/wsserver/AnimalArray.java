@@ -1,24 +1,25 @@
 
-package com.sap.document.sap.rfc.functions;
+package wsserver;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ZMM_OUTPUT_WS_MOV_TT complex type.
+ * <p>Clase Java para animalArray complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="ZMM_OUTPUT_WS_MOV_TT">
+ * &lt;complexType name="animalArray">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="item" type="{urn:sap-com:document:sap:rfc:functions}ZMM_OUTPUT_WS_MOV_ST" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="item" type="{http://wsserver/}animal" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,12 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ZMM_OUTPUT_WS_MOV_TT", propOrder = {
+@XmlType(name = "animalArray", propOrder = {
     "item"
 })
-public class ZMMOUTPUTWSMOVTT {
+public class AnimalArray {
 
-    protected List<ZMMOUTPUTWSMOVST> item;
+    @XmlElement(nillable = true)
+    protected List<Animal> item;
 
     /**
      * Gets the value of the item property.
@@ -53,13 +55,13 @@ public class ZMMOUTPUTWSMOVTT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ZMMOUTPUTWSMOVST }
+     * {@link Animal }
      * 
      * 
      */
-    public List<ZMMOUTPUTWSMOVST> getItem() {
+    public List<Animal> getItem() {
         if (item == null) {
-            item = new ArrayList<ZMMOUTPUTWSMOVST>();
+            item = new ArrayList<Animal>();
         }
         return this.item;
     }

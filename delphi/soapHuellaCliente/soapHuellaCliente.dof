@@ -91,7 +91,7 @@ ImageBase=4194304
 ExeDescription=
 [Directories]
 OutputDir=C:\Documents and Settings\Propietario\Mis documentos\Huella\soapHuellaCliente
-UnitOutputDir=C:\Proyecto\Huella30v2\Objetos
+UnitOutputDir=C:\Documents and Settings\Propietario\Mis documentos\Huella\soapHuellaCliente
 PackageDLLOutputDir=C:\Proyecto\Huella30v2\Objetos
 PackageDCPOutputDir=C:\Proyecto\Huella30v2\Objetos
 SearchPath=$(DELPHI)\Lib\Debug;C:\DOCUME~1\PROPIE~1\ESCRIT~1\JVCL\jcl\lib\d7\debug;C:\Proyecto\Huella30v2\Objetos;C:\Documents and Settings\Propietario\Escritorio\Async32\async32b;C:\Proyecto\Componentes\dcpcrypt2;C:\Proyecto\Componentes\dcpcrypt2\Hashes;C:\Proyecto\Componentes\dcpcrypt2\Ciphers;C:\Proyecto\Componentes\SVO\SVO Delphi\Source;C:\DCU\res;C:\Documents and Settings\Propietario\Escritorio\Tms Component Pack Pro v3.3;C:\tmp\JVCL\jvcl\run;C:\Documents and Settings\Propietario\Mis documentos\Huella\huella\Fuentes\General;C:\tmp\delphichrome\src;C:\Documents and Settings\Propietario\Mis documentos\Huella\Componentes4454;C:\Documents and Settings\Propietario\Mis documentos\Huella\huella\Fuentes
@@ -150,8 +150,9 @@ Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 Count=1
 Item0=$(DELPHI)\Lib\Debug;C:\DOCUME~1\PROPIE~1\ESCRIT~1\JVCL\jcl\lib\d7\debug;C:\Proyecto\Huella30v2\Objetos;C:\Documents and Settings\Propietario\Escritorio\Async32\async32b;C:\Proyecto\Componentes\dcpcrypt2;C:\Proyecto\Componentes\dcpcrypt2\Hashes;C:\Proyecto\Componentes\dcpcrypt2\Ciphers;C:\Proyecto\Componentes\SVO\SVO Delphi\Source;C:\DCU\res;C:\Documents and Settings\Propietario\Escritorio\Tms Component Pack Pro v3.3;C:\tmp\JVCL\jvcl\run;C:\Documents and Settings\Propietario\Mis documentos\Huella\huella\Fuentes\General;C:\tmp\delphichrome\src;C:\Documents and Settings\Propietario\Mis documentos\Huella\Componentes4454;C:\Documents and Settings\Propietario\Mis documentos\Huella\huella\Fuentes
 [HistoryLists\hlUnitOutputDirectory]
-Count=1
-Item0=C:\Proyecto\Huella30v2\Objetos
+Count=2
+Item0=C:\Documents and Settings\Propietario\Mis documentos\Huella\soapHuellaCliente
+Item1=C:\Proyecto\Huella30v2\Objetos
 [HistoryLists\hlOutputDirectorry]
 Count=2
 Item0=C:\Documents and Settings\Propietario\Mis documentos\Huella\soapHuellaCliente

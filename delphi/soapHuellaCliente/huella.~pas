@@ -3,8 +3,9 @@
 // WSDL File described below:
 // WSDL     : http://localhost:1212/huella?wsdl
 // Encoding : UTF-8
+// Codegen  : [wfDebug,wfUseSerializerClassForAttrs]
 // Version  : 1.0
-// (16/04/2019 05:24:02 p.m. - 1.33.2.5)
+// (04/05/2019 11:51:58 a.m. - 1.33.2.5)
 // ************************************************************************ //
 
 unit huella;
@@ -15,6 +16,18 @@ uses InvokeRegistry, SOAPHTTPClient, Types, XSBuiltIns;
 
 type
 
+  animal = class(TRemotable)
+  private
+    SRP: String;
+    SCategoria: String;
+   published
+    property RP: String read SRP write SRP;
+    property Categoria: String read SCategoria write SCategoria;
+   end;
+
+
+  animalArray = array of animal;
+
   // ************************************************************************ //
   // The following types, referred to in the WSDL document are not being represented
   // in this file. They are either aliases[@] of other types represented or were referred
@@ -23,6 +36,7 @@ type
   // indicate incorrect WSDL documents that failed to declare or import a schema type.
   // ************************************************************************ //
   // !:string          - "http://www.w3.org/2001/XMLSchema"
+  // !:animalArray     - "http://wsserver/"
 
 
   // ************************************************************************ //
@@ -36,9 +50,9 @@ type
   // ************************************************************************ //
   HuellaServer = interface(IInvokable)
   ['{95D6A290-4AEA-6330-BBE5-6DB4CBF51A2B}']
+    function  consultaMovimiento(const desde: WideString; const hasta: WideString): animalArray; stdcall;
     function  alta(const arg0: WideString; const arg1: WideString): WideString; stdcall;
     function  baja(const arg0: WideString; const arg1: WideString): WideString; stdcall;
-    function  consultaMovimiento(const arg0: WideString; const arg1: WideString): WideString; stdcall;
     function  modificacion(const arg0: WideString; const arg1: WideString): WideString; stdcall;
   end;
 
@@ -87,6 +101,9 @@ end;
 initialization
   InvRegistry.RegisterInterface(TypeInfo(HuellaServer), 'http://wsserver/', 'UTF-8');
   InvRegistry.RegisterDefaultSOAPAction(TypeInfo(HuellaServer), '');
-  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioDocument);
+  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioDefault);
+
+  RemClassRegistry.RegisterXSClass(animal, 'urn:sap-com:document:sap:rfc:functions', 'animal');
+  RemClassRegistry.RegisterExternalPropName(TypeInfo(animal), 'animal', 'animal');
 
 end. 

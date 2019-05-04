@@ -12,10 +12,12 @@
 #define SOAPConst_SCantLoadLocation 65137
 #define DBConsts_SBcdOverflow 65138
 #define DBConsts_SInvalidBcdValue 65139
-#define xdom_SOddSizeInvalid 65140
-#define xdom_SNegativeSizeInvalid 65141
-#define xdom_SCapacityLessSize 65142
-#define xdom_STargetNil 65143
+#define DBConsts_SCouldNotParseTimeStamp 65140
+#define DBConsts_SInvalidSqlTimeStamp 65141
+#define xdom_SOddSizeInvalid 65142
+#define xdom_SNegativeSizeInvalid 65143
+#define xdom_SCapacityLessSize 65144
+#define xdom_STargetNil 65145
 #define SOAPConst_SInvalidDay 65152
 #define SOAPConst_SInvalidMonth 65153
 #define SOAPConst_SInvalidDuration 65154
@@ -406,6 +408,8 @@ BEGIN
 	SOAPConst_SCantLoadLocation,	"Unable to load WSDL File/Location: %s.  Error [%s]"
 	DBConsts_SBcdOverflow,	"BCD overflow"
 	DBConsts_SInvalidBcdValue,	"%s is not a valid BCD value"
+	DBConsts_SCouldNotParseTimeStamp,	"Could not parse SQL TimeStamp string"
+	DBConsts_SInvalidSqlTimeStamp,	"Invalid SQL date/time values"
 	xdom_SOddSizeInvalid,	"Odd size not valid for WideString"
 	xdom_SNegativeSizeInvalid,	"Negative stream size invalid"
 	xdom_SCapacityLessSize,	"Capacity cannot be less than size"
