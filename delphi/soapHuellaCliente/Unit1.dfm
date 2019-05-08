@@ -1,8 +1,8 @@
 object Form1: TForm1
   Left = 233
   Top = 121
-  Width = 663
-  Height = 527
+  Width = 866
+  Height = 799
   Caption = 'Form1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -203,13 +203,15 @@ object Form1: TForm1
       TabOrder = 1
       OnClick = consultaBtClick
     end
-    object Memo1: TMemo
-      Left = 16
+    object StringGridResultado: TStringGrid
+      Left = 8
       Top = 112
-      Width = 217
-      Height = 241
-      Lines.Strings = (
-        '')
+      Width = 232
+      Height = 249
+      ColCount = 1
+      FixedCols = 0
+      RowCount = 1
+      FixedRows = 0
       TabOrder = 2
     end
   end
@@ -234,21 +236,21 @@ object Form1: TForm1
   object RespuestaLog: TMemo
     Left = 16
     Top = 392
-    Width = 521
-    Height = 89
+    Width = 793
+    Height = 361
     Lines.Strings = (
       '')
     TabOrder = 6
   end
   object HTTPRIO1: THTTPRIO
     OnAfterExecute = HTTPRIO1AfterExecute
-    WSDLLocation = 'http://localhost:1212/huella?wsdl'
+    WSDLLocation = 'http://192.168.1.102:1212/huella?wsdl'
     Service = 'HuellaServerService'
     Port = 'HuellaServerPort'
     HTTPWebNode.Agent = 'Borland SOAP 1.2'
     HTTPWebNode.UseUTF8InHeader = False
     HTTPWebNode.InvokeOptions = [soIgnoreInvalidCerts, soAutoCheckAccessPointViaUDDI]
-    Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soCacheMimeResponse, soUTF8EncodeXML]
+    Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soDocument, soCacheMimeResponse, soUTF8EncodeXML]
     Left = 552
     Top = 104
   end

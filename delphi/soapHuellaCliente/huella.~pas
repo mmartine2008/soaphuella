@@ -1,11 +1,10 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : http://localhost:1212/huella?wsdl
+// WSDL     : http://192.168.1.102:1212/huella?wsdl
 // Encoding : UTF-8
-// Codegen  : [wfDebug,wfUseSerializerClassForAttrs]
 // Version  : 1.0
-// (04/05/2019 11:51:58 a.m. - 1.33.2.5)
+// (07/05/2019 03:31:02 p.m. - 1.33.2.5)
 // ************************************************************************ //
 
 unit huella;
@@ -16,18 +15,8 @@ uses InvokeRegistry, SOAPHTTPClient, Types, XSBuiltIns;
 
 type
 
-  animal = class(TRemotable)
-  private
-    SRP: String;
-    SCategoria: String;
-   published
-    property RP: String read SRP write SRP;
-    property Categoria: String read SCategoria write SCategoria;
-   end;
-
-
-  animalArray = array of animal;
-
+  stringArray = Array of String;
+  
   // ************************************************************************ //
   // The following types, referred to in the WSDL document are not being represented
   // in this file. They are either aliases[@] of other types represented or were referred
@@ -36,7 +25,7 @@ type
   // indicate incorrect WSDL documents that failed to declare or import a schema type.
   // ************************************************************************ //
   // !:string          - "http://www.w3.org/2001/XMLSchema"
-  // !:animalArray     - "http://wsserver/"
+  // !:stringArray     - "http://jaxb.dev.java.net/array"
 
 
   // ************************************************************************ //
@@ -46,11 +35,11 @@ type
   // binding   : HuellaServerPortBinding
   // service   : HuellaServerService
   // port      : HuellaServerPort
-  // URL       : http://localhost:1212/huella
+  // URL       : http://192.168.1.102:1212/huella
   // ************************************************************************ //
   HuellaServer = interface(IInvokable)
   ['{95D6A290-4AEA-6330-BBE5-6DB4CBF51A2B}']
-    function  consultaMovimiento(const desde: WideString; const hasta: WideString): animalArray; stdcall;
+    function  consultaMovimiento(const desde: WideString; const hasta: WideString): stringArray; stdcall;
     function  alta(const arg0: WideString; const arg1: WideString): WideString; stdcall;
     function  baja(const arg0: WideString; const arg1: WideString): WideString; stdcall;
     function  modificacion(const arg0: WideString; const arg1: WideString): WideString; stdcall;
@@ -63,8 +52,8 @@ implementation
 
 function GetHuellaServer(UseWSDL: Boolean; Addr: string; HTTPRIO: THTTPRIO): HuellaServer;
 const
-  defWSDL = 'http://localhost:1212/huella?wsdl';
-  defURL  = 'http://localhost:1212/huella';
+  defWSDL = 'http://192.168.1.102:1212/huella?wsdl';
+  defURL  = 'http://192.168.1.102:1212/huella';
   defSvc  = 'HuellaServerService';
   defPrt  = 'HuellaServerPort';
 var
@@ -101,9 +90,6 @@ end;
 initialization
   InvRegistry.RegisterInterface(TypeInfo(HuellaServer), 'http://wsserver/', 'UTF-8');
   InvRegistry.RegisterDefaultSOAPAction(TypeInfo(HuellaServer), '');
-  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioDefault);
+  InvRegistry.RegisterInvokeOptions(TypeInfo(HuellaServer), ioLiteral);
 
-  RemClassRegistry.RegisterXSClass(animal, 'urn:sap-com:document:sap:rfc:functions', 'animal');
-  RemClassRegistry.RegisterExternalPropName(TypeInfo(animal), 'animal', 'animal');
-
-end. 
+end.

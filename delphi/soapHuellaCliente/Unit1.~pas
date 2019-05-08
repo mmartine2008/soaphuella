@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, huella, DB, DBClient, SOAPConn,
-  InvokeRegistry, Rio, SOAPHTTPClient;
+  InvokeRegistry, Rio, SOAPHTTPClient, Grids;
 
 type
   TForm1 = class(TForm)
@@ -35,9 +35,9 @@ type
     fechaHasta: TDateTimePicker;
     Label9: TLabel;
     Button5: TButton;
-    Memo1: TMemo;
     RespuestaLog: TMemo;
     HTTPRIO1: THTTPRIO;
+    StringGridResultado: TStringGrid;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
@@ -140,29 +140,42 @@ procedure TForm1.consulta;
 var
   ws: HuellaServer;
   fechaStr1, fechaStr2, rta: String;
-  another : animal;
-  movimientos: animalArray;
-  i: integer;
+  //another : item;
+  another : WideString;
+  movimientos: stringArray;
+  i, xPos: integer;
+  rp, categoria: string;
 begin
   ws := GetHuellaServer(false, '', HTTPRIO1);
 
   fechaStr1 := getFecha(fechaDesde);
   fechaStr2 := getFecha(fechaHasta);
   movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
+
+  StringGridResultado.ColCount := 2;
+  StringGridResultado.RowCount := 2;
+  StringGridResultado.FixedRows := 1;
+  StringGridResultado.Cells[0, 1] := 'RP';
+  StringGridResultado.Cells[1, 1] := 'Categoria';
+
   for i := 0 to length(movimientos) -1 do
   begin
+    StringGridResultado.RowCount := StringGridResultado.RowCount +1;
+
+
     another := movimientos[i];
-    ShowMessage(another.RP);
-    Memo1.Lines.Add(another.RP);
+
+    xPos := pos('|', another);
+    rp := copy(another, 1, xPos);
+    categoria := copy(another, xPos+1, length(another) - xPos +1);
+
+    StringGridResultado.Cells[0, i +1] := rp;
+    StringGridResultado.Cells[1, i +1] := categoria;
+
+    //Memo1.Lines.Add('- '+ another.SRP+' - '+another.RP);
+    //Memo1.Lines.Add('- '+ another);
+
   end;
-
-  {
-  movimientos := TStringList.Create;
-  movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
-
-
-   }
-  //
 
 end;
 
@@ -172,7 +185,7 @@ var
   caravana, fechaStr, rta: String;
 begin
   ws := GetHuellaServer();
-  
+
   caravana := Edit3.Text;
   fechaStr :=  getFecha(fechaModifica);
 
@@ -201,7 +214,7 @@ procedure TForm1.HTTPRIO1AfterExecute(const MethodName: String;
   SOAPResponse: TStream);
 begin
   SOAPResponse.Position := 0;
-  Memo1.Lines.LoadFromStream(SOAPResponse);
+  RespuestaLog.Lines.LoadFromStream(SOAPResponse);
 
 end;
 

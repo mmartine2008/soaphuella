@@ -9,12 +9,6 @@ import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.ArrayList;
 
-
-// @WebService
-// @SOAPBinding(style=SOAPBinding.Style.DOCUMENT,
-// 			 use=SOAPBinding.Use.LITERAL, 
-// 			 parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
-
 @WebService
 @SOAPBinding(style=SOAPBinding.Style.RPC)
 public class HuellaServer {
@@ -38,8 +32,8 @@ public class HuellaServer {
 	}
 
 	@WebMethod
-	@WebResult(name="movimientos")
-	public Animal[] consultaMovimiento(
+	@WebResult(name="animales", partName="animales")
+	public String[] consultaMovimiento(
 		@WebParam(name="desde", mode=WebParam.Mode.IN)
 		String desde,
 		@WebParam(name="hasta", mode=WebParam.Mode.IN)
@@ -51,11 +45,11 @@ public class HuellaServer {
 //		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
 		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
 
-		Animal[] output = new Animal[respuesta.size()];
+		String[] output = new String[respuesta.size()];
 
 		int i = 0;
 		for (Animal animal : respuesta) {
-			output[i++] = animal;
+			output[i++] = animal.rp + '|' + animal.categoria;
 	 	}
 
 		return output;

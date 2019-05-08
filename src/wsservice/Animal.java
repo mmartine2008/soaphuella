@@ -3,7 +3,8 @@ package wsserver;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.jws.WebResult;
 
 public class Animal {
     public String rp;
@@ -15,7 +16,10 @@ public class Animal {
 		String output = element.getElementsByTagName(TagName).item(0).getTextContent();
 		return output;
     }
-    
+
+    Animal () {
+    }
+
     Animal (String rp, String categoria) {
         this.rp = rp;
         this.categoria = categoria;
@@ -32,6 +36,14 @@ public class Animal {
 
     public String toString()
     {
-        return "["+this.rp+","+this.categoria+"]";
+        return this.rp+","+this.categoria;
+    }
+
+    public String toJSON()
+    {
+        return "{"+
+                    "RP" + ":" + this.rp +
+                    "Categoria" + ":" + this.categoria + 
+                    "}";
     }
 }
