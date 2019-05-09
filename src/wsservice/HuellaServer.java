@@ -49,7 +49,7 @@ public class HuellaServer {
 
 		int i = 0;
 		for (Animal animal : respuesta) {
-			output[i++] = animal.rp + '|' + animal.categoria;
+			output[i++] = animal.rp + '|' + animal.categoria + '|' + animal.fecha;
 	 	}
 
 		return output;

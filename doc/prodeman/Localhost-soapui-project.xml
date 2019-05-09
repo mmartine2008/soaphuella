@@ -166,8 +166,8 @@
    <soapenv:Body>
       <wss:consultaMovimiento>
          <!--Optional:-->
-         <desde>2019-01-01</desde>
-         <hasta>2019-04-01</hasta>
+         <desde>2019-02-01</desde>
+         <hasta>2019-03-01</hasta>
       </wss:consultaMovimiento>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/consultaMovimientoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dcbb5c76-3c9f-41a2-ae7a-d71c3813e923" isOneWay="false" action="" name="alta" bindingOperationName="alta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b331162-bb23-495f-bf6b-62ae90065ed5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">

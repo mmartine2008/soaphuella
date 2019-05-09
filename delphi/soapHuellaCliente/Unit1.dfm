@@ -167,8 +167,8 @@ object Form1: TForm1
   object GroupBox4: TGroupBox
     Left = 288
     Top = 16
-    Width = 249
-    Height = 369
+    Width = 425
+    Height = 281
     Caption = ' Consulta '
     TabOrder = 3
     object Label7: TLabel
@@ -199,16 +199,17 @@ object Form1: TForm1
       Top = 80
       Width = 75
       Height = 25
-      Caption = 'Enviar'
+      Caption = 'Consultar'
       TabOrder = 1
       OnClick = consultaBtClick
     end
     object StringGridResultado: TStringGrid
       Left = 8
       Top = 112
-      Width = 232
-      Height = 249
+      Width = 409
+      Height = 153
       ColCount = 1
+      DefaultColWidth = 128
       FixedCols = 0
       RowCount = 1
       FixedRows = 0
@@ -225,7 +226,7 @@ object Form1: TForm1
     TabOrder = 4
   end
   object Button5: TButton
-    Left = 560
+    Left = 720
     Top = 24
     Width = 75
     Height = 25
@@ -235,9 +236,9 @@ object Form1: TForm1
   end
   object RespuestaLog: TMemo
     Left = 16
-    Top = 392
+    Top = 608
     Width = 793
-    Height = 361
+    Height = 145
     Lines.Strings = (
       '')
     TabOrder = 6
@@ -251,7 +252,7 @@ object Form1: TForm1
     HTTPWebNode.UseUTF8InHeader = False
     HTTPWebNode.InvokeOptions = [soIgnoreInvalidCerts, soAutoCheckAccessPointViaUDDI]
     Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soDocument, soCacheMimeResponse, soUTF8EncodeXML]
-    Left = 552
-    Top = 104
+    Left = 800
+    Top = 24
   end
 end

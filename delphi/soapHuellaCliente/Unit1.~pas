@@ -141,40 +141,43 @@ var
   ws: HuellaServer;
   fechaStr1, fechaStr2, rta: String;
   //another : item;
-  another : WideString;
+  another : String;
   movimientos: stringArray;
   i, xPos: integer;
   rp, categoria: string;
+
+  datosAnimal: TStringList;
+  delimiter : Array[0..0] of Char;
 begin
+
+  
+  delimiter[0] := '|';
   ws := GetHuellaServer(false, '', HTTPRIO1);
 
   fechaStr1 := getFecha(fechaDesde);
   fechaStr2 := getFecha(fechaHasta);
   movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
 
-  StringGridResultado.ColCount := 2;
+  StringGridResultado.ColCount := 3;
   StringGridResultado.RowCount := 2;
   StringGridResultado.FixedRows := 1;
-  StringGridResultado.Cells[0, 1] := 'RP';
-  StringGridResultado.Cells[1, 1] := 'Categoria';
+  StringGridResultado.Cells[0, 0] := 'RP';
+  StringGridResultado.Cells[1, 0] := 'Categoria';
 
   for i := 0 to length(movimientos) -1 do
   begin
     StringGridResultado.RowCount := StringGridResultado.RowCount +1;
 
-
     another := movimientos[i];
 
-    xPos := pos('|', another);
-    rp := copy(another, 1, xPos);
-    categoria := copy(another, xPos+1, length(another) - xPos +1);
+    datosAnimal := TStringList.Create;
+    ExtractStrings(['|'], [], pChar(another), datosAnimal);
 
-    StringGridResultado.Cells[0, i +1] := rp;
-    StringGridResultado.Cells[1, i +1] := categoria;
+    StringGridResultado.Cells[0, i +1] := datosAnimal[0];
+    StringGridResultado.Cells[1, i +1] := datosAnimal[1];
+    StringGridResultado.Cells[2, i +1] := datosAnimal[2];
 
-    //Memo1.Lines.Add('- '+ another.SRP+' - '+another.RP);
-    //Memo1.Lines.Add('- '+ another);
-
+    datosAnimal.Destroy;
   end;
 
 end;
