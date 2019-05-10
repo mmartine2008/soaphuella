@@ -3,8 +3,7 @@ program soapHuellaCliente;
 uses
   Forms,
   Unit1 in 'Unit1.pas' {Form1},
-  SAPProdeman in 'SAPProdeman.pas',
-  wsdlSAPProdeman in 'wsdlSAPProdeman.pas';
+  huella in 'huella.pas';
 
 {$R *.res}
 

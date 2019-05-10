@@ -4,8 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, huella, DB, DBClient, SOAPConn,
-  InvokeRegistry, Rio, SOAPHTTPClient, Grids;
+  Dialogs, StdCtrls, ComCtrls, DB, DBClient, SOAPConn,
+  InvokeRegistry, Rio, SOAPHTTPClient, Grids, IBStoredProc,
+  IBCustomDataSet, IBQuery, IBDatabase, SAPProdeman, wsdlSAPProdeman,
+  DBCtrls, UDBLookupComboBoxAuto;
 
 type
   TForm1 = class(TForm)
@@ -38,6 +40,24 @@ type
     RespuestaLog: TMemo;
     HTTPRIO1: THTTPRIO;
     StringGridResultado: TStringGrid;
+    IBDatabase1: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    IBQuery1: TIBQuery;
+    IBStoredProc1: TIBStoredProc;
+    Button1: TButton;
+    MemoResultadoActualizacion: TMemo;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    DataSourceRazas: TDataSource;
+    IBQueryRazas: TIBQuery;
+    DBLookupComboBoxRazas: TDBLookupComboBox;
+    DataSourceColor: TDataSource;
+    IBQueryColor: TIBQuery;
+    DBLookupComboBoxColor: TDBLookupComboBox;
+    DataSourceEstablecimiento: TDataSource;
+    IBQueryEstablecimiento: TIBQuery;
+    DBLookupComboBoxEstablecimiento: TDBLookupComboBox;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
@@ -45,15 +65,17 @@ type
     procedure consultaBtClick(Sender: TObject);
     procedure HTTPRIO1AfterExecute(const MethodName: String;
       SOAPResponse: TStream);
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     procedure alta;
     procedure baja;
     procedure consulta;
     procedure modificacion;
+    procedure migrarConsulta;
 
     function getFecha(fechaPicker: TDateTimePicker): String;
-
   public
     { Public declarations }
   end;
@@ -136,49 +158,30 @@ begin
 
 end;
 
+
 procedure TForm1.consulta;
 var
   ws: HuellaServer;
-  fechaStr1, fechaStr2, rta: String;
-  //another : item;
-  another : String;
+  fechaStr1, fechaStr2: String;
   movimientos: stringArray;
-  i, xPos: integer;
-  rp, categoria: string;
 
-  datosAnimal: TStringList;
-  delimiter : Array[0..0] of Char;
 begin
 
-  
-  delimiter[0] := '|';
   ws := GetHuellaServer(false, '', HTTPRIO1);
 
   fechaStr1 := getFecha(fechaDesde);
   fechaStr2 := getFecha(fechaHasta);
-  movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
-
-  StringGridResultado.ColCount := 3;
-  StringGridResultado.RowCount := 2;
-  StringGridResultado.FixedRows := 1;
-  StringGridResultado.Cells[0, 0] := 'RP';
-  StringGridResultado.Cells[1, 0] := 'Categoria';
-
-  for i := 0 to length(movimientos) -1 do
-  begin
-    StringGridResultado.RowCount := StringGridResultado.RowCount +1;
-
-    another := movimientos[i];
-
-    datosAnimal := TStringList.Create;
-    ExtractStrings(['|'], [], pChar(another), datosAnimal);
-
-    StringGridResultado.Cells[0, i +1] := datosAnimal[0];
-    StringGridResultado.Cells[1, i +1] := datosAnimal[1];
-    StringGridResultado.Cells[2, i +1] := datosAnimal[2];
-
-    datosAnimal.Destroy;
+  try
+    begin
+      movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
+      procesarResultadoConsulta(StringGridResultado, movimientos);
+    end
+  except
+    on E : Exception do
+      ShowMessage('Se ha producido un error en la conexion ('+E.Message+')');
+  
   end;
+
 
 end;
 
@@ -219,6 +222,86 @@ begin
   SOAPResponse.Position := 0;
   RespuestaLog.Lines.LoadFromStream(SOAPResponse);
 
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  IBDatabase1.DatabaseName := 'C:\bases\demo\huella.fdb';
+  IBDatabase1.Connected  := true;
+
+  IBQueryRazas.Close;
+  IBQueryRazas.Open;
+  IBQueryRazas.Active := true;
+  DataSourceRaza
+
+  IBQueryColor.Close;
+  IBQueryColor.Open;
+  IBQueryColor.Active := true;
+
+  IBQueryEstablecimiento.Close;
+  IBQueryEstablecimiento.Open;
+  IBQueryEstablecimiento.Active := true;
+
+  DBLookupComboBoxRazas.Enabled := true;
+  DBLookupComboBoxColor.Enabled := true;
+  DBLookupComboBoxEstablecimiento.Enabled := true;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  migrarConsulta;
+end;
+
+{
+Esta funcion toma los elementos de una lista y los migra a la base de datos
+}
+procedure TForm1.migrarConsulta;
+var
+  i, id_categoria, id_sexo, id_animal: integer;
+  ID_RP, Categoria, fecha: String;
+  FechaIngreso, FechaNacimiento: TDate;
+begin
+  MemoResultadoActualizacion.Lines.Clear;
+
+  for i := 1 to StringGridResultado.RowCount -2 do
+  begin
+       ID_RP := StringGridResultado.Cells[0, i];
+       Categoria := StringGridResultado.Cells[1, i];
+       fecha := StringGridResultado.Cells[2, i];
+
+       FechaIngreso := calcularFechaDesdeString(fecha);
+       // Transformar categoria
+       obtenerCategoriaSexo(Categoria, id_categoria, id_sexo, IBQuery1);
+       if (id_categoria = -1) then
+       begin
+        MemoResultadoActualizacion.Lines.Add(
+          ID_RP + ', ' + 'No existe categoria: ('+Categoria+')'
+        );
+        continue;
+       end;
+       // Recuperar los valores necesarios
+       FechaNacimiento := calculaFechaNacimiento(Categoria, FechaIngreso);
+          // obtener raza default
+          // obtener establecimiento activo
+       id_animal := idAnimalNuevo(IBQuery1);
+          // obtener tipo de alta
+          // Obtener color default
+
+       // Buscar si no existe ya el animal
+
+       // Probar de insertarlo
+
+       // Registrar resultado
+
+       MemoResultadoActualizacion.Lines.Add(
+       'id_animal:'       + IntToStr(id_animal) + ' ' +
+       'id_categoria:'    + IntToStr(id_categoria) + ' ' +
+       'ID_RP:'           + ID_RP +  ' ' +
+       'id_sexo:'         + IntToStr(id_sexo) +
+       'FechaNacimiento:' + DateToStr(FechaNacimiento)
+       );
+  end;
+  
 end;
 
 end.

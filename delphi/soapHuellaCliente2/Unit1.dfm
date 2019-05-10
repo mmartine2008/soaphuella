@@ -11,7 +11,6 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label8: TLabel
@@ -168,8 +167,8 @@ object Form1: TForm1
   object GroupBox4: TGroupBox
     Left = 288
     Top = 16
-    Width = 465
-    Height = 481
+    Width = 425
+    Height = 281
     Caption = ' Consulta '
     TabOrder = 3
     object Label7: TLabel
@@ -185,27 +184,6 @@ object Form1: TForm1
       Width = 31
       Height = 13
       Caption = 'Hasta:'
-    end
-    object Label10: TLabel
-      Left = 208
-      Top = 24
-      Width = 77
-      Height = 13
-      Caption = 'Establecimiento:'
-    end
-    object Label11: TLabel
-      Left = 208
-      Top = 48
-      Width = 27
-      Height = 13
-      Caption = 'Color:'
-    end
-    object Label12: TLabel
-      Left = 208
-      Top = 72
-      Width = 28
-      Height = 13
-      Caption = 'Raza:'
     end
     object fechaDesde: TDateTimePicker
       Left = 72
@@ -237,58 +215,6 @@ object Form1: TForm1
       FixedRows = 0
       TabOrder = 2
     end
-    object Button1: TButton
-      Left = 104
-      Top = 272
-      Width = 193
-      Height = 25
-      Caption = '&Migrar'
-      TabOrder = 3
-      OnClick = Button1Click
-    end
-    object MemoResultadoActualizacion: TMemo
-      Left = 8
-      Top = 304
-      Width = 401
-      Height = 161
-      Lines.Strings = (
-        '')
-      ScrollBars = ssVertical
-      TabOrder = 4
-    end
-    object DBLookupComboBoxRazas: TDBLookupComboBox
-      Left = 288
-      Top = 72
-      Width = 169
-      Height = 21
-      DropDownRows = 3
-      KeyField = 'ID_RAZA'
-      ListField = 'NOMBRE'
-      ListSource = DataSourceRazas
-      TabOrder = 5
-    end
-    object DBLookupComboBoxColor: TDBLookupComboBox
-      Left = 288
-      Top = 48
-      Width = 169
-      Height = 21
-      DropDownRows = 3
-      KeyField = 'ID_COLOR'
-      ListField = 'NOMBRE'
-      ListSource = DataSourceColor
-      TabOrder = 6
-    end
-    object DBLookupComboBoxEstablecimiento: TDBLookupComboBox
-      Left = 288
-      Top = 24
-      Width = 169
-      Height = 21
-      DropDownRows = 3
-      KeyField = 'ID_ESTABLECIMIENTO'
-      ListField = 'NOMBRE'
-      ListSource = DataSourceEstablecimiento
-      TabOrder = 7
-    end
   end
   object fechaHasta: TDateTimePicker
     Left = 360
@@ -300,8 +226,8 @@ object Form1: TForm1
     TabOrder = 4
   end
   object Button5: TButton
-    Left = 768
-    Top = 200
+    Left = 720
+    Top = 24
     Width = 75
     Height = 25
     Caption = 'Salir'
@@ -328,82 +254,5 @@ object Form1: TForm1
     Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soDocument, soCacheMimeResponse, soUTF8EncodeXML]
     Left = 800
     Top = 24
-  end
-  object IBDatabase1: TIBDatabase
-    Params.Strings = (
-      'user_name=SYSDBA'
-      'password=masterkey')
-    LoginPrompt = False
-    DefaultTransaction = IBTransaction1
-    IdleTimer = 0
-    SQLDialect = 3
-    TraceFlags = [tfError, tfTransact]
-    Left = 800
-    Top = 64
-  end
-  object IBTransaction1: TIBTransaction
-    Active = False
-    AutoStopAction = saNone
-    Left = 800
-    Top = 96
-  end
-  object IBQuery1: TIBQuery
-    Database = IBDatabase1
-    Transaction = IBTransaction1
-    BufferChunks = 1000
-    CachedUpdates = False
-    Left = 800
-    Top = 128
-  end
-  object IBStoredProc1: TIBStoredProc
-    Database = IBDatabase1
-    Transaction = IBTransaction1
-    Left = 800
-    Top = 160
-  end
-  object DataSourceRazas: TDataSource
-    DataSet = IBQueryRazas
-    Left = 800
-    Top = 232
-  end
-  object IBQueryRazas: TIBQuery
-    Database = IBDatabase1
-    Transaction = IBTransaction1
-    BufferChunks = 1000
-    CachedUpdates = False
-    SQL.Strings = (
-      'SELECT * FROM COD_RAZAS')
-    Left = 768
-    Top = 232
-  end
-  object DataSourceColor: TDataSource
-    DataSet = IBQueryColor
-    Left = 800
-    Top = 272
-  end
-  object IBQueryColor: TIBQuery
-    Database = IBDatabase1
-    Transaction = IBTransaction1
-    BufferChunks = 1000
-    CachedUpdates = False
-    SQL.Strings = (
-      'SELECT * FROM COD_COLORES')
-    Left = 768
-    Top = 272
-  end
-  object DataSourceEstablecimiento: TDataSource
-    DataSet = IBQueryEstablecimiento
-    Left = 800
-    Top = 312
-  end
-  object IBQueryEstablecimiento: TIBQuery
-    Database = IBDatabase1
-    Transaction = IBTransaction1
-    BufferChunks = 1000
-    CachedUpdates = False
-    SQL.Strings = (
-      'SELECT * FROM TAB_ESTABLECIMIENTOS')
-    Left = 768
-    Top = 312
   end
 end
