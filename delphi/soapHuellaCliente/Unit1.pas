@@ -7,7 +7,7 @@ uses
   Dialogs, StdCtrls, ComCtrls, DB, DBClient, SOAPConn,
   InvokeRegistry, Rio, SOAPHTTPClient, Grids, IBStoredProc,
   IBCustomDataSet, IBQuery, IBDatabase, SAPProdeman, wsdlSAPProdeman,
-  DBCtrls, UDBLookupComboBoxAuto;
+  DBCtrls, UDBLookupComboBoxAuto, IBUpdateSQL;
 
 type
   TForm1 = class(TForm)
@@ -33,8 +33,6 @@ type
     Label7: TLabel;
     fechaDesde: TDateTimePicker;
     consultaBt: TButton;
-    Label8: TLabel;
-    fechaHasta: TDateTimePicker;
     Label9: TLabel;
     Button5: TButton;
     RespuestaLog: TMemo;
@@ -58,6 +56,7 @@ type
     DataSourceEstablecimiento: TDataSource;
     IBQueryEstablecimiento: TIBQuery;
     DBLookupComboBoxEstablecimiento: TDBLookupComboBox;
+    fechaHasta: TDateTimePicker;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
@@ -244,6 +243,10 @@ begin
   DBLookupComboBoxRazas.Enabled := true;
   DBLookupComboBoxColor.Enabled := true;
   DBLookupComboBoxEstablecimiento.Enabled := true;
+
+  DBLookupComboBoxEstablecimiento.ListFieldIndex := 1;
+  DBLookupComboBoxRazas.ListFieldIndex := 1;
+
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -256,7 +259,9 @@ Esta funcion toma los elementos de una lista y los migra a la base de datos
 }
 procedure TForm1.migrarConsulta;
 var
-  i, id_categoria, id_sexo, id_animal: integer;
+  i, id_categoria, id_sexo, id_animal, id_cronologia_dentaria,
+  id_establecimiento, id_raza: integer;
+  id_color: integer;
   ID_RP, Categoria, fecha: String;
   FechaIngreso, FechaNacimiento: TDate;
 begin
@@ -279,26 +284,33 @@ begin
         continue;
        end;
        // Recuperar los valores necesarios
-       FechaNacimiento := calculaFechaNacimiento(Categoria, FechaIngreso);
-          // obtener raza default
-          // obtener establecimiento activo
        id_animal := idAnimalNuevo(IBQuery1);
-          // obtener tipo de alta
-          // Obtener color default
+       id_raza := self.DBLookupComboBoxRazas.KeyValue;
+       id_color := self.DBLookupComboBoxColor.KeyValue;
+       id_establecimiento := self.DBLookupComboBoxEstablecimiento.KeyValue;
+       FechaNacimiento := calculaFechaNacimiento(Categoria, FechaIngreso);
+       id_cronologia_dentaria :=  0;
 
        // Buscar si no existe ya el animal
+       if (yaExisteAnimal(ID_RP, IBQuery1)) then
+       begin
+        MemoResultadoActualizacion.Lines.Add(
+        'ID_RP:'+ ID_RP +  ' YA EXISTIA EN LA BASE DE DATOS');
+       end
+       else
+       begin
+        // Probar de insertarlo
+        ingresarAnimal(
+              id_rp, id_animal, id_raza, id_color,
+              id_categoria, id_sexo,
+              id_establecimiento, id_cronologia_dentaria,
+              FechaNacimiento, IBQuery1);
+        // Registrar resultado
 
-       // Probar de insertarlo
-
-       // Registrar resultado
-
-       MemoResultadoActualizacion.Lines.Add(
-       'id_animal:'       + IntToStr(id_animal) + ' ' +
-       'id_categoria:'    + IntToStr(id_categoria) + ' ' +
-       'ID_RP:'           + ID_RP +  ' ' +
-       'id_sexo:'         + IntToStr(id_sexo) +
-       'FechaNacimiento:' + DateToStr(FechaNacimiento)
-       );
+        IBTransaction1.Commit;
+        MemoResultadoActualizacion.Lines.Add(
+        'ID_RP:'+ ID_RP +  ' Se agrego OK');
+       end;
   end;
   
 end;

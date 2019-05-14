@@ -14,13 +14,6 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label8: TLabel
-    Left = 304
-    Top = 72
-    Width = 34
-    Height = 13
-    Caption = 'Desde:'
-  end
   object GroupBox1: TGroupBox
     Left = 16
     Top = 16
@@ -70,8 +63,8 @@ object Form1: TForm1
     end
   end
   object GroupBox2: TGroupBox
-    Left = 16
-    Top = 144
+    Left = 280
+    Top = 16
     Width = 249
     Height = 113
     Caption = 'Baja '
@@ -118,8 +111,8 @@ object Form1: TForm1
     end
   end
   object GroupBox3: TGroupBox
-    Left = 16
-    Top = 272
+    Left = 544
+    Top = 16
     Width = 249
     Height = 113
     Caption = 'Modificaci'#243'n '
@@ -166,10 +159,10 @@ object Form1: TForm1
     end
   end
   object GroupBox4: TGroupBox
-    Left = 288
-    Top = 16
-    Width = 465
-    Height = 481
+    Left = 16
+    Top = 144
+    Width = 745
+    Height = 478
     Caption = ' Consulta '
     TabOrder = 3
     object Label7: TLabel
@@ -249,7 +242,7 @@ object Form1: TForm1
     object MemoResultadoActualizacion: TMemo
       Left = 8
       Top = 304
-      Width = 401
+      Width = 713
       Height = 161
       Lines.Strings = (
         '')
@@ -261,7 +254,7 @@ object Form1: TForm1
       Top = 72
       Width = 169
       Height = 21
-      DropDownRows = 3
+      DropDownRows = 50
       KeyField = 'ID_RAZA'
       ListField = 'NOMBRE'
       ListSource = DataSourceRazas
@@ -289,15 +282,15 @@ object Form1: TForm1
       ListSource = DataSourceEstablecimiento
       TabOrder = 7
     end
-  end
-  object fechaHasta: TDateTimePicker
-    Left = 360
-    Top = 64
-    Width = 122
-    Height = 21
-    Date = 43571.726518726850000000
-    Time = 43571.726518726850000000
-    TabOrder = 4
+    object fechaHasta: TDateTimePicker
+      Left = 71
+      Top = 40
+      Width = 122
+      Height = 21
+      Date = 43571.726518726850000000
+      Time = 43571.726518726850000000
+      TabOrder = 8
+    end
   end
   object Button5: TButton
     Left = 768
@@ -305,17 +298,17 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Salir'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = Button5Click
   end
   object RespuestaLog: TMemo
     Left = 16
-    Top = 608
+    Top = 680
     Width = 793
-    Height = 145
+    Height = 73
     Lines.Strings = (
       '')
-    TabOrder = 6
+    TabOrder = 5
   end
   object HTTPRIO1: THTTPRIO
     OnAfterExecute = HTTPRIO1AfterExecute
@@ -343,6 +336,7 @@ object Form1: TForm1
   end
   object IBTransaction1: TIBTransaction
     Active = False
+    DefaultAction = TACommitRetaining
     AutoStopAction = saNone
     Left = 800
     Top = 96
