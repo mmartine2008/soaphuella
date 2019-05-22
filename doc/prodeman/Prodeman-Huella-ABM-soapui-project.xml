@@ -648,8 +648,8 @@
    <soapenv:Body>
       <urn:ZMM_GOODSMVT_CREATE_SOLO>
          <FI_HEADER>
-            <PSTNG_DATE>2019-04-16</PSTNG_DATE>
-            <DOC_DATE>2019-04-16</DOC_DATE>
+            <PSTNG_DATE>2019-05-22</PSTNG_DATE>
+            <DOC_DATE>2019-05-22</DOC_DATE>
             <REF_DOC_NO></REF_DOC_NO>
             <BILL_OF_LADING></BILL_OF_LADING>
             <GR_GI_SLIP_NO></GR_GI_SLIP_NO>

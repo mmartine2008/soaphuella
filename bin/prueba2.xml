@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap-env:Header/>
+   <soap-env:Body>
+      <n0:ZMM_GOODSMVT_CREATE_SOLOResponse xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+         <FE_RETURN>
+            <item>
+               <TYPE>S</TYPE>
+               <ID>ZMM_NEW</ID>
+               <NUMBER>010</NUMBER>
+               <MESSAGE>S:ZMM_NEW:010 4900001012 2019</MESSAGE>
+               <LOG_NO/>
+               <LOG_MSG_NO>000000</LOG_MSG_NO>
+               <MESSAGE_V1>4900001012</MESSAGE_V1>
+               <MESSAGE_V2>2019</MESSAGE_V2>
+               <MESSAGE_V3/>
+               <MESSAGE_V4/>
+               <PARAMETER/>
+               <ROW>0</ROW>
+               <FIELD/>
+               <SYSTEM/>
+            </item>
+         </FE_RETURN>
+      </n0:ZMM_GOODSMVT_CREATE_SOLOResponse>
+   </soap-env:Body>
+</soap-env:Envelope>

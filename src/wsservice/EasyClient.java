@@ -40,6 +40,10 @@ public class EasyClient {
     private String baseFileConsulta; 
     private String wsEndPointConsulta; 
     private String SOAPActionConsulta; 
+
+    private String baseFileCreacion;
+    private String wsEndPointCreacion;
+    private String SOAPActionCreacion;    
     
     /**
      * Lee la configuracion del arvhico ini
@@ -48,10 +52,14 @@ public class EasyClient {
         try{
             IniFile ini = new IniFile("configuracion.ini");
             
-            baseFileConsulta = ini.getString("Consulta", "baseFileConsulta", "");
+            baseFileConsulta  = ini.getString("Consulta", "baseFileConsulta", "");
             wsEndPointConsulta = ini.getString("Consulta", "wsEndPointConsulta", "");
             SOAPActionConsulta = ini.getString("Consulta", "SOAPActionConsulta", "");
 
+            baseFileCreacion   = ini.getString("Creacion", "baseFileCreacion", "");;
+            wsEndPointCreacion = ini.getString("Creacion", "wsEndPointCreacion", "");;
+            SOAPActionCreacion = ini.getString("Creacion", "SOAPActionCreacion", "");;    
+        
         }catch(Exception e){
             System.err.println(e.getMessage());
         }        
@@ -141,6 +149,41 @@ public class EasyClient {
         String response = getResponse(httpConn);
 
         return response;
+    }
+
+    /** 
+     * Prepara el pedido en el XML doc
+     */
+    private void prepareCreacion(String fecha, String tipoMovimiento, String categoria, Document doc)
+    {
+        Node nodeFechaPst = doc.getElementsByTagName("PSTNG_DATE").item(0);
+        nodeFechaPst.setTextContent(fecha);
+        Node nodeFecha = doc.getElementsByTagName("DOC_DATE").item(0);
+        nodeFecha.setTextContent(fecha);
+
+        Node nodeMvto = doc.getElementsByTagName("MOVE_TYPE").item(0);
+        nodeMvto.setTextContent(tipoMovimiento);
+
+        Node nodeCategoria = doc.getElementsByTagName("MATERIAL").item(0);
+        nodeCategoria.setTextContent(categoria);        
+    }
+
+    public String setMovimiento(String fecha, String tipoMovimiento, String categoria)
+    {
+        String response = "";
+        leerConfiguracion();
+    
+        String xmlBase = getStringService(baseFileCreacion);
+
+        Document doc = convertStringToDocument(xmlBase);
+        prepareCreacion(fecha, tipoMovimiento, categoria, doc);
+        String xmlInput = convertDocumentToString(doc);
+
+        HttpURLConnection httpConn = getConnection(wsEndPointCreacion);
+        sendRequest(httpConn, SOAPActionCreacion, xmlInput);
+        response = getResponse(httpConn);
+
+        return response;        
     }
 
     /**

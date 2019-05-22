@@ -18,9 +18,7 @@ public class HuellaServer {
 	private String ganado = "120010101";
 	private String centro = "5010";
 	private String almacen = "A001";
-	private String movimientoAlta = "971";
-	private String movimientoBaja = "973";
-	private String movimientoModificacion = "309";
+
 
 	/**
 	* Logging interno del servicio. 
@@ -42,8 +40,10 @@ public class HuellaServer {
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 		
-//		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
-		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
+		// Esta linea consulta al servicio
+		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+		// Esta linea (alternativa) consulta un archivo simulado
+//		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
 
 		String[] output = new String[respuesta.size()];
 
@@ -55,44 +55,40 @@ public class HuellaServer {
 		return output;
 	}
 
-	protected String movimiento(String fecha, String caravana, String movimiento)
+	@WebMethod
+	public String alta(
+		@WebParam(name="fecha", mode=WebParam.Mode.IN) 
+		String fecha, 
+		@WebParam(name="categoria", mode=WebParam.Mode.IN) 
+		String categoria)
 	{
+		String resultado = "Ok";
+
 		String consulta = "Movimiento:";
-		consulta += " Material:"+ this.ganado;
+		consulta += " Material:"+ categoria;
 		consulta += " Centro:" + this.centro;
 		consulta += " Almacen:" + this.almacen;
 		consulta += " Fecha:"+ fecha;
-		consulta += " Caravana:"+ caravana;
-		consulta += " TipoMovimiento:" + movimiento;
+		consulta += " TipoMovimiento: Alta";
 
+		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
+
+		// Esta linea consulta al servicio
+		resultado = prodemanSOAPClient.alta(fecha, categoria);
+		// Esta linea simula el servicio
+		//resultado = prodemanSOAPClient.mock_altaAnimal(fecha, categoria);
+		
+		consulta += " Id Nuevo: " +resultado;
 		this.logging(consulta);
 
-		String resultado = "Ok";
-
 		return resultado;
 	}
 
-	public String alta(String fecha, String caravana)
-	{
-		String resultado = 
-		this.movimiento(fecha, caravana, this.movimientoAlta);
+	// public String baja(String fecha, String caravana)
+	// {
+	// }
 
-		return resultado;
-	}
-
-	public String baja(String fecha, String caravana)
-	{
-		String resultado = 
-		this.movimiento(fecha, caravana, this.movimientoBaja);
-
-		return resultado;
-	}
-
-	public String modificacion(String fecha, String caravana)
-	{
-		String resultado = 
-		this.movimiento(fecha, caravana, this.movimientoModificacion);
-
-		return resultado;
-	}		
+	// public String modificacion(String fecha, String caravana)
+	// {
+	// }		
 }

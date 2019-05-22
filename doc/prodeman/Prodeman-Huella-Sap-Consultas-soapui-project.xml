@@ -313,8 +313,8 @@
             <item>
                <SIGN>I</SIGN>
                <OPTION>BT</OPTION>
-               <LOW>2019-01-01</LOW>
-               <HIGH>2019-04-01</HIGH>
+               <LOW>2019-05-01</LOW>
+               <HIGH>2019-05-30</HIGH>
             </item>
          </FI_FECHA>
       </urn:ZMM_CONSULTA_MOVIMIENTO>

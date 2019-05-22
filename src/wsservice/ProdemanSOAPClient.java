@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class ProdemanSOAPClient {
 
+	private String movimientoAlta = "971";
+	private String movimientoBaja = "973";
+	private String movimientoModificacion = "309";
+
 	/**
 	 * Recibe un string y devuelve un array de animales
 	 */
@@ -42,6 +46,24 @@ public class ProdemanSOAPClient {
 	}
 
 	/**
+	 * Procesa el string de la respuesta del service para extraer el error (-1)
+	 * o el id de material (id de animal nuevo en SAP )
+	 */
+	private String procesarRespuestaAlta(String respuesta)
+	{
+		Document document = EasyClient.convertStringToDocument(respuesta);
+		String output;
+
+		try {
+			Node nodeMESSAGE_V1 = document.getElementsByTagName("MESSAGE_V1").item(0);
+			output = nodeMESSAGE_V1.getTextContent();
+		} catch (Exception e) {
+			output = "-1";
+		}
+
+		return output;
+	}
+	/**
 	 * Simula un pedido, sin necesidad de conectar al web Service de prodeman
 	 */
 	public ArrayList<Animal> mock_consultaMovimiento(String desde, String hasta)
@@ -53,12 +75,23 @@ public class ProdemanSOAPClient {
 
 	}
 
+	/**
+	 * Simula un alta, para poder procesar la respuesta
+	 */
+	public String mock_altaAnimal(String fecha, String categoria)
+	{
+		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
+		ProdemanSOAPClient p = new ProdemanSOAPClient();
+		String material = p.procesarRespuestaAlta(respuestaPrueba);
+		return material;
+	}
+
 	public static void main(String[] args) {
-		String respuestaPrueba = EasyClient.getStringService("prueba.xml");
+		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();
 		
-		p.procesarRespuestaMovimiento(respuestaPrueba);
-		
+		String o = p.procesarRespuestaAlta(respuestaPrueba);
+		System.out.println(o);
 	}
 
 	/**
@@ -80,9 +113,19 @@ public class ProdemanSOAPClient {
 		return "";
 	}
 
-	public String alta(String fecha, String caravana)
+	/**
+	 * El alta de un animal de una categoria, devuelve el codigo de material del animal
+	 * es decir el Id del animal en SAP
+	 */
+	public String alta(String fecha, String categoria)
 	{
-    	return "";
+		EasyClient easyClient = new EasyClient();
+
+		String respuesta = easyClient.setMovimiento(fecha, this.movimientoAlta, categoria);
+
+		String materialId = procesarRespuestaAlta(respuesta);
+
+    	return materialId;
 	}
 
 	public String baja(String fecha, String caravana)

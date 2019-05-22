@@ -4,87 +4,51 @@
 <definitions targetNamespace="http://wsserver/" name="HuellaServerService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsserver/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import namespace="http://wsserver/" schemaLocation="http://192.168.1.102:1212/huella?xsd=1"/>
+      <xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://192.168.1.102:1212/huella?xsd=1"/>
     </xsd:schema>
   </types>
   <message name="consultaMovimiento">
-    <part name="parameters" element="tns:consultaMovimiento"/>
+    <part name="desde" type="xsd:string"/>
+    <part name="hasta" type="xsd:string"/>
   </message>
   <message name="consultaMovimientoResponse">
-    <part name="parameters" element="tns:consultaMovimientoResponse"/>
+    <part name="animales" type="ns1:stringArray" xmlns:ns1="http://jaxb.dev.java.net/array"/>
   </message>
   <message name="alta">
-    <part name="parameters" element="tns:alta"/>
+    <part name="fecha" type="xsd:string"/>
+    <part name="categoria" type="xsd:string"/>
   </message>
   <message name="altaResponse">
-    <part name="parameters" element="tns:altaResponse"/>
-  </message>
-  <message name="baja">
-    <part name="parameters" element="tns:baja"/>
-  </message>
-  <message name="bajaResponse">
-    <part name="parameters" element="tns:bajaResponse"/>
-  </message>
-  <message name="modificacion">
-    <part name="parameters" element="tns:modificacion"/>
-  </message>
-  <message name="modificacionResponse">
-    <part name="parameters" element="tns:modificacionResponse"/>
+    <part name="return" type="xsd:string"/>
   </message>
   <portType name="HuellaServer">
-    <operation name="consultaMovimiento">
+    <operation name="consultaMovimiento" parameterOrder="desde hasta">
       <input wsam:Action="http://wsserver/HuellaServer/consultaMovimientoRequest" message="tns:consultaMovimiento"/>
       <output wsam:Action="http://wsserver/HuellaServer/consultaMovimientoResponse" message="tns:consultaMovimientoResponse"/>
     </operation>
-    <operation name="alta">
+    <operation name="alta" parameterOrder="fecha categoria">
       <input wsam:Action="http://wsserver/HuellaServer/altaRequest" message="tns:alta"/>
       <output wsam:Action="http://wsserver/HuellaServer/altaResponse" message="tns:altaResponse"/>
     </operation>
-    <operation name="baja">
-      <input wsam:Action="http://wsserver/HuellaServer/bajaRequest" message="tns:baja"/>
-      <output wsam:Action="http://wsserver/HuellaServer/bajaResponse" message="tns:bajaResponse"/>
-    </operation>
-    <operation name="modificacion">
-      <input wsam:Action="http://wsserver/HuellaServer/modificacionRequest" message="tns:modificacion"/>
-      <output wsam:Action="http://wsserver/HuellaServer/modificacionResponse" message="tns:modificacionResponse"/>
-    </operation>
   </portType>
   <binding name="HuellaServerPortBinding" type="tns:HuellaServer">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
     <operation name="consultaMovimiento">
       <soap:operation soapAction=""/>
       <input>
-        <soap:body use="literal"/>
+        <soap:body use="literal" namespace="http://wsserver/"/>
       </input>
       <output>
-        <soap:body use="literal"/>
+        <soap:body use="literal" namespace="http://wsserver/"/>
       </output>
     </operation>
     <operation name="alta">
       <soap:operation soapAction=""/>
       <input>
-        <soap:body use="literal"/>
+        <soap:body use="literal" namespace="http://wsserver/"/>
       </input>
       <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="baja">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="modificacion">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
+        <soap:body use="literal" namespace="http://wsserver/"/>
       </output>
     </operation>
   </binding>
@@ -94,63 +58,10 @@
     </port>
   </service>
 </definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://192.168.1.102:1212/huella?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.0-SNAPSHOT svn-revision#282759e2b822078de9ba78c743ed663541c16ead.-->
-<xs:schema version="1.0" targetNamespace="http://wsserver/" xmlns:tns="http://wsserver/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="alta" type="tns:alta"/>
-  <xs:element name="altaResponse" type="tns:altaResponse"/>
-  <xs:element name="baja" type="tns:baja"/>
-  <xs:element name="bajaResponse" type="tns:bajaResponse"/>
-  <xs:element name="consultaMovimiento" type="tns:consultaMovimiento"/>
-  <xs:element name="consultaMovimientoResponse" type="tns:consultaMovimientoResponse"/>
-  <xs:element name="modificacion" type="tns:modificacion"/>
-  <xs:element name="modificacionResponse" type="tns:modificacionResponse"/>
-  <xs:complexType name="consultaMovimiento">
+<xs:schema version="1.0" targetNamespace="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="stringArray" final="#all">
     <xs:sequence>
-      <xs:element name="desde" type="xs:string" minOccurs="0"/>
-      <xs:element name="hasta" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="consultaMovimientoResponse">
-    <xs:sequence>
-      <xs:element name="movimientos" type="tns:animal" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="animal">
-    <xs:sequence>
-      <xs:element name="rp" type="xs:string" minOccurs="0"/>
-      <xs:element name="categoria" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificacion">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
-      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificacionResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="alta">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
-      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="altaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="baja">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
-      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="bajaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:string" minOccurs="0"/>
+      <xs:element name="item" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:endpoint>http://localhost:1212/huella</con:endpoint></con:endpoints><con:operation id="3a3ff848-3270-474c-a330-4be2e073f9c3" isOneWay="false" action="" name="consultaMovimiento" bindingOperationName="consultaMovimiento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8f271d80-f30c-4d76-8d5d-ae0ca6c206c2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
@@ -170,28 +81,12 @@
          <hasta>2019-03-01</hasta>
       </wss:consultaMovimiento>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/consultaMovimientoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dcbb5c76-3c9f-41a2-ae7a-d71c3813e923" isOneWay="false" action="" name="alta" bindingOperationName="alta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b331162-bb23-495f-bf6b-62ae90065ed5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/consultaMovimientoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dcbb5c76-3c9f-41a2-ae7a-d71c3813e923" isOneWay="false" action="" name="alta" bindingOperationName="alta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="02de9c1a-2d7d-479a-bb20-a924882e425c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
    <soapenv:Header/>
    <soapenv:Body>
       <wss:alta>
-         <arg0>A</arg0>
-         <arg1>B</arg1>
+         <fecha>2019-05-21</fecha>
+         <categoria>120010101</categoria>
       </wss:alta>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/altaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bf1e9c87-e464-4d1f-bedd-b472158dd3d9" isOneWay="false" action="" name="baja" bindingOperationName="baja" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e08c250e-8542-4372-8d8f-fd384e1a6ea2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <wss:baja>
-         <arg0>?</arg0>
-         <arg1>?</arg1>
-      </wss:baja>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/bajaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fb02bc7d-f44f-488d-96c7-102de922a8d9" isOneWay="false" action="" name="modificacion" bindingOperationName="modificacion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7f78c6a4-91ab-4ccd-8185-3e081dcd7208" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <wss:modificacion>
-         <arg0>?</arg0>
-         <arg1>?</arg1>
-      </wss:modificacion>
-   </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/modificacionRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/altaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
