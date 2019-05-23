@@ -154,7 +154,7 @@ public class EasyClient {
     /** 
      * Prepara el pedido en el XML doc
      */
-    private void prepareCreacion(String fecha, String tipoMovimiento, String categoria, Document doc)
+    private void prepareCreacion(String fecha, String tipoMovimiento, String caravana, Document doc)
     {
         Node nodeFechaPst = doc.getElementsByTagName("PSTNG_DATE").item(0);
         nodeFechaPst.setTextContent(fecha);
@@ -165,10 +165,18 @@ public class EasyClient {
         nodeMvto.setTextContent(tipoMovimiento);
 
         Node nodeCategoria = doc.getElementsByTagName("MATERIAL").item(0);
-        nodeCategoria.setTextContent(categoria);        
+        nodeCategoria.setTextContent(caravana);        
     }
 
-    public String setMovimiento(String fecha, String tipoMovimiento, String categoria)
+    private void prepareCreacionCambio(String fecha, String tipoMovimiento, String categoria, String caravana, Document doc)
+    {
+        preparaCreacion(fecha, tipoMovimiento, caravana, doc);
+
+        Node nodeCategoria = doc.getElementsByTagName("MOVE_MAT").item(0);
+        nodeCategoria.setTextContent(caravana);
+    }    
+
+    public String setMovimiento(String fecha, String tipoMovimiento, String caravana, String categoria)
     {
         String response = "";
         leerConfiguracion();
@@ -176,7 +184,14 @@ public class EasyClient {
         String xmlBase = getStringService(baseFileCreacion);
 
         Document doc = convertStringToDocument(xmlBase);
-        prepareCreacion(fecha, tipoMovimiento, categoria, doc);
+        // Si la categoria es null, es creacion o baja 
+        if (!categoria) {
+            prepareCreacion(fecha, tipoMovimiento, caravana, doc);
+        } else 
+        {
+            prepareCreacionCambio(fecha, tipoMovimiento, caravana, categoria, doc);
+        }
+        
         String xmlInput = convertDocumentToString(doc);
 
         HttpURLConnection httpConn = getConnection(wsEndPointCreacion);

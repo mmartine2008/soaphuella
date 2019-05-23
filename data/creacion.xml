@@ -8,7 +8,7 @@
             <REF_DOC_NO></REF_DOC_NO>
             <BILL_OF_LADING></BILL_OF_LADING>
             <GR_GI_SLIP_NO></GR_GI_SLIP_NO>
-            <PR_UNAME></PR_UNAME>
+            <PR_UNAME>IF_PDM</PR_UNAME>
             <HEADER_TXT></HEADER_TXT>
             <VER_GR_GI_SLIP></VER_GR_GI_SLIP>
             <VER_GR_GI_SLIPX></VER_GR_GI_SLIPX>
@@ -58,9 +58,9 @@
                <RES_TYPE></RES_TYPE>
                <WITHDRAWN></WITHDRAWN>
                <MOVE_MAT></MOVE_MAT>
-               <MOVE_PLANT></MOVE_PLANT>
-               <MOVE_STLOC></MOVE_STLOC>
-               <MOVE_BATCH></MOVE_BATCH>
+               <MOVE_PLANT>5010</MOVE_PLANT>
+               <MOVE_STLOC>A001</MOVE_STLOC>
+               <MOVE_BATCH>HZ082B125</MOVE_BATCH>
                <MOVE_VAL_TYPE></MOVE_VAL_TYPE>
                <MVT_IND></MVT_IND>
                <MOVE_REAS></MOVE_REAS>

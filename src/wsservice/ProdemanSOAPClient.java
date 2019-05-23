@@ -47,9 +47,9 @@ public class ProdemanSOAPClient {
 
 	/**
 	 * Procesa el string de la respuesta del service para extraer el error (-1)
-	 * o el id de material (id de animal nuevo en SAP )
+	 * o el id de material (id de animal nuevo en SAP o modificado)
 	 */
-	private String procesarRespuestaAlta(String respuesta)
+	private String procesarRespuestaCreacion(String respuesta)
 	{
 		Document document = EasyClient.convertStringToDocument(respuesta);
 		String output;
@@ -82,7 +82,7 @@ public class ProdemanSOAPClient {
 	{
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();
-		String material = p.procesarRespuestaAlta(respuestaPrueba);
+		String material = p.procesarRespuestaCreacion(respuestaPrueba);
 		return material;
 	}
 
@@ -90,7 +90,7 @@ public class ProdemanSOAPClient {
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();
 		
-		String o = p.procesarRespuestaAlta(respuestaPrueba);
+		String o = p.procesarRespuestaCreacion(respuestaPrueba);
 		System.out.println(o);
 	}
 
@@ -123,19 +123,35 @@ public class ProdemanSOAPClient {
 
 		String respuesta = easyClient.setMovimiento(fecha, this.movimientoAlta, categoria);
 
-		String materialId = procesarRespuestaAlta(respuesta);
+		String materialId = procesarRespuestaCreacion(respuesta);
 
     	return materialId;
 	}
 
+	/**
+	 * La baja de un animal con una caravana, devuelve el codigo de material del animal
+	 * es decir el Id del animal en SAP (o -1 en error)
+	 */	
 	public String baja(String fecha, String caravana)
 	{
-		return "";
+		EasyClient easyClient = new EasyClient();
+
+		String respuesta = easyClient.setMovimiento(fecha, this.movimientoBaja, caravana, null);
+
+		String materialId = procesarRespuestaCreacion(respuesta);
+
+		return materialId;
 	}
 
-	public String modificacion(String fecha, String caravana)
+	public String modificacion(String fecha, String caravana, String categoria)
 	{
-		return "";
+		EasyClient easyClient = new EasyClient();
+
+		String respuesta = easyClient.setMovimiento(fecha, this.movimientoModificacion, caravana, categoria);
+
+		String materialId = procesarRespuestaCreacion(respuesta);
+
+		return materialId;
 	}
 	
 	
