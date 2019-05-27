@@ -57,6 +57,7 @@ type
     IBQueryEstablecimiento: TIBQuery;
     DBLookupComboBoxEstablecimiento: TDBLookupComboBox;
     fechaHasta: TDateTimePicker;
+    btEventos: TButton;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
@@ -66,6 +67,7 @@ type
       SOAPResponse: TStream);
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure btEventosClick(Sender: TObject);
   private
     { Private declarations }
     procedure alta;
@@ -73,6 +75,7 @@ type
     procedure consulta;
     procedure modificacion;
     procedure migrarConsulta;
+    procedure consultaEventos;
 
     function getFecha(fechaPicker: TDateTimePicker): String;
   public
@@ -313,6 +316,20 @@ begin
        end;
   end;
   
+end;
+
+procedure TForm1.btEventosClick(Sender: TObject);
+begin
+  consultaEventos;
+end;
+
+procedure TForm1.consultaEventos;
+begin
+//  fechaDesde := getFecha(fechaBaja);
+//  fechaHasta := getFecha(fechaAlta);
+
+  recuperaEventos(fechaDesde.Date, fechaHasta.Date, IBQuery1, StringGridResultado);
+
 end;
 
 end.

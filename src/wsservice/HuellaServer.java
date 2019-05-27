@@ -41,9 +41,9 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 		
 		// Esta linea consulta al servicio
-		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+//		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
 		// Esta linea (alternativa) consulta un archivo simulado
-//		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
+		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
 
 		String[] output = new String[respuesta.size()];
 
@@ -74,9 +74,9 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
 		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.alta(fecha, categoria);
+		//resultado = prodemanSOAPClient.alta(fecha, categoria);
 		// Esta linea simula el servicio
-		//resultado = prodemanSOAPClient.mock_altaAnimal(fecha, categoria);
+		resultado = prodemanSOAPClient.mock_altaAnimal(fecha, categoria);
 		
 		consulta += " Id Nuevo: " +resultado;
 		this.logging(consulta);
@@ -84,11 +84,63 @@ public class HuellaServer {
 		return resultado;
 	}
 
-	// public String baja(String fecha, String caravana)
-	// {
-	// }
+	@WebMethod
+	public String baja(
+		@WebParam(name="fecha", mode=WebParam.Mode.IN)
+		String fecha, 
+		@WebParam(name="caravana", mode=WebParam.Mode.IN)
+		String caravana)
+	{
+		String resultado = "Ok";
 
-	// public String modificacion(String fecha, String caravana)
-	// {
-	// }		
+		String consulta = "Movimiento:";
+		consulta += " Material:"+ caravana;
+		consulta += " Centro:" + this.centro;
+		consulta += " Almacen:" + this.almacen;
+		consulta += " Fecha:"+ fecha;
+		consulta += " TipoMovimiento: Baja";
+
+		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
+
+		// Esta linea consulta al servicio
+		resultado = prodemanSOAPClient.baja(fecha, caravana);
+		// Esta linea simula el servicio
+		// ??
+		
+		consulta += " Id borrado: " +resultado;
+		this.logging(consulta);
+
+		return resultado;		
+	}
+
+	@WebMethod	
+	public String modificacion(
+			@WebParam(name="fecha", mode=WebParam.Mode.IN)
+			String fecha, 
+			@WebParam(name="caravana", mode=WebParam.Mode.IN)
+			String caravana, 
+			@WebParam(name="categoria", mode=WebParam.Mode.IN)
+			String categoria)
+	{
+		String resultado = "Ok";
+
+		String consulta = "Movimiento:";
+		consulta += " Material:"+ categoria;
+		consulta += " Centro:" + this.centro;
+		consulta += " Almacen:" + this.almacen;
+		consulta += " Fecha:"+ fecha;
+		consulta += " TipoMovimiento: Modificacion";
+
+		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
+
+		// Esta linea consulta al servicio
+		resultado = prodemanSOAPClient.modificacion(fecha, caravana, categoria);
+		// Esta linea simula el servicio
+		// -- ??;
+		
+		consulta += " Id modificado: " +resultado;
+		this.logging(consulta);
+
+		return resultado;		
+	}		
 }

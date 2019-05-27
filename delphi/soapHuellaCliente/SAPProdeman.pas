@@ -19,7 +19,8 @@ procedure ingresarAnimal(
     FechaNacimiento : TDate;
     query: TIBQuery);
 function yaExisteAnimal(ID_RP:String; query: TIBQuery): boolean;
-
+procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
+                          StringGridResultado: TStringGrid);
 
 implementation
 
@@ -227,5 +228,142 @@ begin
    end
 end;
 
+
+procedure iniciaGrillaEventos(StringGridResultado: TStringGrid);
+begin
+      StringGridResultado.ColCount := 4;
+      StringGridResultado.RowCount := 2;
+      StringGridResultado.FixedRows := 1;
+      StringGridResultado.Cells[0, 0] := 'RP';
+      StringGridResultado.Cells[1, 0] := 'Fecha';
+      StringGridResultado.Cells[2, 0] := 'Categoria';
+      StringGridResultado.Cells[3, 0] := 'Evento';
+end;
+
+procedure cargarGrillaResultados(query: TIBQuery;
+                          StringGridResultado: TStringGrid; Evento: String);
+var
+  categoria: String;
+  fecha: TDate;
+  id_animal: String;
+
+begin
+    while not query.Eof do
+    begin
+       id_animal := query.FieldByName ('ANIMAL').AsString;
+       fecha := query.FieldByName('FECHA').AsDateTime;
+       categoria := query.FieldByName('CATEGORIA').AsString;
+
+       StringGridResultado.Cells[0, StringGridResultado.RowCount -1] := id_animal;
+       StringGridResultado.Cells[1, StringGridResultado.RowCount -1] := DateToStr(fecha);
+       StringGridResultado.Cells[2, StringGridResultado.RowCount -1] := categoria;
+       StringGridResultado.Cells[3, StringGridResultado.RowCount -1] := Evento;
+
+       query.Next;
+       if not query.Eof then
+       begin
+        StringGridResultado.RowCount := StringGridResultado.RowCount +1;
+       end;
+
+    end;
+end;
+
+procedure procesarSQLEventos(query: TIBQuery; sqlTxt: String; fechaDesde, fechaHasta: TDate) ;
+begin
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add(sqlTxt);
+
+    query.ParamByName('DESDE').AsString := FormatDateTime('DD/MM/YYYY', fechaDesde);
+    query.ParamByName('HASTA').AsString := FormatDateTime('DD/MM/YYYY', fechaHasta);
+    query.Open;
+end;
+
+function getSQLEventoAlta:String;
+var
+  sqlTxt: String;
+begin
+  sqlTxt := 'SELECT E.ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
+              'FROM EVE_NACIMIENTO N                           '+
+              'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) '+
+              'INNER JOIN COD_CATEGORIAS C ON (C.ID_CATEGORIA = E.CATEGORIA) '+
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
+
+  getSQLEventoAlta := sqlTxt;
+end;
+
+function getSQLEventoBaja:String;
+var
+  sqlTxt: String;
+begin
+  sqlTxt := 'SELECT A.ID_RP AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA ' +
+              'FROM EVE_BAJA N       ' +
+              'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) ' +
+              'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
+              'INNER JOIN COD_CATEGORIAS C ON (C.ID_CATEGORIA = A.CATEGORIA) '+
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
+
+  getSQLEventoBaja := sqlTxt;
+end;
+
+procedure calcularEventosAlta(query: TIBQuery; fechaDesde, fechaHasta: TDate;
+                          StringGridResultado: TStringGrid);
+var
+  sqlTxt: String;
+begin
+    sqlTxt := getSQLEventoAlta;
+    procesarSQLEventos(query, sqlTxt, fechaDesde, fechaHasta);
+    cargarGrillaResultados(query, StringGridResultado, 'Nuevo');
+end;
+
+procedure calcularEventosBaja(query: TIBQuery; fechaDesde, fechaHasta: TDate;
+                          StringGridResultado: TStringGrid);
+var
+  sqlTxt: String;
+begin
+    sqlTxt := getSQLEventoBaja;
+    procesarSQLEventos(query, sqlTxt, fechaDesde, fechaHasta);
+    cargarGrillaResultados(query, StringGridResultado, 'Baja');
+end;
+
+function getSQLEventoCambio:String;
+var
+  sqlTxt: String;
+begin
+  sqlTxt := 'SELECT A.ID_RP AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
+            'FROM EVE_CAMBIO_CATEGORIA N  '+
+            'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO)    '+
+            'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL)  '+
+            'INNER JOIN COD_CATEGORIAS C ON (N.CATEGORIA_NUEVA = C.ID_CATEGORIA) '+
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA '; 
+
+  getSQLEventoCambio := sqlTxt;
+end;
+
+procedure calcularEventosModificacion(query: TIBQuery; fechaDesde, fechaHasta: TDate;
+                          StringGridResultado: TStringGrid);
+var
+  sqlTxt: String;
+begin
+    sqlTxt := getSQLEventoCambio;
+    procesarSQLEventos(query, sqlTxt, fechaDesde, fechaHasta);
+    cargarGrillaResultados(query, StringGridResultado, 'Cambio');
+end;
+
+
+{
+Debe recuperar todos los eventos. Por ahora solo los de alta por nacimiento
+}
+procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
+                          StringGridResultado: TStringGrid);
+
+begin
+    iniciaGrillaEventos(StringGridResultado);
+
+    calcularEventosAlta(query, fechaDesde, fechaHasta, StringGridResultado);
+    calcularEventosBaja(query, fechaDesde, fechaHasta, StringGridResultado);
+    calcularEventosModificacion(query, fechaDesde, fechaHasta, StringGridResultado);
+
+end;
 
 end.

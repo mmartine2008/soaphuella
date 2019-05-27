@@ -108,11 +108,6 @@ public class ProdemanSOAPClient {
     	return procesado;
     }
 
-	protected String movimiento(String fecha, String caravana, String movimiento)
-	{
-		return "";
-	}
-
 	/**
 	 * El alta de un animal de una categoria, devuelve el codigo de material del animal
 	 * es decir el Id del animal en SAP
@@ -121,7 +116,7 @@ public class ProdemanSOAPClient {
 	{
 		EasyClient easyClient = new EasyClient();
 
-		String respuesta = easyClient.setMovimiento(fecha, this.movimientoAlta, categoria);
+		String respuesta = easyClient.setMovimiento(fecha, this.movimientoAlta, null, categoria);
 
 		String materialId = procesarRespuestaCreacion(respuesta);
 

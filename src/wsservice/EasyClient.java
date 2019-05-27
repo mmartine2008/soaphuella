@@ -170,7 +170,7 @@ public class EasyClient {
 
     private void prepareCreacionCambio(String fecha, String tipoMovimiento, String categoria, String caravana, Document doc)
     {
-        preparaCreacion(fecha, tipoMovimiento, caravana, doc);
+        prepareCreacion(fecha, tipoMovimiento, caravana, doc);
 
         Node nodeCategoria = doc.getElementsByTagName("MOVE_MAT").item(0);
         nodeCategoria.setTextContent(caravana);
@@ -185,7 +185,7 @@ public class EasyClient {
 
         Document doc = convertStringToDocument(xmlBase);
         // Si la categoria es null, es creacion o baja 
-        if (!categoria) {
+        if (categoria == null) {
             prepareCreacion(fecha, tipoMovimiento, caravana, doc);
         } else 
         {
