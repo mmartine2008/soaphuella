@@ -1,6 +1,6 @@
 
  Start         Length     Name                   Class
- 0001:00000000 00183034H .text                   CODE
+ 0001:00000000 00183368H .text                   CODE
  0002:00000000 00002E88H .data                   DATA
  0002:00002E88 00000F4DH .bss                    BSS
 
@@ -143,17 +143,17 @@ Detailed map of segments
  0001:0017222C 00004DD0 C=CODE     S=.text    G=(none)   M=IBDatabase ACBP=A9
  0001:00176FFC 00001978 C=CODE     S=.text    G=(none)   M=IBStoredProc ACBP=A9
  0001:00178974 00001468 C=CODE     S=.text    G=(none)   M=IBQuery  ACBP=A9
- 0001:00179DDC 00000460 C=CODE     S=.text    G=(none)   M=wsdlSAPProdeman ACBP=A9
- 0001:0017A23C 00000038 C=CODE     S=.text    G=(none)   M=IBUpdateSQL ACBP=A9
- 0001:0017A274 00001598 C=CODE     S=.text    G=(none)   M=SAPProdeman ACBP=A9
- 0001:0017B80C 000000A0 C=CODE     S=.text    G=(none)   M=VDBConsts ACBP=A9
- 0001:0017B8AC 00000790 C=CODE     S=.text    G=(none)   M=DBLogDlg ACBP=A9
- 0001:0017C03C 0000059D C=CODE     S=.text    G=(none)   M=DBPWDlg  ACBP=A9
- 0001:0017C5DC 00005620 C=CODE     S=.text    G=(none)   M=DBCtrls  ACBP=A9
- 0001:00181BFC 00000038 C=CODE     S=.text    G=(none)   M=UDBControl ACBP=A9
- 0001:00181C34 00000038 C=CODE     S=.text    G=(none)   M=UDBLookupComboBoxAuto ACBP=A9
- 0001:00181C6C 00000EB8 C=CODE     S=.text    G=(none)   M=Unit1    ACBP=A9
- 0001:00182B24 0000050D C=CODE     S=.text    G=(none)   M=soapHuellaCliente ACBP=A9
+ 0001:00179DDC 0000048C C=CODE     S=.text    G=(none)   M=wsdlSAPProdeman ACBP=A9
+ 0001:0017A268 00000038 C=CODE     S=.text    G=(none)   M=IBUpdateSQL ACBP=A9
+ 0001:0017A2A0 000013D0 C=CODE     S=.text    G=(none)   M=SAPProdeman ACBP=A9
+ 0001:0017B670 000000A0 C=CODE     S=.text    G=(none)   M=VDBConsts ACBP=A9
+ 0001:0017B710 00000790 C=CODE     S=.text    G=(none)   M=DBLogDlg ACBP=A9
+ 0001:0017BEA0 0000059D C=CODE     S=.text    G=(none)   M=DBPWDlg  ACBP=A9
+ 0001:0017C440 00005620 C=CODE     S=.text    G=(none)   M=DBCtrls  ACBP=A9
+ 0001:00181A60 00000038 C=CODE     S=.text    G=(none)   M=UDBControl ACBP=A9
+ 0001:00181A98 00000038 C=CODE     S=.text    G=(none)   M=UDBLookupComboBoxAuto ACBP=A9
+ 0001:00181AD0 00001388 C=CODE     S=.text    G=(none)   M=Unit1    ACBP=A9
+ 0001:00182E58 0000050D C=CODE     S=.text    G=(none)   M=soapHuellaCliente ACBP=A9
  0002:00000000 000000A0 C=DATA     S=.data    G=DGROUP   M=System   ACBP=A9
  0002:000000A0 00000020 C=DATA     S=.data    G=DGROUP   M=SysInit  ACBP=A9
  0002:000000C0 00000274 C=DATA     S=.data    G=DGROUP   M=SysUtils ACBP=A9
@@ -361,145 +361,145 @@ Detailed map of segments
 
  0002:00003EA4       .01
  0002:00003D18       .012
- 0002:00003CD8       .1
  0002:00003D8C       .1
+ 0002:00003B04       .1
  0002:00003B40       .1
  0002:00003D88       .1
- 0002:00003C20       .1
+ 0002:00003AC4       .1
+ 0002:0000366C       .1
+ 0002:00003D84       .1
+ 0002:00003C5C       .1
  0002:00003CD4       .1
- 0002:00003CE8       .1
- 0002:00003CF0       .1
- 0002:00003D90       .1
+ 0002:0000367C       .1
  0002:00003E6C       .1
+ 0002:00003C7C       .1
+ 0002:00003680       .1
+ 0002:00003CE8       .1
+ 0002:000038FC       .1
+ 0002:00003C8C       .1
+ 0002:00003C10       .1
  0002:00003AB4       .1
  0002:00003D74       .1
- 0002:00003D68       .1
- 0002:00003C5C       .1
- 0002:00003F2C       .1
- 0002:00003C7C       .1
- 0002:00003D04       .1
- 0002:00003CC8       .1
- 0002:00003C8C       .1
- 0002:00003E7C       .1
- 0002:00003D84       .1
- 0002:00003674       .1
- 0002:00003840       .1
- 0002:00003C18       .1
  0002:00003C14       .1
- 0002:00003F28       .1
- 0002:00003C10       .1
- 0002:00003D40       .1
- 0002:0000366C       .1
- 0002:00003A74       .1
- 0002:00003A70       .1
- 0002:00003A6C       .1
- 0002:00003A68       .1
- 0002:00003A64       .1
- 0002:0000367C       .1
- 0002:00003A60       .1
- 0002:00003680       .1
- 0002:000038FC       .1
- 0002:00003A5C       .1
- 0002:00003A54       .1
- 0002:00003A44       .1
+ 0002:00003D68       .1
+ 0002:00003C18       .1
  0002:00003928       .1
  0002:0000393C       .1
- 0002:00003D3C       .1
- 0002:00003F3C       .1
- 0002:00003F20       .1
+ 0002:00003CF0       .1
  0002:00003EA0       .1
- 0002:00003890       .1
+ 0002:00003F2C       .1
+ 0002:00003E7C       .1
+ 0002:00003674       .1
+ 0002:00003D04       .1
+ 0002:00003840       .1
+ 0002:00003F28       .1
  0002:00003970       .1
- 0002:00003AC4       .1
- 0002:00003B04       .1
- 0002:00003EB0       .11
+ 0002:00003890       .1
+ 0002:00003D40       .1
+ 0002:00003F20       .1
+ 0002:00003A74       .1
+ 0002:00003D3C       .1
+ 0002:00003A44       .1
+ 0002:00003A54       .1
+ 0002:00003A5C       .1
+ 0002:00003D90       .1
+ 0002:00003A60       .1
+ 0002:00003A64       .1
+ 0002:00003F3C       .1
+ 0002:00003A68       .1
+ 0002:00003A6C       .1
+ 0002:00003A70       .1
+ 0002:00003CC8       .1
+ 0002:00003C20       .1
+ 0002:00003CD8       .1
  0002:00003A78       .11
  0002:00003D80       .11
+ 0002:00003EB0       .11
  0002:00003898       .12
+ 0002:00003D20       .12
  0002:00003AB0       .12
  0002:00003C98       .12
- 0002:00003D20       .12
  0002:00003CB8       .15
- 0002:00003D30       .2
- 0002:00003C0C       .2
- 0002:00003ABC       .2
- 0002:00003F40       .2
- 0002:000038F4       .2
- 0002:00003F48       .2
- 0002:00003D44       .2
- 0002:00003C60       .2
- 0002:00003F30       .2
- 0002:00003D64       .2
  0002:00003D00       .2
- 0002:00003D70       .2
- 0002:00003CF4       .2
- 0002:00003D78       .2
  0002:00003CFC       .2
- 0002:00003F34       .2
- 0002:00003CF8       .2
- 0002:00003D34       .2
- 0002:00003EA8       .2
- 0002:00003B28       .2
- 0002:00003F10       .2
- 0002:00003F24       .2
- 0002:00003F18       .2
+ 0002:00003F30       .2
+ 0002:00003CF4       .2
+ 0002:00003D64       .2
  0002:00003940       .2
+ 0002:00003F10       .2
+ 0002:00003D70       .2
+ 0002:00003EA8       .2
+ 0002:00003D78       .2
+ 0002:00003C0C       .2
+ 0002:00003D34       .2
+ 0002:00003F34       .2
+ 0002:00003C60       .2
+ 0002:00003ABC       .2
+ 0002:00003D30       .2
+ 0002:00003CF8       .2
+ 0002:00003D44       .2
+ 0002:00003F48       .2
+ 0002:000038F4       .2
+ 0002:00003B28       .2
+ 0002:00003F18       .2
+ 0002:00003F40       .2
  0002:00003F1C       .2
+ 0002:00003F24       .2
  0002:00003CCC       .21
  0002:000038F8       .21
- 0002:00003F38       .22
  0002:00003CDC       .22
+ 0002:00003F38       .22
  0002:00003EAC       .23
- 0002:00003C1C       .3
- 0002:00003CAC       .3
- 0002:00003CE4       .3
- 0002:00003D6C       .3
- 0002:00003CBC       .3
- 0002:00003BD0       .3
- 0002:00003CD0       .3
- 0002:00003848       .3
- 0002:00003AF8       .3
- 0002:00003678       .3
- 0002:00003D0C       .3
  0002:00003D14       .3
  0002:00003948       .3
  0002:0000394C       .3
- 0002:00003CA8       .3
  0002:00003EB4       .3
- 0002:00003C58       .3
  0002:00003C80       .3
+ 0002:00003D6C       .3
+ 0002:00003CE4       .3
+ 0002:00003AF8       .3
+ 0002:00003BD0       .3
+ 0002:00003678       .3
+ 0002:00003CAC       .3
+ 0002:00003CD0       .3
+ 0002:00003C1C       .3
+ 0002:00003CBC       .3
+ 0002:00003CA8       .3
+ 0002:00003C58       .3
+ 0002:00003D0C       .3
+ 0002:00003848       .3
  0002:00003C88       .31
  0002:00003794       .35
  0002:00003B18       .36
  0002:00003C54       .36
+ 0002:00003D48       .4
  0002:00003AC8       .4
  0002:00003CC0       .4
  0002:00003A58       .4
- 0002:00003D48       .4
- 0002:00003C24       .41
  0002:00003BF4       .41
+ 0002:00003C24       .41
  0002:00003B30       .42
  0002:00003D54       .43
  0002:00003858       .45
- 0002:00003CB0       .5
- 0002:000037FC       .5
- 0002:00003D7C       .5
- 0002:00003B00       .5
- 0002:00003CA4       .5
- 0002:000035BC       .5
  0002:00003D4C       .5
+ 0002:00003D7C       .5
+ 0002:00003CB0       .5
+ 0002:000035BC       .5
+ 0002:00003CA4       .5
+ 0002:000037FC       .5
+ 0002:00003B00       .5
  0002:00003C84       .51
  0002:00003984       .6
- 0002:00003C90       .6
  0002:00003E98       .6
  0002:00003844       .6
+ 0002:00003C90       .6
  0002:00003CC4       .7
- 0002:00003B54       .72
  0002:00003B08       .72
+ 0002:00003B54       .72
  0002:00003B34       .73
- 0002:00003BCC       .8
  0002:00003AFC       .8
  0002:00003B14       .8
+ 0002:00003BCC       .8
  0002:00003F14       .8
  0002:00003820       .81
  0002:00003BE4       .9
@@ -625,21 +625,21 @@ Detailed map of segments
  0001:00004D54       @ValInt64
  0001:00002320       @ValLong
  0001:000199DC       @VarAdd
- 0001:0000478C       @VarAddRef
  0001:0001786C       @VarAddRef
+ 0001:0000478C       @VarAddRef
  0001:000199E8       @VarAnd
  0001:00018080       @VarArrayGet
  0001:00018170       @VarArrayPut
  0001:00011F6C       @VarCast
  0001:000116E4       @VarClear
- 0001:000116F8       @VarClr
  0001:0000464C       @VarClr
+ 0001:000116F8       @VarClr
  0001:000199F4       @VarCmpEQ
  0001:00019A24       @VarCmpGT
  0001:00019A14       @VarCmpLT
  0001:00019A04       @VarCmpNE
- 0001:00004864       @VarCopy
  0001:00011A20       @VarCopy
+ 0001:00004864       @VarCopy
  0001:00011CA0       @VarCopyNoInd
  0001:00015CE4       @VarFromBool
  0001:00015B70       @VarFromByte
@@ -754,13 +754,13 @@ Detailed map of segments
  0001:00024D88       AddSubComponentsToLoaded
  0001:000298C4       AddThread
  0001:0016EFBC       AddToProcessedSQL
- 0002:00001144       AdjustAmt
  0002:0000114C       AdjustAmt
- 0002:00001154       AdjustAmt
- 0002:000019B4       AdjustAmt
  0002:0000115C       AdjustAmt
- 0002:000019BC       AdjustAmt
  0002:000019C4       AdjustAmt
+ 0002:000019BC       AdjustAmt
+ 0002:000019B4       AdjustAmt
+ 0002:00001154       AdjustAmt
+ 0002:00001144       AdjustAmt
  0001:000302C0       AdjustColor
  0001:0003DC04       AdjustColors
  0001:000C3F40       AdjustDays
@@ -777,13 +777,13 @@ Detailed map of segments
  0002:00000314       AL1s
  0001:0000EF64       AL2
  0002:00000324       AL2s
+ 0002:00000D40       Alignments
+ 0002:00000D80       Alignments
+ 0002:00000AB0       Alignments
  0002:00000FD8       Alignments
  0002:00000FE8       Alignments
- 0002:00000D80       Alignments
- 0002:00000D40       Alignments
- 0002:00000AB0       Alignments
- 0001:0005340C       AlignWork
  0001:000744DC       AlignWork
+ 0001:0005340C       AlignWork
  0001:0002B958       AllocateHWnd
  0001:00008540       AllocMem
  0002:000035B4       AllocMemCount
@@ -792,9 +792,9 @@ Detailed map of segments
  0001:00006148       AllocTlsBuffer
  0001:0000EF98       ALR
  0001:0000EF7C       ALV
- 0002:00001D80       AMP
- 0002:00001D58       AMP
  0002:00001D60       AMP
+ 0002:00001D58       AMP
+ 0002:00001D80       AMP
  0002:00001D78       AMP
  0001:00027E94       AncestorIsValid
  0002:00000DC4       AnchorAlign
@@ -859,8 +859,8 @@ Detailed map of segments
  0001:0007DB28       BcdAdd
  0001:0007D658       BcdCompare
  0001:0007E9C4       BcdCurrencyFormat
- 0001:0007D934       BcdDivide
  0001:0007DAB4       BcdDivide
+ 0001:0007D934       BcdDivide
  0001:0007A60C       BcdError
  0001:0007A59C       BcdErrorFmt
  0001:0007E2B4       BcdFixedOrNumberFormat
@@ -910,8 +910,8 @@ Detailed map of segments
  0001:00014A18       BoolToWStrViaOS
  0002:00000D38       BorderStyles
  0002:00000AA8       BorderStyles
- 0001:0001D840       Bounds
  0001:00006514       Bounds
+ 0001:0001D840       Bounds
  0002:00000F80       Breaks
  0001:000C73DC       BrkrConst
  0002:000038E8       BrushManager
@@ -949,8 +949,8 @@ Detailed map of segments
  0001:0000DFF8       ByteType
  0001:0000DF4C       ByteTypeTest
  0002:00003BD4       CachedComCtrlVer
- 0001:001594C8       CalcAxis
  0001:001584CC       CalcAxis
+ 0001:001594C8       CalcAxis
  0001:001587D8       CalcAxisState
  0001:001585B8       CalcFixedAxis
  0001:0002B820       CalcJmpOffset
@@ -963,11 +963,10 @@ Detailed map of segments
  0001:0015A850       CalcSizeInfo
  0001:0005D4A4       CalcSplitterPos
  0001:0008FBB0       CalcTotalSize
- 0001:0017A624       calculaFechaNacimiento
- 0001:0017B478       calcularEventosAlta
- 0001:0017B4F4       calcularEventosBaja
- 0001:0017B700       calcularEventosModificacion
- 0001:0017A754       calcularFechaDesdeString
+ 0001:0017A674       calculaFechaNacimiento
+ 0001:0017B370       calcularEventosBaja
+ 0001:0017B57C       calcularEventosModificacion
+ 0001:0017A7A4       calcularFechaDesdeString
  0001:000888AC       CalculatedStored
  0002:000016B0       CallingConventionName
  0001:00006BB8       CallNextHookEx
@@ -981,14 +980,14 @@ Detailed map of segments
  0002:000009FC       Captions
  0002:00000E7C       CaptureControl
  0001:001560A4       CaretPos
- 0001:0017AF38       cargarGrillaResultados
+ 0001:0017AF88       cargarGrillaResultados
  0001:0013744C       CategoryBag.Create
  0001:001374A0       CategoryBag.Destroy
  0002:00000F20       cBooleanToItemAutoFlag
  0002:00000508       CBooleanToRelationship
  0002:0000174C       CCMap
- 0002:00001E80       CDATASTART
  0002:00001E54       CDATASTART
+ 0002:00001E80       CDATASTART
  0002:00003ABA       CF_COMPONENT
  0002:00003AB8       CF_PICTURE
  0002:00003818       ChangeAnyProc
@@ -997,8 +996,8 @@ Detailed map of segments
  0001:00003980       CharFromWChar
  0001:0000E310       CharLength
  0001:00006BC8       CharLowerBuff
- 0001:0000056C       CharNext
  0001:00006BD0       CharNext
+ 0001:0000056C       CharNext
  0001:0002DA90       CharsetToIdent
  0001:0000E1D4       CharToByteIndex
  0001:0000E24C       CharToByteLen
@@ -1149,8 +1148,8 @@ Detailed map of segments
  0001:000E8B40       cp1250ToUTF16Str
  0001:000E8434       cp1251ToUTF16Char
  0001:000E8824       cp1252ToUTF16Char
- 0002:00001EE0       CR
  0002:00001DD4       CR
+ 0002:00001EE0       CR
  0002:00001D70       CR
  0002:00000478       CRangeToType
  0001:0000D7A0       CreateAssertException
@@ -1246,11 +1245,11 @@ Detailed map of segments
  0002:0000141C       DbClientHandle
  0001:00098978       DBCommon
  0001:00078F20       DBConsts
- 0001:00181B88       DBCtrls
- 0001:0017BFE4       DBLogDlg
- 0001:0017C5C0       DBPWDlg
+ 0001:001819EC       DBCtrls
+ 0001:0017BE48       DBLogDlg
+ 0001:0017C424       DBPWDlg
  0002:00003C4C       DBScreen
- 0001:0017DF34       DBUseRightToLeftAlignment
+ 0001:0017DD98       DBUseRightToLeftAlignment
  0002:00000178       DCon10
  0002:00000718       DDBsOnly
  0001:0002BA14       DeallocateHWnd
@@ -1274,8 +1273,8 @@ Detailed map of segments
  0002:0000111C       DefaultBlank
  0002:00000DC0       DefaultDockTreeClass
  0002:00003C9C       DefaultDOMVendor
- 0002:000021A0       DefaultFieldClasses
  0002:000011FC       DefaultFieldClasses
+ 0002:000021A0       DefaultFieldClasses
  0002:000015D8       DefaultNodeIndent
  0002:000035C0       DefaultUserCodePage
  0002:0000096C       DefBrushData
@@ -1290,12 +1289,12 @@ Detailed map of segments
  0001:00006C28       DefWindowProc
  0001:00005320       DelayLoadResourceModule
  0001:000007B8       DeleteBlock
- 0001:000066E0       DeleteCriticalSection
  0001:000006C8       DeleteCriticalSection
+ 0001:000066E0       DeleteCriticalSection
  0001:000069B8       DeleteDC
  0001:000069C0       DeleteEnhMetaFile
- 0001:00009390       DeleteFile
  0001:000066E8       DeleteFile
+ 0001:00009390       DeleteFile
  0001:000010B0       DeleteFree
  0001:00006C30       DeleteMenu
  0001:000069C8       DeleteObject
@@ -1327,8 +1326,8 @@ Detailed map of segments
  0001:0015D45C       DisposeStrItem
  0001:00008458       DivMod
  0001:00039F28       Dlgs
- 0001:00053270       DoAlign
  0001:00074360       DoAlign
+ 0001:00053270       DoAlign
  0001:00094F44       DoBindFields
  0001:001582F0       DoCalc
  0001:00058754       DoCalcConstraints
@@ -1338,8 +1337,8 @@ Detailed map of segments
  0001:0006748C       DoClick
  0001:001572B0       DoColWidths
  0001:00054F74       DoControlMsg
- 0002:00001E84       DOCTYPESTART
  0002:00001E58       DOCTYPESTART
+ 0002:00001E84       DOCTYPESTART
  0001:0006B068       DoDisableWindow
  0001:0004CB54       DoDragOver
  0001:00008568       DoExitProc
@@ -1360,8 +1359,8 @@ Detailed map of segments
  0001:000707B8       DoNestedActivation
  0001:00029864       DoneThreadSynchronization
  0001:00076A48       DoOnHelp
- 0001:0007415C       DoPosition
  0001:00052E20       DoPosition
+ 0001:0007415C       DoPosition
  0001:0005C370       DoPrune
  0001:0003C82C       DoRect
  0001:00157300       DoRowHeights
@@ -1370,44 +1369,44 @@ Detailed map of segments
  0001:00156B40       DoSizeAdjust
  0002:000011C4       Dot
  0002:00000604       DotSep
+ 0002:00001E38       DoubleQuote
+ 0002:00001E64       DoubleQuote
+ 0002:00001E90       DoubleQuote
  0002:00001C78       DoubleQuote
  0002:00001EB4       DoubleQuote
- 0002:00001E90       DoubleQuote
- 0002:00001E64       DoubleQuote
- 0002:00001E38       DoubleQuote
  0002:00001CC8       DOUBLESPACE
  0002:00001D3C       DOUBLESPACE
  0001:0015A7B4       DoUpdate
- 0001:00030C8C       DoWrite
- 0001:000215CC       DoWrite
  0001:00060F98       DoWrite
  0001:00031C8C       DoWrite
+ 0001:000215CC       DoWrite
+ 0001:00030C8C       DoWrite
  0001:000542C4       DoWriteDesignSize
  0001:00051334       DoWriteIsControl
  0002:00002284       DPBConstantNames
  0002:00001E24       DQ
  0002:00001C70       DQ
- 0002:00001D30       dQuote
- 0002:00001D94       dQuote
- 0002:00001D28       dQuote
- 0002:00001DB4       dQuote
- 0002:00001D20       dQuote
- 0002:00001D8C       dQuote
- 0002:00001DAC       dQuote
- 0002:00001D18       dQuote
- 0002:00001EF0       dQuote
- 0002:00001D38       dQuote
- 0002:00001DA4       dQuote
- 0002:00001D9C       dQuote
  0002:00001C84       dQuote
- 0002:00001D4C       dQuote
- 0002:00001D54       dQuote
  0002:00001C8C       dQuote
- 0002:00001CA4       dQuote
  0002:00001C94       dQuote
  0002:00001C9C       dQuote
- 0002:00001E2C       dQuote
+ 0002:00001CA4       dQuote
+ 0002:00001D18       dQuote
+ 0002:00001D20       dQuote
+ 0002:00001D28       dQuote
+ 0002:00001D30       dQuote
+ 0002:00001D38       dQuote
  0002:00001D44       dQuote
+ 0002:00001D4C       dQuote
+ 0002:00001D54       dQuote
+ 0002:00001D94       dQuote
+ 0002:00001D9C       dQuote
+ 0002:00001DA4       dQuote
+ 0002:00001DAC       dQuote
+ 0002:00001DB4       dQuote
+ 0002:00001E2C       dQuote
+ 0002:00001EF0       dQuote
+ 0002:00001D8C       dQuote
  0002:00003B74       DragCapture
  0002:00003B68       DragControl
  0001:0004D3B0       DragDone
@@ -1462,10 +1461,10 @@ Detailed map of segments
  0002:00000EA8       EdgeStyles
  0001:000A176C       EDOMParseError.Create
  0001:0000D650       EHeapException.FreeInstance
- 0001:00160B7C       EIBError.Create
  0001:00160AF4       EIBError.Create
- 0002:00001EA0       ELEMENTSTART
+ 0001:00160B7C       EIBError.Create
  0002:00001ECC       ELEMENTSTART
+ 0002:00001EA0       ELEMENTSTART
  0002:00001DC4       EM
  0001:0013716C       Email.Create
  0002:00000D7C       Empty
@@ -1496,8 +1495,8 @@ Detailed map of segments
  0001:00003858       EndThread
  0001:000006B8       EnterCriticalSection
  0001:000066F0       EnterCriticalSection
- 0002:00001E9C       ENTITYSTART
  0002:00001EC8       ENTITYSTART
+ 0002:00001E9C       ENTITYSTART
  0001:000066F8       EnumCalendarInfoA
  0001:00006CC0       EnumClipboardFormats
  0002:00003924       EnumDisplayMonitors
@@ -1513,12 +1512,12 @@ Detailed map of segments
  0002:00003754       EraNames
  0001:0000C2D8       EraToYear
  0002:00003770       EraYearOffsets
- 0001:0014D1C0       ERemotableException.Create
  0001:0014D17C       ERemotableException.Create
+ 0001:0014D1C0       ERemotableException.Create
  0002:00000068       errCaption
- 0001:0006271C       Error
- 0001:00001F08       Error
  0001:0001E044       Error
+ 0001:00001F08       Error
+ 0001:0006271C       Error
  0001:00023B94       Error
  0002:00000004       ErrorAddr
  0001:00001EBC       ErrorAt
@@ -1582,8 +1581,8 @@ Detailed map of segments
  0002:00001294       FieldTypeNames
  0001:00009300       FileAge
  0001:000092EC       FileClose
- 0001:000091EC       FileCreate
  0001:00009220       FileCreate
+ 0001:000091EC       FileCreate
  0001:00009370       FileExists
  0002:000009A0       FileFormats
  0002:0000000C       FileMode
@@ -1601,153 +1600,153 @@ Detailed map of segments
  0001:00001210       FillerSizeBeforeGap
  0001:000C1930       FillMethodArray
  0001:00006CE0       FillRect
- 0001:0016101C       Finalization
- 0001:0014EF18       Finalization
- 0001:0014EC98       Finalization
- 0001:0013866C       Finalization
- 0001:0013A498       Finalization
- 0001:0001BBB4       Finalization
- 0001:0001BA70       Finalization
- 0001:0013AFB8       Finalization
- 0001:00019CA8       Finalization
- 0001:00019A34       Finalization
- 0001:001604A8       Finalization
- 0001:0013CEC4       Finalization
- 0001:0016043C       Finalization
- 0001:0013D580       Finalization
- 0001:00148AB0       Finalization
- 0001:0004945C       Finalization
- 0001:0014EF80       Finalization
- 0001:0015141C       Finalization
- 0001:00182B24       Finalization
- 0001:00151454       Finalization
- 0001:001610A4       Finalization
- 0001:001518B4       Finalization
- 0001:00182AEC       Finalization
- 0001:00151A38       Finalization
- 0001:00169D14       Finalization
- 0001:0000780C       Finalization
- 0001:00181C34       Finalization
- 0001:00132F5C       Finalization
- 0001:0000747C       Finalization
- 0001:00154090       Finalization
- 0001:00132124       Finalization
- 0001:00007444       Finalization
- 0001:00131A84       Finalization
- 0001:00129D68       Finalization
- 0001:0016A90C       Finalization
- 0001:0016AA50       Finalization
- 0001:0016F9E4       Finalization
- 0001:00042728       Finalization
- 0001:00181BFC       Finalization
- 0001:00041990       Finalization
- 0001:000D7C04       Finalization
- 0001:000D7A98       Finalization
- 0001:000D6900       Finalization
- 0001:00181B44       Finalization
- 0001:000D6358       Finalization
- 0001:000D5CB4       Finalization
- 0001:000D576C       Finalization
- 0001:000D3BD0       Finalization
- 0001:000D39C4       Finalization
- 0001:000D398C       Finalization
+ 0001:0007F7AC       Finalization
  0001:000CA0D8       Finalization
+ 0001:0013D580       Finalization
+ 0001:0007F828       Finalization
+ 0001:0003B39C       Finalization
+ 0001:000D398C       Finalization
+ 0001:0017B638       Finalization
+ 0001:000D39C4       Finalization
+ 0001:000D6358       Finalization
+ 0001:000690EC       Finalization
+ 0001:000D5CB4       Finalization
+ 0001:0017B6D8       Finalization
+ 0001:000D3BD0       Finalization
+ 0001:00148AB0       Finalization
+ 0001:000D576C       Finalization
  0001:000C9F08       Finalization
+ 0001:0013CEC4       Finalization
+ 0001:000808C0       Finalization
+ 0001:000D6900       Finalization
+ 0001:0016043C       Finalization
+ 0001:0014EC98       Finalization
+ 0001:0014EF18       Finalization
+ 0001:00019A34       Finalization
+ 0001:0014EF80       Finalization
+ 0001:0013AFB8       Finalization
+ 0001:0015141C       Finalization
+ 0001:00151454       Finalization
+ 0001:00019CA8       Finalization
+ 0001:001518B4       Finalization
+ 0001:00151A38       Finalization
+ 0001:000D7A98       Finalization
+ 0001:000D7C04       Finalization
  0001:000C74C8       Finalization
+ 0001:00154090       Finalization
+ 0001:0003E4A4       Finalization
+ 0001:0003E55C       Finalization
  0001:000C73AC       Finalization
  0001:000C7374       Finalization
+ 0001:0017BE18       Finalization
+ 0001:0017A268       Finalization
  0001:000C733C       Finalization
+ 0001:00039EF8       Finalization
  0001:000C72EC       Finalization
- 0001:000C31D8       Finalization
- 0001:000C2EF8       Finalization
- 0001:000C229C       Finalization
- 0001:000C1308       Finalization
- 0001:000C0E40       Finalization
- 0001:000ABC80       Finalization
- 0001:0002BA4C       Finalization
- 0001:0002BE38       Finalization
- 0001:000A2120       Finalization
- 0001:000A1B80       Finalization
- 0001:0005E2A8       Finalization
- 0001:000A17C4       Finalization
- 0001:0005FC4C       Finalization
- 0001:000A0AF8       Finalization
- 0001:00099384       Finalization
- 0001:0009919C       Finalization
- 0001:00098FBC       Finalization
- 0001:00098F6C       Finalization
- 0001:00098E4C       Finalization
- 0001:00098E14       Finalization
- 0001:000989B8       Finalization
- 0001:00098980       Finalization
- 0001:00098948       Finalization
- 0001:00098860       Finalization
- 0001:000808C0       Finalization
- 0001:0007F828       Finalization
- 0001:0007F7AC       Finalization
- 0001:00048648       Finalization
- 0001:0003F008       Finalization
- 0001:000484CC       Finalization
+ 0001:00039EC0       Finalization
+ 0001:00039E88       Finalization
+ 0001:00061764       Finalization
+ 0001:00039E50       Finalization
+ 0001:00039E18       Finalization
+ 0001:0003EC60       Finalization
+ 0001:0003ECF8       Finalization
+ 0001:0017C3E8       Finalization
+ 0001:0003EDD4       Finalization
+ 0001:0003EE34       Finalization
  0001:0007A290       Finalization
  0001:00006554       Finalization
+ 0001:0003EE84       Finalization
+ 0001:000C31D8       Finalization
+ 0001:0003EEEC       Finalization
  0001:00006230       Finalization
+ 0001:0003EF50       Finalization
  0001:00078EF0       Finalization
  0001:00078D60       Finalization
+ 0001:000C2EF8       Finalization
+ 0001:0001BA70       Finalization
+ 0001:0003EFAC       Finalization
+ 0001:000C229C       Finalization
+ 0001:0003F008       Finalization
+ 0001:001604A8       Finalization
+ 0001:0013A498       Finalization
  0001:000789DC       Finalization
+ 0001:0001BBB4       Finalization
  0001:000366E8       Finalization
  0001:000369DC       Finalization
+ 0001:00098860       Finalization
+ 0001:0005FC4C       Finalization
+ 0001:000C1308       Finalization
+ 0001:00098948       Finalization
+ 0001:000C0E40       Finalization
+ 0001:0005E2A8       Finalization
  0001:00077D24       Finalization
- 0001:0003EFAC       Finalization
+ 0001:00098980       Finalization
  0001:00006000       Finalization
  0001:00036E34       Finalization
  0001:00171DF4       Finalization
  0001:001721F4       Finalization
  0001:0003715C       Finalization
- 0001:0015EFD4       Finalization
- 0001:00176F98       Finalization
+ 0001:000989B8       Finalization
+ 0001:00039D58       Finalization
+ 0001:0013866C       Finalization
  0001:000379D0       Finalization
+ 0001:00039D20       Finalization
+ 0001:00176F98       Finalization
+ 0001:000ABC80       Finalization
  0001:00037A14       Finalization
- 0001:0017893C       Finalization
+ 0001:00039CE8       Finalization
+ 0001:00039CB0       Finalization
+ 0001:00098E14       Finalization
+ 0001:001819A8       Finalization
+ 0001:00039C3C       Finalization
  0001:00038C10       Finalization
  0001:00038C5C       Finalization
  0001:00038C94       Finalization
+ 0001:00041990       Finalization
+ 0001:0016F9E4       Finalization
+ 0001:00098E4C       Finalization
+ 0001:0016AA50       Finalization
+ 0001:0016A90C       Finalization
+ 0001:0017893C       Finalization
+ 0001:0002BA4C       Finalization
+ 0001:0016101C       Finalization
  0001:00039004       Finalization
+ 0001:001610A4       Finalization
  0001:00179DA4       Finalization
- 0001:0003EF50       Finalization
+ 0001:00181A60       Finalization
+ 0001:00042728       Finalization
+ 0001:0002BE38       Finalization
  0001:00039214       Finalization
- 0001:0017A188       Finalization
+ 0001:0015EFD4       Finalization
  0001:00010660       Finalization
- 0001:0017A23C       Finalization
- 0001:00039C3C       Finalization
- 0001:00039CB0       Finalization
- 0001:00039CE8       Finalization
- 0001:00039D20       Finalization
- 0001:00039D58       Finalization
- 0001:0003EEEC       Finalization
- 0001:00039E18       Finalization
- 0001:00039E50       Finalization
- 0001:00039E88       Finalization
- 0001:00039EC0       Finalization
- 0001:00039EF8       Finalization
- 0001:0003EE84       Finalization
- 0001:0003B39C       Finalization
- 0001:0017B7D4       Finalization
- 0001:000690EC       Finalization
- 0001:0017B874       Finalization
- 0001:0003EE34       Finalization
- 0001:0003EDD4       Finalization
+ 0001:00181A98       Finalization
+ 0001:00129D68       Finalization
+ 0001:00182E20       Finalization
+ 0001:00182E58       Finalization
+ 0001:0017A1B4       Finalization
+ 0001:00098F6C       Finalization
+ 0001:000A2120       Finalization
+ 0001:00169D14       Finalization
+ 0001:00098FBC       Finalization
+ 0001:0000780C       Finalization
+ 0001:0009919C       Finalization
+ 0001:0004945C       Finalization
+ 0001:00131A84       Finalization
+ 0001:00007444       Finalization
+ 0001:00132F5C       Finalization
+ 0001:00099384       Finalization
  0001:0015F324       Finalization
+ 0001:000A0AF8       Finalization
  0001:0000FBF4       Finalization
- 0001:0017C584       Finalization
  0001:0015F35C       Finalization
- 0001:0003E4A4       Finalization
+ 0001:000A1B80       Finalization
  0001:0015F394       Finalization
- 0001:0003E55C       Finalization
  0001:0015F794       Finalization
- 0001:0017BFB4       Finalization
- 0001:00061764       Finalization
- 0001:0003EC60       Finalization
- 0001:0003ECF8       Finalization
+ 0001:000A17C4       Finalization
+ 0001:00048648       Finalization
+ 0001:0000747C       Finalization
+ 0001:000484CC       Finalization
+ 0001:00132124       Finalization
  0001:00004F98       FinalizeArray
  0001:00003420       FinalizeUnits
  0001:0006716C       Find
@@ -1760,8 +1759,8 @@ Detailed map of segments
  0001:00138098       FindBusiness.Destroy
  0001:0001E63C       FindClass
  0001:00005318       FindClassHInstance
- 0001:00006710       FindClose
  0001:00000594       FindClose
+ 0001:00006710       FindClose
  0001:00001144       FindCommitted
  0001:0004B78C       FindControl
  0001:0005BA40       FindControlAtPos
@@ -1771,10 +1770,10 @@ Detailed map of segments
  0001:0004D714       FindDragTarget
  0001:000B95F4       FindElementDefs
  0001:0002512C       FindExistingComponent
- 0001:00006718       FindFirstFile
  0001:0000059C       FindFirstFile
- 0001:0001EB60       FindGlobalComponent
+ 0001:00006718       FindFirstFile
  0001:0006B34C       FindGlobalComponent
+ 0001:0001EB60       FindGlobalComponent
  0002:00003864       FindGlobalComponentProcs
  0001:000052F0       FindHInstance
  0001:0001E9B0       FindIdentToInt
@@ -1874,8 +1873,8 @@ Detailed map of segments
  0001:00160098       FreeIBLibrary
  0001:0002B770       FreeIntConstList
  0001:0015E8D8       FreeItem
- 0001:000005A4       FreeLibrary
  0001:00006730       FreeLibrary
+ 0001:000005A4       FreeLibrary
  0001:00032E44       FreeMemoryContexts
  0001:0002B924       FreeObjectInstance
  0001:00006750       FreeResource
@@ -1944,8 +1943,8 @@ Detailed map of segments
  0001:00006A00       GetCurrentPositionEx
  0001:00006768       GetCurrentProcessId
  0002:00003A34       GetCurrentThemeName
- 0001:0000065C       GetCurrentThreadId
  0001:00006770       GetCurrentThreadId
+ 0001:0000065C       GetCurrentThreadId
  0001:00007140       GetCurrentTime
  0001:00006D30       GetCursor
  0001:00077458       GetCursorHeightMargin
@@ -2017,7 +2016,7 @@ Detailed map of segments
  0001:00074678       GetHint
  0001:000746C8       GetHintControl
  0001:00068F50       GetHotkey
- 0001:00179FC4       GetHuellaServer
+ 0001:00179FF0       GetHuellaServer
  0001:0016012C       GetIBClientVersion
  0001:00160C0C       GetIBDataBaseErrorMessages
  0001:00006D70       GetIconInfo
@@ -2059,9 +2058,9 @@ Detailed map of segments
  0001:000C779C       GetMimeBoundaryFromType
  0001:000005BC       GetModuleFileName
  0001:000067B0       GetModuleFileName
+ 0001:000005C4       GetModuleHandle
  0001:000067B8       GetModuleHandle
  0001:00006128       GetModuleHandle
- 0001:000005C4       GetModuleHandle
  0002:00003918       GetMonitorInfo
  0002:0000391C       GetMonitorInfoA
  0002:00003920       GetMonitorInfoW
@@ -2084,10 +2083,10 @@ Detailed map of segments
  0001:000005CC       GetProcAddress
  0001:000067C0       GetProcAddress
  0001:00006DF0       GetProp
- 0001:00019F1C       GetPropInfo
- 0001:00019F48       GetPropInfo
  0001:0001A88C       GetPropInfo
+ 0001:00019F1C       GetPropInfo
  0001:0001A8FC       GetPropInfo
+ 0001:00019F48       GetPropInfo
  0001:0001A950       GetPropInfos
  0001:00019FDC       GetPropValue
  0001:0006BB54       GetRealScrollPosition
@@ -2103,9 +2102,8 @@ Detailed map of segments
  0001:00000938       GetSpace
  0001:0000099C       GetSpaceAt
  0001:00062794       GetSpecialName
- 0001:0017B1A4       getSQLEventoAlta
- 0001:0017B2FC       getSQLEventoBaja
- 0001:0017B570       getSQLEventoCambio
+ 0001:0017B1F4       getSQLEventoBaja
+ 0001:0017B3EC       getSQLEventoCambio
  0001:000C3150       GetStackTypeSize
  0001:000005D4       GetStartupInfo
  0001:00000544       GetStdHandle
@@ -2118,8 +2116,8 @@ Detailed map of segments
  0001:00006E20       GetSysColorBrush
  0001:000067D8       GetSystemInfo
  0001:00006E28       GetSystemMenu
- 0001:00006E30       GetSystemMetrics
  0002:00003908       GetSystemMetrics
+ 0001:00006E30       GetSystemMetrics
  0001:00006A60       GetSystemPaletteEntries
  0001:000C7694       GetTempDir
  0001:000C76CC       GetTempHandle
@@ -2185,8 +2183,8 @@ Detailed map of segments
  0001:00006E60       GetWindowRect
  0001:00006E68       GetWindowText
  0002:00003A20       GetWindowTheme
- 0001:00006E70       GetWindowThreadProcessId
  0001:00006E78       GetWindowThreadProcessId
+ 0001:00006E70       GetWindowThreadProcessId
  0001:00006A80       GetWinMetaFileBits
  0001:0012D73C       get_errorCode
  0001:00006810       GlobalAddAtom
@@ -2215,8 +2213,8 @@ Detailed map of segments
  0001:00071704       HandleEdge
  0001:000258D8       HandleException
  0001:0007F988       HandleSafeCallException
- 0001:0013B57C       HasDefinition
  0001:0013B664       HasDefinition
+ 0001:0013B57C       HasDefinition
  0002:00000028       HeapAllocFlags
  0002:000035C8       heapErrorCode
  0002:000035CC       heapLock
@@ -2275,12 +2273,12 @@ Detailed map of segments
  0001:0016FA14       IBSQL
  0001:00171ED4       IBSQLMonitor
  0001:0017896C       IBStoredProc
- 0001:0017A26C       IBUpdateSQL
+ 0001:0017A298       IBUpdateSQL
  0001:0015F354       IBUtils
  0001:0015F7C4       IBXConst
  0002:00000FA0       IChecks
  0002:00000A10       IconIDs
- 0001:0017A82C       idAnimalNuevo
+ 0001:0017A87C       idAnimalNuevo
  0002:00000FA8       IDefaults
  0001:00137754       IdentifierBag.Create
  0001:001377A8       IdentifierBag.Destroy
@@ -2320,18 +2318,18 @@ Detailed map of segments
  0002:00000EE8       IMM32DLL
  0001:0005E024       Imm32IsIME
  0002:00000184       IMSecsPerDay
- 0001:00011700       InBounds
  0001:00011460       InBounds
+ 0001:00011700       InBounds
  0001:000E9A68       IncBufSize
  0001:0015588C       Includes
  0001:000D3F2C       IncPtr
- 0001:00011730       Increment
  0001:00011490       Increment
- 0002:000019AC       IncrementAmount
+ 0001:00011730       Increment
  0002:00001138       IncrementAmount
+ 0002:000019AC       IncrementAmount
  0001:00006E80       InflateRect
- 0001:0017A954       ingresarAnimal
- 0001:0017AE84       iniciaGrillaEventos
+ 0001:0017A9A4       ingresarAnimal
+ 0001:0017AED4       iniciaGrillaEventos
  0001:0003EECC       IniFiles
  0001:00000ED8       InitAllocator
  0001:00037194       InitAnApi
@@ -2351,8 +2349,8 @@ Detailed map of segments
  0001:00038D48       InitFlatSB
  0001:0003B24C       InitGlobals
  0001:00030720       InitializeBitmapInfoHeader
- 0001:00006858       InitializeCriticalSection
  0001:000006B0       InitializeCriticalSection
+ 0001:00006858       InitializeCriticalSection
  0002:000035C4       initialized
  0001:00038D18       InitializeFlatSB
  0001:000061E0       InitializeModule
@@ -2380,8 +2378,8 @@ Detailed map of segments
  0002:00000E88       InnerStyles
  0002:00003050       Input
  0001:0013869C       inquire_v1
- 0001:00052D58       InsertBefore
  0001:000740C8       InsertBefore
+ 0001:00052D58       InsertBefore
  0001:000A4A1C       InsertFormattingNode
  0001:00001384       InsertFree
  0001:00066618       InsertHotkeyFarEastFormat
@@ -2394,15 +2392,15 @@ Detailed map of segments
  0001:00016780       Int64Op
  0001:00017120       IntCompare
  0002:0000385C       IntConstList
- 0001:00006738       InterlockedDecrement
- 0001:0000F17C       InterlockedDecrement
  0001:00000654       InterlockedDecrement
- 0001:0000F188       InterlockedExchange
+ 0001:0000F17C       InterlockedDecrement
+ 0001:00006738       InterlockedDecrement
  0001:00006740       InterlockedExchange
+ 0001:0000F188       InterlockedExchange
  0001:0000F190       InterlockedExchangeAdd
+ 0001:00006748       InterlockedIncrement
  0001:0000064C       InterlockedIncrement
  0001:0000F170       InterlockedIncrement
- 0001:00006748       InterlockedIncrement
  0001:0002CE50       InternalDeletePalette
  0001:00002080       InternalFlush
  0001:000011C4       InternalFreeMem
@@ -2428,8 +2426,8 @@ Detailed map of segments
  0001:00016668       IntOp
  0001:00008E58       IntToHex
  0001:0001EAA0       IntToIdent
- 0001:00008D44       IntToStr
  0001:00008E30       IntToStr
+ 0001:00008D44       IntToStr
  0001:00006EA0       InvalidateRect
  0001:0007CC18       InvalidBcdString
  0001:0002F66C       InvalidBitmap
@@ -2647,18 +2645,18 @@ Detailed map of segments
  0001:000E6D74       KOI8_RToUTF16Char
  0001:00009404       LastDelimiter
  0002:00001DD0       LB
- 0001:0000E654       LCIDToCodePage
  0001:00005F8C       LCIDToCodePage
+ 0001:0000E654       LCIDToCodePage
  0002:00000110       LeadBytes
  0001:000006C0       LeaveCriticalSection
  0001:00006860       LeaveCriticalSection
  0001:00156144       LeftSide
  0001:0007B3F8       LeftTrim
  0002:000015AC       LegacyTypeNames
- 0002:00001DD8       LF
- 0002:00001E1C       LF
  0002:00001EDC       LF
  0002:00001D6C       LF
+ 0002:00001DD8       LF
+ 0002:00001E1C       LF
  0002:00000038       LibModuleList
  0001:0015943C       LinePos
  0001:00006A98       LineTo
@@ -2689,14 +2687,14 @@ Detailed map of segments
  0001:00006F20       LoadString
  0001:00131BE4       LoadXMLLibrary
  0001:000B5BA0       LoadXMLSchema
- 0001:00000690       LocalAlloc
  0001:00006130       LocalAlloc
+ 0001:00000690       LocalAlloc
  0001:00000698       LocalFree
  0001:0000CBB0       LocalGetLocaleStr
  0002:00003A50       Lock
  0001:00006878       LockResource
- 0001:0017BAF0       LoginDialog
- 0001:0017BC10       LoginDialogEx
+ 0001:0017B954       LoginDialog
+ 0001:0017BA74       LoginDialogEx
  0002:00003C3C       LoginDialogExProc
  0002:00003C38       LoginDialogProc
  0002:00003694       LongDateFormat
@@ -2708,9 +2706,9 @@ Detailed map of segments
  0001:00008668       LowerCase
  0001:00006930       lstrcpy
  0001:000005F4       lstrcpyn
- 0002:00001DB8       LT
  0002:00001EE8       LT
  0002:00001CD0       LT
+ 0002:00001DB8       LT
  0002:00003824       LVarTypes
  0002:00003828       LVarTypeSync
  0002:00003030       MainInstance
@@ -2723,8 +2721,8 @@ Detailed map of segments
  0001:0009BCAC       MakeNamedNodeMap
  0001:0012CBD4       MakeNode
  0001:0009BBF0       MakeNode
- 0001:0009BC7C       MakeNodeList
  0001:0012CC28       MakeNodeList
+ 0001:0009BC7C       MakeNodeList
  0001:000A1078       MakeNodeName
  0001:0002B844       MakeObjectInstance
  0001:000071CC       MakeROP4
@@ -2738,8 +2736,8 @@ Detailed map of segments
  0001:00006880       MapViewOfFile
  0001:00006F28       MapVirtualKey
  0001:00006F30       MapWindowPoints
- 0002:00000F0C       Mask
  0001:001540C0       Mask
+ 0002:00000F0C       Mask
  0001:00006AA0       MaskBlt
  0001:00078054       MaskDoFormatText
  0002:00001120       MaskFieldSeparator
@@ -2754,10 +2752,10 @@ Detailed map of segments
  0001:000C736C       Masks
  0001:00078A0C       MaskUtils
  0001:00036A0C       Math
- 0001:0015983C       Max
  0001:000369B0       Max
- 0002:00001DDC       MaxCode
+ 0001:0015983C       Max
  0002:00001CA8       MaxCode
+ 0002:00001DDC       MaxCode
  0001:0006E700       MaximizedChildren
  0002:00000040       MemoryManager
  0002:00000F28       MenuKeyCaps
@@ -2765,19 +2763,19 @@ Detailed map of segments
  0001:000007EC       MergeBlockAfter
  0001:000014C8       MergeCommit
  0001:00006F38       MessageBeep
- 0001:00006F40       MessageBox
  0001:0000058C       MessageBox
+ 0001:00006F40       MessageBox
  0001:0003B10C       MessageDlgPos
  0001:0003B148       MessageDlgPosHelp
  0001:000074AC       Messages
  0002:00001DC8       MI
  0001:00098E44       Midas
  0001:000989B0       MidConst
- 0001:00159808       Min
- 0001:000203EC       Min
- 0001:0015F00C       Min
- 0001:00036944       Min
  0001:00036970       Min
+ 0001:00159808       Min
+ 0001:00036944       Min
+ 0001:0015F00C       Min
+ 0001:000203EC       Min
  0001:00158C38       MinRedraw
  0001:000524B0       MinVar
  0002:00003938       MMAvailable
@@ -2840,8 +2838,8 @@ Detailed map of segments
  0002:00000644       NilMethod
  0002:000015F4       NodeChangeMap
  0002:000015F8       NodeChangeMap
- 0002:00001EF8       NodeClasses
  0002:00001460       NodeClasses
+ 0002:00001EF8       NodeClasses
  0001:000A11D0       NodeMatches
  0002:000014C0       NodeTypeNames
  0002:00001F2C       NodeTypes
@@ -2850,8 +2848,8 @@ Detailed map of segments
  0001:0007D1D0       NormalizeBcd
  0001:0007D4D0       NormalizeBcdPair
  0001:0007CAE8       NormalizeFractions
- 0002:00001ED4       NOTATIONSTART
  0002:00001EA8       NOTATIONSTART
+ 0002:00001ED4       NOTATIONSTART
  0001:00002D8C       NotifyAnyExcept
  0001:000209A4       NotifyDesigner
  0001:00095F90       NotifyDetails
@@ -2878,16 +2876,16 @@ Detailed map of segments
  0002:00001128       NullSQLTimeStamp
  0002:0000044C       NullStrictConvert
  0001:0007D330       NumberOfDigits
- 0002:00001E3C       NUMBERSIGN
  0002:00001E68       NUMBERSIGN
+ 0002:00001E3C       NUMBERSIGN
  0001:00028094       ObjectAncestorMatch
  0001:0004B744       ObjectFromHWnd
- 0001:0017A460       obtenerCategoriaSexo
+ 0001:0017A4B0       obtenerCategoriaSexo
  0002:00000D74       OEMConverts
  0001:00006F50       OemToAnsi
  0001:00006F58       OffsetRect
  0001:000784F0       OffsetToMaskOffset
- 0001:0017DED8       OkToChangeFieldAlignment
+ 0001:0017DD3C       OkToChangeFieldAlignment
  0001:0007FD50       OleCheck
  0001:0007FD2C       OleError
  0001:00004ACC       OleStrToStrVar
@@ -2932,7 +2930,7 @@ Detailed map of segments
  0001:00019298       ParseParam
  0002:00003D24       ParserLanguage
  0001:000C54D8       PartialDate
- 0001:0017C2C4       PasswordDialog
+ 0001:0017C128       PasswordDialog
  0002:00003C48       PasswordDialog
  0002:00000D50       Passwords
  0001:00006AB0       PatBlt
@@ -2944,10 +2942,10 @@ Detailed map of segments
  0001:00137118       Phone2.Create
  0002:00001E48       PIEND
  0002:00001E74       PIEND
- 0002:00001E44       PISTART
- 0002:00001E94       PISTART
  0002:00001EB8       PISTART
+ 0002:00001E94       PISTART
  0002:00001E70       PISTART
+ 0002:00001E44       PISTART
  0001:00006AB8       PlayEnhMetaFile
  0001:000064F0       Point
  0001:0001D7C8       Point
@@ -2962,8 +2960,8 @@ Detailed map of segments
  0001:00006F78       PostQuitMessage
  0002:000011AC       Power10
  0001:00038CD0       Printers
- 0001:0017A274       procesarResultadoConsulta
- 0001:0017B0A8       procesarSQLEventos
+ 0001:0017A2A0       procesarResultadoConsulta
+ 0001:0017B0F8       procesarSQLEventos
  0001:000727B4       ProcessExecute
  0001:0006B7CC       ProcessHorz
  0001:000728E4       ProcessUpdate
@@ -2974,21 +2972,21 @@ Detailed map of segments
  0002:00001030       Props
  0001:00024520       PropValueError
  0001:00098FB4       Provider
- 0001:00155840       PtInRect
  0001:00006F80       PtInRect
+ 0001:00155840       PtInRect
  0002:000000A4       PtrToNil
  0001:00009F20       PutExponent
- 0002:00001E5C       QM
- 0002:00001E30       QM
  0002:00001E88       QM
+ 0002:00001E30       QM
+ 0002:00001E5C       QM
  0002:00001DC0       QM
  0002:00001EAC       QM
  0002:00003B94       QualifyingSites
  0001:0015F23C       QuoteIdentifier
  0001:0000D858       RaiseAssertException
+ 0001:00022F28       RaiseException
  0001:0000054C       RaiseException
  0001:00080484       RaiseException
- 0001:00022F28       RaiseException
  0002:00003014       RaiseExceptionProc
  0001:0000EE14       RaiseLastOSError
  0001:0008034C       RaiseNameException
@@ -3017,11 +3015,11 @@ Detailed map of segments
  0001:00016560       RealOp
  0001:00167F6C       RecordDataLength
  0001:00024F0C       Recover
- 0001:0001D814       Rect
  0001:000064B8       Rect
+ 0001:0001D814       Rect
  0001:00006AE0       Rectangle
  0001:00006AD8       RectVisible
- 0001:0017B77C       recuperaEventos
+ 0001:0017B5F8       recuperaEventos
  0001:00143828       RecurseArray
  0001:00006F88       RedrawWindow
  0002:0000381C       RefAnyProc
@@ -3042,8 +3040,8 @@ Detailed map of segments
  0001:0003EF34       Registry
  0001:00006668       RegOpenKeyEx
  0001:00000614       RegOpenKeyEx
- 0001:00006670       RegQueryValueEx
  0001:0000061C       RegQueryValueEx
+ 0001:00006670       RegQueryValueEx
  0001:00039D88       RegStr
  0001:00006FA8       ReleaseCapture
  0001:00006FB0       ReleaseDC
@@ -3052,7 +3050,7 @@ Detailed map of segments
  0002:0000361C       remBytes
  0001:0014EC14       RemClassRegistry
  0002:00003D5C       RemClassRegistryV
- 0001:0017BD48       RemoteLoginDialog
+ 0001:0017BBAC       RemoteLoginDialog
  0002:00003C40       RemoteLoginDialogProc
  0001:00000874       RemoveBlock
  0002:00000620       RemoveDataModule
@@ -3060,8 +3058,8 @@ Detailed map of segments
  0001:0002446C       RemoveFixups
  0001:00024808       RemoveGlobalFixup
  0001:00006FB8       RemoveMenu
- 0001:00005840       RemoveModuleUnloadProc
  0001:00005868       RemoveModuleUnloadProc
+ 0001:00005840       RemoveModuleUnloadProc
  0001:00006FC0       RemoveProp
  0001:000298D4       RemoveThread
  0001:0014EC34       RemTypeRegistry
@@ -3124,7 +3122,7 @@ Detailed map of segments
  0001:000A115C       SameNamespace
  0001:00008778       SameText
  0001:000C218C       SameTypeInfo
- 0001:0017B804       SAPProdeman
+ 0001:0017B668       SAPProdeman
  0001:00006AF0       SaveDC
  0001:0006AF98       SaveFocusState
  0002:00003C30       SaveInitProc
@@ -3155,10 +3153,10 @@ Detailed map of segments
  0001:00156078       Selection
  0001:00006B00       SelectObject
  0001:00006B08       SelectPalette
- 0002:00001D5C       SEMICOLON
  0002:00001D64       SEMICOLON
- 0002:00001D84       SEMICOLON
  0002:00001D7C       SEMICOLON
+ 0002:00001D5C       SEMICOLON
+ 0002:00001D84       SEMICOLON
  0001:0004B7FC       SendAppMessage
  0001:0006B2B0       SendFocusMessage
  0001:00006FE0       SendMessage
@@ -3186,7 +3184,7 @@ Detailed map of segments
  0001:00040010       SetComCtlStyle
  0001:0002508C       SetCompName
  0001:00007008       SetCursor
- 0001:0017BF98       SetCursorType
+ 0001:0017BDFC       SetCursorType
  0001:000B8F28       SetDerivationMeth
  0001:00006B28       SetDIBColorTable
  0001:000068D0       SetEndOfFile
@@ -3275,13 +3273,13 @@ Detailed map of segments
  0002:0000370C       ShortDayNames
  0002:000036AC       ShortMonthNames
  0002:000036A4       ShortTimeFormat
- 0002:00001064       ShowCommands
  0002:00001070       ShowCommands
+ 0002:00001064       ShowCommands
  0002:0000107C       ShowCommands
  0001:00007098       ShowCursor
  0001:0000D330       ShowException
- 0002:00000E80       ShowFlags
  0002:00001118       ShowFlags
+ 0002:00000E80       ShowFlags
  0001:0006AFC0       ShowMDIClientEdge
  0001:0003B200       ShowMessage
  0001:0003B218       ShowMessagePos
@@ -3295,10 +3293,10 @@ Detailed map of segments
  0001:000298B4       SignalSyncEvent
  0001:0007CEE4       SignificantIntDigits
  0001:00016C44       SimpleVarOp
- 0002:00001EB0       SingleQuote
- 0002:00001E8C       SingleQuote
  0002:00001E34       SingleQuote
+ 0002:00001EB0       SingleQuote
  0002:00001E60       SingleQuote
+ 0002:00001E8C       SingleQuote
  0002:00001C74       SingleQuote
  0002:00000EE0       SizeCursors
  0001:000068F8       SizeofResource
@@ -3308,8 +3306,8 @@ Detailed map of segments
  0001:000C9068       SkipMimeBoundary
  0001:000D65D8       SkipWhite
  0002:00001DCC       SL
- 0001:00006900       Sleep
  0001:0000EE0C       Sleep
+ 0001:00006900       Sleep
  0001:0001D7EC       SmallPoint
  0001:000071F0       SmallPointToPoint
  0002:00003624       smallTab
@@ -3327,16 +3325,16 @@ Detailed map of segments
  0001:000C3AAC       SoapHexBinaryErrorFmt
  0001:00132F8C       SOAPHTTPClient
  0001:0015144C       SOAPHTTPTrans
- 0001:00182FEC       soapHuellaCliente
+ 0001:00183320       soapHuellaCliente
  0001:001518E4       SOAPMidas
  0001:000C3C0C       SoapStrToFloat
  0002:00001E6C       SOLIDUS
  0002:00001E40       SOLIDUS
- 0002:00001C7C       SPACE
  0002:00001D74       SPACE
- 0002:00001EE4       SPACE
  0002:00001EF4       SPACE
+ 0002:00001C7C       SPACE
  0002:00001CD4       SPACE
+ 0002:00001EE4       SPACE
  0002:00001CCC       SPACE
  0002:0000118C       spaceChars
  0002:000035EC       spaceRoot
@@ -3349,26 +3347,26 @@ Detailed map of segments
  0001:00079EBC       SQLTimeStampToStr
  0002:00001140       SQLTimeStampVariantType
  0001:0007A2CC       SqlTimSt
- 0002:00001DA0       sQuote
+ 0002:00001E28       sQuote
+ 0002:00001D14       sQuote
+ 0002:00001D1C       sQuote
+ 0002:00001C90       sQuote
+ 0002:00001EEC       sQuote
+ 0002:00001C98       sQuote
+ 0002:00001D24       sQuote
+ 0002:00001D2C       sQuote
+ 0002:00001D34       sQuote
+ 0002:00001D40       sQuote
+ 0002:00001D48       sQuote
+ 0002:00001D50       sQuote
+ 0002:00001CA0       sQuote
  0002:00001D98       sQuote
  0002:00001D90       sQuote
- 0002:00001D88       sQuote
- 0002:00001D50       sQuote
- 0002:00001EEC       sQuote
- 0002:00001D48       sQuote
- 0002:00001D40       sQuote
- 0002:00001D34       sQuote
- 0002:00001D24       sQuote
- 0002:00001DA8       sQuote
- 0002:00001D1C       sQuote
- 0002:00001D14       sQuote
  0002:00001C80       sQuote
+ 0002:00001DA0       sQuote
+ 0002:00001DA8       sQuote
+ 0002:00001D88       sQuote
  0002:00001C88       sQuote
- 0002:00001C90       sQuote
- 0002:00001C98       sQuote
- 0002:00001CA0       sQuote
- 0002:00001E28       sQuote
- 0002:00001D2C       sQuote
  0002:00001DB0       sQuote
  0001:001576D0       StackAlloc
  0001:00157700       StackFree
@@ -3438,8 +3436,8 @@ Detailed map of segments
  0001:0007B758       SubtractChars
  0001:0007CF28       SubtractNormalizedFractions
  0001:0007B940       SubtractStrings
- 0001:000071AC       Succeeded
  0001:0001BB9C       Succeeded
+ 0001:000071AC       Succeeded
  0001:0000F840       Supports
  0001:0000F798       Supports
  0001:0000F75C       Supports
@@ -3465,8 +3463,8 @@ Detailed map of segments
  0001:000070B8       SystemParametersInfo
  0001:0000B0E4       SystemTimeToDateTime
  0001:0000FD74       SysUtils
- 0002:00001ED8       TAB
  0002:00001D68       TAB
+ 0002:00001ED8       TAB
  0001:0005F0A0       TActionLink.IsCaptionLinked
  0001:0005F0C4       TActionLink.IsCheckedLinked
  0001:0005F0E8       TActionLink.IsEnabledLinked
@@ -4643,8 +4641,8 @@ Detailed map of segments
  0001:00060480       TCustomImageList.Delete
  0001:0005FEDC       TCustomImageList.Destroy
  0001:000605C0       TCustomImageList.DoDraw
- 0001:00060830       TCustomImageList.Draw
  0001:000607F0       TCustomImageList.Draw
+ 0001:00060830       TCustomImageList.Draw
  0001:000616BC       TCustomImageList.EndUpdate
  0001:00060EA0       TCustomImageList.Equal
  0001:00060278       TCustomImageList.FreeHandle
@@ -4778,8 +4776,8 @@ Detailed map of segments
  0001:00018D98       TCustomVariantType.CastToOle
  0001:00018D54       TCustomVariantType.Compare
  0001:00018D60       TCustomVariantType.CompareOp
- 0001:00018DD4       TCustomVariantType.Create
  0001:00018E18       TCustomVariantType.Create
+ 0001:00018DD4       TCustomVariantType.Create
  0001:000190A0       TCustomVariantType.Destroy
  0001:000191B8       TCustomVariantType.DispInvoke
  0001:0001912C       TCustomVariantType.IsClear
@@ -4932,8 +4930,8 @@ Detailed map of segments
  0001:000949A0       TDataSet.GetDetailLinkFields
  0001:00094A3C       TDataSet.GetFieldClass
  0001:0009525C       TDataSet.GetFieldCount
- 0001:00095340       TDataSet.GetFieldData
  0001:0009535C       TDataSet.GetFieldData
+ 0001:00095340       TDataSet.GetFieldData
  0001:00095394       TDataSet.GetFieldData
  0001:00094A60       TDataSet.GetFieldFullName
  0001:00097F3C       TDataSet.GetFieldList
@@ -5014,8 +5012,8 @@ Detailed map of segments
  0001:0009445C       TDataSet.SetConstraints
  0001:000967A8       TDataSet.SetCurrentRecord
  0001:0009426C       TDataSet.SetDataSetField
- 0001:000955CC       TDataSet.SetFieldData
  0001:000954C4       TDataSet.SetFieldData
+ 0001:000955CC       TDataSet.SetFieldData
  0001:00097D2C       TDataSet.SetFiltered
  0001:00097D58       TDataSet.SetFilterOptions
  0001:00097D7C       TDataSet.SetFilterText
@@ -5056,11 +5054,11 @@ Detailed map of segments
  0001:0009139C       TDataSource.SetEnabled
  0001:000911E0       TDataSource.SetState
  0001:00091258       TDataSource.UpdateState
- 0001:0017DFD0       TDataSourceLink.ActiveChanged
- 0001:0017DF88       TDataSourceLink.Create
- 0001:0017DFF4       TDataSourceLink.FocusControl
- 0001:0017E054       TDataSourceLink.LayoutChanged
- 0001:0017E078       TDataSourceLink.RecordChanged
+ 0001:0017DE34       TDataSourceLink.ActiveChanged
+ 0001:0017DDEC       TDataSourceLink.Create
+ 0001:0017DE58       TDataSourceLink.FocusControl
+ 0001:0017DEB8       TDataSourceLink.LayoutChanged
+ 0001:0017DEDC       TDataSourceLink.RecordChanged
  0001:0008CEDC       TDateField.Create
  0001:0008CF30       TDateField.GetDataSize
  0001:0008C7E8       TDateTimeField.CopyData
@@ -5101,101 +5099,101 @@ Detailed map of segments
  0001:00041818       TDateTimePicker.SetParseInput
  0001:0004185C       TDateTimePicker.SetShowCheckbox
  0001:00041890       TDateTimePicker.SetTime
- 0001:001806F0       TDBLookupComboBox.CloseUp
- 0001:00180814       TDBLookupComboBox.CMBiDiModeChanged
- 0001:0018165C       TDBLookupComboBox.CMCancelMode
- 0001:00181698       TDBLookupComboBox.CMCtl3DChanged
- 0001:00180844       TDBLookupComboBox.CMDialogKey
- 0001:001816D0       TDBLookupComboBox.CMFontChanged
- 0001:001816F8       TDBLookupComboBox.CMGetDataLink
- 0001:0018180C       TDBLookupComboBox.CMMouseEnter
- 0001:0018185C       TDBLookupComboBox.CMMouseLeave
- 0001:00180608       TDBLookupComboBox.Create
- 0001:001808A0       TDBLookupComboBox.CreateParams
- 0001:001808E8       TDBLookupComboBox.DropDown
- 0001:00181764       TDBLookupComboBox.ExecuteAction
- 0001:00180C4C       TDBLookupComboBox.KeyDown
- 0001:00180DBC       TDBLookupComboBox.KeyPress
- 0001:00180E30       TDBLookupComboBox.KeyValueChanged
- 0001:00180F48       TDBLookupComboBox.ListMouseUp
- 0001:00180FA4       TDBLookupComboBox.MouseDown
- 0001:00181040       TDBLookupComboBox.MouseMove
- 0001:00181120       TDBLookupComboBox.MouseUp
- 0001:00181154       TDBLookupComboBox.Paint
- 0001:00181528       TDBLookupComboBox.SetBounds
- 0001:00181594       TDBLookupComboBox.StopTracking
- 0001:001815CC       TDBLookupComboBox.TrackButton
- 0001:001817B8       TDBLookupComboBox.UpdateAction
- 0001:00180F28       TDBLookupComboBox.UpdateListFields
- 0001:00181570       TDBLookupComboBox.UseRightToLeftAlignment
- 0001:00181718       TDBLookupComboBox.WMCancelMode
- 0001:0018173C       TDBLookupComboBox.WMKillFocus
- 0001:0017E3A0       TDBLookupControl.CanModify
- 0001:0017E400       TDBLookupControl.CheckNotCircular
- 0001:0017E484       TDBLookupControl.CheckNotLookup
- 0001:0017F1B0       TDBLookupControl.CMEnabledChanged
- 0001:0017F1D4       TDBLookupControl.CMGetDataLink
- 0001:0017E1A4       TDBLookupControl.Create
- 0001:0017E600       TDBLookupControl.DataLinkRecordChanged
- 0001:0017E2F0       TDBLookupControl.Destroy
- 0001:0017F1F4       TDBLookupControl.ExecuteAction
- 0001:0017E6A0       TDBLookupControl.GetBorderSize
- 0001:0017E704       TDBLookupControl.GetDataSource
- 0001:0017E724       TDBLookupControl.GetKeyFieldName
- 0001:0017E75C       TDBLookupControl.GetListSource
- 0001:0017E790       TDBLookupControl.GetReadOnly
- 0001:0017E7B0       TDBLookupControl.GetTextHeight
- 0001:0017E810       TDBLookupControl.KeyValueChanged
- 0001:0017EA50       TDBLookupControl.ListLinkDataChanged
- 0001:0017EA5C       TDBLookupControl.LocateKey
- 0001:0017EB4C       TDBLookupControl.Notification
- 0001:0017EBBC       TDBLookupControl.ProcessSearchKey
- 0001:0017EE1C       TDBLookupControl.SelectKeyValue
- 0001:0017EE84       TDBLookupControl.SetDataFieldName
- 0001:0017EEC4       TDBLookupControl.SetDataSource
- 0001:0017EF10       TDBLookupControl.SetKeyFieldName
- 0001:0017EF58       TDBLookupControl.SetKeyValue
- 0001:0017EF98       TDBLookupControl.SetListFieldName
- 0001:0017EFD8       TDBLookupControl.SetListSource
- 0001:0017F014       TDBLookupControl.SetLookupMode
- 0001:0017F104       TDBLookupControl.SetReadOnly
- 0001:0017F248       TDBLookupControl.UpdateAction
- 0001:0017E510       TDBLookupControl.UpdateDataFields
- 0001:0017E81C       TDBLookupControl.UpdateListFields
- 0001:0017F128       TDBLookupControl.WMGetDlgCode
- 0001:0017F29C       TDBLookupControl.WMKeyDown
- 0001:0017F144       TDBLookupControl.WMKillFocus
- 0001:0017F174       TDBLookupControl.WMSetFocus
- 0001:00180248       TDBLookupListBox.CMCtl3DChanged
- 0001:00180294       TDBLookupListBox.CMFontChanged
- 0001:0017F320       TDBLookupListBox.Create
- 0001:0017F3A4       TDBLookupListBox.CreateParams
- 0001:0017F3F8       TDBLookupListBox.CreateWnd
- 0001:00180494       TDBLookupListBox.ExecuteAction
- 0001:0017F414       TDBLookupListBox.GetKeyIndex
- 0001:0017F4E4       TDBLookupListBox.KeyDown
- 0001:0017F64C       TDBLookupListBox.KeyPress
- 0001:0017F678       TDBLookupListBox.KeyValueChanged
- 0001:0017F788       TDBLookupListBox.ListLinkDataChanged
- 0001:0017F844       TDBLookupListBox.MouseDown
- 0001:0017F910       TDBLookupListBox.MouseMove
- 0001:0017F968       TDBLookupListBox.MouseUp
- 0001:0017F9B8       TDBLookupListBox.Paint
- 0001:0017FDD0       TDBLookupListBox.SelectCurrent
- 0001:0017FE64       TDBLookupListBox.SelectItemAt
- 0001:0017FEDC       TDBLookupListBox.SetBorderStyle
- 0001:0017FF20       TDBLookupListBox.SetBounds
- 0001:0017FFE4       TDBLookupListBox.SetRowCount
- 0001:00180038       TDBLookupListBox.StopTimer
- 0001:00180068       TDBLookupListBox.StopTracking
- 0001:0018009C       TDBLookupListBox.TimerScroll
- 0001:001804E8       TDBLookupListBox.UpdateAction
- 0001:0017F72C       TDBLookupListBox.UpdateListFields
- 0001:00180178       TDBLookupListBox.UpdateScrollBar
- 0001:0017FFC0       TDBLookupListBox.UseRightToLeftAlignment
- 0001:001802C0       TDBLookupListBox.WMCancelMode
- 0001:001802E4       TDBLookupListBox.WMTimer
- 0001:001802FC       TDBLookupListBox.WMVScroll
+ 0001:00180554       TDBLookupComboBox.CloseUp
+ 0001:00180678       TDBLookupComboBox.CMBiDiModeChanged
+ 0001:001814C0       TDBLookupComboBox.CMCancelMode
+ 0001:001814FC       TDBLookupComboBox.CMCtl3DChanged
+ 0001:001806A8       TDBLookupComboBox.CMDialogKey
+ 0001:00181534       TDBLookupComboBox.CMFontChanged
+ 0001:0018155C       TDBLookupComboBox.CMGetDataLink
+ 0001:00181670       TDBLookupComboBox.CMMouseEnter
+ 0001:001816C0       TDBLookupComboBox.CMMouseLeave
+ 0001:0018046C       TDBLookupComboBox.Create
+ 0001:00180704       TDBLookupComboBox.CreateParams
+ 0001:0018074C       TDBLookupComboBox.DropDown
+ 0001:001815C8       TDBLookupComboBox.ExecuteAction
+ 0001:00180AB0       TDBLookupComboBox.KeyDown
+ 0001:00180C20       TDBLookupComboBox.KeyPress
+ 0001:00180C94       TDBLookupComboBox.KeyValueChanged
+ 0001:00180DAC       TDBLookupComboBox.ListMouseUp
+ 0001:00180E08       TDBLookupComboBox.MouseDown
+ 0001:00180EA4       TDBLookupComboBox.MouseMove
+ 0001:00180F84       TDBLookupComboBox.MouseUp
+ 0001:00180FB8       TDBLookupComboBox.Paint
+ 0001:0018138C       TDBLookupComboBox.SetBounds
+ 0001:001813F8       TDBLookupComboBox.StopTracking
+ 0001:00181430       TDBLookupComboBox.TrackButton
+ 0001:0018161C       TDBLookupComboBox.UpdateAction
+ 0001:00180D8C       TDBLookupComboBox.UpdateListFields
+ 0001:001813D4       TDBLookupComboBox.UseRightToLeftAlignment
+ 0001:0018157C       TDBLookupComboBox.WMCancelMode
+ 0001:001815A0       TDBLookupComboBox.WMKillFocus
+ 0001:0017E204       TDBLookupControl.CanModify
+ 0001:0017E264       TDBLookupControl.CheckNotCircular
+ 0001:0017E2E8       TDBLookupControl.CheckNotLookup
+ 0001:0017F014       TDBLookupControl.CMEnabledChanged
+ 0001:0017F038       TDBLookupControl.CMGetDataLink
+ 0001:0017E008       TDBLookupControl.Create
+ 0001:0017E464       TDBLookupControl.DataLinkRecordChanged
+ 0001:0017E154       TDBLookupControl.Destroy
+ 0001:0017F058       TDBLookupControl.ExecuteAction
+ 0001:0017E504       TDBLookupControl.GetBorderSize
+ 0001:0017E568       TDBLookupControl.GetDataSource
+ 0001:0017E588       TDBLookupControl.GetKeyFieldName
+ 0001:0017E5C0       TDBLookupControl.GetListSource
+ 0001:0017E5F4       TDBLookupControl.GetReadOnly
+ 0001:0017E614       TDBLookupControl.GetTextHeight
+ 0001:0017E674       TDBLookupControl.KeyValueChanged
+ 0001:0017E8B4       TDBLookupControl.ListLinkDataChanged
+ 0001:0017E8C0       TDBLookupControl.LocateKey
+ 0001:0017E9B0       TDBLookupControl.Notification
+ 0001:0017EA20       TDBLookupControl.ProcessSearchKey
+ 0001:0017EC80       TDBLookupControl.SelectKeyValue
+ 0001:0017ECE8       TDBLookupControl.SetDataFieldName
+ 0001:0017ED28       TDBLookupControl.SetDataSource
+ 0001:0017ED74       TDBLookupControl.SetKeyFieldName
+ 0001:0017EDBC       TDBLookupControl.SetKeyValue
+ 0001:0017EDFC       TDBLookupControl.SetListFieldName
+ 0001:0017EE3C       TDBLookupControl.SetListSource
+ 0001:0017EE78       TDBLookupControl.SetLookupMode
+ 0001:0017EF68       TDBLookupControl.SetReadOnly
+ 0001:0017F0AC       TDBLookupControl.UpdateAction
+ 0001:0017E374       TDBLookupControl.UpdateDataFields
+ 0001:0017E680       TDBLookupControl.UpdateListFields
+ 0001:0017EF8C       TDBLookupControl.WMGetDlgCode
+ 0001:0017F100       TDBLookupControl.WMKeyDown
+ 0001:0017EFA8       TDBLookupControl.WMKillFocus
+ 0001:0017EFD8       TDBLookupControl.WMSetFocus
+ 0001:001800AC       TDBLookupListBox.CMCtl3DChanged
+ 0001:001800F8       TDBLookupListBox.CMFontChanged
+ 0001:0017F184       TDBLookupListBox.Create
+ 0001:0017F208       TDBLookupListBox.CreateParams
+ 0001:0017F25C       TDBLookupListBox.CreateWnd
+ 0001:001802F8       TDBLookupListBox.ExecuteAction
+ 0001:0017F278       TDBLookupListBox.GetKeyIndex
+ 0001:0017F348       TDBLookupListBox.KeyDown
+ 0001:0017F4B0       TDBLookupListBox.KeyPress
+ 0001:0017F4DC       TDBLookupListBox.KeyValueChanged
+ 0001:0017F5EC       TDBLookupListBox.ListLinkDataChanged
+ 0001:0017F6A8       TDBLookupListBox.MouseDown
+ 0001:0017F774       TDBLookupListBox.MouseMove
+ 0001:0017F7CC       TDBLookupListBox.MouseUp
+ 0001:0017F81C       TDBLookupListBox.Paint
+ 0001:0017FC34       TDBLookupListBox.SelectCurrent
+ 0001:0017FCC8       TDBLookupListBox.SelectItemAt
+ 0001:0017FD40       TDBLookupListBox.SetBorderStyle
+ 0001:0017FD84       TDBLookupListBox.SetBounds
+ 0001:0017FE48       TDBLookupListBox.SetRowCount
+ 0001:0017FE9C       TDBLookupListBox.StopTimer
+ 0001:0017FECC       TDBLookupListBox.StopTracking
+ 0001:0017FF00       TDBLookupListBox.TimerScroll
+ 0001:0018034C       TDBLookupListBox.UpdateAction
+ 0001:0017F590       TDBLookupListBox.UpdateListFields
+ 0001:0017FFDC       TDBLookupListBox.UpdateScrollBar
+ 0001:0017FE24       TDBLookupListBox.UseRightToLeftAlignment
+ 0001:00180124       TDBLookupListBox.WMCancelMode
+ 0001:00180148       TDBLookupListBox.WMTimer
+ 0001:00180160       TDBLookupListBox.WMVScroll
  0001:000987DC       TDefaultDBScreenApplication.GetCursor
  0001:000987F8       TDefaultDBScreenApplication.GetTitle
  0001:00098818       TDefaultDBScreenApplication.ProcessMessages
@@ -6172,16 +6170,16 @@ Detailed map of segments
  0001:0008C290       TFloatField.SetVarValue
  0001:0008C2BC       TFloatField.UpdateCheckRange
  0001:0007A774       TFMTBcdData.Compare
- 0001:0007AA10       TFMTBcdData.Create
- 0001:0007AA68       TFMTBcdData.Create
  0001:0007ABEC       TFMTBcdData.Create
  0001:0007AB38       TFMTBcdData.Create
- 0001:0007A64C       TFMTBcdData.DoAdd
+ 0001:0007AA68       TFMTBcdData.Create
+ 0001:0007AA10       TFMTBcdData.Create
  0001:0007A684       TFMTBcdData.DoAdd
+ 0001:0007A64C       TFMTBcdData.DoAdd
  0001:0007A738       TFMTBcdData.DoDivide
  0001:0007A6FC       TFMTBcdData.DoMultiply
- 0001:0007A6A4       TFMTBcdData.DoSubtract
  0001:0007A6DC       TFMTBcdData.DoSubtract
+ 0001:0007A6A4       TFMTBcdData.DoSubtract
  0001:0007A894       TFMTBcdData.GetAsCurrency
  0001:0007A7BC       TFMTBcdData.GetAsDouble
  0001:0007A818       TFMTBcdData.GetAsInteger
@@ -6245,22 +6243,27 @@ Detailed map of segments
  0001:0002E180       TFont.SetPitch
  0001:0002E0EC       TFont.SetSize
  0001:0002E138       TFont.SetStyle
- 0001:0018232C       TForm1.alta
- 0001:0018221C       TForm1.altaBtClick
- 0001:00182408       TForm1.baja
- 0001:00182694       TForm1.bajaBtClick
- 0001:00182AA8       TForm1.btEventosClick
- 0001:001827D4       TForm1.Button1Click
- 0001:00182214       TForm1.Button5Click
- 0001:00182494       TForm1.consulta
- 0001:001826A4       TForm1.consultaBtClick
- 0001:00182AB0       TForm1.consultaEventos
- 0001:001826D4       TForm1.FormCreate
- 0001:00182224       TForm1.getFecha
- 0001:001826AC       TForm1.HTTPRIO1AfterExecute
- 0001:001827DC       TForm1.migrarConsulta
- 0001:0018269C       TForm1.modificaBtClick
- 0001:00182608       TForm1.modificacion
+ 0001:001821DC       TForm1.alta
+ 0001:001820CC       TForm1.altaBtClick
+ 0001:001822B8       TForm1.baja
+ 0001:0018255C       TForm1.bajaBtClick
+ 0001:0018256C       TForm1.btConsultaClick
+ 0001:00182998       TForm1.btEventosClick
+ 0001:00182A04       TForm1.btExportarClick
+ 0001:001826C4       TForm1.btMigrarClick
+ 0001:001820A4       TForm1.Button5Click
+ 0001:00182344       TForm1.consulta
+ 0001:001829AC       TForm1.consultaEventos
+ 0001:001820AC       TForm1.desahabilitaBotones
+ 0001:00182D4C       TForm1.eventoBaja
+ 0001:00182C78       TForm1.eventoNuevo
+ 0001:00182A0C       TForm1.exportarEventos
+ 0001:001825A8       TForm1.FormCreate
+ 0001:001820D4       TForm1.getFecha
+ 0001:00182580       TForm1.HTTPRIO1AfterExecute
+ 0001:001826CC       TForm1.migrarConsulta
+ 0001:00182564       TForm1.modificaBtClick
+ 0001:001824D0       TForm1.modificacion
  0001:00030C5C       TGraphic.Changed
  0001:00030C18       TGraphic.Create
  0001:00030CF0       TGraphic.DefineProperties
@@ -6288,11 +6291,11 @@ Detailed map of segments
  0001:0002325C       THandleStream.Create
  0001:000232AC       THandleStream.Read
  0001:0002331C       THandleStream.Seek
- 0001:00023370       THandleStream.SetSize
  0001:00023350       THandleStream.SetSize
+ 0001:00023370       THandleStream.SetSize
  0001:000232E4       THandleStream.Write
- 0001:0014B144       THeaderList.Add
  0001:0014B164       THeaderList.Add
+ 0001:0014B144       THeaderList.Add
  0001:0014B184       THeaderList.Clear
  0001:0014B19C       THeaderList.Create
  0001:0014B1F0       THeaderList.Destroy
@@ -6352,8 +6355,8 @@ Detailed map of segments
  0001:0014F6F8       THTTPReqResp.Create
  0001:0014F7A4       THTTPReqResp.Destroy
  0001:001510E4       THTTPReqResp.Execute
- 0001:00151208       THTTPReqResp.Execute
  0001:00151058       THTTPReqResp.Execute
+ 0001:00151208       THTTPReqResp.Execute
  0001:00150B0C       THTTPReqResp.Get
  0001:0014FA40       THTTPReqResp.GetHTTPReqResp
  0001:0014FCC4       THTTPReqResp.GetMimeBoundary
@@ -6483,8 +6486,8 @@ Detailed map of segments
  0001:00166B6C       TIBCustomDataSet.GetDataSource
  0001:001645C0       TIBCustomDataSet.GetDeleteSQL
  0001:00166BA0       TIBCustomDataSet.GetFieldClass
- 0001:00166E78       TIBCustomDataSet.GetFieldData
  0001:00166E08       TIBCustomDataSet.GetFieldData
+ 0001:00166E78       TIBCustomDataSet.GetFieldData
  0001:001645E0       TIBCustomDataSet.GetInsertSQL
  0001:00164678       TIBCustomDataSet.GetModifySQL
  0001:00166EC8       TIBCustomDataSet.GetRecNo
@@ -6980,22 +6983,22 @@ Detailed map of segments
  0001:00149BDC       TInvokableClassRegistry.GetHeaderClass
  0001:0014A6F8       TInvokableClassRegistry.GetInterfaceTypeInfo
  0001:0014A1C8       TInvokableClassRegistry.GetIntfIndex
- 0001:0014A29C       TInvokableClassRegistry.GetIntfInvokeOptions
  0001:0014A220       TInvokableClassRegistry.GetIntfInvokeOptions
+ 0001:0014A29C       TInvokableClassRegistry.GetIntfInvokeOptions
  0001:0014A464       TInvokableClassRegistry.GetMethExternalName
  0001:0014A588       TInvokableClassRegistry.GetMethInternalName
  0001:0014ABB8       TInvokableClassRegistry.GetNamespaceByGUID
  0001:0014A2CC       TInvokableClassRegistry.GetParamExternalName
  0001:0014AAE8       TInvokableClassRegistry.GetReturnParamNames
- 0001:0014AA0C       TInvokableClassRegistry.GetUDDIInfo
  0001:0014AAB0       TInvokableClassRegistry.GetUDDIInfo
+ 0001:0014AA0C       TInvokableClassRegistry.GetUDDIInfo
  0001:00149AEC       TInvokableClassRegistry.InternalGetHeaderName
  0001:00149B64       TInvokableClassRegistry.InternalGetHeaderNamespace
  0001:00149ABC       TInvokableClassRegistry.Lock
  0001:0014A06C       TInvokableClassRegistry.RegisterDefaultSOAPAction
  0001:00149D28       TInvokableClassRegistry.RegisterInterface
- 0001:0014A10C       TInvokableClassRegistry.RegisterInvokeOptions
  0001:0014A158       TInvokableClassRegistry.RegisterInvokeOptions
+ 0001:0014A10C       TInvokableClassRegistry.RegisterInvokeOptions
  0001:00149AD4       TInvokableClassRegistry.UnLock
  0001:00019550       TInvokeableVariantType.DispInvoke
  0001:00019814       TInvokeableVariantType.DoFunction
@@ -7023,8 +7026,8 @@ Detailed map of segments
  0001:0001F3C8       TList.Clear
  0001:0001F3E8       TList.Delete
  0001:0001F344       TList.Destroy
- 0001:0001F4C4       TList.Error
  0001:0001F484       TList.Error
+ 0001:0001F4C4       TList.Error
  0001:0001F524       TList.Exchange
  0001:0001F5B8       TList.Expand
  0001:0001FA50       TList.Extract
@@ -7041,12 +7044,12 @@ Detailed map of segments
  0001:0001F8D8       TList.Remove
  0001:0001F94C       TList.SetCapacity
  0001:0001F9A8       TList.SetCount
- 0001:0017E0E8       TListSourceLink.ActiveChanged
- 0001:0017E0A0       TListSourceLink.Create
- 0001:0017E10C       TListSourceLink.DataSetChanged
- 0001:0017E130       TListSourceLink.LayoutChanged
+ 0001:0017DF4C       TListSourceLink.ActiveChanged
+ 0001:0017DF04       TListSourceLink.Create
+ 0001:0017DF70       TListSourceLink.DataSetChanged
+ 0001:0017DF94       TListSourceLink.LayoutChanged
  0001:0007EF44       TLiteralInfo.Create
- 0001:0017BF30       TLoginDialog.FormShow
+ 0001:0017BD94       TLoginDialog.FormShow
  0001:0008774C       TLookupList.Add
  0001:0008779C       TLookupList.Clear
  0001:000876C0       TLookupList.Create
@@ -7103,8 +7106,8 @@ Detailed map of segments
  0001:00067ABC       TMenu.Loaded
  0001:00067ADC       TMenu.MenuChanged
  0001:00067BAC       TMenu.Notification
- 0001:000680F8       TMenu.ParentBiDiModeChanged
  0001:00068138       TMenu.ParentBiDiModeChanged
+ 0001:000680F8       TMenu.ParentBiDiModeChanged
  0001:00067DC0       TMenu.ProcessMenuChar
  0001:00068198       TMenu.SetAutoHotkeys
  0001:000681E0       TMenu.SetAutoLineReduction
@@ -7360,8 +7363,8 @@ Detailed map of segments
  0001:000A05A8       TMSDOMDocument.loadFromStream
  0001:000A0418       TMSDOMDocument.loadxml
  0001:000A02F4       TMSDOMDocument.save
- 0001:000A0638       TMSDOMDocument.saveToStream
  0001:000A036C       TMSDOMDocument.saveToStream
+ 0001:000A0638       TMSDOMDocument.saveToStream
  0001:0009FDE8       TMSDOMDocument.set_async
  0001:0009FC1C       TMSDOMDocument.set_documentElement
  0001:000A048C       TMSDOMDocument.set_OnAsyncLoad
@@ -7560,8 +7563,8 @@ Detailed map of segments
  0001:0013FC3C       TOPToSoapDomConvert.InvContextToMsg
  0001:0013F7A4       TOPToSoapDomConvert.MakeFault
  0001:0013F110       TOPToSoapDomConvert.MakeResponse
- 0001:0013E29C       TOPToSoapDomConvert.MsgToInvContext
  0001:0013E658       TOPToSoapDomConvert.MsgToInvContext
+ 0001:0013E29C       TOPToSoapDomConvert.MsgToInvContext
  0001:00141A60       TOPToSoapDomConvert.NewXMLDocument
  0001:0014067C       TOPToSoapDomConvert.ProcessFault
  0001:00140FE8       TOPToSoapDomConvert.ProcessResponse
@@ -7636,8 +7639,8 @@ Detailed map of segments
  0001:0013147C       TOXDOMDocument.loadFromStream
  0001:00131240       TOXDOMDocument.loadxml
  0001:001312E8       TOXDOMDocument.save
- 0001:001313E4       TOXDOMDocument.saveToStream
  0001:00131510       TOXDOMDocument.saveToStream
+ 0001:001313E4       TOXDOMDocument.saveToStream
  0001:00130CE8       TOXDOMDocument.set_async
  0001:00130B34       TOXDOMDocument.set_documentElement
  0001:00131874       TOXDOMDocument.set_Encoding
@@ -7740,8 +7743,8 @@ Detailed map of segments
  0001:0012E468       TOXDOMNode.set_nodeValue
  0001:0012E624       TOXDOMNode.set_text
  0001:0012E4B8       TOXDOMNode.supports
- 0001:0012E784       TOXDOMNode.transformNode
  0001:0012E714       TOXDOMNode.transformNode
+ 0001:0012E784       TOXDOMNode.transformNode
  0001:0012E7F4       TOXDOMNodeList.Create
  0001:0012E84C       TOXDOMNodeList.get_item
  0001:0012E8A8       TOXDOMNodeList.get_length
@@ -7829,11 +7832,11 @@ Detailed map of segments
  0001:000D0D10       TParts.Add
  0001:000D0E50       TParts.GetPart
  0001:000D0DDC       TParts.Insert
- 0001:0017C3DC       TPasswordDialog.AddButtonClick
- 0001:0017C338       TPasswordDialog.EditChange
- 0001:0017C520       TPasswordDialog.OKButtonClick
- 0001:0017C4F0       TPasswordDialog.RemoveAllButtonClick
- 0001:0017C46C       TPasswordDialog.RemoveButtonClick
+ 0001:0017C240       TPasswordDialog.AddButtonClick
+ 0001:0017C19C       TPasswordDialog.EditChange
+ 0001:0017C384       TPasswordDialog.OKButtonClick
+ 0001:0017C354       TPasswordDialog.RemoveAllButtonClick
+ 0001:0017C2D0       TPasswordDialog.RemoveButtonClick
  0001:00036430       TPatternManager.AllocPattern
  0001:00036384       TPatternManager.Create
  0001:000364FC       TPatternManager.CreateBitmap
@@ -7883,9 +7886,9 @@ Detailed map of segments
  0001:000317B4       TPicture.SetGraphic
  0001:00031998       TPicture.SupportsClipboardFormat
  0001:00031C1C       TPicture.WriteData
- 0001:0018053C       TPopupDataList.Create
- 0001:001805A4       TPopupDataList.CreateParams
- 0001:001805EC       TPopupDataList.WMMouseActivate
+ 0001:001803A0       TPopupDataList.Create
+ 0001:00180408       TPopupDataList.CreateParams
+ 0001:00180450       TPopupDataList.WMMouseActivate
  0001:000689CC       TPopupList.Add
  0001:00068384       TPopupList.MainWndProc
  0001:00068A04       TPopupList.Remove
@@ -7930,9 +7933,9 @@ Detailed map of segments
  0001:000110E0       TranslateResult
  0002:00003CB4       TranslatorList
  0001:0002F998       TransparentStretchBlt
- 0001:000727F0       TraverseClients
- 0001:00072920       TraverseClients
  0001:00072640       TraverseClients
+ 0001:00072920       TraverseClients
+ 0001:000727F0       TraverseClients
  0001:00056950       TraverseControls
  0001:000245E0       TReader.CheckValue
  0001:00024654       TReader.DefineBinaryProperty
@@ -8028,8 +8031,8 @@ Detailed map of segments
  0001:0014AEE4       TRemotable.SetDataContext
  0001:0014AFC8       TRemotable.SOAPToObject
  0001:0014C138       TRemotableTypeRegistry.ClassOptions
- 0001:0014CF98       TRemotableTypeRegistry.ClassToURI
  0001:0014CFCC       TRemotableTypeRegistry.ClassToURI
+ 0001:0014CF98       TRemotableTypeRegistry.ClassToURI
  0001:0014BA94       TRemotableTypeRegistry.Create
  0001:0014BAE8       TRemotableTypeRegistry.Destroy
  0001:0014CC68       TRemotableTypeRegistry.FindEntry
@@ -8045,8 +8048,8 @@ Detailed map of segments
  0001:0014C1D0       TRemotableTypeRegistry.RegisterSerializeOptions
  0001:0014BB58       TRemotableTypeRegistry.RegisterXSClass
  0001:0014BDD4       TRemotableTypeRegistry.RegisterXSInfo
- 0001:0014C264       TRemotableTypeRegistry.SerializeOptions
  0001:0014C32C       TRemotableTypeRegistry.SerializeOptions
+ 0001:0014C264       TRemotableTypeRegistry.SerializeOptions
  0001:0014D11C       TRemotableTypeRegistry.TypeInfoToXSD
  0001:0014BB40       TRemotableTypeRegistry.UnLock
  0001:0014CCEC       TRemotableTypeRegistry.URIToClass
@@ -8110,8 +8113,8 @@ Detailed map of segments
  0001:0000C928       TryStrToDate
  0001:0000CA20       TryStrToDateTime
  0001:0000AA34       TryStrToFloat
- 0001:0000AA94       TryStrToFloat
  0001:0000AA5C       TryStrToFloat
+ 0001:0000AA94       TryStrToFloat
  0001:00008EF0       TryStrToInt
  0001:00008F60       TryStrToInt64
  0001:00079F58       TryStrToSQLTimeStamp
@@ -8258,8 +8261,8 @@ Detailed map of segments
  0001:00143260       TSOAPDomConv.IsNodeAVarArray
  0001:0014896C       TSOAPDomConv.IsObjectWriting
  0001:001465D4       TSOAPDomConv.LoadObject
- 0001:001428CC       TSOAPDomConv.MakeArrayNode
  0001:00142478       TSOAPDomConv.MakeArrayNode
+ 0001:001428CC       TSOAPDomConv.MakeArrayNode
  0001:001450A8       TSOAPDomConv.MultiRefObject
  0001:00147F44       TSOAPDomConv.NodeIsNULL
  0001:00146540       TSOAPDomConv.ObjectMemberNoShow
@@ -8272,9 +8275,9 @@ Detailed map of segments
  0001:00143F1C       TSOAPDomConv.ReadVariant
  0001:001489C0       TSOAPDomConv.RemoveObjectAsWriting
  0001:00148A70       TSOAPDomConv.ResetMultiRef
- 0001:00144FFC       TSOAPDomConv.SerializationOptions
  0001:0014503C       TSOAPDomConv.SerializationOptions
  0001:00145084       TSOAPDomConv.SerializationOptions
+ 0001:00144FFC       TSOAPDomConv.SerializationOptions
  0001:00148394       TSOAPDomConv.SetNodeType
  0001:00146328       TSOAPDomConv.SetObjectPropFromText
  0001:001484C8       TSOAPDomConv.SetOptions
@@ -8299,9 +8302,9 @@ Detailed map of segments
  0001:000D5800       TSoapEnvelope.MakeEnvelope
  0001:000D5BD4       TSoapEnvelope.MakeFault
  0001:000D5AF4       TSoapEnvelope.MakeHeader
+ 0001:0014AD20       TSOAPHeaders.Get
  0001:0014ACFC       TSOAPHeaders.Get
  0001:0014AD98       TSOAPHeaders.Get
- 0001:0014AD20       TSOAPHeaders.Get
  0001:0014ADD0       TSOAPHeaders.GetOwnsSentHeaders
  0001:0014AC88       TSOAPHeaders.Send
  0001:0014ACD8       TSOAPHeaders.SendAt
@@ -8333,10 +8336,10 @@ Detailed map of segments
  0001:00079228       TSQLTimeStampData.AdjustMonths
  0001:000793AC       TSQLTimeStampData.AdjustSeconds
  0001:000795C0       TSQLTimeStampData.Compare
- 0001:00079870       TSQLTimeStampData.Create
- 0001:000797B0       TSQLTimeStampData.Create
  0001:0007974C       TSQLTimeStampData.Create
+ 0001:00079870       TSQLTimeStampData.Create
  0001:00079810       TSQLTimeStampData.Create
+ 0001:000797B0       TSQLTimeStampData.Create
  0001:00079490       TSQLTimeStampData.DaysInMonth
  0001:00079538       TSQLTimeStampData.DoAdd
  0001:000794BC       TSQLTimeStampData.DoSubtract
@@ -8382,11 +8385,11 @@ Detailed map of segments
  0001:00022E58       TStream.GetSize
  0001:00023070       TStream.ReadBuffer
  0001:000231F8       TStream.ReadComponent
- 0001:00022F74       TStream.Seek
  0001:00023000       TStream.Seek
+ 0001:00022F74       TStream.Seek
  0001:00022E3C       TStream.SetPosition
- 0001:00022ED0       TStream.SetSize
  0001:00022EA4       TStream.SetSize
+ 0001:00022ED0       TStream.SetSize
  0001:00022EB4       TStream.SetSize64
  0001:000230B8       TStream.WriteBuffer
  0001:0002B750       TStreamAdapter.Clone
@@ -8504,8 +8507,8 @@ Detailed map of segments
  0001:000213A4       TStrings.Destroy
  0001:00021678       TStrings.EndUpdate
  0001:0002169C       TStrings.Equals
- 0001:00021758       TStrings.Error
  0001:00021798       TStrings.Error
+ 0001:00021758       TStrings.Error
  0001:000217F8       TStrings.Exchange
  0001:000218E4       TStrings.ExtractName
  0001:00021974       TStrings.GetCapacity
@@ -8571,9 +8574,9 @@ Detailed map of segments
  0001:00041EC4       TThemeServices.DrawParentBackground
  0001:00041F3C       TThemeServices.DrawText
  0001:000420B8       TThemeServices.GetElementDetails
+ 0001:00041FA4       TThemeServices.GetElementDetails
  0001:00042120       TThemeServices.GetElementDetails
  0001:00042064       TThemeServices.GetElementDetails
- 0001:00041FA4       TThemeServices.GetElementDetails
  0001:00041D08       TThemeServices.GetTheme
  0001:00041D68       TThemeServices.GetThemesEnabled
  0001:0004258C       TThemeServices.PaintBorder
@@ -8587,8 +8590,8 @@ Detailed map of segments
  0001:00029C28       TThread.Destroy
  0001:00029DA0       TThread.DoTerminate
  0001:00029F4C       TThread.Resume
- 0001:00029DC8       TThread.Synchronize
  0001:00029F10       TThread.Synchronize
+ 0001:00029DC8       TThread.Synchronize
  0001:00029F84       TThread.Terminate
  0001:00029F98       TThread.WaitFor
  0001:0001FBA4       TThreadList.Add
@@ -8612,16 +8615,16 @@ Detailed map of segments
  0001:0003D8B4       TTimer.Timer
  0001:0003D794       TTimer.UpdateTimer
  0001:0003D70C       TTimer.WndProc
- 0001:001718BC       TTraceObject.Create
  0001:00171950       TTraceObject.Create
+ 0001:001718BC       TTraceObject.Create
  0001:000D080C       TTypes.AfterConstruction
  0001:000D09B0       TTypes.GetSchemaDefs
  0001:000D7978       TTypeTranslator.Base64ToVar
  0001:000D7A74       TTypeTranslator.Base64ToVar
  0001:000D76A0       TTypeTranslator.CastNativeToSoap
  0001:000D7228       TTypeTranslator.CastSoapToNative
- 0001:000D6A6C       TTypeTranslator.CastSoapToVariant
  0001:000D6CBC       TTypeTranslator.CastSoapToVariant
+ 0001:000D6A6C       TTypeTranslator.CastSoapToVariant
  0001:000D69F4       TTypeTranslator.Create
  0001:000D6A38       TTypeTranslator.Destroy
  0001:000E9B64       TUTF16BEToUTF8Stream.convertWriteBuffer
@@ -8647,11 +8650,11 @@ Detailed map of segments
  0001:00090500       TVariantField.SetAsSqlTimeStamp
  0001:00090610       TVariantField.SetAsString
  0001:0009066C       TVariantField.SetVarValue
- 0001:001819D8       TVCLScreenApplication.GetCursor
- 0001:00181A1C       TVCLScreenApplication.GetTitle
- 0001:00181A3C       TVCLScreenApplication.ProcessMessages
- 0001:00181A54       TVCLScreenApplication.SetCursor
- 0001:00181AA8       TVCLScreenApplication.SetTitle
+ 0001:0018183C       TVCLScreenApplication.GetCursor
+ 0001:00181880       TVCLScreenApplication.GetTitle
+ 0001:001818A0       TVCLScreenApplication.ProcessMessages
+ 0001:001818B8       TVCLScreenApplication.SetCursor
+ 0001:0018190C       TVCLScreenApplication.SetTitle
  0001:000C78E8       TWebRequestStream.Destroy
  0001:000C7C80       TWebRequestStream.Read
  0001:000C791C       TWebRequestStream.ReadLn
@@ -8958,13 +8961,13 @@ Detailed map of segments
  0001:000D3844       TWSDLDocument.LoadData
  0001:000D3970       TWSDLDocument.SetDefinition
  0001:0013B800       TWSDLItems.CompareName
- 0001:0013B3A0       TWSDLItems.Create
  0001:0013B30C       TWSDLItems.Create
+ 0001:0013B3A0       TWSDLItems.Create
  0001:0013BE74       TWSDLItems.GetBindingForServicePort
  0001:0013C824       TWSDLItems.GetBindingOperationNode
  0001:0013C4E0       TWSDLItems.GetGenericBindingAttribute
- 0001:0013C6D8       TWSDLItems.GetHttpBindingAttribute
  0001:0013C7A4       TWSDLItems.GetHttpBindingAttribute
+ 0001:0013C6D8       TWSDLItems.GetHttpBindingAttribute
  0001:0013BB98       TWSDLItems.GetPortsForService
  0001:0013B9B0       TWSDLItems.GetServices
  0001:0013CC64       TWSDLItems.GetSoapAction
@@ -9015,9 +9018,9 @@ Detailed map of segments
  0001:000BAB64       TXMLAttributeDef.SetRef
  0001:000BABAC       TXMLAttributeDef.SetUse
  0001:000B5E64       TXMLAttributeDefList.GetAttributeDef
+ 0001:000BE234       TXMLAttributeDefs.Add
  0001:000BE1B0       TXMLAttributeDefs.Add
  0001:000BE2CC       TXMLAttributeDefs.Add
- 0001:000BE234       TXMLAttributeDefs.Add
  0001:000BE140       TXMLAttributeDefs.ChildListNotify
  0001:000BE3E4       TXMLAttributeDefs.Find
  0001:000BE458       TXMLAttributeDefs.GetItem
@@ -9170,8 +9173,8 @@ Detailed map of segments
  0001:000A8EE4       TXMLDocument.Loaded
  0001:000A9890       TXMLDocument.LoadFromFile
  0001:000A9B88       TXMLDocument.LoadFromStream
- 0001:000A9C74       TXMLDocument.LoadFromXML
  0001:000A9C38       TXMLDocument.LoadFromXML
+ 0001:000A9C74       TXMLDocument.LoadFromXML
  0001:000A8D88       TXMLDocument.NewInstance
  0001:000A9190       TXMLDocument.NodeIndentStored
  0001:000A8F74       TXMLDocument.ReadDOMVendor
@@ -9182,8 +9185,8 @@ Detailed map of segments
  0001:000A9948       TXMLDocument.SaveToFile
  0001:000A9BD0       TXMLDocument.SaveToStream
  0001:000A9D50       TXMLDocument.SaveToUTF8String
- 0001:000A9CD0       TXMLDocument.SaveToXML
  0001:000A9FE4       TXMLDocument.SaveToXML
+ 0001:000A9CD0       TXMLDocument.SaveToXML
  0001:000A9AC8       TXMLDocument.SaveToXMLStrings
  0001:000A920C       TXMLDocument.SetActive
  0001:000AAAD8       TXMLDocument.SetDocumentElement
@@ -9268,9 +9271,9 @@ Detailed map of segments
  0001:001037E0       TXmlInputSource.reset2
  0001:0010391C       TXmlInputSource.skipTextDecl
  0001:001158BC       TXmlMemoryStream.setPointer
+ 0001:000A6228       TXMLNode.AddChild
  0001:000A6410       TXMLNode.AddChild
  0001:000A62E0       TXMLNode.AddChild
- 0001:000A6228       TXMLNode.AddChild
  0001:000A71DC       TXMLNode.AddHostedNode
  0001:000A5C28       TXMLNode.AttributeListNotify
  0001:000A75F4       TXMLNode.CheckReadOnly
@@ -9316,8 +9319,8 @@ Detailed map of segments
  0001:000A802C       TXMLNode.GetReadOnly
  0001:000A7810       TXMLNode.GetText
  0001:000A7BC8       TXMLNode.GetXML
- 0001:000A5538       TXMLNode.HasAttribute
  0001:000A55E0       TXMLNode.HasAttribute
+ 0001:000A5538       TXMLNode.HasAttribute
  0001:000A6130       TXMLNode.HasChildNode
  0001:000A60D0       TXMLNode.HasChildNode
  0001:000A6990       TXMLNode.InternalAddChild
@@ -9339,8 +9342,8 @@ Detailed map of segments
  0001:000A7FC0       TXMLNode.SetParentNode
  0001:000A8048       TXMLNode.SetReadOnly
  0001:000A78D8       TXMLNode.SetText
- 0001:000A74A4       TXMLNode.TransformNode
  0001:000A7424       TXMLNode.TransformNode
+ 0001:000A74A4       TXMLNode.TransformNode
  0001:000A5124       TXMLNode._AddRef
  0001:000A5160       TXMLNode._Release
  0001:000A8934       TXMLNodeCollection.AddItem
@@ -9361,24 +9364,24 @@ Detailed map of segments
  0001:000A4290       TXMLNodeList.BeginUpdate
  0001:000A4E64       TXMLNodeList.Clear
  0001:000A41D0       TXMLNodeList.Create
+ 0001:000A4C40       TXMLNodeList.Delete
  0001:000A4CC8       TXMLNodeList.Delete
  0001:000A4CA0       TXMLNodeList.Delete
- 0001:000A4C40       TXMLNodeList.Delete
  0001:000A425C       TXMLNodeList.Destroy
  0001:000A42B0       TXMLNodeList.DoNotify
  0001:000A42A0       TXMLNodeList.EndUpdate
- 0001:000A44B4       TXMLNodeList.FindNode
- 0001:000A4538       TXMLNodeList.FindNode
  0001:000A4458       TXMLNodeList.FindNode
+ 0001:000A4538       TXMLNodeList.FindNode
+ 0001:000A44B4       TXMLNodeList.FindNode
  0001:000A46E8       TXMLNodeList.FindSibling
  0001:000A45D8       TXMLNodeList.First
  0001:000A4740       TXMLNodeList.Get
  0001:000A42F4       TXMLNodeList.GetCount
  0001:000A47B8       TXMLNodeList.GetNode
  0001:000A4F00       TXMLNodeList.GetUpdateCount
- 0001:000A4388       TXMLNodeList.IndexOf
  0001:000A43B0       TXMLNodeList.IndexOf
  0001:000A4314       TXMLNodeList.IndexOf
+ 0001:000A4388       TXMLNodeList.IndexOf
  0001:000A4B50       TXMLNodeList.Insert
  0001:000A4900       TXMLNodeList.InternalInsert
  0001:000A4660       TXMLNodeList.Last
@@ -9722,8 +9725,8 @@ Detailed map of segments
  0002:00003D08       TypeTranslator
  0001:0001BAC0       TypInfo
  0001:000E9AAC       UCS4CodeToUTF8String
- 0001:00181C2C       UDBControl
- 0001:00181C64       UDBLookupComboBoxAuto
+ 0001:00181A90       UDBControl
+ 0001:00181AC8       UDBLookupComboBoxAuto
  0001:0013A4C8       UDDIHelper
  0001:000199CC       Unassigned
  0001:0000055C       UnhandledExceptionFilter
@@ -9736,7 +9739,7 @@ Detailed map of segments
  0001:000070E0       UnionRect
  0001:00062BA4       UniqueCommand
  0001:00003D70       UniqueString
- 0001:00182B1C       Unit1
+ 0001:00182E50       Unit1
  0001:0000FE54       UniUnimplemented
  0001:00007154       UnlockResource
  0001:00006908       UnmapViewOfFile
@@ -9782,8 +9785,8 @@ Detailed map of segments
  0001:0006B5C0       ValidParentForm
  0001:0007C500       ValueOverOne
  0002:00000C60       Values
- 0002:00001358       Values
  0002:00000C68       Values
+ 0002:00001358       Values
  0001:0008F6F0       ValueToStr
  0002:000037B0       VarAdd
  0002:00000014       VarAddRefProc
@@ -9810,8 +9813,8 @@ Detailed map of segments
  0001:00011E34       VarCastAsInterface
  0001:00011D50       VarCastAsOleStr
  0001:00011D9C       VarCastAsString
- 0001:00010EAC       VarCastError
  0001:00010E58       VarCastError
+ 0001:00010EAC       VarCastError
  0001:00011F00       VarCastRare
  0001:00011E80       VarCastViaOS
  0001:00011668       VarClearDeep
@@ -9834,10 +9837,10 @@ Detailed map of segments
  0001:000804A0       VarDispInvoke
  0002:00003810       VarDispProc
  0002:000037BC       VarDiv
- 0001:0017E154       VarEquals
+ 0001:0017DFB8       VarEquals
  0001:0007B0F0       VarFMTBcd
- 0001:0007B098       VarFMTBcdCreate
  0001:0007AFF8       VarFMTBcdCreate
+ 0001:0007B098       VarFMTBcdCreate
  0001:0007B048       VarFMTBcdCreate
  0001:0007B0D4       VarFMTBcdCreate
  0001:00017D5C       VarFromDateTime
@@ -9852,8 +9855,8 @@ Detailed map of segments
  0002:000037C0       VarIDiv
  0001:00010F9C       VarInvalidNullOp
  0001:00010F48       VarInvalidOp
- 0001:00017FFC       VarIsArray
  0001:00017FF4       VarIsArray
+ 0001:00017FFC       VarIsArray
  0001:00017BA4       VarIsClear
  0001:00017C6C       VarIsEmpty
  0001:00017C80       VarIsNull
@@ -9868,8 +9871,8 @@ Detailed map of segments
  0001:00010FF0       VarOverflowError
  0002:000037DC       VarR4FromStr
  0002:000037E0       VarR8FromStr
- 0001:00011334       VarResultCheck
  0001:00011340       VarResultCheck
+ 0001:00011334       VarResultCheck
  0001:00017D94       VarSameValue
  0001:00079D64       VarSQLTimeStamp
  0001:00079D0C       VarSQLTimeStampCreate
@@ -9928,15 +9931,15 @@ Detailed map of segments
  0002:0000135C       VarTypeMap
  0001:00010690       VarUtils
  0002:000037D0       VarXor
- 0001:0017B8A4       VDBConsts
+ 0001:0017B708       VDBConsts
  0001:00008F90       VerifyBoolStrArray
  0001:00006948       VerQueryValue
  0002:00003B3C       ViewerName
- 0001:00006910       VirtualAlloc
  0001:000006A0       VirtualAlloc
+ 0001:00006910       VirtualAlloc
  0001:000006A8       VirtualFree
- 0001:0000062C       VirtualQuery
  0001:00006918       VirtualQuery
+ 0001:0000062C       VirtualQuery
  0001:00006920       WaitForSingleObject
  0001:00029890       WaitForSyncEvent
  0001:00007100       WaitMessage
@@ -9975,15 +9978,15 @@ Detailed map of segments
  0001:000D39F4       WinSock
  0001:00038C8C       WinSpool
  0002:000009F8       WndProcPtrAtom
- 0002:00000DA8       WordWraps
  0002:00000D4C       WordWraps
+ 0002:00000DA8       WordWraps
  0002:00000D48       WordWraps
  0001:0016A118       WriteBlob
  0001:0001EF28       WriteCollection
  0001:00028798       WriteCollectionProp
  0001:0005C9A0       WriteControlName
- 0001:001793B8       WriteData
  0001:001787A0       WriteData
+ 0001:001793B8       WriteData
  0001:00003658       WriteErrorMessage
  0001:00000564       WriteFile
  0001:00006928       WriteFile
@@ -10007,7 +10010,7 @@ Detailed map of segments
  0001:000C2F94       WSDLIntf
  0001:0013CEF4       WSDLItems
  0001:0013D5B0       WSDLNode
- 0001:0017A1B8       wsdlSAPProdeman
+ 0001:0017A1E4       wsdlSAPProdeman
  0001:00003F3C       WStrError
  0001:00003F5C       WStrSet
  0001:0012A1D8       xdom
@@ -10060,7 +10063,7 @@ Detailed map of segments
  0001:0015898C       XOutsideOrEqualHorzFixedBoundary
  0001:000C7334       XSBuiltIns
  0001:00160484       XSQLDA_LENGTH
- 0001:0017AD3C       yaExisteAnimal
+ 0001:0017AD8C       yaExisteAnimal
  0001:0007CAA0       _CopyBytes
  0001:0007CAB0       _CopyOddFractions
  0001:0007CAD8       _CopyRestBlank
@@ -18681,188 +18684,191 @@ Detailed map of segments
  0001:00179D7C       TIBQuery.PSSetCommandText
  0001:00179DA4       Finalization
  0001:00179DD4       IBQuery
- 0001:00179FC4       GetHuellaServer
- 0001:0017A188       Finalization
- 0001:0017A1B8       wsdlSAPProdeman
- 0001:0017A23C       Finalization
- 0001:0017A26C       IBUpdateSQL
- 0001:0017A274       procesarResultadoConsulta
- 0001:0017A460       obtenerCategoriaSexo
- 0001:0017A624       calculaFechaNacimiento
- 0001:0017A754       calcularFechaDesdeString
- 0001:0017A82C       idAnimalNuevo
- 0001:0017A954       ingresarAnimal
- 0001:0017AD3C       yaExisteAnimal
- 0001:0017AE84       iniciaGrillaEventos
- 0001:0017AF38       cargarGrillaResultados
- 0001:0017B0A8       procesarSQLEventos
- 0001:0017B1A4       getSQLEventoAlta
- 0001:0017B2FC       getSQLEventoBaja
- 0001:0017B478       calcularEventosAlta
- 0001:0017B4F4       calcularEventosBaja
- 0001:0017B570       getSQLEventoCambio
- 0001:0017B700       calcularEventosModificacion
- 0001:0017B77C       recuperaEventos
- 0001:0017B7D4       Finalization
- 0001:0017B804       SAPProdeman
- 0001:0017B874       Finalization
- 0001:0017B8A4       VDBConsts
- 0001:0017BAF0       LoginDialog
- 0001:0017BC10       LoginDialogEx
- 0001:0017BD48       RemoteLoginDialog
- 0001:0017BF30       TLoginDialog.FormShow
- 0001:0017BF98       SetCursorType
- 0001:0017BFB4       Finalization
- 0001:0017BFE4       DBLogDlg
- 0001:0017C2C4       PasswordDialog
- 0001:0017C338       TPasswordDialog.EditChange
- 0001:0017C3DC       TPasswordDialog.AddButtonClick
- 0001:0017C46C       TPasswordDialog.RemoveButtonClick
- 0001:0017C4F0       TPasswordDialog.RemoveAllButtonClick
- 0001:0017C520       TPasswordDialog.OKButtonClick
- 0001:0017C584       Finalization
- 0001:0017C5C0       DBPWDlg
- 0001:0017DED8       OkToChangeFieldAlignment
- 0001:0017DF34       DBUseRightToLeftAlignment
- 0001:0017DF88       TDataSourceLink.Create
- 0001:0017DFD0       TDataSourceLink.ActiveChanged
- 0001:0017DFF4       TDataSourceLink.FocusControl
- 0001:0017E054       TDataSourceLink.LayoutChanged
- 0001:0017E078       TDataSourceLink.RecordChanged
- 0001:0017E0A0       TListSourceLink.Create
- 0001:0017E0E8       TListSourceLink.ActiveChanged
- 0001:0017E10C       TListSourceLink.DataSetChanged
- 0001:0017E130       TListSourceLink.LayoutChanged
- 0001:0017E154       VarEquals
- 0001:0017E1A4       TDBLookupControl.Create
- 0001:0017E2F0       TDBLookupControl.Destroy
- 0001:0017E3A0       TDBLookupControl.CanModify
- 0001:0017E400       TDBLookupControl.CheckNotCircular
- 0001:0017E484       TDBLookupControl.CheckNotLookup
- 0001:0017E510       TDBLookupControl.UpdateDataFields
- 0001:0017E600       TDBLookupControl.DataLinkRecordChanged
- 0001:0017E6A0       TDBLookupControl.GetBorderSize
- 0001:0017E704       TDBLookupControl.GetDataSource
- 0001:0017E724       TDBLookupControl.GetKeyFieldName
- 0001:0017E75C       TDBLookupControl.GetListSource
- 0001:0017E790       TDBLookupControl.GetReadOnly
- 0001:0017E7B0       TDBLookupControl.GetTextHeight
- 0001:0017E810       TDBLookupControl.KeyValueChanged
- 0001:0017E81C       TDBLookupControl.UpdateListFields
- 0001:0017EA50       TDBLookupControl.ListLinkDataChanged
- 0001:0017EA5C       TDBLookupControl.LocateKey
- 0001:0017EB4C       TDBLookupControl.Notification
- 0001:0017EBBC       TDBLookupControl.ProcessSearchKey
- 0001:0017EE1C       TDBLookupControl.SelectKeyValue
- 0001:0017EE84       TDBLookupControl.SetDataFieldName
- 0001:0017EEC4       TDBLookupControl.SetDataSource
- 0001:0017EF10       TDBLookupControl.SetKeyFieldName
- 0001:0017EF58       TDBLookupControl.SetKeyValue
- 0001:0017EF98       TDBLookupControl.SetListFieldName
- 0001:0017EFD8       TDBLookupControl.SetListSource
- 0001:0017F014       TDBLookupControl.SetLookupMode
- 0001:0017F104       TDBLookupControl.SetReadOnly
- 0001:0017F128       TDBLookupControl.WMGetDlgCode
- 0001:0017F144       TDBLookupControl.WMKillFocus
- 0001:0017F174       TDBLookupControl.WMSetFocus
- 0001:0017F1B0       TDBLookupControl.CMEnabledChanged
- 0001:0017F1D4       TDBLookupControl.CMGetDataLink
- 0001:0017F1F4       TDBLookupControl.ExecuteAction
- 0001:0017F248       TDBLookupControl.UpdateAction
- 0001:0017F29C       TDBLookupControl.WMKeyDown
- 0001:0017F320       TDBLookupListBox.Create
- 0001:0017F3A4       TDBLookupListBox.CreateParams
- 0001:0017F3F8       TDBLookupListBox.CreateWnd
- 0001:0017F414       TDBLookupListBox.GetKeyIndex
- 0001:0017F4E4       TDBLookupListBox.KeyDown
- 0001:0017F64C       TDBLookupListBox.KeyPress
- 0001:0017F678       TDBLookupListBox.KeyValueChanged
- 0001:0017F72C       TDBLookupListBox.UpdateListFields
- 0001:0017F788       TDBLookupListBox.ListLinkDataChanged
- 0001:0017F844       TDBLookupListBox.MouseDown
- 0001:0017F910       TDBLookupListBox.MouseMove
- 0001:0017F968       TDBLookupListBox.MouseUp
- 0001:0017F9B8       TDBLookupListBox.Paint
- 0001:0017FDD0       TDBLookupListBox.SelectCurrent
- 0001:0017FE64       TDBLookupListBox.SelectItemAt
- 0001:0017FEDC       TDBLookupListBox.SetBorderStyle
- 0001:0017FF20       TDBLookupListBox.SetBounds
- 0001:0017FFC0       TDBLookupListBox.UseRightToLeftAlignment
- 0001:0017FFE4       TDBLookupListBox.SetRowCount
- 0001:00180038       TDBLookupListBox.StopTimer
- 0001:00180068       TDBLookupListBox.StopTracking
- 0001:0018009C       TDBLookupListBox.TimerScroll
- 0001:00180178       TDBLookupListBox.UpdateScrollBar
- 0001:00180248       TDBLookupListBox.CMCtl3DChanged
- 0001:00180294       TDBLookupListBox.CMFontChanged
- 0001:001802C0       TDBLookupListBox.WMCancelMode
- 0001:001802E4       TDBLookupListBox.WMTimer
- 0001:001802FC       TDBLookupListBox.WMVScroll
- 0001:00180494       TDBLookupListBox.ExecuteAction
- 0001:001804E8       TDBLookupListBox.UpdateAction
- 0001:0018053C       TPopupDataList.Create
- 0001:001805A4       TPopupDataList.CreateParams
- 0001:001805EC       TPopupDataList.WMMouseActivate
- 0001:00180608       TDBLookupComboBox.Create
- 0001:001806F0       TDBLookupComboBox.CloseUp
- 0001:00180814       TDBLookupComboBox.CMBiDiModeChanged
- 0001:00180844       TDBLookupComboBox.CMDialogKey
- 0001:001808A0       TDBLookupComboBox.CreateParams
- 0001:001808E8       TDBLookupComboBox.DropDown
- 0001:00180C4C       TDBLookupComboBox.KeyDown
- 0001:00180DBC       TDBLookupComboBox.KeyPress
- 0001:00180E30       TDBLookupComboBox.KeyValueChanged
- 0001:00180F28       TDBLookupComboBox.UpdateListFields
- 0001:00180F48       TDBLookupComboBox.ListMouseUp
- 0001:00180FA4       TDBLookupComboBox.MouseDown
- 0001:00181040       TDBLookupComboBox.MouseMove
- 0001:00181120       TDBLookupComboBox.MouseUp
- 0001:00181154       TDBLookupComboBox.Paint
- 0001:00181528       TDBLookupComboBox.SetBounds
- 0001:00181570       TDBLookupComboBox.UseRightToLeftAlignment
- 0001:00181594       TDBLookupComboBox.StopTracking
- 0001:001815CC       TDBLookupComboBox.TrackButton
- 0001:0018165C       TDBLookupComboBox.CMCancelMode
- 0001:00181698       TDBLookupComboBox.CMCtl3DChanged
- 0001:001816D0       TDBLookupComboBox.CMFontChanged
- 0001:001816F8       TDBLookupComboBox.CMGetDataLink
- 0001:00181718       TDBLookupComboBox.WMCancelMode
- 0001:0018173C       TDBLookupComboBox.WMKillFocus
- 0001:00181764       TDBLookupComboBox.ExecuteAction
- 0001:001817B8       TDBLookupComboBox.UpdateAction
- 0001:0018180C       TDBLookupComboBox.CMMouseEnter
- 0001:0018185C       TDBLookupComboBox.CMMouseLeave
- 0001:001819D8       TVCLScreenApplication.GetCursor
- 0001:00181A1C       TVCLScreenApplication.GetTitle
- 0001:00181A3C       TVCLScreenApplication.ProcessMessages
- 0001:00181A54       TVCLScreenApplication.SetCursor
- 0001:00181AA8       TVCLScreenApplication.SetTitle
- 0001:00181B44       Finalization
- 0001:00181B88       DBCtrls
- 0001:00181BFC       Finalization
- 0001:00181C2C       UDBControl
- 0001:00181C34       Finalization
- 0001:00181C64       UDBLookupComboBoxAuto
- 0001:00182214       TForm1.Button5Click
- 0001:0018221C       TForm1.altaBtClick
- 0001:00182224       TForm1.getFecha
- 0001:0018232C       TForm1.alta
- 0001:00182408       TForm1.baja
- 0001:00182494       TForm1.consulta
- 0001:00182608       TForm1.modificacion
- 0001:00182694       TForm1.bajaBtClick
- 0001:0018269C       TForm1.modificaBtClick
- 0001:001826A4       TForm1.consultaBtClick
- 0001:001826AC       TForm1.HTTPRIO1AfterExecute
- 0001:001826D4       TForm1.FormCreate
- 0001:001827D4       TForm1.Button1Click
- 0001:001827DC       TForm1.migrarConsulta
- 0001:00182AA8       TForm1.btEventosClick
- 0001:00182AB0       TForm1.consultaEventos
- 0001:00182AEC       Finalization
- 0001:00182B1C       Unit1
- 0001:00182B24       Finalization
- 0001:00182FEC       soapHuellaCliente
+ 0001:00179FF0       GetHuellaServer
+ 0001:0017A1B4       Finalization
+ 0001:0017A1E4       wsdlSAPProdeman
+ 0001:0017A268       Finalization
+ 0001:0017A298       IBUpdateSQL
+ 0001:0017A2A0       procesarResultadoConsulta
+ 0001:0017A4B0       obtenerCategoriaSexo
+ 0001:0017A674       calculaFechaNacimiento
+ 0001:0017A7A4       calcularFechaDesdeString
+ 0001:0017A87C       idAnimalNuevo
+ 0001:0017A9A4       ingresarAnimal
+ 0001:0017AD8C       yaExisteAnimal
+ 0001:0017AED4       iniciaGrillaEventos
+ 0001:0017AF88       cargarGrillaResultados
+ 0001:0017B0F8       procesarSQLEventos
+ 0001:0017B1F4       getSQLEventoBaja
+ 0001:0017B370       calcularEventosBaja
+ 0001:0017B3EC       getSQLEventoCambio
+ 0001:0017B57C       calcularEventosModificacion
+ 0001:0017B5F8       recuperaEventos
+ 0001:0017B638       Finalization
+ 0001:0017B668       SAPProdeman
+ 0001:0017B6D8       Finalization
+ 0001:0017B708       VDBConsts
+ 0001:0017B954       LoginDialog
+ 0001:0017BA74       LoginDialogEx
+ 0001:0017BBAC       RemoteLoginDialog
+ 0001:0017BD94       TLoginDialog.FormShow
+ 0001:0017BDFC       SetCursorType
+ 0001:0017BE18       Finalization
+ 0001:0017BE48       DBLogDlg
+ 0001:0017C128       PasswordDialog
+ 0001:0017C19C       TPasswordDialog.EditChange
+ 0001:0017C240       TPasswordDialog.AddButtonClick
+ 0001:0017C2D0       TPasswordDialog.RemoveButtonClick
+ 0001:0017C354       TPasswordDialog.RemoveAllButtonClick
+ 0001:0017C384       TPasswordDialog.OKButtonClick
+ 0001:0017C3E8       Finalization
+ 0001:0017C424       DBPWDlg
+ 0001:0017DD3C       OkToChangeFieldAlignment
+ 0001:0017DD98       DBUseRightToLeftAlignment
+ 0001:0017DDEC       TDataSourceLink.Create
+ 0001:0017DE34       TDataSourceLink.ActiveChanged
+ 0001:0017DE58       TDataSourceLink.FocusControl
+ 0001:0017DEB8       TDataSourceLink.LayoutChanged
+ 0001:0017DEDC       TDataSourceLink.RecordChanged
+ 0001:0017DF04       TListSourceLink.Create
+ 0001:0017DF4C       TListSourceLink.ActiveChanged
+ 0001:0017DF70       TListSourceLink.DataSetChanged
+ 0001:0017DF94       TListSourceLink.LayoutChanged
+ 0001:0017DFB8       VarEquals
+ 0001:0017E008       TDBLookupControl.Create
+ 0001:0017E154       TDBLookupControl.Destroy
+ 0001:0017E204       TDBLookupControl.CanModify
+ 0001:0017E264       TDBLookupControl.CheckNotCircular
+ 0001:0017E2E8       TDBLookupControl.CheckNotLookup
+ 0001:0017E374       TDBLookupControl.UpdateDataFields
+ 0001:0017E464       TDBLookupControl.DataLinkRecordChanged
+ 0001:0017E504       TDBLookupControl.GetBorderSize
+ 0001:0017E568       TDBLookupControl.GetDataSource
+ 0001:0017E588       TDBLookupControl.GetKeyFieldName
+ 0001:0017E5C0       TDBLookupControl.GetListSource
+ 0001:0017E5F4       TDBLookupControl.GetReadOnly
+ 0001:0017E614       TDBLookupControl.GetTextHeight
+ 0001:0017E674       TDBLookupControl.KeyValueChanged
+ 0001:0017E680       TDBLookupControl.UpdateListFields
+ 0001:0017E8B4       TDBLookupControl.ListLinkDataChanged
+ 0001:0017E8C0       TDBLookupControl.LocateKey
+ 0001:0017E9B0       TDBLookupControl.Notification
+ 0001:0017EA20       TDBLookupControl.ProcessSearchKey
+ 0001:0017EC80       TDBLookupControl.SelectKeyValue
+ 0001:0017ECE8       TDBLookupControl.SetDataFieldName
+ 0001:0017ED28       TDBLookupControl.SetDataSource
+ 0001:0017ED74       TDBLookupControl.SetKeyFieldName
+ 0001:0017EDBC       TDBLookupControl.SetKeyValue
+ 0001:0017EDFC       TDBLookupControl.SetListFieldName
+ 0001:0017EE3C       TDBLookupControl.SetListSource
+ 0001:0017EE78       TDBLookupControl.SetLookupMode
+ 0001:0017EF68       TDBLookupControl.SetReadOnly
+ 0001:0017EF8C       TDBLookupControl.WMGetDlgCode
+ 0001:0017EFA8       TDBLookupControl.WMKillFocus
+ 0001:0017EFD8       TDBLookupControl.WMSetFocus
+ 0001:0017F014       TDBLookupControl.CMEnabledChanged
+ 0001:0017F038       TDBLookupControl.CMGetDataLink
+ 0001:0017F058       TDBLookupControl.ExecuteAction
+ 0001:0017F0AC       TDBLookupControl.UpdateAction
+ 0001:0017F100       TDBLookupControl.WMKeyDown
+ 0001:0017F184       TDBLookupListBox.Create
+ 0001:0017F208       TDBLookupListBox.CreateParams
+ 0001:0017F25C       TDBLookupListBox.CreateWnd
+ 0001:0017F278       TDBLookupListBox.GetKeyIndex
+ 0001:0017F348       TDBLookupListBox.KeyDown
+ 0001:0017F4B0       TDBLookupListBox.KeyPress
+ 0001:0017F4DC       TDBLookupListBox.KeyValueChanged
+ 0001:0017F590       TDBLookupListBox.UpdateListFields
+ 0001:0017F5EC       TDBLookupListBox.ListLinkDataChanged
+ 0001:0017F6A8       TDBLookupListBox.MouseDown
+ 0001:0017F774       TDBLookupListBox.MouseMove
+ 0001:0017F7CC       TDBLookupListBox.MouseUp
+ 0001:0017F81C       TDBLookupListBox.Paint
+ 0001:0017FC34       TDBLookupListBox.SelectCurrent
+ 0001:0017FCC8       TDBLookupListBox.SelectItemAt
+ 0001:0017FD40       TDBLookupListBox.SetBorderStyle
+ 0001:0017FD84       TDBLookupListBox.SetBounds
+ 0001:0017FE24       TDBLookupListBox.UseRightToLeftAlignment
+ 0001:0017FE48       TDBLookupListBox.SetRowCount
+ 0001:0017FE9C       TDBLookupListBox.StopTimer
+ 0001:0017FECC       TDBLookupListBox.StopTracking
+ 0001:0017FF00       TDBLookupListBox.TimerScroll
+ 0001:0017FFDC       TDBLookupListBox.UpdateScrollBar
+ 0001:001800AC       TDBLookupListBox.CMCtl3DChanged
+ 0001:001800F8       TDBLookupListBox.CMFontChanged
+ 0001:00180124       TDBLookupListBox.WMCancelMode
+ 0001:00180148       TDBLookupListBox.WMTimer
+ 0001:00180160       TDBLookupListBox.WMVScroll
+ 0001:001802F8       TDBLookupListBox.ExecuteAction
+ 0001:0018034C       TDBLookupListBox.UpdateAction
+ 0001:001803A0       TPopupDataList.Create
+ 0001:00180408       TPopupDataList.CreateParams
+ 0001:00180450       TPopupDataList.WMMouseActivate
+ 0001:0018046C       TDBLookupComboBox.Create
+ 0001:00180554       TDBLookupComboBox.CloseUp
+ 0001:00180678       TDBLookupComboBox.CMBiDiModeChanged
+ 0001:001806A8       TDBLookupComboBox.CMDialogKey
+ 0001:00180704       TDBLookupComboBox.CreateParams
+ 0001:0018074C       TDBLookupComboBox.DropDown
+ 0001:00180AB0       TDBLookupComboBox.KeyDown
+ 0001:00180C20       TDBLookupComboBox.KeyPress
+ 0001:00180C94       TDBLookupComboBox.KeyValueChanged
+ 0001:00180D8C       TDBLookupComboBox.UpdateListFields
+ 0001:00180DAC       TDBLookupComboBox.ListMouseUp
+ 0001:00180E08       TDBLookupComboBox.MouseDown
+ 0001:00180EA4       TDBLookupComboBox.MouseMove
+ 0001:00180F84       TDBLookupComboBox.MouseUp
+ 0001:00180FB8       TDBLookupComboBox.Paint
+ 0001:0018138C       TDBLookupComboBox.SetBounds
+ 0001:001813D4       TDBLookupComboBox.UseRightToLeftAlignment
+ 0001:001813F8       TDBLookupComboBox.StopTracking
+ 0001:00181430       TDBLookupComboBox.TrackButton
+ 0001:001814C0       TDBLookupComboBox.CMCancelMode
+ 0001:001814FC       TDBLookupComboBox.CMCtl3DChanged
+ 0001:00181534       TDBLookupComboBox.CMFontChanged
+ 0001:0018155C       TDBLookupComboBox.CMGetDataLink
+ 0001:0018157C       TDBLookupComboBox.WMCancelMode
+ 0001:001815A0       TDBLookupComboBox.WMKillFocus
+ 0001:001815C8       TDBLookupComboBox.ExecuteAction
+ 0001:0018161C       TDBLookupComboBox.UpdateAction
+ 0001:00181670       TDBLookupComboBox.CMMouseEnter
+ 0001:001816C0       TDBLookupComboBox.CMMouseLeave
+ 0001:0018183C       TVCLScreenApplication.GetCursor
+ 0001:00181880       TVCLScreenApplication.GetTitle
+ 0001:001818A0       TVCLScreenApplication.ProcessMessages
+ 0001:001818B8       TVCLScreenApplication.SetCursor
+ 0001:0018190C       TVCLScreenApplication.SetTitle
+ 0001:001819A8       Finalization
+ 0001:001819EC       DBCtrls
+ 0001:00181A60       Finalization
+ 0001:00181A90       UDBControl
+ 0001:00181A98       Finalization
+ 0001:00181AC8       UDBLookupComboBoxAuto
+ 0001:001820A4       TForm1.Button5Click
+ 0001:001820AC       TForm1.desahabilitaBotones
+ 0001:001820CC       TForm1.altaBtClick
+ 0001:001820D4       TForm1.getFecha
+ 0001:001821DC       TForm1.alta
+ 0001:001822B8       TForm1.baja
+ 0001:00182344       TForm1.consulta
+ 0001:001824D0       TForm1.modificacion
+ 0001:0018255C       TForm1.bajaBtClick
+ 0001:00182564       TForm1.modificaBtClick
+ 0001:0018256C       TForm1.btConsultaClick
+ 0001:00182580       TForm1.HTTPRIO1AfterExecute
+ 0001:001825A8       TForm1.FormCreate
+ 0001:001826C4       TForm1.btMigrarClick
+ 0001:001826CC       TForm1.migrarConsulta
+ 0001:00182998       TForm1.btEventosClick
+ 0001:001829AC       TForm1.consultaEventos
+ 0001:00182A04       TForm1.btExportarClick
+ 0001:00182A0C       TForm1.exportarEventos
+ 0001:00182C78       TForm1.eventoNuevo
+ 0001:00182D4C       TForm1.eventoBaja
+ 0001:00182E20       Finalization
+ 0001:00182E50       Unit1
+ 0001:00182E58       Finalization
+ 0001:00183320       soapHuellaCliente
  0002:00000000       ExitCode
  0002:00000004       ErrorAddr
  0002:00000008       RandSeed
@@ -38055,355 +38061,364 @@ Line numbers for IBQuery(IBQuery.pas) segment .text
 
 Line numbers for wsdlSAPProdeman(wsdlSAPProdeman.pas) segment .text
 
-    61 0001:00179FC4    62 0001:00179FE9    63 0001:00179FF1    65 0001:00179FF7
-    66 0001:00179FFB    68 0001:0017A00A    70 0001:0017A017    71 0001:0017A01D
-    73 0001:0017A030    74 0001:0017A036    75 0001:0017A044    76 0001:0017A05E
-    78 0001:0017A062    79 0001:0017A06D    80 0001:0017A07A    82 0001:0017A089
-    84 0001:0017A0A1    85 0001:0017A0AF    87 0001:0017A0DC    90 0001:0017A1B8
-    91 0001:0017A1C1    92 0001:0017A1DF    93 0001:0017A1F1    95 0001:0017A203
+    61 0001:00179FF0    62 0001:0017A015    63 0001:0017A01D    65 0001:0017A023
+    66 0001:0017A027    68 0001:0017A036    70 0001:0017A043    71 0001:0017A049
+    73 0001:0017A05C    74 0001:0017A062    75 0001:0017A070    76 0001:0017A08A
+    78 0001:0017A08E    79 0001:0017A099    80 0001:0017A0A6    82 0001:0017A0B5
+    84 0001:0017A0CD    85 0001:0017A0DB    87 0001:0017A108    90 0001:0017A1E4
+    91 0001:0017A1ED    92 0001:0017A20B    93 0001:0017A21D    95 0001:0017A22F
 
 Line numbers for IBUpdateSQL(IBUpdateSQL.pas) segment .text
 
-   208 0001:0017A26C   208 0001:0017A273
+   208 0001:0017A298   208 0001:0017A29F
 
 Line numbers for SAPProdeman(SAPProdeman.pas) segment .text
 
-    32 0001:0017A274    33 0001:0017A29E    34 0001:0017A2AA    35 0001:0017A2B6
-    36 0001:0017A2C2    37 0001:0017A2D2    39 0001:0017A2E5    41 0001:0017A301
-    43 0001:0017A30F    45 0001:0017A320    46 0001:0017A32E    48 0001:0017A348
-    49 0001:0017A365    50 0001:0017A388    52 0001:0017A3AB    53 0001:0017A3B4
-    39 0001:0017A3B7    54 0001:0017A3F8    57 0001:0017A460    58 0001:0017A496
-    59 0001:0017A49D    60 0001:0017A4A8    61 0001:0017A4B8    62 0001:0017A4DD
-    65 0001:0017A4E4    67 0001:0017A50F    68 0001:0017A52D    72 0001:0017A54D
-    73 0001:0017A553    76 0001:0017A589    82 0001:0017A624    83 0001:0017A644
-    84 0001:0017A649    88 0001:0017A676    90 0001:0017A67D    93 0001:0017A69B
-    95 0001:0017A6A2    97 0001:0017A6B1   100 0001:0017A6B6   101 0001:0017A6E6
-   106 0001:0017A754   107 0001:0017A781   108 0001:0017A797   109 0001:0017A7AD
-   111 0001:0017A7C3   113 0001:0017A81C   118 0001:0017A82C   119 0001:0017A84D
-   121 0001:0017A850   122 0001:0017A857   123 0001:0017A862   124 0001:0017A872
-   126 0001:0017A879   128 0001:0017A8A4   131 0001:0017A8C2   132 0001:0017A8EE
-   162 0001:0017A954   163 0001:0017A983   191 0001:0017A990   192 0001:0017A997
-   193 0001:0017A9A2   195 0001:0017A9B0   196 0001:0017A9C4   197 0001:0017A9D7
-   198 0001:0017A9EA   199 0001:0017A9FE   200 0001:0017AA11   201 0001:0017AA24
-   202 0001:0017AA37   203 0001:0017AA4E   205 0001:0017AA62   207 0001:0017AA7F
-   210 0001:0017AAA8   213 0001:0017AD3C   214 0001:0017AD68   215 0001:0017AD6F
-   216 0001:0017AD7A   217 0001:0017AD8A   219 0001:0017AD9E   221 0001:0017ADA5
-   223 0001:0017ADD4   227 0001:0017ADD8   229 0001:0017AE0C   233 0001:0017AE84
-   234 0001:0017AE87   235 0001:0017AE93   236 0001:0017AE9F   237 0001:0017AEAB
-   238 0001:0017AEBB   239 0001:0017AECE   240 0001:0017AEE1   241 0001:0017AEF4
-   250 0001:0017AF38   253 0001:0017AF6D   254 0001:0017AF81   255 0001:0017AF96
-   257 0001:0017AFAA   258 0001:0017AFBE   259 0001:0017AFE3   260 0001:0017AFFA
-   262 0001:0017B011   263 0001:0017B018   265 0001:0017B021   251 0001:0017B02F
-   269 0001:0017B06B   272 0001:0017B0A8   273 0001:0017B0CD   274 0001:0017B0D4
-   275 0001:0017B0DF   277 0001:0017B0ED   278 0001:0017B116   279 0001:0017B13F
-   280 0001:0017B168   285 0001:0017B1A4   286 0001:0017B1BA   292 0001:0017B1C7
-   293 0001:0017B1EE   298 0001:0017B2FC   299 0001:0017B312   306 0001:0017B31F
-   307 0001:0017B346   313 0001:0017B478   314 0001:0017B491   315 0001:0017B499
-   316 0001:0017B4AF   317 0001:0017B4DA   323 0001:0017B4F4   324 0001:0017B50D
-   325 0001:0017B515   326 0001:0017B52B   327 0001:0017B556   332 0001:0017B570
-   333 0001:0017B586   340 0001:0017B593   341 0001:0017B5BA   347 0001:0017B700
-   348 0001:0017B719   349 0001:0017B721   350 0001:0017B737   351 0001:0017B762
-   360 0001:0017B77C   361 0001:0017B785   363 0001:0017B78C   364 0001:0017B7A1
-   365 0001:0017B7B6   367 0001:0017B7CB   369 0001:0017B804   369 0001:0017B80B
+    34 0001:0017A2A0    35 0001:0017A2CA    36 0001:0017A2D6    37 0001:0017A2E2
+    38 0001:0017A2EE    39 0001:0017A2FE    40 0001:0017A311    42 0001:0017A324
+    44 0001:0017A340    46 0001:0017A34E    48 0001:0017A35F    49 0001:0017A36D
+    51 0001:0017A387    52 0001:0017A3A4    53 0001:0017A3C7    55 0001:0017A3EA
+    56 0001:0017A3F3    42 0001:0017A3F6    59 0001:0017A437    62 0001:0017A4B0
+    63 0001:0017A4E6    64 0001:0017A4ED    65 0001:0017A4F8    66 0001:0017A508
+    67 0001:0017A52D    70 0001:0017A534    72 0001:0017A55F    73 0001:0017A57D
+    77 0001:0017A59D    78 0001:0017A5A3    81 0001:0017A5D9    87 0001:0017A674
+    88 0001:0017A694    89 0001:0017A699    93 0001:0017A6C6    95 0001:0017A6CD
+    98 0001:0017A6EB   100 0001:0017A6F2   102 0001:0017A701   105 0001:0017A706
+   106 0001:0017A736   111 0001:0017A7A4   112 0001:0017A7D1   113 0001:0017A7E7
+   114 0001:0017A7FD   116 0001:0017A813   118 0001:0017A86C   123 0001:0017A87C
+   124 0001:0017A89D   126 0001:0017A8A0   127 0001:0017A8A7   128 0001:0017A8B2
+   129 0001:0017A8C2   131 0001:0017A8C9   133 0001:0017A8F4   136 0001:0017A912
+   137 0001:0017A93E   167 0001:0017A9A4   168 0001:0017A9D3   196 0001:0017A9E0
+   197 0001:0017A9E7   198 0001:0017A9F2   200 0001:0017AA00   201 0001:0017AA14
+   202 0001:0017AA27   203 0001:0017AA3A   204 0001:0017AA4E   205 0001:0017AA61
+   206 0001:0017AA74   207 0001:0017AA87   208 0001:0017AA9E   210 0001:0017AAB2
+   212 0001:0017AACF   215 0001:0017AAF8   218 0001:0017AD8C   219 0001:0017ADB8
+   220 0001:0017ADBF   221 0001:0017ADCA   222 0001:0017ADDA   224 0001:0017ADEE
+   226 0001:0017ADF5   228 0001:0017AE24   232 0001:0017AE28   234 0001:0017AE5C
+   238 0001:0017AED4   239 0001:0017AED7   240 0001:0017AEE3   241 0001:0017AEEF
+   242 0001:0017AEFB   243 0001:0017AF0B   244 0001:0017AF1E   245 0001:0017AF31
+   246 0001:0017AF44   255 0001:0017AF88   258 0001:0017AFBD   259 0001:0017AFD1
+   260 0001:0017AFE6   262 0001:0017AFFA   263 0001:0017B00E   264 0001:0017B033
+   265 0001:0017B04A   267 0001:0017B061   268 0001:0017B068   270 0001:0017B071
+   256 0001:0017B07F   274 0001:0017B0BB   277 0001:0017B0F8   278 0001:0017B11D
+   279 0001:0017B124   280 0001:0017B12F   282 0001:0017B13D   283 0001:0017B166
+   284 0001:0017B18F   285 0001:0017B1B8   303 0001:0017B1F4   304 0001:0017B20A
+   311 0001:0017B217   312 0001:0017B23E   328 0001:0017B370   329 0001:0017B389
+   330 0001:0017B391   331 0001:0017B3A7   332 0001:0017B3D2   337 0001:0017B3EC
+   338 0001:0017B402   345 0001:0017B40F   346 0001:0017B436   352 0001:0017B57C
+   353 0001:0017B595   354 0001:0017B59D   355 0001:0017B5B3   356 0001:0017B5DE
+   365 0001:0017B5F8   366 0001:0017B601   369 0001:0017B608   370 0001:0017B61D
+   372 0001:0017B632   376 0001:0017B668   376 0001:0017B66F
 
 Line numbers for VDBConsts(VDBConsts.pas) segment .text
 
-    45 0001:0017B8A4    45 0001:0017B8AB
+    45 0001:0017B708    45 0001:0017B70F
 
 Line numbers for DBLogDlg(DBLogDlg.pas) segment .text
 
-    54 0001:0017BAF0    55 0001:0017BB16    56 0001:0017BB2D    57 0001:0017BB3B
-    58 0001:0017BB4C    59 0001:0017BB5F    60 0001:0017BB63    61 0001:0017BB7C
-    63 0001:0017BB8A    64 0001:0017BBA6    65 0001:0017BBC2    68 0001:0017BBD3
-    70 0001:0017BC08    74 0001:0017BC10    75 0001:0017BC36    76 0001:0017BC4D
-    77 0001:0017BC5B    78 0001:0017BC6C    79 0001:0017BC7F    80 0001:0017BC83
-    81 0001:0017BC89    83 0001:0017BC9B    84 0001:0017BCB4    86 0001:0017BCC2
-    87 0001:0017BCDE    88 0001:0017BCFA    91 0001:0017BD0B    93 0001:0017BD40
-    96 0001:0017BD48    97 0001:0017BD6D    98 0001:0017BD84    99 0001:0017BD92
-   100 0001:0017BDAA   101 0001:0017BDBA   102 0001:0017BDCA   103 0001:0017BDDA
-   104 0001:0017BE00   105 0001:0017BE26   106 0001:0017BE4C   107 0001:0017BE66
-   108 0001:0017BE79   109 0001:0017BE7D   110 0001:0017BE96   112 0001:0017BEA4
-   113 0001:0017BEC0   114 0001:0017BEDC   117 0001:0017BEED   119 0001:0017BF2A
-   122 0001:0017BF30   123 0001:0017BF3C   124 0001:0017BF66   125 0001:0017BF93
-   128 0001:0017BF98   129 0001:0017BF9F   130 0001:0017BFAF   132 0001:0017BFE4
-   133 0001:0017BFF0   134 0001:0017BFFA   135 0001:0017C005   136 0001:0017C00F
-   137 0001:0017C01A   138 0001:0017C024   144 0001:0017C02F   145 0001:0017C03A
+    54 0001:0017B954    55 0001:0017B97A    56 0001:0017B991    57 0001:0017B99F
+    58 0001:0017B9B0    59 0001:0017B9C3    60 0001:0017B9C7    61 0001:0017B9E0
+    63 0001:0017B9EE    64 0001:0017BA0A    65 0001:0017BA26    68 0001:0017BA37
+    70 0001:0017BA6C    74 0001:0017BA74    75 0001:0017BA9A    76 0001:0017BAB1
+    77 0001:0017BABF    78 0001:0017BAD0    79 0001:0017BAE3    80 0001:0017BAE7
+    81 0001:0017BAED    83 0001:0017BAFF    84 0001:0017BB18    86 0001:0017BB26
+    87 0001:0017BB42    88 0001:0017BB5E    91 0001:0017BB6F    93 0001:0017BBA4
+    96 0001:0017BBAC    97 0001:0017BBD1    98 0001:0017BBE8    99 0001:0017BBF6
+   100 0001:0017BC0E   101 0001:0017BC1E   102 0001:0017BC2E   103 0001:0017BC3E
+   104 0001:0017BC64   105 0001:0017BC8A   106 0001:0017BCB0   107 0001:0017BCCA
+   108 0001:0017BCDD   109 0001:0017BCE1   110 0001:0017BCFA   112 0001:0017BD08
+   113 0001:0017BD24   114 0001:0017BD40   117 0001:0017BD51   119 0001:0017BD8E
+   122 0001:0017BD94   123 0001:0017BDA0   124 0001:0017BDCA   125 0001:0017BDF7
+   128 0001:0017BDFC   129 0001:0017BE03   130 0001:0017BE13   132 0001:0017BE48
+   133 0001:0017BE54   134 0001:0017BE5E   135 0001:0017BE69   136 0001:0017BE73
+   137 0001:0017BE7E   138 0001:0017BE88   144 0001:0017BE93   145 0001:0017BE9E
 
 Line numbers for DBPWDlg(DBPWDlg.pas) segment .text
 
-    44 0001:0017C2C4    45 0001:0017C2CD    46 0001:0017C2E4    47 0001:0017C2F2
-    48 0001:0017C302    50 0001:0017C31F    52 0001:0017C332    57 0001:0017C338
-    58 0001:0017C357    59 0001:0017C370    60 0001:0017C381    61 0001:0017C392
-    62 0001:0017C3D5    65 0001:0017C3DC    66 0001:0017C3FB    67 0001:0017C41D
-    68 0001:0017C427    69 0001:0017C438    70 0001:0017C466    73 0001:0017C46C
-    74 0001:0017C48B    75 0001:0017C4AD    76 0001:0017C4BE    77 0001:0017C4EC
-    80 0001:0017C4F0    81 0001:0017C4FC    82 0001:0017C50A    83 0001:0017C51B
-    86 0001:0017C520    87 0001:0017C53F    88 0001:0017C57E    94 0001:0017C584
-    96 0001:0017C5BB    90 0001:0017C5C0    91 0001:0017C5CC    93 0001:0017C5D7
+    44 0001:0017C128    45 0001:0017C131    46 0001:0017C148    47 0001:0017C156
+    48 0001:0017C166    50 0001:0017C183    52 0001:0017C196    57 0001:0017C19C
+    58 0001:0017C1BB    59 0001:0017C1D4    60 0001:0017C1E5    61 0001:0017C1F6
+    62 0001:0017C239    65 0001:0017C240    66 0001:0017C25F    67 0001:0017C281
+    68 0001:0017C28B    69 0001:0017C29C    70 0001:0017C2CA    73 0001:0017C2D0
+    74 0001:0017C2EF    75 0001:0017C311    76 0001:0017C322    77 0001:0017C350
+    80 0001:0017C354    81 0001:0017C360    82 0001:0017C36E    83 0001:0017C37F
+    86 0001:0017C384    87 0001:0017C3A3    88 0001:0017C3E2    94 0001:0017C3E8
+    96 0001:0017C41F    90 0001:0017C424    91 0001:0017C430    93 0001:0017C43B
 
 Line numbers for DBCtrls(dbctrls.pas) segment .text
 
-  1427 0001:0017DED8  1432 0001:0017DEE4  1438 0001:0017DF22  1439 0001:0017DF2D
-  1446 0001:0017DF34  1447 0001:0017DF40  1448 0001:0017DF46  1450 0001:0017DF51
-  1451 0001:0017DF55  1453 0001:0017DF84  4205 0001:0017DF88  4206 0001:0017DFA0
-  4207 0001:0017DFAA  4208 0001:0017DFCC  4211 0001:0017DFD0  4212 0001:0017DFD7
-  4213 0001:0017DFEE  4216 0001:0017DFF4  4217 0001:0017E001  4220 0001:0017E038
-  4221 0001:0017E03F  4223 0001:0017E04D  4226 0001:0017E054  4227 0001:0017E05B
-  4228 0001:0017E072  4231 0001:0017E078  4232 0001:0017E084  4233 0001:0017E09B
-  4238 0001:0017E0A0  4239 0001:0017E0B8  4240 0001:0017E0C2  4241 0001:0017E0E4
-  4244 0001:0017E0E8  4245 0001:0017E0EF  4246 0001:0017E106  4249 0001:0017E10C
-  4250 0001:0017E113  4251 0001:0017E12A  4254 0001:0017E130  4255 0001:0017E137
-  4256 0001:0017E14E  4261 0001:0017E154  4262 0001:0017E163  4263 0001:0017E167
-  4264 0001:0017E175  4266 0001:0017E193  4267 0001:0017E19B  4275 0001:0017E1A4
-  4276 0001:0017E1D9  4277 0001:0017E1E6  4278 0001:0017E1F0  4280 0001:0017E1FE
-  4281 0001:0017E20A  4282 0001:0017E214  4283 0001:0017E21E  4284 0001:0017E236
-  4285 0001:0017E24B  4286 0001:0017E25A  4287 0001:0017E26F  4288 0001:0017E27E
-  4289 0001:0017E293  4290 0001:0017E2E3  4293 0001:0017E2F0  4294 0001:0017E301
-  4295 0001:0017E30F  4296 0001:0017E31D  4297 0001:0017E328  4298 0001:0017E334
-  4299 0001:0017E342  4300 0001:0017E350  4301 0001:0017E35B  4302 0001:0017E367
-  4303 0001:0017E375  4304 0001:0017E383  4305 0001:0017E39C  4308 0001:0017E3A0
-  4309 0001:0017E3A9  4311 0001:0017E3FA  4314 0001:0017E400  4315 0001:0017E41C
-  4316 0001:0017E44C  4317 0001:0017E480  4320 0001:0017E484  4321 0001:0017E49E
-  4322 0001:0017E4C1  4323 0001:0017E509  4326 0001:0017E510  4327 0001:0017E517
-  4328 0001:0017E522  4329 0001:0017E52D  4331 0001:0017E54C  4332 0001:0017E554
-  4333 0001:0017E57C  4334 0001:0017E58B  4336 0001:0017E5B8  4338 0001:0017E5CA
-  4339 0001:0017E5F3  4340 0001:0017E5FD  4343 0001:0017E600  4344 0001:0017E623
-  4345 0001:0017E637  4346 0001:0017E643  4347 0001:0017E661  4348 0001:0017E69C
-  4354 0001:0017E6A0  4355 0001:0017E6AC  4356 0001:0017E6BD  4357 0001:0017E6D1
-  4358 0001:0017E6ED  4359 0001:0017E6FF  4362 0001:0017E704  4363 0001:0017E70D
-  4364 0001:0017E71F  4367 0001:0017E724  4368 0001:0017E730  4369 0001:0017E757
-  4372 0001:0017E75C  4373 0001:0017E765  4374 0001:0017E78A  4377 0001:0017E790
-  4378 0001:0017E799  4379 0001:0017E7AB  4386 0001:0017E7B0  4387 0001:0017E7B9
-  4388 0001:0017E7C3  4389 0001:0017E7DB  4390 0001:0017E7E8  4391 0001:0017E7F5
-  4392 0001:0017E800  4393 0001:0017E809  4396 0001:0017E810  4397 0001:0017E817
-  4403 0001:0017E81C  4404 0001:0017E83B  4405 0001:0017E845  4406 0001:0017E850
-  4407 0001:0017E85B  4408 0001:0017E869  4410 0001:0017E88C  4411 0001:0017E894
-  4412 0001:0017E8A5  4413 0001:0017E8C2  4414 0001:0017E8D0  4416 0001:0017E8F9
-  4418 0001:0017E93C  4420 0001:0017E948  4421 0001:0017E962  4422 0001:0017E977
-  4423 0001:0017E98A  4426 0001:0017E99B  4427 0001:0017E9C1  4428 0001:0017E9E4
-  4429 0001:0017EA06  4431 0001:0017EA1F  4433 0001:0017EA46  4436 0001:0017EA50
-  4437 0001:0017EA57  4442 0001:0017EA5C  4443 0001:0017EA7B  4444 0001:0017EA7F
-  4445 0001:0017EA8D  4446 0001:0017EA9E  4449 0001:0017EAF8  4450 0001:0017EAFC
-  4453 0001:0017EB1B  4454 0001:0017EB40  4458 0001:0017EB4C  4459 0001:0017EB5B
-  4460 0001:0017EB69  4462 0001:0017EB6F  4463 0001:0017EB92  4465 0001:0017EBB5
-  4472 0001:0017EBBC  4473 0001:0017EBE3  4475 0001:0017EC23  4476 0001:0017EC39
-  4478 0001:0017EC4B  4480 0001:0017EC5E  4481 0001:0017EC66  4482 0001:0017EC83
-  4483 0001:0017EC8B  4484 0001:0017ECA9  4486 0001:0017ECCB  4488 0001:0017ECD1
-  4489 0001:0017ECDA  4491 0001:0017ECDF  4492 0001:0017ECFA  4494 0001:0017ED00
-  4496 0001:0017ED17  4497 0001:0017ED36  4498 0001:0017ED44  4501 0001:0017ED80
-  4502 0001:0017ED9F  4508 0001:0017EDBE  4513 0001:0017EE10  4516 0001:0017EE1C
-  4517 0001:0017EE29  4519 0001:0017EE35  4520 0001:0017EE47  4522 0001:0017EE5D
-  4523 0001:0017EE68  4524 0001:0017EE73  4525 0001:0017EE7F  4528 0001:0017EE84
-  4529 0001:0017EE90  4531 0001:0017EEA3  4532 0001:0017EEB3  4534 0001:0017EEBE
-  4537 0001:0017EEC4  4538 0001:0017EED0  4539 0001:0017EEE8  4540 0001:0017EEF9
-  4541 0001:0017EF0A  4544 0001:0017EF10  4545 0001:0017EF1C  4546 0001:0017EF24
-  4548 0001:0017EF37  4549 0001:0017EF47  4551 0001:0017EF52  4554 0001:0017EF58
-  4555 0001:0017EF64  4557 0001:0017EF78  4558 0001:0017EF88  4560 0001:0017EF93
-  4563 0001:0017EF98  4564 0001:0017EFA4  4566 0001:0017EFB7  4567 0001:0017EFC7
-  4569 0001:0017EFD2  4572 0001:0017EFD8  4573 0001:0017EFE4  4574 0001:0017EFEC
-  4575 0001:0017EFFD  4576 0001:0017F00E  4579 0001:0017F014  4580 0001:0017F020
-  4581 0001:0017F032  4583 0001:0017F038  4584 0001:0017F061  4585 0001:0017F07B
-  4586 0001:0017F094  4587 0001:0017F09E  4590 0001:0017F0B7  4591 0001:0017F0C7
-  4592 0001:0017F0D1  4593 0001:0017F0DE  4594 0001:0017F0EE  4596 0001:0017F100
-  4599 0001:0017F104  4600 0001:0017F110  4601 0001:0017F121  4604 0001:0017F128
-  4605 0001:0017F134  4606 0001:0017F13E  4609 0001:0017F144  4610 0001:0017F150
-  4611 0001:0017F15A  4612 0001:0017F165  4613 0001:0017F16D  4616 0001:0017F174
-  4617 0001:0017F180  4618 0001:0017F18D  4619 0001:0017F197  4620 0001:0017F1A2
-  4621 0001:0017F1AA  4624 0001:0017F1B0  4625 0001:0017F1BC  4626 0001:0017F1C7
-  4627 0001:0017F1CF  4630 0001:0017F1D4  4631 0001:0017F1E0  4632 0001:0017F1EF
-  4635 0001:0017F1F4  4636 0001:0017F201  4638 0001:0017F241  4641 0001:0017F248
-  4642 0001:0017F255  4644 0001:0017F295  4647 0001:0017F29C  4648 0001:0017F2A8
-  4651 0001:0017F2E9  4652 0001:0017F2F7  4653 0001:0017F308  4655 0001:0017F311
-  4656 0001:0017F31C  4661 0001:0017F320  4662 0001:0017F33B  4663 0001:0017F348
-  4664 0001:0017F35A  4665 0001:0017F367  4666 0001:0017F371  4667 0001:0017F399
-  4670 0001:0017F3A4  4671 0001:0017F3B0  4673 0001:0017F3BB  4674 0001:0017F3C7
-  4675 0001:0017F3DD  4677 0001:0017F3E9  4678 0001:0017F3F3  4681 0001:0017F3F8
-  4682 0001:0017F3FF  4683 0001:0017F407  4684 0001:0017F40F  4689 0001:0017F414
-  4690 0001:0017F439  4691 0001:0017F44A  4693 0001:0017F463  4694 0001:0017F474
-  4695 0001:0017F485  4696 0001:0017F49C  4697 0001:0017F4B1  4691 0001:0017F4B4
-  4698 0001:0017F4B9  4699 0001:0017F4E0  4704 0001:0017F4E4  4705 0001:0017F4F3
-  4706 0001:0017F501  4708 0001:0017F514  4709 0001:0017F519  4710 0001:0017F54E
-  4711 0001:0017F557  4712 0001:0017F560  4713 0001:0017F573  4714 0001:0017F582
-  4715 0001:0017F58B  4717 0001:0017F592  4719 0001:0017F59C  4720 0001:0017F5A9
-  4721 0001:0017F5C7  4723 0001:0017F5E5  4724 0001:0017F5F0  4725 0001:0017F5F6
-  4728 0001:0017F617  4729 0001:0017F622  4731 0001:0017F627  4733 0001:0017F63D
-  4736 0001:0017F645  4739 0001:0017F64C  4740 0001:0017F658  4741 0001:0017F663
-  4742 0001:0017F673  4745 0001:0017F678  4746 0001:0017F694  4747 0001:0017F6AC
-  4748 0001:0017F6CE  4749 0001:0017F6DA  4750 0001:0017F6FD  4751 0001:0017F727
-  4754 0001:0017F72C  4755 0001:0017F733  4756 0001:0017F741  4758 0001:0017F756
-  4760 0001:0017F782  4763 0001:0017F788  4764 0001:0017F78F  4766 0001:0017F79B
-  4767 0001:0017F7B2  4768 0001:0017F7C9  4772 0001:0017F802  4773 0001:0017F80D
-  4774 0001:0017F818  4776 0001:0017F822  4778 0001:0017F82E  4779 0001:0017F836
-  4781 0001:0017F83E  4785 0001:0017F844  4786 0001:0017F854  4788 0001:0017F85E
-  4789 0001:0017F86B  4791 0001:0017F877  4792 0001:0017F882  4794 0001:0017F88E
-  4795 0001:0017F89D  4797 0001:0017F8A3  4800 0001:0017F8D1  4801 0001:0017F8DB
-  4802 0001:0017F8E5  4805 0001:0017F8F3  4806 0001:0017F909  4809 0001:0017F910
-  4810 0001:0017F91F  4812 0001:0017F92B  4813 0001:0017F939  4814 0001:0017F945
-  4816 0001:0017F94D  4817 0001:0017F95F  4821 0001:0017F968  4822 0001:0017F977
-  4824 0001:0017F983  4825 0001:0017F98B  4827 0001:0017F999  4828 0001:0017F9AF
-  4838 0001:0017F9B8  4839 0001:0017F9E2  4840 0001:0017F9F6  4841 0001:0017FA0C
-  4842 0001:0017FA22  4843 0001:0017FA32  4844 0001:0017FA4D  4845 0001:0017FA65
-  4846 0001:0017FA7B  4848 0001:0017FA98  4849 0001:0017FAA4  4850 0001:0017FAC0
-  4851 0001:0017FAD6  4852 0001:0017FAED  4853 0001:0017FB08  4854 0001:0017FB11
-  4855 0001:0017FB1A  4857 0001:0017FB2C  4858 0001:0017FB3D  4861 0001:0017FB74
-  4862 0001:0017FB8A  4863 0001:0017FBA0  4865 0001:0017FBA4  4866 0001:0017FBA9
-  4868 0001:0017FBBF  4869 0001:0017FBD3  4870 0001:0017FBDB  4871 0001:0017FBEE
-  4872 0001:0017FBFC  4873 0001:0017FC07  4874 0001:0017FC0E  4875 0001:0017FC17
-  4876 0001:0017FC2F  4877 0001:0017FC3C  4878 0001:0017FC5A  4880 0001:0017FC7A
-  4881 0001:0017FC80  4882 0001:0017FC86  4883 0001:0017FC9F  4884 0001:0017FCBE
-  4886 0001:0017FCC6  4887 0001:0017FCDA  4888 0001:0017FCEE  4889 0001:0017FCF1
-  4891 0001:0017FCFE  4866 0001:0017FD01  4893 0001:0017FD0A  4894 0001:0017FD0F
-  4895 0001:0017FD1A  4896 0001:0017FD39  4897 0001:0017FD57  4898 0001:0017FD68
-  4846 0001:0017FD6B  4899 0001:0017FD74  4900 0001:0017FDBC  4903 0001:0017FDD0
-  4904 0001:0017FDEB  4905 0001:0017FDF5  4906 0001:0017FE03  4908 0001:0017FE2F
-  4910 0001:0017FE5E  4915 0001:0017FE64  4916 0001:0017FE73  4917 0001:0017FE7E
-  4918 0001:0017FE97  4919 0001:0017FEB8  4920 0001:0017FECE  4921 0001:0017FED6
-  4924 0001:0017FEDC  4925 0001:0017FEE8  4927 0001:0017FEF6  4928 0001:0017FF02
-  4929 0001:0017FF0A  4931 0001:0017FF1B  4936 0001:0017FF20  4937 0001:0017FF2F
-  4938 0001:0017FF3D  4939 0001:0017FF4B  4940 0001:0017FF58  4941 0001:0017FF65
-  4942 0001:0017FF71  4944 0001:0017FF82  4945 0001:0017FF93  4947 0001:0017FF9E
-  4948 0001:0017FFBA  4951 0001:0017FFC0  4952 0001:0017FFC9  4953 0001:0017FFE0
-  4956 0001:0017FFE4  4957 0001:0017FFF1  4958 0001:0017FFFE  4959 0001:0018000B
-  4960 0001:00180033  4963 0001:00180038  4964 0001:0018003F  4966 0001:0018004B
-  4967 0001:0018005B  4969 0001:00180065  4972 0001:00180068  4973 0001:0018006F
-  4975 0001:0018007B  4976 0001:00180083  4977 0001:0018008D  4979 0001:00180097
-  4984 0001:0018009C  4985 0001:001800A5  4986 0001:001800AA  4987 0001:001800AF
-  4989 0001:001800BB  4990 0001:001800C2  4992 0001:001800D0  4994 0001:001800E3
-  4995 0001:001800EA  4997 0001:00180101  4999 0001:00180111  5000 0001:00180133
-  5001 0001:00180147  5002 0001:00180152  5003 0001:00180168  5005 0001:00180172
-  5011 0001:00180178  5012 0001:00180181  5013 0001:00180186  5014 0001:0018018B
-  5016 0001:0018019F  5017 0001:001801A6  5018 0001:001801BD  5020 0001:001801E4
-  5021 0001:001801EB  5022 0001:001801F2  5025 0001:0018021A  5026 0001:0018021F
-  5027 0001:00180225  5028 0001:0018022B  5030 0001:00180241  5033 0001:00180248
-  5034 0001:00180254  5036 0001:0018026A  5037 0001:00180272  5039 0001:00180283
-  5040 0001:0018028E  5043 0001:00180294  5044 0001:001802A0  5045 0001:001802AB
-  5046 0001:001802B9  5049 0001:001802C0  5050 0001:001802CC  5051 0001:001802D4
-  5052 0001:001802DF  5055 0001:001802E4  5056 0001:001802F0  5057 0001:001802F8
-  5060 0001:001802FC  5061 0001:00180308  5062 0001:00180315  5064 0001:0018032B
-  5065 0001:0018033C  5066 0001:00180373  5067 0001:0018038C  5068 0001:001803AB
-  5069 0001:001803CD  5072 0001:001803F8  5073 0001:00180423  5074 0001:0018042D
-  5076 0001:0018044C  5077 0001:00180474  5080 0001:0018047E  5081 0001:00180488
-  5083 0001:00180490  5086 0001:00180494  5087 0001:001804A1  5089 0001:001804E1
-  5092 0001:001804E8  5093 0001:001804F5  5095 0001:00180535  5100 0001:0018053C
-  5101 0001:00180557  5102 0001:00180564  5103 0001:00180576  5104 0001:0018059B
-  5107 0001:001805A4  5108 0001:001805B0  5111 0001:001805BB  5112 0001:001805C5
-  5113 0001:001805CF  5114 0001:001805DD  5116 0001:001805E7  5119 0001:001805EC
-  5120 0001:001805F8  5121 0001:00180602  5126 0001:00180608  5127 0001:00180623
-  5128 0001:00180630  5129 0001:00180642  5130 0001:0018064F  5131 0001:00180659
-  5132 0001:00180671  5133 0001:00180681  5134 0001:00180692  5135 0001:001806AE
-  5136 0001:001806BE  5137 0001:001806E6  5142 0001:001806F0  5143 0001:00180710
-  5145 0001:00180720  5146 0001:0018073A  5147 0001:00180745  5148 0001:0018075C
-  5150 0001:0018077F  5151 0001:00180789  5152 0001:00180799  5153 0001:001807A1
-  5154 0001:001807AE  5155 0001:001807D1  5157 0001:0018080D  5160 0001:00180814
-  5161 0001:00180820  5162 0001:0018082B  5163 0001:0018083F  5166 0001:00180844
-  5167 0001:00180850  5169 0001:0018086F  5170 0001:00180885  5172 0001:00180891
-  5173 0001:0018089C  5176 0001:001808A0  5177 0001:001808AC  5179 0001:001808B7
-  5180 0001:001808CD  5182 0001:001808D9  5183 0001:001808E3  5191 0001:001808E8
-  5192 0001:00180905  5194 0001:00180925  5195 0001:00180944  5196 0001:00180958
-  5197 0001:0018096C  5198 0001:00180978  5199 0001:00180991  5200 0001:001809A5
-  5201 0001:001809C3  5203 0001:001809FE  5204 0001:00180A26  5205 0001:00180A3D
-  5206 0001:00180A54  5207 0001:00180A70  5206 0001:00180A9C  5208 0001:00180AA1
-  5209 0001:00180AB2  5210 0001:00180AD8  5211 0001:00180AF2  5212 0001:00180B09
-  5213 0001:00180B2E  5214 0001:00180B3A  5215 0001:00180B6B  5217 0001:00180B77
-  5219 0001:00180B8C  5220 0001:00180B92  5221 0001:00180B98  5222 0001:00180B9E
-  5224 0001:00180BA2  5225 0001:00180BAF  5226 0001:00180BC6  5228 0001:00180BE2
-  5230 0001:00180C06  5231 0001:00180C10  5233 0001:00180C38  5238 0001:00180C4C
-  5239 0001:00180C79  5240 0001:00180C87  5241 0001:00180CAD  5243 0001:00180CB3
-  5244 0001:00180CD9  5246 0001:00180CE6  5248 0001:00180CF2  5249 0001:00180D01
-  5252 0001:00180D16  5253 0001:00180D2F  5255 0001:00180D45  5256 0001:00180D64
-  5258 0001:00180D6C  5259 0001:00180DB6  5262 0001:00180DBC  5263 0001:00180DC9
-  5264 0001:00180DD4  5265 0001:00180DE0  5266 0001:00180DED  5268 0001:00180E03
-  5270 0001:00180E1A  5271 0001:00180E2A  5274 0001:00180E30  5275 0001:00180E4A
-  5277 0001:00180E56  5278 0001:00180E77  5280 0001:00180E8E  5282 0001:00180EA9
-  5283 0001:00180ECA  5286 0001:00180EE1  5287 0001:00180EEE  5289 0001:00180EF8
-  5290 0001:00180F22  5293 0001:00180F28  5294 0001:00180F2F  5295 0001:00180F37
-  5296 0001:00180F42  5300 0001:00180F48  5301 0001:00180F57  5302 0001:00180F5D
-  5303 0001:00180F9C  5307 0001:00180FA4  5308 0001:00180FB3  5310 0001:00180FB9
-  5311 0001:00180FC4  5312 0001:00180FD0  5313 0001:00180FEB  5315 0001:00180FF7
-  5316 0001:00181001  5317 0001:0018100B  5318 0001:00181019  5321 0001:00181024
-  5322 0001:0018103A  5328 0001:00181040  5329 0001:0018104F  5331 0001:0018105F
-  5332 0001:0018106D  5334 0001:0018107D  5335 0001:001810AD  5337 0001:001810D1
-  5338 0001:001810D9  5339 0001:001810E4  5340 0001:00181103  5344 0001:00181105
-  5345 0001:00181117  5349 0001:00181120  5350 0001:0018112F  5351 0001:00181137
-  5352 0001:0018114D  5363 0001:00181154  5364 0001:00181171  5365 0001:00181185
-  5366 0001:0018119C  5368 0001:001811C6  5369 0001:001811D2  5371 0001:001811EE
-  5372 0001:00181204  5374 0001:0018120A  5375 0001:00181220  5377 0001:00181236
-  5380 0001:0018125D  5381 0001:0018126E  5384 0001:0018127F  5385 0001:00181294
-  5386 0001:001812A4  5387 0001:001812B5  5389 0001:001812C1  5390 0001:001812D9
-  5391 0001:001812ED  5392 0001:001812F4  5393 0001:00181301  5394 0001:0018131F
-  5396 0001:0018133F  5397 0001:0018135B  5399 0001:0018136F  5400 0001:0018137B
-  5401 0001:00181387  5403 0001:00181392  5404 0001:001813AB  5405 0001:001813C5
-  5406 0001:001813DC  5407 0001:001813FD  5409 0001:00181411  5410 0001:00181416
-  5413 0001:00181422  5415 0001:00181430  5416 0001:0018143C  5418 0001:00181442
-  5419 0001:0018144E  5421 0001:00181454  5422 0001:0018146C  5424 0001:00181472
-  5425 0001:00181476  5426 0001:00181486  5430 0001:001814AB  5431 0001:001814C3
-  5432 0001:001814CC  5433 0001:001814D8  5435 0001:001814E1  5436 0001:001814E8
-  5438 0001:00181523  5441 0001:00181528  5442 0001:00181538  5443 0001:00181568
-  5446 0001:00181570  5447 0001:00181579  5448 0001:00181590  5451 0001:00181594
-  5452 0001:0018159B  5454 0001:001815A7  5455 0001:001815B5  5456 0001:001815BF
-  5458 0001:001815C9  5463 0001:001815CC  5464 0001:001815DB  5466 0001:00181630
-  5468 0001:0018163E  5469 0001:0018164A  5471 0001:00181655  5474 0001:0018165C
-  5475 0001:00181668  5476 0001:00181684  5477 0001:00181691  5480 0001:00181698
-  5481 0001:001816A4  5483 0001:001816AE  5484 0001:001816B6  5486 0001:001816C0
-  5487 0001:001816CB  5490 0001:001816D0  5491 0001:001816DC  5492 0001:001816E7
-  5493 0001:001816F1  5496 0001:001816F8  5497 0001:00181704  5498 0001:00181713
-  5501 0001:00181718  5502 0001:00181724  5503 0001:0018172C  5504 0001:00181737
-  5507 0001:0018173C  5508 0001:00181748  5509 0001:00181753  5510 0001:00181760
-  5513 0001:00181764  5514 0001:00181771  5516 0001:001817B1  5519 0001:001817B8
-  5520 0001:001817C5  5522 0001:00181805  5525 0001:0018180C  5526 0001:00181818
-  5528 0001:00181823  5530 0001:00181846  5531 0001:00181850  5533 0001:00181858
-  5536 0001:0018185C  5537 0001:00181868  5538 0001:00181873  5540 0001:0018188D
-  5541 0001:00181897  5543 0001:0018189F  5823 0001:001819D8  5824 0001:001819E1
-  5825 0001:001819FE  5826 0001:00181A04  5827 0001:00181A0A  5829 0001:00181A10
-  5831 0001:00181A17  5834 0001:00181A1C  5835 0001:00181A28  5836 0001:00181A37
-  5839 0001:00181A3C  5840 0001:00181A43  5841 0001:00181A4F  5844 0001:00181A54
-  5845 0001:00181A60  5846 0001:00181A6F  5847 0001:00181A7F  5848 0001:00181A91
-  5850 0001:00181AA1  5853 0001:00181AA8  5854 0001:00181AB4  5855 0001:00181AC3
-  5862 0001:00181B44  5863 0001:00181B67  5865 0001:00181B86  5857 0001:00181B88
-  5858 0001:00181B9E  5859 0001:00181BC2  5861 0001:00181BD9
+  1427 0001:0017DD3C  1432 0001:0017DD48  1438 0001:0017DD86  1439 0001:0017DD91
+  1446 0001:0017DD98  1447 0001:0017DDA4  1448 0001:0017DDAA  1450 0001:0017DDB5
+  1451 0001:0017DDB9  1453 0001:0017DDE8  4205 0001:0017DDEC  4206 0001:0017DE04
+  4207 0001:0017DE0E  4208 0001:0017DE30  4211 0001:0017DE34  4212 0001:0017DE3B
+  4213 0001:0017DE52  4216 0001:0017DE58  4217 0001:0017DE65  4220 0001:0017DE9C
+  4221 0001:0017DEA3  4223 0001:0017DEB1  4226 0001:0017DEB8  4227 0001:0017DEBF
+  4228 0001:0017DED6  4231 0001:0017DEDC  4232 0001:0017DEE8  4233 0001:0017DEFF
+  4238 0001:0017DF04  4239 0001:0017DF1C  4240 0001:0017DF26  4241 0001:0017DF48
+  4244 0001:0017DF4C  4245 0001:0017DF53  4246 0001:0017DF6A  4249 0001:0017DF70
+  4250 0001:0017DF77  4251 0001:0017DF8E  4254 0001:0017DF94  4255 0001:0017DF9B
+  4256 0001:0017DFB2  4261 0001:0017DFB8  4262 0001:0017DFC7  4263 0001:0017DFCB
+  4264 0001:0017DFD9  4266 0001:0017DFF7  4267 0001:0017DFFF  4275 0001:0017E008
+  4276 0001:0017E03D  4277 0001:0017E04A  4278 0001:0017E054  4280 0001:0017E062
+  4281 0001:0017E06E  4282 0001:0017E078  4283 0001:0017E082  4284 0001:0017E09A
+  4285 0001:0017E0AF  4286 0001:0017E0BE  4287 0001:0017E0D3  4288 0001:0017E0E2
+  4289 0001:0017E0F7  4290 0001:0017E147  4293 0001:0017E154  4294 0001:0017E165
+  4295 0001:0017E173  4296 0001:0017E181  4297 0001:0017E18C  4298 0001:0017E198
+  4299 0001:0017E1A6  4300 0001:0017E1B4  4301 0001:0017E1BF  4302 0001:0017E1CB
+  4303 0001:0017E1D9  4304 0001:0017E1E7  4305 0001:0017E200  4308 0001:0017E204
+  4309 0001:0017E20D  4311 0001:0017E25E  4314 0001:0017E264  4315 0001:0017E280
+  4316 0001:0017E2B0  4317 0001:0017E2E4  4320 0001:0017E2E8  4321 0001:0017E302
+  4322 0001:0017E325  4323 0001:0017E36D  4326 0001:0017E374  4327 0001:0017E37B
+  4328 0001:0017E386  4329 0001:0017E391  4331 0001:0017E3B0  4332 0001:0017E3B8
+  4333 0001:0017E3E0  4334 0001:0017E3EF  4336 0001:0017E41C  4338 0001:0017E42E
+  4339 0001:0017E457  4340 0001:0017E461  4343 0001:0017E464  4344 0001:0017E487
+  4345 0001:0017E49B  4346 0001:0017E4A7  4347 0001:0017E4C5  4348 0001:0017E500
+  4354 0001:0017E504  4355 0001:0017E510  4356 0001:0017E521  4357 0001:0017E535
+  4358 0001:0017E551  4359 0001:0017E563  4362 0001:0017E568  4363 0001:0017E571
+  4364 0001:0017E583  4367 0001:0017E588  4368 0001:0017E594  4369 0001:0017E5BB
+  4372 0001:0017E5C0  4373 0001:0017E5C9  4374 0001:0017E5EE  4377 0001:0017E5F4
+  4378 0001:0017E5FD  4379 0001:0017E60F  4386 0001:0017E614  4387 0001:0017E61D
+  4388 0001:0017E627  4389 0001:0017E63F  4390 0001:0017E64C  4391 0001:0017E659
+  4392 0001:0017E664  4393 0001:0017E66D  4396 0001:0017E674  4397 0001:0017E67B
+  4403 0001:0017E680  4404 0001:0017E69F  4405 0001:0017E6A9  4406 0001:0017E6B4
+  4407 0001:0017E6BF  4408 0001:0017E6CD  4410 0001:0017E6F0  4411 0001:0017E6F8
+  4412 0001:0017E709  4413 0001:0017E726  4414 0001:0017E734  4416 0001:0017E75D
+  4418 0001:0017E7A0  4420 0001:0017E7AC  4421 0001:0017E7C6  4422 0001:0017E7DB
+  4423 0001:0017E7EE  4426 0001:0017E7FF  4427 0001:0017E825  4428 0001:0017E848
+  4429 0001:0017E86A  4431 0001:0017E883  4433 0001:0017E8AA  4436 0001:0017E8B4
+  4437 0001:0017E8BB  4442 0001:0017E8C0  4443 0001:0017E8DF  4444 0001:0017E8E3
+  4445 0001:0017E8F1  4446 0001:0017E902  4449 0001:0017E95C  4450 0001:0017E960
+  4453 0001:0017E97F  4454 0001:0017E9A4  4458 0001:0017E9B0  4459 0001:0017E9BF
+  4460 0001:0017E9CD  4462 0001:0017E9D3  4463 0001:0017E9F6  4465 0001:0017EA19
+  4472 0001:0017EA20  4473 0001:0017EA47  4475 0001:0017EA87  4476 0001:0017EA9D
+  4478 0001:0017EAAF  4480 0001:0017EAC2  4481 0001:0017EACA  4482 0001:0017EAE7
+  4483 0001:0017EAEF  4484 0001:0017EB0D  4486 0001:0017EB2F  4488 0001:0017EB35
+  4489 0001:0017EB3E  4491 0001:0017EB43  4492 0001:0017EB5E  4494 0001:0017EB64
+  4496 0001:0017EB7B  4497 0001:0017EB9A  4498 0001:0017EBA8  4501 0001:0017EBE4
+  4502 0001:0017EC03  4508 0001:0017EC22  4513 0001:0017EC74  4516 0001:0017EC80
+  4517 0001:0017EC8D  4519 0001:0017EC99  4520 0001:0017ECAB  4522 0001:0017ECC1
+  4523 0001:0017ECCC  4524 0001:0017ECD7  4525 0001:0017ECE3  4528 0001:0017ECE8
+  4529 0001:0017ECF4  4531 0001:0017ED07  4532 0001:0017ED17  4534 0001:0017ED22
+  4537 0001:0017ED28  4538 0001:0017ED34  4539 0001:0017ED4C  4540 0001:0017ED5D
+  4541 0001:0017ED6E  4544 0001:0017ED74  4545 0001:0017ED80  4546 0001:0017ED88
+  4548 0001:0017ED9B  4549 0001:0017EDAB  4551 0001:0017EDB6  4554 0001:0017EDBC
+  4555 0001:0017EDC8  4557 0001:0017EDDC  4558 0001:0017EDEC  4560 0001:0017EDF7
+  4563 0001:0017EDFC  4564 0001:0017EE08  4566 0001:0017EE1B  4567 0001:0017EE2B
+  4569 0001:0017EE36  4572 0001:0017EE3C  4573 0001:0017EE48  4574 0001:0017EE50
+  4575 0001:0017EE61  4576 0001:0017EE72  4579 0001:0017EE78  4580 0001:0017EE84
+  4581 0001:0017EE96  4583 0001:0017EE9C  4584 0001:0017EEC5  4585 0001:0017EEDF
+  4586 0001:0017EEF8  4587 0001:0017EF02  4590 0001:0017EF1B  4591 0001:0017EF2B
+  4592 0001:0017EF35  4593 0001:0017EF42  4594 0001:0017EF52  4596 0001:0017EF64
+  4599 0001:0017EF68  4600 0001:0017EF74  4601 0001:0017EF85  4604 0001:0017EF8C
+  4605 0001:0017EF98  4606 0001:0017EFA2  4609 0001:0017EFA8  4610 0001:0017EFB4
+  4611 0001:0017EFBE  4612 0001:0017EFC9  4613 0001:0017EFD1  4616 0001:0017EFD8
+  4617 0001:0017EFE4  4618 0001:0017EFF1  4619 0001:0017EFFB  4620 0001:0017F006
+  4621 0001:0017F00E  4624 0001:0017F014  4625 0001:0017F020  4626 0001:0017F02B
+  4627 0001:0017F033  4630 0001:0017F038  4631 0001:0017F044  4632 0001:0017F053
+  4635 0001:0017F058  4636 0001:0017F065  4638 0001:0017F0A5  4641 0001:0017F0AC
+  4642 0001:0017F0B9  4644 0001:0017F0F9  4647 0001:0017F100  4648 0001:0017F10C
+  4651 0001:0017F14D  4652 0001:0017F15B  4653 0001:0017F16C  4655 0001:0017F175
+  4656 0001:0017F180  4661 0001:0017F184  4662 0001:0017F19F  4663 0001:0017F1AC
+  4664 0001:0017F1BE  4665 0001:0017F1CB  4666 0001:0017F1D5  4667 0001:0017F1FD
+  4670 0001:0017F208  4671 0001:0017F214  4673 0001:0017F21F  4674 0001:0017F22B
+  4675 0001:0017F241  4677 0001:0017F24D  4678 0001:0017F257  4681 0001:0017F25C
+  4682 0001:0017F263  4683 0001:0017F26B  4684 0001:0017F273  4689 0001:0017F278
+  4690 0001:0017F29D  4691 0001:0017F2AE  4693 0001:0017F2C7  4694 0001:0017F2D8
+  4695 0001:0017F2E9  4696 0001:0017F300  4697 0001:0017F315  4691 0001:0017F318
+  4698 0001:0017F31D  4699 0001:0017F344  4704 0001:0017F348  4705 0001:0017F357
+  4706 0001:0017F365  4708 0001:0017F378  4709 0001:0017F37D  4710 0001:0017F3B2
+  4711 0001:0017F3BB  4712 0001:0017F3C4  4713 0001:0017F3D7  4714 0001:0017F3E6
+  4715 0001:0017F3EF  4717 0001:0017F3F6  4719 0001:0017F400  4720 0001:0017F40D
+  4721 0001:0017F42B  4723 0001:0017F449  4724 0001:0017F454  4725 0001:0017F45A
+  4728 0001:0017F47B  4729 0001:0017F486  4731 0001:0017F48B  4733 0001:0017F4A1
+  4736 0001:0017F4A9  4739 0001:0017F4B0  4740 0001:0017F4BC  4741 0001:0017F4C7
+  4742 0001:0017F4D7  4745 0001:0017F4DC  4746 0001:0017F4F8  4747 0001:0017F510
+  4748 0001:0017F532  4749 0001:0017F53E  4750 0001:0017F561  4751 0001:0017F58B
+  4754 0001:0017F590  4755 0001:0017F597  4756 0001:0017F5A5  4758 0001:0017F5BA
+  4760 0001:0017F5E6  4763 0001:0017F5EC  4764 0001:0017F5F3  4766 0001:0017F5FF
+  4767 0001:0017F616  4768 0001:0017F62D  4772 0001:0017F666  4773 0001:0017F671
+  4774 0001:0017F67C  4776 0001:0017F686  4778 0001:0017F692  4779 0001:0017F69A
+  4781 0001:0017F6A2  4785 0001:0017F6A8  4786 0001:0017F6B8  4788 0001:0017F6C2
+  4789 0001:0017F6CF  4791 0001:0017F6DB  4792 0001:0017F6E6  4794 0001:0017F6F2
+  4795 0001:0017F701  4797 0001:0017F707  4800 0001:0017F735  4801 0001:0017F73F
+  4802 0001:0017F749  4805 0001:0017F757  4806 0001:0017F76D  4809 0001:0017F774
+  4810 0001:0017F783  4812 0001:0017F78F  4813 0001:0017F79D  4814 0001:0017F7A9
+  4816 0001:0017F7B1  4817 0001:0017F7C3  4821 0001:0017F7CC  4822 0001:0017F7DB
+  4824 0001:0017F7E7  4825 0001:0017F7EF  4827 0001:0017F7FD  4828 0001:0017F813
+  4838 0001:0017F81C  4839 0001:0017F846  4840 0001:0017F85A  4841 0001:0017F870
+  4842 0001:0017F886  4843 0001:0017F896  4844 0001:0017F8B1  4845 0001:0017F8C9
+  4846 0001:0017F8DF  4848 0001:0017F8FC  4849 0001:0017F908  4850 0001:0017F924
+  4851 0001:0017F93A  4852 0001:0017F951  4853 0001:0017F96C  4854 0001:0017F975
+  4855 0001:0017F97E  4857 0001:0017F990  4858 0001:0017F9A1  4861 0001:0017F9D8
+  4862 0001:0017F9EE  4863 0001:0017FA04  4865 0001:0017FA08  4866 0001:0017FA0D
+  4868 0001:0017FA23  4869 0001:0017FA37  4870 0001:0017FA3F  4871 0001:0017FA52
+  4872 0001:0017FA60  4873 0001:0017FA6B  4874 0001:0017FA72  4875 0001:0017FA7B
+  4876 0001:0017FA93  4877 0001:0017FAA0  4878 0001:0017FABE  4880 0001:0017FADE
+  4881 0001:0017FAE4  4882 0001:0017FAEA  4883 0001:0017FB03  4884 0001:0017FB22
+  4886 0001:0017FB2A  4887 0001:0017FB3E  4888 0001:0017FB52  4889 0001:0017FB55
+  4891 0001:0017FB62  4866 0001:0017FB65  4893 0001:0017FB6E  4894 0001:0017FB73
+  4895 0001:0017FB7E  4896 0001:0017FB9D  4897 0001:0017FBBB  4898 0001:0017FBCC
+  4846 0001:0017FBCF  4899 0001:0017FBD8  4900 0001:0017FC20  4903 0001:0017FC34
+  4904 0001:0017FC4F  4905 0001:0017FC59  4906 0001:0017FC67  4908 0001:0017FC93
+  4910 0001:0017FCC2  4915 0001:0017FCC8  4916 0001:0017FCD7  4917 0001:0017FCE2
+  4918 0001:0017FCFB  4919 0001:0017FD1C  4920 0001:0017FD32  4921 0001:0017FD3A
+  4924 0001:0017FD40  4925 0001:0017FD4C  4927 0001:0017FD5A  4928 0001:0017FD66
+  4929 0001:0017FD6E  4931 0001:0017FD7F  4936 0001:0017FD84  4937 0001:0017FD93
+  4938 0001:0017FDA1  4939 0001:0017FDAF  4940 0001:0017FDBC  4941 0001:0017FDC9
+  4942 0001:0017FDD5  4944 0001:0017FDE6  4945 0001:0017FDF7  4947 0001:0017FE02
+  4948 0001:0017FE1E  4951 0001:0017FE24  4952 0001:0017FE2D  4953 0001:0017FE44
+  4956 0001:0017FE48  4957 0001:0017FE55  4958 0001:0017FE62  4959 0001:0017FE6F
+  4960 0001:0017FE97  4963 0001:0017FE9C  4964 0001:0017FEA3  4966 0001:0017FEAF
+  4967 0001:0017FEBF  4969 0001:0017FEC9  4972 0001:0017FECC  4973 0001:0017FED3
+  4975 0001:0017FEDF  4976 0001:0017FEE7  4977 0001:0017FEF1  4979 0001:0017FEFB
+  4984 0001:0017FF00  4985 0001:0017FF09  4986 0001:0017FF0E  4987 0001:0017FF13
+  4989 0001:0017FF1F  4990 0001:0017FF26  4992 0001:0017FF34  4994 0001:0017FF47
+  4995 0001:0017FF4E  4997 0001:0017FF65  4999 0001:0017FF75  5000 0001:0017FF97
+  5001 0001:0017FFAB  5002 0001:0017FFB6  5003 0001:0017FFCC  5005 0001:0017FFD6
+  5011 0001:0017FFDC  5012 0001:0017FFE5  5013 0001:0017FFEA  5014 0001:0017FFEF
+  5016 0001:00180003  5017 0001:0018000A  5018 0001:00180021  5020 0001:00180048
+  5021 0001:0018004F  5022 0001:00180056  5025 0001:0018007E  5026 0001:00180083
+  5027 0001:00180089  5028 0001:0018008F  5030 0001:001800A5  5033 0001:001800AC
+  5034 0001:001800B8  5036 0001:001800CE  5037 0001:001800D6  5039 0001:001800E7
+  5040 0001:001800F2  5043 0001:001800F8  5044 0001:00180104  5045 0001:0018010F
+  5046 0001:0018011D  5049 0001:00180124  5050 0001:00180130  5051 0001:00180138
+  5052 0001:00180143  5055 0001:00180148  5056 0001:00180154  5057 0001:0018015C
+  5060 0001:00180160  5061 0001:0018016C  5062 0001:00180179  5064 0001:0018018F
+  5065 0001:001801A0  5066 0001:001801D7  5067 0001:001801F0  5068 0001:0018020F
+  5069 0001:00180231  5072 0001:0018025C  5073 0001:00180287  5074 0001:00180291
+  5076 0001:001802B0  5077 0001:001802D8  5080 0001:001802E2  5081 0001:001802EC
+  5083 0001:001802F4  5086 0001:001802F8  5087 0001:00180305  5089 0001:00180345
+  5092 0001:0018034C  5093 0001:00180359  5095 0001:00180399  5100 0001:001803A0
+  5101 0001:001803BB  5102 0001:001803C8  5103 0001:001803DA  5104 0001:001803FF
+  5107 0001:00180408  5108 0001:00180414  5111 0001:0018041F  5112 0001:00180429
+  5113 0001:00180433  5114 0001:00180441  5116 0001:0018044B  5119 0001:00180450
+  5120 0001:0018045C  5121 0001:00180466  5126 0001:0018046C  5127 0001:00180487
+  5128 0001:00180494  5129 0001:001804A6  5130 0001:001804B3  5131 0001:001804BD
+  5132 0001:001804D5  5133 0001:001804E5  5134 0001:001804F6  5135 0001:00180512
+  5136 0001:00180522  5137 0001:0018054A  5142 0001:00180554  5143 0001:00180574
+  5145 0001:00180584  5146 0001:0018059E  5147 0001:001805A9  5148 0001:001805C0
+  5150 0001:001805E3  5151 0001:001805ED  5152 0001:001805FD  5153 0001:00180605
+  5154 0001:00180612  5155 0001:00180635  5157 0001:00180671  5160 0001:00180678
+  5161 0001:00180684  5162 0001:0018068F  5163 0001:001806A3  5166 0001:001806A8
+  5167 0001:001806B4  5169 0001:001806D3  5170 0001:001806E9  5172 0001:001806F5
+  5173 0001:00180700  5176 0001:00180704  5177 0001:00180710  5179 0001:0018071B
+  5180 0001:00180731  5182 0001:0018073D  5183 0001:00180747  5191 0001:0018074C
+  5192 0001:00180769  5194 0001:00180789  5195 0001:001807A8  5196 0001:001807BC
+  5197 0001:001807D0  5198 0001:001807DC  5199 0001:001807F5  5200 0001:00180809
+  5201 0001:00180827  5203 0001:00180862  5204 0001:0018088A  5205 0001:001808A1
+  5206 0001:001808B8  5207 0001:001808D4  5206 0001:00180900  5208 0001:00180905
+  5209 0001:00180916  5210 0001:0018093C  5211 0001:00180956  5212 0001:0018096D
+  5213 0001:00180992  5214 0001:0018099E  5215 0001:001809CF  5217 0001:001809DB
+  5219 0001:001809F0  5220 0001:001809F6  5221 0001:001809FC  5222 0001:00180A02
+  5224 0001:00180A06  5225 0001:00180A13  5226 0001:00180A2A  5228 0001:00180A46
+  5230 0001:00180A6A  5231 0001:00180A74  5233 0001:00180A9C  5238 0001:00180AB0
+  5239 0001:00180ADD  5240 0001:00180AEB  5241 0001:00180B11  5243 0001:00180B17
+  5244 0001:00180B3D  5246 0001:00180B4A  5248 0001:00180B56  5249 0001:00180B65
+  5252 0001:00180B7A  5253 0001:00180B93  5255 0001:00180BA9  5256 0001:00180BC8
+  5258 0001:00180BD0  5259 0001:00180C1A  5262 0001:00180C20  5263 0001:00180C2D
+  5264 0001:00180C38  5265 0001:00180C44  5266 0001:00180C51  5268 0001:00180C67
+  5270 0001:00180C7E  5271 0001:00180C8E  5274 0001:00180C94  5275 0001:00180CAE
+  5277 0001:00180CBA  5278 0001:00180CDB  5280 0001:00180CF2  5282 0001:00180D0D
+  5283 0001:00180D2E  5286 0001:00180D45  5287 0001:00180D52  5289 0001:00180D5C
+  5290 0001:00180D86  5293 0001:00180D8C  5294 0001:00180D93  5295 0001:00180D9B
+  5296 0001:00180DA6  5300 0001:00180DAC  5301 0001:00180DBB  5302 0001:00180DC1
+  5303 0001:00180E00  5307 0001:00180E08  5308 0001:00180E17  5310 0001:00180E1D
+  5311 0001:00180E28  5312 0001:00180E34  5313 0001:00180E4F  5315 0001:00180E5B
+  5316 0001:00180E65  5317 0001:00180E6F  5318 0001:00180E7D  5321 0001:00180E88
+  5322 0001:00180E9E  5328 0001:00180EA4  5329 0001:00180EB3  5331 0001:00180EC3
+  5332 0001:00180ED1  5334 0001:00180EE1  5335 0001:00180F11  5337 0001:00180F35
+  5338 0001:00180F3D  5339 0001:00180F48  5340 0001:00180F67  5344 0001:00180F69
+  5345 0001:00180F7B  5349 0001:00180F84  5350 0001:00180F93  5351 0001:00180F9B
+  5352 0001:00180FB1  5363 0001:00180FB8  5364 0001:00180FD5  5365 0001:00180FE9
+  5366 0001:00181000  5368 0001:0018102A  5369 0001:00181036  5371 0001:00181052
+  5372 0001:00181068  5374 0001:0018106E  5375 0001:00181084  5377 0001:0018109A
+  5380 0001:001810C1  5381 0001:001810D2  5384 0001:001810E3  5385 0001:001810F8
+  5386 0001:00181108  5387 0001:00181119  5389 0001:00181125  5390 0001:0018113D
+  5391 0001:00181151  5392 0001:00181158  5393 0001:00181165  5394 0001:00181183
+  5396 0001:001811A3  5397 0001:001811BF  5399 0001:001811D3  5400 0001:001811DF
+  5401 0001:001811EB  5403 0001:001811F6  5404 0001:0018120F  5405 0001:00181229
+  5406 0001:00181240  5407 0001:00181261  5409 0001:00181275  5410 0001:0018127A
+  5413 0001:00181286  5415 0001:00181294  5416 0001:001812A0  5418 0001:001812A6
+  5419 0001:001812B2  5421 0001:001812B8  5422 0001:001812D0  5424 0001:001812D6
+  5425 0001:001812DA  5426 0001:001812EA  5430 0001:0018130F  5431 0001:00181327
+  5432 0001:00181330  5433 0001:0018133C  5435 0001:00181345  5436 0001:0018134C
+  5438 0001:00181387  5441 0001:0018138C  5442 0001:0018139C  5443 0001:001813CC
+  5446 0001:001813D4  5447 0001:001813DD  5448 0001:001813F4  5451 0001:001813F8
+  5452 0001:001813FF  5454 0001:0018140B  5455 0001:00181419  5456 0001:00181423
+  5458 0001:0018142D  5463 0001:00181430  5464 0001:0018143F  5466 0001:00181494
+  5468 0001:001814A2  5469 0001:001814AE  5471 0001:001814B9  5474 0001:001814C0
+  5475 0001:001814CC  5476 0001:001814E8  5477 0001:001814F5  5480 0001:001814FC
+  5481 0001:00181508  5483 0001:00181512  5484 0001:0018151A  5486 0001:00181524
+  5487 0001:0018152F  5490 0001:00181534  5491 0001:00181540  5492 0001:0018154B
+  5493 0001:00181555  5496 0001:0018155C  5497 0001:00181568  5498 0001:00181577
+  5501 0001:0018157C  5502 0001:00181588  5503 0001:00181590  5504 0001:0018159B
+  5507 0001:001815A0  5508 0001:001815AC  5509 0001:001815B7  5510 0001:001815C4
+  5513 0001:001815C8  5514 0001:001815D5  5516 0001:00181615  5519 0001:0018161C
+  5520 0001:00181629  5522 0001:00181669  5525 0001:00181670  5526 0001:0018167C
+  5528 0001:00181687  5530 0001:001816AA  5531 0001:001816B4  5533 0001:001816BC
+  5536 0001:001816C0  5537 0001:001816CC  5538 0001:001816D7  5540 0001:001816F1
+  5541 0001:001816FB  5543 0001:00181703  5823 0001:0018183C  5824 0001:00181845
+  5825 0001:00181862  5826 0001:00181868  5827 0001:0018186E  5829 0001:00181874
+  5831 0001:0018187B  5834 0001:00181880  5835 0001:0018188C  5836 0001:0018189B
+  5839 0001:001818A0  5840 0001:001818A7  5841 0001:001818B3  5844 0001:001818B8
+  5845 0001:001818C4  5846 0001:001818D3  5847 0001:001818E3  5848 0001:001818F5
+  5850 0001:00181905  5853 0001:0018190C  5854 0001:00181918  5855 0001:00181927
+  5862 0001:001819A8  5863 0001:001819CB  5865 0001:001819EA  5857 0001:001819EC
+  5858 0001:00181A02  5859 0001:00181A26  5861 0001:00181A3D
 
 Line numbers for UDBControl(UDBControl.pas) segment .text
 
-    41 0001:00181C2C    41 0001:00181C33
+    41 0001:00181A90    41 0001:00181A97
 
 Line numbers for UDBLookupComboBoxAuto(UDBLookupComboBoxAuto.pas) segment .text
 
-   144 0001:00181C64   144 0001:00181C6B
+   144 0001:00181AC8   144 0001:00181ACF
 
 Line numbers for Unit1(Unit1.pas) segment .text
 
-    94 0001:00182214    95 0001:00182219    99 0001:0018221C   100 0001:00182221
-   108 0001:00182224   109 0001:00182249   110 0001:00182254   111 0001:00182268
-   112 0001:00182274   114 0001:00182280   116 0001:00182287   119 0001:00182297
-   121 0001:0018229E   124 0001:001822AE   126 0001:001822DA   127 0001:0018230E
-   135 0001:0018232C   136 0001:0018234A   138 0001:00182359   139 0001:00182367
-   141 0001:00182377   143 0001:001823A2   145 0001:00182400   151 0001:00182408
-   152 0001:00182422   154 0001:00182431   155 0001:0018243F   159 0001:0018244F
-   161 0001:0018248D   170 0001:00182494   172 0001:001824B3   174 0001:001824C6
-   175 0001:001824D6   176 0001:001824E6   178 0001:001824F4   179 0001:0018251F
-   182 0001:00182548   183 0001:0018254A   188 0001:001825BE   194 0001:00182608
-   195 0001:00182622   197 0001:00182631   198 0001:0018263F   202 0001:0018264F
-   204 0001:0018268D   208 0001:00182694   209 0001:00182699   213 0001:0018269C
-   214 0001:001826A1   218 0001:001826A4   219 0001:001826A9   223 0001:001826AC
-   224 0001:001826B2   225 0001:001826BD   227 0001:001826D0   230 0001:001826D4
-   231 0001:001826D7   232 0001:001826E7   234 0001:001826F4   235 0001:001826FF
-   236 0001:0018270A   238 0001:0018271A   239 0001:00182725   240 0001:00182730
-   242 0001:00182740   243 0001:0018274B   244 0001:00182756   246 0001:00182766
-   247 0001:00182773   248 0001:00182780   250 0001:0018278D   251 0001:0018279D
-   253 0001:001827AD   257 0001:001827D4   258 0001:001827D9   270 0001:001827DC
-   271 0001:00182809   273 0001:0018281A   275 0001:00182836   276 0001:00182849
-   277 0001:0018285F   279 0001:00182875   281 0001:00182881   282 0001:00182896
-   286 0001:0018289C   287 0001:001828D2   290 0001:001828D7   291 0001:001828E5
-   292 0001:001828F8   293 0001:0018290B   294 0001:0018291E   295 0001:00182930
-   298 0001:00182935   300 0001:00182947   306 0001:00182977   313 0001:001829A6
-   314 0001:001829B1   317 0001:001829DF   273 0001:001829E0   319 0001:00182A16
-   323 0001:00182AA8   324 0001:00182AAD   327 0001:00182AB0   331 0001:00182AB3
-   333 0001:00182AE8   335 0001:00182B1C   335 0001:00182B23
+    99 0001:001820A4   100 0001:001820A9   103 0001:001820AC   104 0001:001820AF
+   105 0001:001820BC   106 0001:001820C9   111 0001:001820CC   112 0001:001820D1
+   120 0001:001820D4   121 0001:001820F9   122 0001:00182104   123 0001:00182118
+   124 0001:00182124   126 0001:00182130   128 0001:00182137   131 0001:00182147
+   133 0001:0018214E   136 0001:0018215E   138 0001:0018218A   139 0001:001821BE
+   147 0001:001821DC   148 0001:001821FA   150 0001:00182209   151 0001:00182217
+   153 0001:00182227   155 0001:00182252   157 0001:001822B0   163 0001:001822B8
+   164 0001:001822D2   166 0001:001822E1   167 0001:001822EF   171 0001:001822FF
+   173 0001:0018233D   182 0001:00182344   184 0001:00182363   186 0001:00182376
+   187 0001:00182386   188 0001:00182396   190 0001:001823A4   191 0001:001823CF
+   192 0001:001823DD   194 0001:001823E9   198 0001:00182411   199 0001:00182413
+   204 0001:00182487   210 0001:001824D0   211 0001:001824EA   213 0001:001824F9
+   214 0001:00182507   218 0001:00182517   220 0001:00182555   224 0001:0018255C
+   225 0001:00182561   229 0001:00182564   230 0001:00182569   233 0001:0018256C
+   234 0001:0018256F   235 0001:00182576   236 0001:0018257D   240 0001:00182580
+   241 0001:00182586   242 0001:00182591   244 0001:001825A4   247 0001:001825A8
+   248 0001:001825AB   249 0001:001825BB   251 0001:001825C8   252 0001:001825D3
+   253 0001:001825DE   255 0001:001825EE   256 0001:001825F9   257 0001:00182604
+   259 0001:00182614   260 0001:0018261F   261 0001:0018262A   263 0001:0018263A
+   264 0001:00182647   265 0001:00182654   267 0001:00182661   268 0001:00182671
+   270 0001:00182681   271 0001:0018268E   272 0001:0018269B   276 0001:001826C4
+   277 0001:001826C9   289 0001:001826CC   290 0001:001826F9   292 0001:0018270A
+   294 0001:00182726   295 0001:00182739   296 0001:0018274F   298 0001:00182765
+   300 0001:00182771   301 0001:00182786   305 0001:0018278C   306 0001:001827C2
+   309 0001:001827C7   310 0001:001827D5   311 0001:001827E8   312 0001:001827FB
+   313 0001:0018280E   314 0001:00182820   317 0001:00182825   319 0001:00182837
+   325 0001:00182867   332 0001:00182896   333 0001:001828A1   336 0001:001828CF
+   292 0001:001828D0   338 0001:00182906   341 0001:00182998   342 0001:0018299B
+   343 0001:001829A2   344 0001:001829A9   347 0001:001829AC   349 0001:001829AF
+   350 0001:001829E4   352 0001:001829F3   354 0001:00182A00   358 0001:00182A04
+   359 0001:00182A09   366 0001:00182A0C   368 0001:00182A2C   370 0001:00182A3D
+   372 0001:00182A59   373 0001:00182A6C   374 0001:00182A82   375 0001:00182A98
+   377 0001:00182AAE   379 0001:00182ABD   380 0001:00182ACE   382 0001:00182B04
+   384 0001:00182B13   385 0001:00182B24   387 0001:00182B33   391 0001:00182B59
+   394 0001:00182B7F   400 0001:00182B8C   370 0001:00182B8D   402 0001:00182BB6
+   408 0001:00182C78   409 0001:00182CB0   411 0001:00182CC3   413 0001:00182CF9
+   414 0001:00182D43   420 0001:00182D4C   421 0001:00182D84   423 0001:00182D97
+   425 0001:00182DCD   426 0001:00182E17   428 0001:00182E50   428 0001:00182E57
 
 Line numbers for soapHuellaCliente(C:\Documents and Settings\Propietario\Mis documentos\Huella\soapHuellaCliente\soapHuellaCliente.dpr) segment .text
 
-    11 0001:00182FEC    12 0001:00182FFC    13 0001:00183008    14 0001:00183020
-    15 0001:0018302C
+    11 0001:00183320    12 0001:00183330    13 0001:0018333C    14 0001:00183354
+    15 0001:00183360
 
 Bound resource files
 
@@ -38418,4 +38433,4 @@ soapHuellaCliente.res
 soapHuellaCliente.drf
 
 
-Program entry point at 0001:00182FEC
+Program entry point at 0001:00183320

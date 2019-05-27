@@ -86,6 +86,12 @@ public class ProdemanSOAPClient {
 		return material;
 	}
 
+	public String mock_bajaAnimal(String fecha, String caravana)
+	{
+		return caravana;
+	}
+
+
 	public static void main(String[] args) {
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();

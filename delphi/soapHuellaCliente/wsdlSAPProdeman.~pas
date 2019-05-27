@@ -15,8 +15,6 @@ uses InvokeRegistry, SOAPHTTPClient, Types, XSBuiltIns;
 
 type
 
-  stringArray = Array of String;
-  
   // ************************************************************************ //
   // The following types, referred to in the WSDL document are not being represented
   // in this file. They are either aliases[@] of other types represented or were referred

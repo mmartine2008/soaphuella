@@ -22,8 +22,10 @@ function yaExisteAnimal(ID_RP:String; query: TIBQuery): boolean;
 procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
                           StringGridResultado: TStringGrid);
 
+
 implementation
 
+  
 procedure procesarResultadoConsulta(StringGridResultado: TStringGrid; movimientos: stringArray);
 var
   another : String;
@@ -35,6 +37,7 @@ begin
       StringGridResultado.FixedRows := 1;
       StringGridResultado.Cells[0, 0] := 'RP';
       StringGridResultado.Cells[1, 0] := 'Categoria';
+      StringGridResultado.Cells[2, 0] := 'Fecha';
 
       for i := 0 to length(movimientos) -1 do
       begin
@@ -51,6 +54,8 @@ begin
 
         datosAnimal.Destroy;
       end;
+
+
 end;
 
 procedure obtenerCategoriaSexo(CategoriaNombre: String; var CategoriaId, SexoId: integer; query: TIBQuery);
@@ -330,6 +335,8 @@ function getSQLEventoCambio:String;
 var
   sqlTxt: String;
 begin
+  // Falta que recupere la categoria verdadera (TORO == TORO INSEMINACION)
+
   sqlTxt := 'SELECT A.ID_RP AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
             'FROM EVE_CAMBIO_CATEGORIA N  '+
             'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO)    '+
@@ -365,5 +372,7 @@ begin
     calcularEventosModificacion(query, fechaDesde, fechaHasta, StringGridResultado);
 
 end;
+
+
 
 end.

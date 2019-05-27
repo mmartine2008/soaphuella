@@ -32,7 +32,7 @@ type
     GroupBox4: TGroupBox;
     Label7: TLabel;
     fechaDesde: TDateTimePicker;
-    consultaBt: TButton;
+    btConsulta: TButton;
     Label9: TLabel;
     Button5: TButton;
     RespuestaLog: TMemo;
@@ -42,7 +42,7 @@ type
     IBTransaction1: TIBTransaction;
     IBQuery1: TIBQuery;
     IBStoredProc1: TIBStoredProc;
-    Button1: TButton;
+    btMigrar: TButton;
     MemoResultadoActualizacion: TMemo;
     Label10: TLabel;
     Label11: TLabel;
@@ -58,16 +58,18 @@ type
     DBLookupComboBoxEstablecimiento: TDBLookupComboBox;
     fechaHasta: TDateTimePicker;
     btEventos: TButton;
+    btExportar: TButton;
     procedure Button5Click(Sender: TObject);
     procedure altaBtClick(Sender: TObject);
     procedure bajaBtClick(Sender: TObject);
     procedure modificaBtClick(Sender: TObject);
-    procedure consultaBtClick(Sender: TObject);
+    procedure btConsultaClick(Sender: TObject);
     procedure HTTPRIO1AfterExecute(const MethodName: String;
       SOAPResponse: TStream);
     procedure FormCreate(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure btMigrarClick(Sender: TObject);
     procedure btEventosClick(Sender: TObject);
+    procedure btExportarClick(Sender: TObject);
   private
     { Private declarations }
     procedure alta;
@@ -76,8 +78,11 @@ type
     procedure modificacion;
     procedure migrarConsulta;
     procedure consultaEventos;
-
+    procedure desahabilitaBotones;
     function getFecha(fechaPicker: TDateTimePicker): String;
+    procedure exportarEventos;
+    function eventoNuevo(Categoria, Fecha: String):string;
+    function eventoBaja(Caravana, Fecha: String):string;  
   public
     { Public declarations }
   end;
@@ -93,6 +98,13 @@ procedure TForm1.Button5Click(Sender: TObject);
 begin
   Close;
 end;
+
+procedure TForm1.desahabilitaBotones;
+begin
+  btMigrar.Enabled := false;
+  btExportar.Enabled := false;
+end;
+
 
 procedure TForm1.altaBtClick(Sender: TObject);
 begin
@@ -177,6 +189,10 @@ begin
     begin
       movimientos := ws.consultaMovimiento(fechaStr1, fechaStr2);
       procesarResultadoConsulta(StringGridResultado, movimientos);
+      if  length(movimientos) > 0 then
+      begin
+        btMigrar.enabled := true;
+      end;
     end
   except
     on E : Exception do
@@ -213,8 +229,9 @@ begin
   modificacion;
 end;
 
-procedure TForm1.consultaBtClick(Sender: TObject);
+procedure TForm1.btConsultaClick(Sender: TObject);
 begin
+  desahabilitaBotones;
   consulta;
 end;
 
@@ -250,9 +267,11 @@ begin
   DBLookupComboBoxEstablecimiento.ListFieldIndex := 1;
   DBLookupComboBoxRazas.ListFieldIndex := 1;
 
+  btMigrar.Enabled := false;
+  btExportar.Enabled := false;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.btMigrarClick(Sender: TObject);
 begin
   migrarConsulta;
 end;
@@ -320,16 +339,90 @@ end;
 
 procedure TForm1.btEventosClick(Sender: TObject);
 begin
+  desahabilitaBotones;
   consultaEventos;
 end;
 
 procedure TForm1.consultaEventos;
 begin
-//  fechaDesde := getFecha(fechaBaja);
-//  fechaHasta := getFecha(fechaAlta);
 
   recuperaEventos(fechaDesde.Date, fechaHasta.Date, IBQuery1, StringGridResultado);
+  if  StringGridResultado.RowCount > 1 then
+  begin
+    btExportar.Enabled := true;
+  end;
+end;
 
+procedure TForm1.btExportarClick(Sender: TObject);
+begin
+  exportarEventos;
+end;
+
+procedure TForm1.exportarEventos;
+var
+  i: integer;
+  ID_RP, Categoria, fecha, Evento: String;
+  ID_NUEVO: String;
+begin
+
+  MemoResultadoActualizacion.Lines.Clear;
+
+  for i := 1 to StringGridResultado.RowCount -2 do
+  begin
+    ID_RP     := StringGridResultado.Cells[0, i];
+    fecha     := StringGridResultado.Cells[1, i];
+    Categoria := StringGridResultado.Cells[2, i];
+    Evento    := StringGridResultado.Cells[3, i];
+
+    if Evento = 'Nuevo' then
+    begin
+      ID_NUEVO := eventoNuevo(Fecha, Categoria);
+      MemoResultadoActualizacion.Lines.Add('Se agrego el animal '+ID_RP+' con nuevo ID:' + ID_NUEVO);
+    end
+    else if Evento = 'Baja' then
+    begin
+      ID_NUEVO := eventoBaja(ID_RP, Fecha);
+      if (ID_NUEVO <> '-1') then
+      begin
+        MemoResultadoActualizacion.Lines.Add('Se elimino el animal '+ID_RP);
+      end
+      else
+      begin
+        MemoResultadoActualizacion.Lines.Add('Error eliminando el animal '+ID_RP);
+      end;
+    end
+    else if Evento = 'Cambio' then
+    begin
+      //ID_NUEVO := eventoCambio(ID_RP, Categoria, Fecha);
+    end;
+
+
+  end;
+
+end;
+
+function TForm1.eventoNuevo(Categoria, Fecha: String):string;
+var
+  ws: HuellaServer;
+  ID_NUEVO: String;
+begin
+   ws := GetHuellaServer(false, '', HTTPRIO1);
+
+   ID_NUEVO := ws.alta(Categoria, fecha);
+
+   eventoNuevo := ID_NUEVO;
+end;
+
+function TForm1.eventoBaja(Caravana, Fecha: String):string;
+var
+  ws: HuellaServer;
+  ID_NUEVO: String;
+begin
+   ws := GetHuellaServer(false, '', HTTPRIO1);
+
+   ID_NUEVO := ws.baja(Caravana, fecha);
+
+   eventoBaja := ID_NUEVO;
 end;
 
 end.

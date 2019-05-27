@@ -209,7 +209,7 @@ object Form1: TForm1
       Time = 42751.726518726850000000
       TabOrder = 0
     end
-    object consultaBt: TButton
+    object btConsulta: TButton
       Left = 120
       Top = 72
       Width = 185
@@ -217,7 +217,7 @@ object Form1: TForm1
       Hint = 'Consulta a SAP por los movimientos que hubieran de ingreso'
       Caption = 'Consultar Movimientos'
       TabOrder = 1
-      OnClick = consultaBtClick
+      OnClick = btConsultaClick
     end
     object StringGridResultado: TStringGrid
       Left = 24
@@ -231,14 +231,14 @@ object Form1: TForm1
       FixedRows = 0
       TabOrder = 2
     end
-    object Button1: TButton
+    object btMigrar: TButton
       Left = 104
       Top = 320
       Width = 193
       Height = 25
-      Caption = '&Migrar'
+      Caption = '&Importar desde SAP'
       TabOrder = 3
-      OnClick = Button1Click
+      OnClick = btMigrarClick
     end
     object MemoResultadoActualizacion: TMemo
       Left = 8
@@ -301,6 +301,15 @@ object Form1: TForm1
       Caption = 'Consultar Eventos'
       TabOrder = 9
       OnClick = btEventosClick
+    end
+    object btExportar: TButton
+      Left = 312
+      Top = 320
+      Width = 201
+      Height = 25
+      Caption = '&Exportar a SAP'
+      TabOrder = 10
+      OnClick = btExportarClick
     end
   end
   object Button5: TButton

@@ -86,10 +86,11 @@ public class HuellaServer {
 
 	@WebMethod
 	public String baja(
-		@WebParam(name="fecha", mode=WebParam.Mode.IN)
-		String fecha, 
 		@WebParam(name="caravana", mode=WebParam.Mode.IN)
-		String caravana)
+		String caravana,
+		@WebParam(name="fecha", mode=WebParam.Mode.IN)
+		String fecha 
+		)
 	{
 		String resultado = "Ok";
 
@@ -103,9 +104,9 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
 		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.baja(fecha, caravana);
+		//resultado = prodemanSOAPClient.baja(fecha, caravana);
 		// Esta linea simula el servicio
-		// ??
+		resultado = prodemanSOAPClient.mock_bajaAnimal(fecha, caravana);
 		
 		consulta += " Id borrado: " +resultado;
 		this.logging(consulta);
