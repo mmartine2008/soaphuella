@@ -92,7 +92,9 @@ public class HuellaServer {
 		@WebParam(name="caravana", mode=WebParam.Mode.IN)
 		String caravana,
 		@WebParam(name="fecha", mode=WebParam.Mode.IN)
-		String fecha 
+		String fecha,
+		@WebParam(name="categoria", mode=WebParam.Mode.IN)
+		String categoria 
 		)
 	{
 		String resultado = "Ok";
@@ -107,9 +109,10 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
 		// Esta linea consulta al servicio
-		//resultado = prodemanSOAPClient.baja(fecha, caravana);
+		resultado = prodemanSOAPClient.baja(fecha, caravana, categoria);
+
 		// Esta linea simula el servicio
-		resultado = prodemanSOAPClient.mock_bajaAnimal(fecha, caravana);
+		//resultado = prodemanSOAPClient.mock_bajaAnimal(fecha, caravana);
 		
 		consulta += " Id borrado: " +resultado;
 		this.logging(consulta);
@@ -123,13 +126,16 @@ public class HuellaServer {
 			String fecha, 
 			@WebParam(name="caravana", mode=WebParam.Mode.IN)
 			String caravana, 
-			@WebParam(name="categoria", mode=WebParam.Mode.IN)
-			String categoria)
+			@WebParam(name="categoriaAnterior", mode=WebParam.Mode.IN)
+			String categoriaAnterior, 
+			@WebParam(name="categoriaNueva", mode=WebParam.Mode.IN)
+			String categoriaNueva)
 	{
 		String resultado = "Ok";
 
 		String consulta = "Movimiento:";
-		consulta += " Material:"+ categoria;
+		consulta += " Material:"+ categoriaAnterior;
+		consulta += " Material Cambio:"+ categoriaNueva;
 		consulta += " Centro:" + this.centro;
 		consulta += " Almacen:" + this.almacen;
 		consulta += " Fecha:"+ fecha;
@@ -138,7 +144,8 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
 		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.modificacion(fecha, caravana, categoria);
+		resultado = prodemanSOAPClient.modificacion(fecha, caravana, 
+						categoriaAnterior, categoriaNueva);
 		// Esta linea simula el servicio
 		// -- ??;
 		

@@ -55,12 +55,23 @@ public class ProdemanSOAPClient {
 	{
 		Document document = EasyClient.convertStringToDocument(respuesta);
 		String output;
-
+		String errorCode;
 		try {
-			System.out.println(respuesta);
-			Node nodeMESSAGE_V1 = document.getElementsByTagName("MESSAGE_V1").item(0);
-			output = nodeMESSAGE_V1.getTextContent();
-		} catch (Exception e) {
+			Node typeError = document.getElementsByTagName("TYPE").item(0);
+			errorCode = typeError.getTextContent();
+			System.out.println(errorCode);
+			if (errorCode.equals("E"))
+			{
+				Node nodeMessage = document.getElementsByTagName("MESSAGE").item(0);
+				output = "-1 | " + 	nodeMessage.getTextContent();
+			} else 
+			{
+				//System.out.println(respuesta);
+				Node nodeMESSAGE_V1 = document.getElementsByTagName("MESSAGE_V1").item(0);
+				output = nodeMESSAGE_V1.getTextContent();
+			}
+		}
+		 catch (Exception e) {
 			output = "-1";
 		}
 
@@ -149,14 +160,17 @@ public class ProdemanSOAPClient {
 		return materialId;
 	}
 
-	public String modificacion(String fecha, String caravana, String categoria)
+	public String modificacion(String fecha, String caravana, 
+		String categoriaAnterior, String categoriaNueva)
 	{
 		EasyClient easyClient = new EasyClient();
 
 		String respuesta = easyClient.setMovimiento(
-			fecha, this.movimientoModificacion, caravana, categoria, null);
+			fecha, this.movimientoModificacion, caravana, 
+			categoriaAnterior, categoriaNueva);
 
 		String materialId = procesarRespuestaCreacion(respuesta);
+		System.out.println(respuesta);
 
 		return materialId;
 	}
