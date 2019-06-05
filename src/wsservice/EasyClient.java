@@ -33,9 +33,14 @@ import java.net.URL;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 
 
 public class EasyClient {
+
+    private String username;
+    private String password;
 
     private String baseFileConsulta; 
     private String wsEndPointConsulta; 
@@ -43,7 +48,10 @@ public class EasyClient {
 
     private String baseFileCreacion;
     private String wsEndPointCreacion;
-    private String SOAPActionCreacion;    
+    private String SOAPActionCreacion; 
+
+    private String plant;
+    private String stage_loc;
     
     /**
      * Lee la configuracion del arvhico ini
@@ -56,9 +64,15 @@ public class EasyClient {
             wsEndPointConsulta = ini.getString("Consulta", "wsEndPointConsulta", "");
             SOAPActionConsulta = ini.getString("Consulta", "SOAPActionConsulta", "");
 
-            baseFileCreacion   = ini.getString("Creacion", "baseFileCreacion", "");;
-            wsEndPointCreacion = ini.getString("Creacion", "wsEndPointCreacion", "");;
-            SOAPActionCreacion = ini.getString("Creacion", "SOAPActionCreacion", "");;    
+            baseFileCreacion   = ini.getString("Creacion", "baseFileCreacion", "");
+            wsEndPointCreacion = ini.getString("Creacion", "wsEndPointCreacion", "");
+            SOAPActionCreacion = ini.getString("Creacion", "SOAPActionCreacion", "");
+            
+            username   = ini.getString("Comun", "username", "");
+            password   = ini.getString("Comun", "password", "");
+
+            plant = ini.getString("Comun", "PLANT", "");
+            stage_loc = ini.getString("Comun", "STGE_LOC", "");
         
         }catch(Exception e){
             System.err.println(e.getMessage());
@@ -137,6 +151,9 @@ public class EasyClient {
 
     public String getMovimientos(String desde, String hasta)
     {
+        BufferedReader br;
+        String response;
+
         leerConfiguracion();
     
         String xmlBase = getStringService(baseFileConsulta);
@@ -146,37 +163,31 @@ public class EasyClient {
 
         HttpURLConnection httpConn = getConnection(wsEndPointConsulta);
         sendRequest(httpConn, SOAPActionConsulta, xmlInput);
-        String response = getResponse(httpConn);
+        response = getResponse(httpConn);
 
         return response;
     }
 
-    /** 
-     * Prepara el pedido en el XML doc
+    /**
+     * setea un valor del XML de intercambio
      */
-    private void prepareCreacion(String fecha, String tipoMovimiento, String caravana, Document doc)
+    private void preparaParametro(Document doc, String tagName, String tagValue)
     {
-        Node nodeFechaPst = doc.getElementsByTagName("PSTNG_DATE").item(0);
-        nodeFechaPst.setTextContent(fecha);
-        Node nodeFecha = doc.getElementsByTagName("DOC_DATE").item(0);
-        nodeFecha.setTextContent(fecha);
-
-        Node nodeMvto = doc.getElementsByTagName("MOVE_TYPE").item(0);
-        nodeMvto.setTextContent(tipoMovimiento);
-
-        Node nodeCategoria = doc.getElementsByTagName("MATERIAL").item(0);
-        nodeCategoria.setTextContent(caravana);        
+        Node node = doc.getElementsByTagName(tagName).item(0);
+        node.setTextContent(tagValue);
     }
 
-    private void prepareCreacionCambio(String fecha, String tipoMovimiento, String categoria, String caravana, Document doc)
+    private void preparaParametrosComunes(Document doc)
     {
-        prepareCreacion(fecha, tipoMovimiento, caravana, doc);
-
-        Node nodeCategoria = doc.getElementsByTagName("MOVE_MAT").item(0);
-        nodeCategoria.setTextContent(caravana);
+        preparaParametro(doc, "PLANT", plant);
+        preparaParametro(doc, "STGE_LOC", stage_loc);
     }    
 
-    public String setMovimiento(String fecha, String tipoMovimiento, String caravana, String categoria)
+    /**
+     * categoriaDestino puede ser null , si no es un cambio de categoria
+     */
+    public String setMovimiento(String fecha, String tipoMovimiento, String caravana, 
+                    String categoriaOrigen, String categoriaDestino)
     {
         String response = "";
         leerConfiguracion();
@@ -184,12 +195,19 @@ public class EasyClient {
         String xmlBase = getStringService(baseFileCreacion);
 
         Document doc = convertStringToDocument(xmlBase);
-        // Si la categoria es null, es creacion o baja 
-        if (categoria == null) {
-            prepareCreacion(fecha, tipoMovimiento, caravana, doc);
-        } else 
+
+        preparaParametrosComunes(doc);
+        preparaParametro(doc, "PSTNG_DATE", fecha);
+        preparaParametro(doc, "DOC_DATE", fecha);
+        preparaParametro(doc, "MOVE_TYPE", tipoMovimiento);
+        preparaParametro(doc, "BATCH", caravana);
+        preparaParametro(doc, "MATERIAL", categoriaOrigen);
+        if (tipoMovimiento.equals("309"))  // Es un cambio
         {
-            prepareCreacionCambio(fecha, tipoMovimiento, caravana, categoria, doc);
+            preparaParametro(doc, "MOVE_MAT", categoriaDestino);
+            preparaParametro(doc, "MOVE_BATCH", caravana);
+            preparaParametro(doc, "MOVE_PLANT", plant);
+            preparaParametro(doc, "MOVE_STLOC", stage_loc);
         }
         
         String xmlInput = convertDocumentToString(doc);
@@ -207,7 +225,7 @@ public class EasyClient {
     public static void main(String args[]) {
         EasyClient easyClient = new EasyClient();
 
-        String respuesta = easyClient.getMovimientos("2019-01-01", "2019-04-01");
+        String respuesta = easyClient.getMovimientos("2019-01-01", "2019-06-01");
 
         System.out.println(respuesta);
     }
@@ -215,9 +233,14 @@ public class EasyClient {
     protected  HttpURLConnection getConnection(String wsEndPoint)
     {
         try {
+            
+    
             // Crea la conexion
             URL url = new URL(wsEndPoint);
+            
             URLConnection connection = url.openConnection();
+
+
             HttpURLConnection httpConn = (HttpURLConnection) connection;
             return httpConn;
         } catch (Exception e)
@@ -238,9 +261,14 @@ public class EasyClient {
             bout.write(buffer);
             byte[] b = bout.toByteArray();
 
+            String userpass = username + ":" + password;
+            String basicAuth = "Basic " + new String(Base64.encode(userpass.getBytes()));
+
             httpConn.setRequestProperty("Content-Length", String.valueOf(b.length));
             httpConn.setRequestProperty("Content-Type", "text/xml; charset=utf-8");
             httpConn.setRequestProperty("SOAPAction", SOAPAction);
+            httpConn.setRequestProperty ("Authorization", basicAuth);
+
             httpConn.setRequestMethod("POST");
             httpConn.setDoOutput(true);
             httpConn.setDoInput(true);
@@ -252,7 +280,8 @@ public class EasyClient {
             out.close();
         } catch (Exception e)
         {
-            System.out.println(e);
+            
+            System.out.println("266: "+e.toString());
         }
     }
 
@@ -271,7 +300,7 @@ public class EasyClient {
             }
         } catch (IOException e)
         {
-            System.out.println(e);
+            System.out.println("285: "+e);
         }
 
 		// Write the SOAP message formatted to the console.

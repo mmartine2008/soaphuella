@@ -34,7 +34,7 @@
                <SCHED_LINE></SCHED_LINE>
                <VAL_TYPE></VAL_TYPE>
                <ENTRY_QNT>1</ENTRY_QNT>
-               <ENTRY_UOM>ST</ENTRY_UOM>
+               <ENTRY_UOM>EA</ENTRY_UOM>
                <ENTRY_UOM_ISO></ENTRY_UOM_ISO>
                <PO_PR_QNT></PO_PR_QNT>
                <ORDERPR_UN></ORDERPR_UN>

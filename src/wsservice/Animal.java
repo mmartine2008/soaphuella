@@ -19,7 +19,7 @@ public class Animal {
     public String categoria;
     public String fecha;
 
-    private String parseCategoria(String material)
+    private static String parseCategoria(String material)
     {
         switch (material) {
             case "000000000120010101": return "TERNERO"; 
@@ -27,9 +27,22 @@ public class Animal {
             case "000000000120010103": return "NOVILLO"; 
             case "000000000120010104": return "VACA"; 
             case "000000000120010105": return "TORO"; 
-            case "000000000120010106": return "VAQUILLONA"; 
+            case "000000000120010106": return "VAQUILLONA";
+            default: return null; 
         }
-        return material;
+    }
+
+    public static boolean esCategoriaAnimal(Node nodo)
+    {
+        String material = getValorXML(nodo, "MATERIAL");
+        String categoria = parseCategoria(material);
+        if (categoria != null)
+        {
+            return true;
+        } else 
+        {
+            return false;
+        }
     }
 
     private static String getValorXML(Node nodo, String TagName)
@@ -49,7 +62,7 @@ public class Animal {
 
     Animal (Node nodo) {
 
-        String rp = getValorXML(nodo, "MAT_DOC");
+        String rp = getValorXML(nodo, "BATCH");
         String categoria = getValorXML(nodo, "MATERIAL");
         categoria = this.parseCategoria(categoria);
 

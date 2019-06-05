@@ -41,9 +41,9 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 		
 		// Esta linea consulta al servicio
-//		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
 		// Esta linea (alternativa) consulta un archivo simulado
-		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
+//		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
 
 		String[] output = new String[respuesta.size()];
 
@@ -59,6 +59,8 @@ public class HuellaServer {
 	public String alta(
 		@WebParam(name="fecha", mode=WebParam.Mode.IN) 
 		String fecha, 
+		@WebParam(name="caravana", mode=WebParam.Mode.IN) 
+		String caravana, 
 		@WebParam(name="categoria", mode=WebParam.Mode.IN) 
 		String categoria)
 	{
@@ -66,6 +68,7 @@ public class HuellaServer {
 
 		String consulta = "Movimiento:";
 		consulta += " Material:"+ categoria;
+		consulta += " Caravana:"+ caravana;
 		consulta += " Centro:" + this.centro;
 		consulta += " Almacen:" + this.almacen;
 		consulta += " Fecha:"+ fecha;
@@ -74,9 +77,9 @@ public class HuellaServer {
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
 		// Esta linea consulta al servicio
-		//resultado = prodemanSOAPClient.alta(fecha, categoria);
+		resultado = prodemanSOAPClient.alta(fecha, caravana, categoria);
 		// Esta linea simula el servicio
-		resultado = prodemanSOAPClient.mock_altaAnimal(fecha, categoria);
+		//resultado = prodemanSOAPClient.mock_altaAnimal(fecha, caravana, categoria);
 		
 		consulta += " Id Nuevo: " +resultado;
 		this.logging(consulta);

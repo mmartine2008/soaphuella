@@ -801,17 +801,17 @@
          </FI_ITEM>
       </urn:ZMM_GOODSMVT_CREATE_SOLO>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="55e44e89-a71c-4950-9f0d-d0f3b2dbccc3" name="Baja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:rfc:functions:ZMM_WS_GOODSMVT_CREATE_SOLO:ZMM_GOODSMVT_CREATE_SOLORequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="55e44e89-a71c-4950-9f0d-d0f3b2dbccc3" name="Baja"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept-Language" value="es,en-US" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://srv-s4-asq.pdm.local:8000/sap/bc/srt/rfc/sap/zmm_ws_goodsmvt_create_solo/400/zmm_ws_goodsmvt_create_solo/zmm_ws_goodsmvt_create_solo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
    <soapenv:Header/>
    <soapenv:Body>
       <urn:ZMM_GOODSMVT_CREATE_SOLO>
          <FI_HEADER>
-            <PSTNG_DATE>2019-05-22</PSTNG_DATE>
-            <DOC_DATE>2019-05-22</DOC_DATE>
+            <PSTNG_DATE>2019-06-03</PSTNG_DATE>
+            <DOC_DATE>2019-06-03</DOC_DATE>
             <REF_DOC_NO></REF_DOC_NO>
             <BILL_OF_LADING></BILL_OF_LADING>
             <GR_GI_SLIP_NO></GR_GI_SLIP_NO>
-            <PR_UNAME>IF_PDM</PR_UNAME>
+            <PR_UNAME></PR_UNAME>
             <HEADER_TXT></HEADER_TXT>
             <VER_GR_GI_SLIP></VER_GR_GI_SLIP>
             <VER_GR_GI_SLIPX></VER_GR_GI_SLIPX>
@@ -823,10 +823,10 @@
          <FI_ITEM>
             <!--Zero or more repetitions:-->
             <item>
-               <MATERIAL>4900001014</MATERIAL>
+               <MATERIAL>120010103</MATERIAL>
                <PLANT>5010</PLANT>
                <STGE_LOC>A001</STGE_LOC>
-               <BATCH>HZ082B125</BATCH>
+               <BATCH>HZ082B456</BATCH>
                <MOVE_TYPE>973</MOVE_TYPE>
                <STCK_TYPE></STCK_TYPE>
                <SPEC_STOCK></SPEC_STOCK>
@@ -837,7 +837,7 @@
                <SCHED_LINE></SCHED_LINE>
                <VAL_TYPE></VAL_TYPE>
                <ENTRY_QNT>1</ENTRY_QNT>
-               <ENTRY_UOM>ST</ENTRY_UOM>
+               <ENTRY_UOM>EA</ENTRY_UOM>
                <ENTRY_UOM_ISO></ENTRY_UOM_ISO>
                <PO_PR_QNT></PO_PR_QNT>
                <ORDERPR_UN></ORDERPR_UN>
@@ -876,8 +876,8 @@
                <NETWORK></NETWORK>
                <ACTIVITY></ACTIVITY>
                <PART_ACCT></PART_ACCT>
-               <AMOUNT_LC>10.0</AMOUNT_LC>
-               <AMOUNT_SV>10.0</AMOUNT_SV>
+               <AMOUNT_LC></AMOUNT_LC>
+               <AMOUNT_SV></AMOUNT_SV>
                <REF_DOC_YR></REF_DOC_YR>
                <REF_DOC></REF_DOC>
                <REF_DOC_IT></REF_DOC_IT>
