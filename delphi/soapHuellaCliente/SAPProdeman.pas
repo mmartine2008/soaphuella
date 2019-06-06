@@ -236,19 +236,20 @@ end;
 
 procedure iniciaGrillaEventos(StringGridResultado: TStringGrid);
 begin
-      StringGridResultado.ColCount := 4;
+      StringGridResultado.ColCount := 5;
       StringGridResultado.RowCount := 2;
       StringGridResultado.FixedRows := 1;
-      StringGridResultado.Cells[0, 0] := 'RP';
+      StringGridResultado.Cells[0, 0] := 'Id Senasa';
       StringGridResultado.Cells[1, 0] := 'Fecha';
       StringGridResultado.Cells[2, 0] := 'Categoria';
       StringGridResultado.Cells[3, 0] := 'Evento';
+      StringGridResultado.Cells[4, 0] := 'Categoria Nueva';
 end;
 
 procedure cargarGrillaResultados(query: TIBQuery;
                           StringGridResultado: TStringGrid; Evento: String);
 var
-  categoria: String;
+  categoria, categoria_nueva: String;
   fecha: TDate;
   id_animal: String;
 
@@ -263,6 +264,12 @@ begin
        StringGridResultado.Cells[1, StringGridResultado.RowCount -1] := DateToStr(fecha);
        StringGridResultado.Cells[2, StringGridResultado.RowCount -1] := categoria;
        StringGridResultado.Cells[3, StringGridResultado.RowCount -1] := Evento;
+
+       if Evento = 'Cambio' then
+       begin
+          categoria_nueva :=  query.FieldByName('CATEGORIA_NUEVA').AsString;
+          StringGridResultado.Cells[4, StringGridResultado.RowCount -1] := categoria_nueva;
+       end;
 
        query.Next;
        if not query.Eof then
@@ -284,13 +291,17 @@ begin
     query.Open;
 end;
 
+{
+Solo recupera eventos de nacimiento. Son los unicos que se informan
+}
 function getSQLEventoAlta:String;
 var
   sqlTxt: String;
 begin
-  sqlTxt := 'SELECT E.ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
+  sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
               'FROM EVE_NACIMIENTO N                           '+
               'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) '+
+              'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
               'INNER JOIN COD_CATEGORIAS C ON (C.ID_CATEGORIA = E.CATEGORIA) '+
               'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
 
@@ -301,7 +312,7 @@ function getSQLEventoBaja:String;
 var
   sqlTxt: String;
 begin
-  sqlTxt := 'SELECT A.ID_RP AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA ' +
+  sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA ' +
               'FROM EVE_BAJA N       ' +
               'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) ' +
               'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
@@ -337,12 +348,14 @@ var
 begin
   // Falta que recupere la categoria verdadera (TORO == TORO INSEMINACION)
 
-  sqlTxt := 'SELECT A.ID_RP AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
+  sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, '+
+            'C.NOMBRE AS CATEGORIA, C2.NOMBRE AS CATEGORIA_NUEVA '+
             'FROM EVE_CAMBIO_CATEGORIA N  '+
             'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO)    '+
             'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL)  '+
-            'INNER JOIN COD_CATEGORIAS C ON (N.CATEGORIA_NUEVA = C.ID_CATEGORIA) '+
-              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA '; 
+            'INNER JOIN COD_CATEGORIAS C ON (N.CATEGORIA_ANTERIOR = C.ID_CATEGORIA) '+
+            'INNER JOIN COD_CATEGORIAS C2 ON (N.CATEGORIA_NUEVA = C2.ID_CATEGORIA) '+
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
 
   getSQLEventoCambio := sqlTxt;
 end;

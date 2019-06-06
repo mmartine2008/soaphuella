@@ -19,6 +19,12 @@ public class HuellaServer {
 	private String centro = "5010";
 	private String almacen = "A001";
 
+	private Boolean mocking = false;
+
+	public void setMocking(Boolean mocking)
+	{
+		this.mocking = mocking;
+	}
 
 	/**
 	* Logging interno del servicio. 
@@ -39,11 +45,15 @@ public class HuellaServer {
 		this.logging("consultaMovimiento "+desde+" "+hasta);
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
-		
-		// Esta linea consulta al servicio
-		ArrayList<Animal> respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
-		// Esta linea (alternativa) consulta un archivo simulado
-//		ArrayList<Animal> respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
+		ArrayList<Animal> respuesta;
+		if (this.mocking)
+		{
+			respuesta = prodemanSOAPClient.mock_consultaMovimiento(desde, hasta);
+		}
+		else
+		{
+			respuesta = prodemanSOAPClient.consultaMovimiento(desde, hasta);
+		}
 
 		String[] output = new String[respuesta.size()];
 
@@ -76,12 +86,16 @@ public class HuellaServer {
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
-		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.alta(fecha, caravana, categoria);
-		// Esta linea simula el servicio
-		//resultado = prodemanSOAPClient.mock_altaAnimal(fecha, caravana, categoria);
-		
-		consulta += " Id Nuevo: " +resultado;
+		if (this.mocking)
+		{
+			resultado = prodemanSOAPClient.mock_altaAnimal(fecha, caravana, categoria);
+		}
+		else
+		{
+			resultado = prodemanSOAPClient.alta(fecha, caravana, categoria);
+		}		
+
+		consulta += " DocMaterial: " +resultado;
 		this.logging(consulta);
 
 		return resultado;
@@ -108,11 +122,14 @@ public class HuellaServer {
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
-		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.baja(fecha, caravana, categoria);
-
-		// Esta linea simula el servicio
-		//resultado = prodemanSOAPClient.mock_bajaAnimal(fecha, caravana);
+		if (this.mocking)
+		{
+			resultado = prodemanSOAPClient.mock_bajaAnimal(fecha, caravana, categoria);
+		}
+		else
+		{
+			resultado = prodemanSOAPClient.baja(fecha, caravana, categoria);
+		}	
 		
 		consulta += " Id borrado: " +resultado;
 		this.logging(consulta);
@@ -143,13 +160,18 @@ public class HuellaServer {
 
 		ProdemanSOAPClient prodemanSOAPClient = new ProdemanSOAPClient();
 
-		// Esta linea consulta al servicio
-		resultado = prodemanSOAPClient.modificacion(fecha, caravana, 
-						categoriaAnterior, categoriaNueva);
-		// Esta linea simula el servicio
-		// -- ??;
-		
-		consulta += " Id modificado: " +resultado;
+		if (this.mocking)
+		{
+			resultado = prodemanSOAPClient.mock_cambioCategoria(fecha, caravana, 
+								categoriaAnterior, categoriaNueva);
+		}
+		else
+		{
+			resultado = prodemanSOAPClient.modificacion(fecha, caravana, 
+								categoriaAnterior, categoriaNueva);
+		}
+
+		consulta += " Id Material Modificado: " +resultado;
 		this.logging(consulta);
 
 		return resultado;		

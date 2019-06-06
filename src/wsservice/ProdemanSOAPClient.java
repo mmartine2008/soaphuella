@@ -90,21 +90,33 @@ public class ProdemanSOAPClient {
 	}
 
 	/**
-	 * Simula un alta, para poder procesar la respuesta
+	 * Simula una llamada al servicio de creacion.
 	 */
-	public String mock_altaAnimal(String fecha, String caravana, String categoria)
+	private String mock_creacion()
 	{
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();
 		String material = p.procesarRespuestaCreacion(respuestaPrueba);
 		return material;
 	}
-
-	public String mock_bajaAnimal(String fecha, String caravana)
+	/**
+	 * Simula un alta, para poder procesar la respuesta
+	 */
+	public String mock_altaAnimal(String fecha, String caravana, String categoria)
 	{
-		return caravana;
+		return mock_creacion();
 	}
 
+	public String mock_bajaAnimal(String fecha, String caravana, String categoria)
+	{
+		return mock_creacion();
+	}
+
+	public String mock_cambioCategoria(String fecha, String caravana, 
+				String categoria, String categoriaNueva)
+	{
+		return mock_creacion();
+	}	
 
 	public static void main(String[] args) {
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");

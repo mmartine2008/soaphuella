@@ -27,7 +27,15 @@ public class HuellaServiceStarter {
 		String url = protocolo+"://"+host+":"+port+"/"+endPoint;
 		String wsdl = url + "?" + "wsdl";
 
-		Endpoint.publish(url, new HuellaServer());
+		HuellaServer huellaServer = new HuellaServer();
+		
+		if (args.length > 4)
+		{
+			huellaServer.setMocking(true);
+			System.out.println("<< MOCKING ACTIVO >>");
+		}
+
+		Endpoint.publish(url, huellaServer);
 
 		System.out.println("Servicio Huella Iniciado en  @ " + url);
 		System.out.println("Puede obtener el WSDL en "+wsdl);
