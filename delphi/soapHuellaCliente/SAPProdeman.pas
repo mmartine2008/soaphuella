@@ -22,6 +22,9 @@ function yaExisteAnimal(ID_RP:String; query: TIBQuery): boolean;
 procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
                           StringGridResultado: TStringGrid);
 
+function formatearFecha(fecha: String):String;
+function formatearCategoria(categoria: String):String;
+
 
 implementation
 
@@ -386,6 +389,27 @@ begin
 
 end;
 
+// Recibe 20/03/2018 emite 2018-03-20
+function formatearFecha( fecha: String):String;
+var
+  dia, mes, anio: string;
+begin
+  dia := copy(fecha, 1, 2);
+  mes := copy(fecha, 4, 2);
+  anio := copy(fecha, 7, 4);
 
+  formatearFecha := anio + '-' + mes + '-' + dia;
+
+end;
+
+function formatearCategoria(categoria: String ):String;
+begin
+  if categoria = 'TERNERO' then formatearCategoria := '120010101';
+  if categoria = 'TERNERA' then formatearCategoria := '120010102';
+  if categoria = 'NOVILLO' then formatearCategoria := '120010103';
+  if categoria = 'VACA'    then formatearCategoria := '120010104';
+  if categoria = 'TORO'    then formatearCategoria := '120010105';
+  if categoria = 'VAQUILLONA' then formatearCategoria := '120010106';
+end;
 
 end.

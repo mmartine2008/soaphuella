@@ -146,6 +146,7 @@ public class ProdemanSOAPClient {
 	 */
 	public String alta(String fecha, String caravana, String categoria)
 	{
+		System.out.println("ALTA: "+fecha+" "+caravana+ " "+categoria);
 		EasyClient easyClient = new EasyClient();
 
 		String respuesta = easyClient.setMovimiento(
@@ -162,6 +163,7 @@ public class ProdemanSOAPClient {
 	 */	
 	public String baja(String fecha, String caravana, String categoria)
 	{
+		System.out.println("BAJA: "+fecha+" "+caravana+ " "+categoria);
 		EasyClient easyClient = new EasyClient();
 
 		String respuesta = easyClient.setMovimiento(

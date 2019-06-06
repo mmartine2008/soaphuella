@@ -4,7 +4,7 @@
 // WSDL     : http://192.168.1.102:1212/huella?wsdl
 // Encoding : UTF-8
 // Version  : 1.0
-// (27/05/2019 08:52:46 p.m. - 1.33.2.5)
+// (06/06/2019 04:58:21 p.m. - 1.33.2.5)
 // ************************************************************************ //
 
 unit wsdlSAPProdeman;
@@ -15,6 +15,8 @@ uses InvokeRegistry, SOAPHTTPClient, Types, XSBuiltIns;
 
 type
 
+  stringArray = Array of String;
+  
   // ************************************************************************ //
   // The following types, referred to in the WSDL document are not being represented
   // in this file. They are either aliases[@] of other types represented or were referred
@@ -24,6 +26,7 @@ type
   // ************************************************************************ //
   // !:string          - "http://www.w3.org/2001/XMLSchema"
   // !:stringArray     - "http://jaxb.dev.java.net/array"
+  // !:boolean         - "http://www.w3.org/2001/XMLSchema"
 
 
   // ************************************************************************ //
@@ -38,9 +41,10 @@ type
   HuellaServer = interface(IInvokable)
   ['{95D6A290-4AEA-6330-BBE5-6DB4CBF51A2B}']
     function  consultaMovimiento(const desde: WideString; const hasta: WideString): stringArray; stdcall;
-    function  alta(const fecha: WideString; const categoria: WideString): WideString; stdcall;
-    function  baja(const caravana: WideString; const fecha: WideString): WideString; stdcall;
-    function  modificacion(const fecha: WideString; const caravana: WideString; const categoria: WideString): WideString; stdcall;
+    function  alta(const fecha: WideString; const caravana: WideString; const categoria: WideString): WideString; stdcall;
+    function  baja(const caravana: WideString; const fecha: WideString; const categoria: WideString): WideString; stdcall;
+    function  modificacion(const fecha: WideString; const caravana: WideString; const categoriaAnterior: WideString; const categoriaNueva: WideString): WideString; stdcall;
+    procedure setMocking(const arg0: Boolean); stdcall;
   end;
 
 function GetHuellaServer(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): HuellaServer;

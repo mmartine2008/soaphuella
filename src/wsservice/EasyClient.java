@@ -165,8 +165,6 @@ public class EasyClient {
         sendRequest(httpConn, SOAPActionConsulta, xmlInput);
         response = getResponse(httpConn);
 
-        System.out.println(response);
-
         return response;
     }
 

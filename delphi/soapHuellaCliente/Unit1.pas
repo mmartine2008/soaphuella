@@ -11,31 +11,12 @@ uses
 
 type
   TForm1 = class(TForm)
-    GroupBox1: TGroupBox;
-    Edit1: TEdit;
-    fechaAlta: TDateTimePicker;
-    Label1: TLabel;
-    Label2: TLabel;
-    altaBt: TButton;
-    GroupBox2: TGroupBox;
-    Label3: TLabel;
-    Label4: TLabel;
-    Edit2: TEdit;
-    fechaBaja: TDateTimePicker;
-    bajaBt: TButton;
-    GroupBox3: TGroupBox;
-    Label5: TLabel;
-    Label6: TLabel;
-    Edit3: TEdit;
-    fechaModifica: TDateTimePicker;
-    modificaBt: TButton;
     GroupBox4: TGroupBox;
     Label7: TLabel;
     fechaDesde: TDateTimePicker;
     btConsulta: TButton;
     Label9: TLabel;
     Button5: TButton;
-    RespuestaLog: TMemo;
     HTTPRIO1: THTTPRIO;
     StringGridResultado: TStringGrid;
     IBDatabase1: TIBDatabase;
@@ -59,30 +40,37 @@ type
     fechaHasta: TDateTimePicker;
     btEventos: TButton;
     btExportar: TButton;
+    Label1: TLabel;
+    urlProxy: TEdit;
     procedure Button5Click(Sender: TObject);
-    procedure altaBtClick(Sender: TObject);
-    procedure bajaBtClick(Sender: TObject);
-    procedure modificaBtClick(Sender: TObject);
     procedure btConsultaClick(Sender: TObject);
-    procedure HTTPRIO1AfterExecute(const MethodName: String;
-      SOAPResponse: TStream);
     procedure FormCreate(Sender: TObject);
     procedure btMigrarClick(Sender: TObject);
     procedure btEventosClick(Sender: TObject);
     procedure btExportarClick(Sender: TObject);
   private
     { Private declarations }
-    procedure alta;
-    procedure baja;
+
+
     procedure consulta;
-    procedure modificacion;
+
     procedure migrarConsulta;
     procedure consultaEventos;
     procedure desahabilitaBotones;
     function getFecha(fechaPicker: TDateTimePicker): String;
     procedure exportarEventos;
-    function eventoNuevo(Categoria, Fecha: String):string;
-    function eventoBaja(Caravana, Fecha: String):string;  
+    function eventoNuevo(fecha, caravana, categoria: String):string;
+    function eventoBaja(fecha, caravana, categoria: String):string;
+    function eventoCambio(fecha, caravana, categoria, categoriaNueva: String):string;
+    procedure procesarError(ID_RP, Evento, docMaterial: String);
+    procedure procesarEvento(ID_RP, fecha, categoria, Evento, categoriaNueva : String);
+
+    function chequearDatosNecesarios: boolean;
+    function chequearEstablecimiento: boolean;
+    function chequearRaza: boolean;
+    function chequerColor: boolean;
+
+    function getConector: HuellaServer;
   public
     { Public declarations }
   end;
@@ -105,11 +93,6 @@ begin
   btExportar.Enabled := false;
 end;
 
-
-procedure TForm1.altaBtClick(Sender: TObject);
-begin
-  alta;
-end;
 
 function TForm1.getFecha(fechaPicker: TDateTimePicker): String;
 var
@@ -138,41 +121,6 @@ begin
   getFecha := fechaStr;
 end;
 
-procedure TForm1.alta;
-var
-  ws: HuellaServer;
-  caravana, fechaStr: String;
-  rta: WideString;
-
-begin
-  ws := GetHuellaServer;
-  
-  caravana := Edit1.Text;
-  fechaStr :=  getFecha(fechaAlta);
-
-  ws.alta(fechaStr, caravana);
-
-  RespuestaLog.Lines.Add(rta);
-
-end;
-
-procedure TForm1.baja;
-var
-  ws: HuellaServer;
-  caravana, fechaStr, rta: String;
-begin
-  ws := GetHuellaServer;
-  
-  caravana := Edit2.Text;
-  fechaStr :=  getFecha(fechaBaja);
-
-  //rta := ws.baja(fechaStr, caravana);
-
-  RespuestaLog.Lines.Add(rta);
-
-end;
-
-
 procedure TForm1.consulta;
 var
   ws: HuellaServer;
@@ -181,7 +129,7 @@ var
 
 begin
 
-  ws := GetHuellaServer(false, '', HTTPRIO1);
+  ws := getConector;
 
   fechaStr1 := getFecha(fechaDesde);
   fechaStr2 := getFecha(fechaHasta);
@@ -203,44 +151,10 @@ begin
 
 end;
 
-procedure TForm1.modificacion;
-var
-  ws: HuellaServer;
-  caravana, fechaStr, rta: String;
-begin
-  ws := GetHuellaServer();
-
-  caravana := Edit3.Text;
-  fechaStr :=  getFecha(fechaModifica);
-
-//  rta := ws.modificacion(fechaStr, caravana);
-
-  RespuestaLog.Lines.Add(rta);
-
-end;
-
-procedure TForm1.bajaBtClick(Sender: TObject);
-begin
-  baja;
-end;
-
-procedure TForm1.modificaBtClick(Sender: TObject);
-begin
-  modificacion;
-end;
-
 procedure TForm1.btConsultaClick(Sender: TObject);
 begin
   desahabilitaBotones;
   consulta;
-end;
-
-procedure TForm1.HTTPRIO1AfterExecute(const MethodName: String;
-  SOAPResponse: TStream);
-begin
-  SOAPResponse.Position := 0;
-  RespuestaLog.Lines.LoadFromStream(SOAPResponse);
-
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -271,9 +185,59 @@ begin
   btExportar.Enabled := false;
 end;
 
+function TForm1.chequearEstablecimiento: boolean;
+begin
+  if VarIsNull(self.DBLookupComboBoxEstablecimiento.KeyValue) then
+  begin
+    ShowMessage('Seleccione Establecimiento');
+    chequearEstablecimiento := false;
+  end
+  else
+  begin
+    chequearEstablecimiento := true;
+  end;
+end;
+
+function TForm1.chequearRaza: boolean;
+begin
+  if VarIsNull(self.DBLookupComboBoxRazas.KeyValue) then
+  begin
+    ShowMessage('Seleccione Raza');
+    chequearRaza := false;
+  end
+  else
+  begin
+    chequearRaza := true;
+  end;
+end;
+
+function TForm1.chequerColor: boolean;
+begin
+  if VarIsNull(self.DBLookupComboBoxColor.KeyValue) then
+  begin
+    ShowMessage('Seleccione Color');
+    chequerColor := false;
+  end
+  else
+  begin
+    chequerColor := true;
+  end;
+end;
+
+
+function TForm1.chequearDatosNecesarios: boolean;
+begin
+  chequearDatosNecesarios :=
+    chequearEstablecimiento and
+    chequerColor and chequearRaza;
+end;
+
 procedure TForm1.btMigrarClick(Sender: TObject);
 begin
-  migrarConsulta;
+  if chequearDatosNecesarios then
+  begin
+    migrarConsulta;
+  end
 end;
 
 {
@@ -358,71 +322,112 @@ begin
   exportarEventos;
 end;
 
+procedure TForm1.procesarError(ID_RP, Evento, docMaterial: String);
+begin
+  if AnsiPos(docMaterial, '|') = 0 then
+  begin
+      MemoResultadoActualizacion.Lines.Add('El evento '+Evento+' del animal '+
+              ID_RP+' se realizó con Documento:' + docMaterial);
+  end
+  else
+  begin
+    MemoResultadoActualizacion.Lines.Add('El evento '+Evento+' del animal '+
+              ID_RP+' tuvo el error:' + docMaterial);
+  end;
+end;
+
+
+procedure TForm1.procesarEvento(ID_RP, fecha, categoria,
+            Evento, categoriaNueva : String) ;
+var
+  docMaterial: String;
+begin
+    if Evento = 'Nuevo' then
+    begin
+      docMaterial := eventoNuevo(formatearFecha(Fecha), ID_RP, formatearCategoria(categoria));
+    end;
+
+    if Evento = 'Baja' then
+    begin
+      docMaterial := eventoBaja(formatearFecha(Fecha), ID_RP, formatearCategoria(categoria));
+    end;
+
+    if Evento = 'Cambio' then
+    begin
+      docMaterial := eventoCambio(formatearFecha(Fecha), ID_RP, formatearCategoria(categoria),
+                                          formatearCategoria(categoriaNueva));
+    end;
+
+    procesarError(ID_RP, Evento, docMaterial);
+end;
+
 procedure TForm1.exportarEventos;
 var
   i: integer;
-  ID_RP, Categoria, fecha, Evento: String;
-  ID_NUEVO: String;
+  ID_RP, categoria, categoriaNueva, fecha, Evento: String;
 begin
 
   MemoResultadoActualizacion.Lines.Clear;
 
-  for i := 1 to StringGridResultado.RowCount -2 do
+  for i := 1 to StringGridResultado.RowCount -1 do
   begin
     ID_RP     := StringGridResultado.Cells[0, i];
     fecha     := StringGridResultado.Cells[1, i];
-    Categoria := StringGridResultado.Cells[2, i];
+    categoria := StringGridResultado.Cells[2, i];
     Evento    := StringGridResultado.Cells[3, i];
+    categoriaNueva := StringGridResultado.Cells[4, i];
 
-    if Evento = 'Nuevo' then
-    begin
-      ID_NUEVO := eventoNuevo(Fecha, Categoria);
-      MemoResultadoActualizacion.Lines.Add('Se agrego el animal '+ID_RP+' con nuevo ID:' + ID_NUEVO);
-    end
-    else if Evento = 'Baja' then
-    begin
-      ID_NUEVO := eventoBaja(ID_RP, Fecha);
-      if (ID_NUEVO <> '-1') then
-      begin
-        MemoResultadoActualizacion.Lines.Add('Se elimino el animal '+ID_RP);
-      end
-      else
-      begin
-        MemoResultadoActualizacion.Lines.Add('Error eliminando el animal '+ID_RP);
-      end;
-    end
-    else if Evento = 'Cambio' then
-    begin
-      //ID_NUEVO := eventoCambio(ID_RP, Categoria, Fecha);
-    end;
-
-
+    procesarEvento(ID_RP, fecha, categoria, Evento, categoriaNueva);
   end;
 
 end;
 
-function TForm1.eventoNuevo(Categoria, Fecha: String):string;
+function TForm1.eventoCambio(fecha, caravana, categoria, categoriaNueva: String):string;
 var
   ws: HuellaServer;
-  ID_NUEVO: String;
+  docMaterial: String;
 begin
-   ws := GetHuellaServer(false, '', HTTPRIO1);
+   ws := getConector;
 
-   ID_NUEVO := ws.alta(Categoria, fecha);
+   docMaterial := ws.modificacion(fecha, caravana, categoria, categoriaNueva);
 
-   eventoNuevo := ID_NUEVO;
+   eventoCambio := docMaterial;
 end;
 
-function TForm1.eventoBaja(Caravana, Fecha: String):string;
+function TForm1.eventoNuevo(fecha, caravana, categoria: String):string;
 var
   ws: HuellaServer;
-  ID_NUEVO: String;
+  docMaterial: String;
 begin
-   ws := GetHuellaServer(false, '', HTTPRIO1);
+   ws := getConector;
 
-   ID_NUEVO := ws.baja(Caravana, fecha);
+   docMaterial := ws.alta(fecha, caravana, categoria);
 
-   eventoBaja := ID_NUEVO;
+   eventoNuevo := docMaterial;
+end;
+
+function TForm1.eventoBaja(fecha, caravana, categoria: String):string;
+var
+  ws: HuellaServer;
+  docMaterial: String;
+begin
+   ws := getConector;
+
+   docMaterial := ws.baja(fecha, caravana, categoria);
+
+   eventoBaja := docMaterial;
+end;
+
+function TForm1.getConector: HuellaServer;
+var
+  ws: HuellaServer;
+  defURL: String;
+begin
+  defURL := urlProxy.Text;
+
+  ws := GetHuellaServer(false, defURL+ '?wsdl');
+
+  getConector := ws;
 end;
 
 end.

@@ -22,6 +22,9 @@ function yaExisteAnimal(ID_RP:String; query: TIBQuery): boolean;
 procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
                           StringGridResultado: TStringGrid);
 
+function formatearFecha(fecha: String):String;
+function formatearCategoria(categoria: String):String;
+
 
 implementation
 
@@ -298,7 +301,7 @@ function getSQLEventoAlta:String;
 var
   sqlTxt: String;
 begin
-  sqlTxt := 'SELECT A.ID_SENASA, E.FECHA, C.NOMBRE AS CATEGORIA '+
+  sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
               'FROM EVE_NACIMIENTO N                           '+
               'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) '+
               'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
@@ -386,6 +389,27 @@ begin
 
 end;
 
+// Recibe 20/03/2018 emite 2018-03-20
+function formatearFecha( fecha: String):String;
+var
+  dia, mes, anio: string;
+begin
+  dia := copy(fecha, 1, 2);
+  mes := copy(fecha, 4, 2);
+  anio := copy(fecha, 6, 4);
 
+  formatearFecha := anio + '-' + mes + '-' + dia;
+
+end;
+
+function formatearCategoria(categoria: String ):String;
+begin
+  if categoria = 'TERNERO' then formatearCategoria := '120010101';
+  if categoria = 'TERNERA' then formatearCategoria := '120010102';
+  if categoria = 'NOVILLO' then formatearCategoria := '120010103';
+  if categoria = 'VACA'    then formatearCategoria := '120010104';
+  if categoria = 'TORO'    then formatearCategoria := '120010105';
+  if categoria = 'VAQUILLONA' then formatearCategoria := '120010106';
+end;
 
 end.
