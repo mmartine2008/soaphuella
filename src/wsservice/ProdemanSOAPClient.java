@@ -59,14 +59,13 @@ public class ProdemanSOAPClient {
 		try {
 			Node typeError = document.getElementsByTagName("TYPE").item(0);
 			errorCode = typeError.getTextContent();
-			System.out.println(errorCode);
+			
 			if (errorCode.equals("E"))
 			{
 				Node nodeMessage = document.getElementsByTagName("MESSAGE").item(0);
 				output = "-1 | " + 	nodeMessage.getTextContent();
 			} else 
 			{
-				//System.out.println(respuesta);
 				Node nodeMESSAGE_V1 = document.getElementsByTagName("MESSAGE_V1").item(0);
 				output = nodeMESSAGE_V1.getTextContent();
 			}

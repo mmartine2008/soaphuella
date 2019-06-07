@@ -25,6 +25,7 @@
   <message name="baja">
     <part name="caravana" type="xsd:string"/>
     <part name="fecha" type="xsd:string"/>
+    <part name="categoria" type="xsd:string"/>
   </message>
   <message name="bajaResponse">
     <part name="return" type="xsd:string"/>
@@ -32,11 +33,16 @@
   <message name="modificacion">
     <part name="fecha" type="xsd:string"/>
     <part name="caravana" type="xsd:string"/>
-    <part name="categoria" type="xsd:string"/>
+    <part name="categoriaAnterior" type="xsd:string"/>
+    <part name="categoriaNueva" type="xsd:string"/>
   </message>
   <message name="modificacionResponse">
     <part name="return" type="xsd:string"/>
   </message>
+  <message name="setMocking">
+    <part name="arg0" type="xsd:boolean"/>
+  </message>
+  <message name="setMockingResponse"/>
   <portType name="HuellaServer">
     <operation name="consultaMovimiento" parameterOrder="desde hasta">
       <input wsam:Action="http://wsserver/HuellaServer/consultaMovimientoRequest" message="tns:consultaMovimiento"/>
@@ -46,13 +52,17 @@
       <input wsam:Action="http://wsserver/HuellaServer/altaRequest" message="tns:alta"/>
       <output wsam:Action="http://wsserver/HuellaServer/altaResponse" message="tns:altaResponse"/>
     </operation>
-    <operation name="baja" parameterOrder="caravana fecha">
+    <operation name="baja" parameterOrder="caravana fecha categoria">
       <input wsam:Action="http://wsserver/HuellaServer/bajaRequest" message="tns:baja"/>
       <output wsam:Action="http://wsserver/HuellaServer/bajaResponse" message="tns:bajaResponse"/>
     </operation>
-    <operation name="modificacion" parameterOrder="fecha caravana categoria">
+    <operation name="modificacion" parameterOrder="fecha caravana categoriaAnterior categoriaNueva">
       <input wsam:Action="http://wsserver/HuellaServer/modificacionRequest" message="tns:modificacion"/>
       <output wsam:Action="http://wsserver/HuellaServer/modificacionResponse" message="tns:modificacionResponse"/>
+    </operation>
+    <operation name="setMocking">
+      <input wsam:Action="http://wsserver/HuellaServer/setMockingRequest" message="tns:setMocking"/>
+      <output wsam:Action="http://wsserver/HuellaServer/setMockingResponse" message="tns:setMockingResponse"/>
     </operation>
   </portType>
   <binding name="HuellaServerPortBinding" type="tns:HuellaServer">
@@ -93,6 +103,15 @@
         <soap:body use="literal" namespace="http://wsserver/"/>
       </output>
     </operation>
+    <operation name="setMocking">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://wsserver/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://wsserver/"/>
+      </output>
+    </operation>
   </binding>
   <service name="HuellaServerService">
     <port name="HuellaServerPort" binding="tns:HuellaServerPortBinding">
@@ -124,12 +143,13 @@
          <categoria>120010101</categoria>
       </wss:alta>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:username/><con:password/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/altaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="684f0437-805a-4260-bc78-e7c5891d3cd2" isOneWay="false" action="" name="baja" bindingOperationName="baja" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="00b6d201-9b8a-4ec9-8182-1f77ca750881" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
+</soapenv:Envelope>]]></con:request><con:credentials><con:username/><con:password/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/altaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="684f0437-805a-4260-bc78-e7c5891d3cd2" isOneWay="false" action="" name="baja" bindingOperationName="baja" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="155a81c5-e41d-45c3-a015-1ce9f9137c71" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
    <soapenv:Header/>
    <soapenv:Body>
       <wss:baja>
-         <caravana>111</caravana>
-         <fecha>12/12/2019</fecha>
+         <caravana>HZ182C126</caravana>
+         <fecha>2019-06-06</fecha>
+         <categoria>120010105</categoria>
       </wss:baja>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/bajaRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7e2781a7-7237-43b6-9952-d7774cccd224" isOneWay="false" action="" name="modificacion" bindingOperationName="modificacion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a22e7b39-ad02-459b-8c90-8288aab18885" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
@@ -141,4 +161,11 @@
          <categoria>?</categoria>
       </wss:modificacion>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/modificacionRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/modificacionRequest"/></con:call></con:operation><con:operation id="c4dd073d-2638-4498-92e3-7fd5a78c7883" isOneWay="false" action="" name="setMocking" bindingOperationName="setMocking" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f486e5b6-59e7-41aa-bca7-15303e9ff0d1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.1.102:1212/huella</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wss="http://wsserver/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wss:setMocking>
+         <arg0>?</arg0>
+      </wss:setMocking>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wsserver/HuellaServer/setMockingRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

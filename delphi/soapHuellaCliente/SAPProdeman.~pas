@@ -25,6 +25,7 @@ procedure recuperaEventos(fechaDesde, fechaHasta: TDate; query: TIBQuery;
 function formatearFecha(fecha: String):String;
 function formatearCategoria(categoria: String):String;
 
+procedure registrarEvento(idEvento: integer; docMaterial: String; query: TIBQuery);
 
 implementation
 
@@ -239,14 +240,15 @@ end;
 
 procedure iniciaGrillaEventos(StringGridResultado: TStringGrid);
 begin
-      StringGridResultado.ColCount := 5;
+      StringGridResultado.ColCount := 6;
       StringGridResultado.RowCount := 2;
       StringGridResultado.FixedRows := 1;
       StringGridResultado.Cells[0, 0] := 'Id Senasa';
       StringGridResultado.Cells[1, 0] := 'Fecha';
       StringGridResultado.Cells[2, 0] := 'Categoria';
       StringGridResultado.Cells[3, 0] := 'Evento';
-      StringGridResultado.Cells[4, 0] := 'Categoria Nueva';
+      StringGridResultado.Cells[4, 0] := 'Categoria Nueva';   
+      StringGridResultado.Cells[5, 0] := 'idEvento';
 end;
 
 procedure cargarGrillaResultados(query: TIBQuery;
@@ -254,7 +256,7 @@ procedure cargarGrillaResultados(query: TIBQuery;
 var
   categoria, categoria_nueva: String;
   fecha: TDate;
-  id_animal: String;
+  id_animal, idEvento: String;
 
 begin
     while not query.Eof do
@@ -262,11 +264,13 @@ begin
        id_animal := query.FieldByName ('ANIMAL').AsString;
        fecha := query.FieldByName('FECHA').AsDateTime;
        categoria := query.FieldByName('CATEGORIA').AsString;
+       idEvento := query.FieldByName('ID_EVENTO').AsString;
 
        StringGridResultado.Cells[0, StringGridResultado.RowCount -1] := id_animal;
        StringGridResultado.Cells[1, StringGridResultado.RowCount -1] := DateToStr(fecha);
        StringGridResultado.Cells[2, StringGridResultado.RowCount -1] := categoria;
        StringGridResultado.Cells[3, StringGridResultado.RowCount -1] := Evento;
+       StringGridResultado.Cells[5, StringGridResultado.RowCount -1] := idEvento;
 
        if Evento = 'Cambio' then
        begin
@@ -289,8 +293,10 @@ begin
     query.SQL.Clear;
     query.SQL.Add(sqlTxt);
 
-    query.ParamByName('DESDE').AsString := FormatDateTime('DD/MM/YYYY', fechaDesde);
-    query.ParamByName('HASTA').AsString := FormatDateTime('DD/MM/YYYY', fechaHasta);
+//    query.ParamByName('DESDE').AsString := FormatDateTime('DD/MM/YYYY', fechaDesde);
+//    query.ParamByName('HASTA').AsString := FormatDateTime('DD/MM/YYYY', fechaHasta);
+    query.ParamByName('DESDE').AsString := FormatDateTime('YYYY-MM-DD', fechaDesde);
+    query.ParamByName('HASTA').AsString := FormatDateTime('YYYY-MM-DD', fechaHasta);
     query.Open;
 end;
 
@@ -302,11 +308,13 @@ var
   sqlTxt: String;
 begin
   sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA '+
+            ', E.ID_EVENTO ' +
               'FROM EVE_NACIMIENTO N                           '+
               'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) '+
               'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
               'INNER JOIN COD_CATEGORIAS C ON (C.ID_CATEGORIA = E.CATEGORIA) '+
-              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ' +
+              'AND E.ID_EVENTO NOT IN (SELECT ID_EVENTO FROM SAP_EVENTOS)';
 
   getSQLEventoAlta := sqlTxt;
 end;
@@ -316,11 +324,13 @@ var
   sqlTxt: String;
 begin
   sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, C.NOMBRE AS CATEGORIA ' +
+            ', E.ID_EVENTO ' +
               'FROM EVE_BAJA N       ' +
               'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO) ' +
               'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL) '+
               'INNER JOIN COD_CATEGORIAS C ON (C.ID_CATEGORIA = A.CATEGORIA) '+
-              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ' +
+              'AND E.ID_EVENTO NOT IN (SELECT ID_EVENTO FROM SAP_EVENTOS)';
 
   getSQLEventoBaja := sqlTxt;
 end;
@@ -353,14 +363,33 @@ begin
 
   sqlTxt := 'SELECT A.ID_SENASA AS ANIMAL, E.FECHA, '+
             'C.NOMBRE AS CATEGORIA, C2.NOMBRE AS CATEGORIA_NUEVA '+
+            ', E.ID_EVENTO ' +
             'FROM EVE_CAMBIO_CATEGORIA N  '+
             'INNER JOIN EVE_EVENTOS E ON (N.ID_EVENTO = E.ID_EVENTO)    '+
             'INNER JOIN TAB_ANIMALES A ON (E.ANIMAL = A.ID_ANIMAL)  '+
             'INNER JOIN COD_CATEGORIAS C ON (N.CATEGORIA_ANTERIOR = C.ID_CATEGORIA) '+
             'INNER JOIN COD_CATEGORIAS C2 ON (N.CATEGORIA_NUEVA = C2.ID_CATEGORIA) '+
-              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ';
+              'WHERE E.FECHA BETWEEN :DESDE AND :HASTA ' +
+              'AND E.ID_EVENTO NOT IN (SELECT ID_EVENTO FROM SAP_EVENTOS)';
 
   getSQLEventoCambio := sqlTxt;
+end;
+
+procedure registrarEvento(idEvento: integer; docMaterial: String; query: TIBQuery);
+var
+  sqlTxt : String;
+begin
+   sqlTxt := ' INSERT INTO SAP_EVENTOS '+
+             ' VALUES (:ID_EVENTO, :DOC_MATERIAL, CURRENT_TIMESTAMP)';
+
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add(sqlTxt);
+
+    query.ParamByName('ID_EVENTO').AsInteger := idEvento;
+    query.ParamByName('DOC_MATERIAL').AsString := docMaterial;
+    query.Open;
+
 end;
 
 procedure calcularEventosModificacion(query: TIBQuery; fechaDesde, fechaHasta: TDate;
@@ -396,7 +425,7 @@ var
 begin
   dia := copy(fecha, 1, 2);
   mes := copy(fecha, 4, 2);
-  anio := copy(fecha, 6, 4);
+  anio := copy(fecha, 7, 4);
 
   formatearFecha := anio + '-' + mes + '-' + dia;
 

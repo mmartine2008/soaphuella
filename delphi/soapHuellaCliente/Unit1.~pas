@@ -62,8 +62,9 @@ type
     function eventoNuevo(fecha, caravana, categoria: String):string;
     function eventoBaja(fecha, caravana, categoria: String):string;
     function eventoCambio(fecha, caravana, categoria, categoriaNueva: String):string;
-    procedure procesarError(ID_RP, Evento, docMaterial: String);
-    procedure procesarEvento(ID_RP, fecha, categoria, Evento, categoriaNueva : String);
+    procedure procesarError(ID_RP, Evento, docMaterial, idEvento: String);
+    procedure procesarEvento(ID_RP, fecha, categoria,
+            Evento, categoriaNueva, idEvento : String);
 
     function chequearDatosNecesarios: boolean;
     function chequearEstablecimiento: boolean;
@@ -71,6 +72,8 @@ type
     function chequerColor: boolean;
 
     function getConector: HuellaServer;
+
+    procedure cerrarBase;
   public
     { Public declarations }
   end;
@@ -81,6 +84,35 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.cerrarBase;
+begin
+    IBDatabase1.Connected  := false;
+end;
+
+procedure TForm1.abrirBase;
+begin
+  IBDatabase1.Connected  := true;
+
+  IBQueryRazas.Close;
+  IBQueryRazas.Open;
+  IBQueryRazas.Active := true;
+
+  IBQueryColor.Close;
+  IBQueryColor.Open;
+  IBQueryColor.Active := true;
+
+  IBQueryEstablecimiento.Close;
+  IBQueryEstablecimiento.Open;
+  IBQueryEstablecimiento.Active := true;
+
+  DBLookupComboBoxRazas.Enabled := true;
+  DBLookupComboBoxColor.Enabled := true;
+  DBLookupComboBoxEstablecimiento.Enabled := true;
+
+  DBLookupComboBoxEstablecimiento.ListFieldIndex := 1;
+  DBLookupComboBoxRazas.ListFieldIndex := 1;
+end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
@@ -160,27 +192,9 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   IBDatabase1.DatabaseName := 'C:\bases\demo\huella.fdb';
-  IBDatabase1.Connected  := true;
 
-  IBQueryRazas.Close;
-  IBQueryRazas.Open;
-  IBQueryRazas.Active := true;
-
-  IBQueryColor.Close;
-  IBQueryColor.Open;
-  IBQueryColor.Active := true;
-
-  IBQueryEstablecimiento.Close;
-  IBQueryEstablecimiento.Open;
-  IBQueryEstablecimiento.Active := true;
-
-  DBLookupComboBoxRazas.Enabled := true;
-  DBLookupComboBoxColor.Enabled := true;
-  DBLookupComboBoxEstablecimiento.Enabled := true;
-
-  DBLookupComboBoxEstablecimiento.ListFieldIndex := 1;
-  DBLookupComboBoxRazas.ListFieldIndex := 1;
-
+  abrirBase;
+  
   btMigrar.Enabled := false;
   btExportar.Enabled := false;
 end;
@@ -303,6 +317,9 @@ end;
 
 procedure TForm1.btEventosClick(Sender: TObject);
 begin
+  cerrarBase;
+  abrirBase;
+
   desahabilitaBotones;
   consultaEventos;
 end;
@@ -322,12 +339,13 @@ begin
   exportarEventos;
 end;
 
-procedure TForm1.procesarError(ID_RP, Evento, docMaterial: String);
+procedure TForm1.procesarError(ID_RP, Evento, docMaterial, idEvento: String);
 begin
-  if AnsiPos(docMaterial, '|') = 0 then
+  if AnsiPos('|', docMaterial) = 0 then
   begin
       MemoResultadoActualizacion.Lines.Add('El evento '+Evento+' del animal '+
               ID_RP+' se realizó con Documento:' + docMaterial);
+      registrarEvento(StrToInt(idEvento), docMaterial, IBQuery1);
   end
   else
   begin
@@ -338,7 +356,7 @@ end;
 
 
 procedure TForm1.procesarEvento(ID_RP, fecha, categoria,
-            Evento, categoriaNueva : String) ;
+            Evento, categoriaNueva, idEvento : String) ;
 var
   docMaterial: String;
 begin
@@ -358,13 +376,13 @@ begin
                                           formatearCategoria(categoriaNueva));
     end;
 
-    procesarError(ID_RP, Evento, docMaterial);
+    procesarError(ID_RP, Evento, docMaterial, idEvento);
 end;
 
 procedure TForm1.exportarEventos;
 var
   i: integer;
-  ID_RP, categoria, categoriaNueva, fecha, Evento: String;
+  ID_RP, categoria, categoriaNueva, fecha, Evento, idEvento: String;
 begin
 
   MemoResultadoActualizacion.Lines.Clear;
@@ -376,8 +394,9 @@ begin
     categoria := StringGridResultado.Cells[2, i];
     Evento    := StringGridResultado.Cells[3, i];
     categoriaNueva := StringGridResultado.Cells[4, i];
+    idEvento  := StringGridResultado.Cells[5, i];
 
-    procesarEvento(ID_RP, fecha, categoria, Evento, categoriaNueva);
+    procesarEvento(ID_RP, fecha, categoria, Evento, categoriaNueva, idEvento);
   end;
 
 end;
