@@ -183,7 +183,7 @@ public class ProdemanSOAPClient {
 			categoriaAnterior, categoriaNueva);
 
 		String materialId = procesarRespuestaCreacion(respuesta);
-		System.out.println(respuesta);
+
 
 		return materialId;
 	}
