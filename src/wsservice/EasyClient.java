@@ -216,6 +216,9 @@ public class EasyClient {
         sendRequest(httpConn, SOAPActionCreacion, xmlInput);
         response = getResponse(httpConn);
 
+        System.out.println("XML Enviado:");
+        System.out.println(xmlInput);
+
         return response;        
     }
 

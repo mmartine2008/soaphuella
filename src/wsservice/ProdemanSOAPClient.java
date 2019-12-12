@@ -1,6 +1,6 @@
 package wsserver;
 
-import com.sap.document.sap.rfc.functions.*;
+//import com.sap.document.sap.rfc.functions.*;
 import java.net.URL;
  
 import javax.xml.namespace.QName;
@@ -96,6 +96,11 @@ public class ProdemanSOAPClient {
 		String respuestaPrueba = EasyClient.getStringService("prueba2.xml");
 		ProdemanSOAPClient p = new ProdemanSOAPClient();
 		String material = p.procesarRespuestaCreacion(respuestaPrueba);
+
+		System.out.println("XML Recibido:");
+		System.out.println(respuestaPrueba);
+		System.out.println();
+
 		return material;
 	}
 	/**
